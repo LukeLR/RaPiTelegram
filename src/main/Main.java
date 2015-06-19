@@ -6,8 +6,9 @@ import network.NetworkNotifier;
 
 public class Main {
 	public static void main(String[] args){
-		NetworkNotifier n = new Notifier();
+		Notifier n = new Notifier();
 		NetworkListener nl = new NetworkListener(n, 1234);
 		nl.start();
+		n.setListener(nl);
 	}
 }

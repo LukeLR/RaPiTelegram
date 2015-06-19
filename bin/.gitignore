@@ -1,5 +1,6 @@
-/Date/
+/.DS_Store
 /basicConsole/
+/date/
 /gui/
 /layout/
 /library/
@@ -10,5 +11,3 @@
 /res/
 /test/
 /util/
-/date/
-/.DS_Store
