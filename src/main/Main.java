@@ -9,6 +9,6 @@ public class Main {
 		Notifier n = new Notifier();
 		NetworkListener nl = new NetworkListener(n, 1234);
 		nl.start();
-		n.setListener(nl);
+		n.setListener(nl); //gets executed, because NetworkListener is a Thread
 	}
 }
