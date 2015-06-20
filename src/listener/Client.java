@@ -3,11 +3,11 @@ package listener;
 import network.NetworkListener;
 import logging.Logger;
 
-public class Notifier implements network.NetworkNotifier {
+public class Client implements network.NetworkClient {
 	private boolean bidirectional = false;
 	private NetworkListener listener = null;
 	
-	public Notifier(){
+	public Client(){
 		
 	}
 	
