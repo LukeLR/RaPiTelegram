@@ -1,12 +1,12 @@
 package main;
 
-import listener.Client;
+import listener.Notifier;
 import network.NetworkListener;
-import network.NetworkClient;
+import network.NetworkNotifier;
 
 public class Main {
 	public static void main(String[] args){
-		Client c = new Client();
+		Notifier n = new Notifier();
 		NetworkListener nl = new NetworkListener(n, 1234);
 		nl.start();
 		n.setListener(nl); //gets executed, because NetworkListener is a Thread
