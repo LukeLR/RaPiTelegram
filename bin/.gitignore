@@ -1,14 +1,10 @@
-/.DS_Store
 /basicConsole/
 /date/
 /gui/
 /layout/
 /library/
-/listener/
 /logging/
-/main/
 /network/
 /res/
 /test/
 /util/
-/Handler.class
