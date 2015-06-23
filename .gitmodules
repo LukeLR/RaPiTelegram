@@ -1,3 +1,6 @@
 [submodule "lib/JSON-java"]
 	path = lib/JSON-java
 	url = https://github.com/douglascrockford/JSON-java.git
+[submodule "lib/LukeUtils"]
+	path = lib/LukeUtils
+	url = https://github.com/LukeLR/LukeUtils.git
