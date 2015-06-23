@@ -8,7 +8,7 @@ public class JSONTest {
 	public static void main(String[] args){
 		JSONObject obj = new JSONObject(
 				"{\"event\": \"message\", \"service\": false, \"flags\":"
-				+ " 257, \"text\": \"hi\", \"id\": 4666, \"from\":"
+				+ " 257, \"text\": \"hi 123 56es\", \"id\": 4666, \"from\":"
 				+ " {\"username\": \"my_username\", \"flags\": 259,"
 				+ " \"id\": 12345678, \"first_name\": \"Ich\", \"phone\":"
 				+ " \"4915781234567\", \"print_name\": \"Ich\", \"last_name\":"
@@ -20,5 +20,11 @@ public class JSONTest {
 				+ " \"unread\": true}");
 		Logger.logMessage('I', new JSONTest(), "event is: " + obj.getString("event"));
 		Logger.logMessage('I', new JSONTest(), "message text is: " + obj.getString("text"));
+		
+		String messageString = obj.getString("text");
+		String[] contents = messageString.trim().split("\\s");
+		for (int i = 0; i < contents.length; i++){
+			Logger.logMessage('I', new JSONTest(), "message contents [" + String.valueOf(i) + "]: " + contents[i]);
+		}
 	}
 }
