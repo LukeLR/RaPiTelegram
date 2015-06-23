@@ -17,7 +17,7 @@ public class Notifier implements network.NetworkNotifier {
 	}
 	
 	public void onNotify(String notifyString) {
-		Logger.logMessage('I', this, "passed:" + notifyString);
+		Logger.logMessage('I', this, "got notifyString: " + notifyString);
 		if (bidirectional = true && server != null){
 			server.send(notifyString);
 		}
