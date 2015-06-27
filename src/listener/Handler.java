@@ -33,11 +33,19 @@ public class Handler extends Thread{
 	private void handleMessage(){
 		if (verbose) Logger.logMessage('I', this, "Handling command: " + messageContents[0]);
 		switch(messageContents[0]){
-		case "exit": Logger.logMessage('I', this, "Received Exit-command over network. Exiting."); System.exit(0); break;
+		case "ping": this.ping(); break;
+		case "PING": this.ping(); break;
+		case "Ping": this.ping(); break;
+		case "exit": this.exit(); break;
+		case "Exit": this.exit(); break;
 		case "switchOn": this.switchOn(); break;
 		case "switchon": this.switchOn(); break;
+		case "SwitchOn": this.switchOn(); break;
+		case "Switchon": this.switchOn(); break;
 		case "switchOff": this.switchOff(); break;
 		case "switchoff": this.switchOff(); break;
+		case "SwitchOff": this.switchOff(); break;
+		case "Switchoff": this.switchOff(); break;
 		case "delay": this.postpone(); break;
 		case "postpone": this.postpone(); break;
 		case "help": this.help(); break;
@@ -49,6 +57,15 @@ public class Handler extends Thread{
 	}
 	
 	//------ Begin of command-related methods ------
+	
+	private void ping(){
+		
+	}
+	
+	private void exit(){
+		Logger.logMessage('I', this, "Received Exit-command over network. Exiting.");
+		System.exit(0);
+	}
 	
 	private void switchOn(){
 		
@@ -83,6 +100,4 @@ public class Handler extends Thread{
 	private void restart(){
 		
 	}
-	
-	
 }
