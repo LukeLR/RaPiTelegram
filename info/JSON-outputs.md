@@ -22,3 +22,38 @@
 
 ##new message in group
 {"event": "message", "service": false, "flags": 257, "text": "hey", "id": 4741, "from": {"username": "my_username", "flags": 259, "id": 12345678, "first_name": "Ich", "phone": "4915781234567", "print_name": "Ich", "last_name": "", "type": "user"}, "to": {"title": "Chat title", "flags": 256, "id": 567891234, "print_name": "Chat print name", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1435442761, "out": false, "unread": true}
+
+###beautified:
+{
+  "event": "message",
+  "service": false,
+  "flags": 257,
+  "text": "hey",
+  "id": 4741,
+  "from": {
+    "username": "my_username",
+    "flags": 259,
+    "id": 12345678,
+    "first_name": "Ich",
+    "phone": "4915781234567",
+    "print_name": "Ich",
+    "last_name": "",
+    "type": "user"
+  },
+  "to": {
+    "title": "Chat title",
+    "flags": 256,
+    "id": 567891234,
+    "print_name": "Chat print name",
+    "members_num": 2,
+    "type": "chat",
+    "admin": {
+      "id": 0,
+      "print_name": "user#0",
+      "type": "user"
+    }
+  },
+  "date": 1435442761,
+  "out": false,
+  "unread": true
+}
