@@ -36,6 +36,9 @@ public class Handler extends Thread{
 		case "ping": this.ping(); break;
 		case "PING": this.ping(); break;
 		case "Ping": this.ping(); break;
+		case "echo": this.echo(); break;
+		case "Echo": this.echo(); break;
+		case "ECHO": this.echo(); break;
 		case "exit": this.exit(); break;
 		case "Exit": this.exit(); break;
 		case "switchOn": this.switchOn(); break;
@@ -59,6 +62,10 @@ public class Handler extends Thread{
 	//------ Begin of command-related methods ------
 	
 	private void ping(){
+		
+	}
+	
+	private void echo(){
 		
 	}
 	
