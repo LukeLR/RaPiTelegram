@@ -44,6 +44,7 @@ public class User extends Chat {
 			print_name = last_name;
 		} else {
 			Logger.logMessage('E', this, "Couldn't generate print name. Neither first_name nor last_name nor both are set.");
+			print_name = default_print_name;
 		}
 	}
 	
