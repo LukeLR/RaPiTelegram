@@ -55,6 +55,32 @@ public class Message {
 		this.text = text;
 	}
 	
+	// ------ Advanced setter methods ------
+	
+	public void setFromChatID(int from_chat_id){
+		from.setID(from_chat_id);
+	}
+	
+	public void setToChatID(int to_chat_id){
+		to.setID(to_chat_id);
+	}
+	
+	public void setFromChatFlags(int from_chat_flags){
+		from.setFlags(from_chat_flags);
+	}
+	
+	public void setToChatFlags(int to_chat_flags){
+		to.setFlags(to_chat_flags);
+	}
+	
+	public void setFromPrintName(String from_print_name){
+		from.setPrintName(from_print_name);
+	}
+	
+	public void setToPrintName(String to_print_name){
+		to.setPrintName(to_print_name);
+	}
+	
 	// ------ Getter methods ------
 	
 	public Chat getFrom(){
