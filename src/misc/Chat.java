@@ -1,5 +1,7 @@
 package misc;
 
+import org.json.JSONObject;
+
 import logging.Logger;
 
 public class Chat {
@@ -10,6 +12,44 @@ public class Chat {
 	protected String type = "none";
 	
 	private boolean sendAdditionalErrorMessages = false;
+	private boolean warnJSONConstructor = true;
+	
+	public Chat(){
+		
+	}
+	
+	public Chat(int id, int flags, String print_name, String type){
+		this.id = id;
+		this.flags = flags;
+		this.print_name = print_name;
+		this.type = type;
+	}
+	
+	public Chat(String please, String use, int the, int subclasses, int this_wont_work){
+		Logger.logMessage('E', this, "This Chat object is not a Group!");
+	}
+	
+	public Chat(String please, String use, String the, int subclasses, int this_, int wont_work){
+		Logger.logMessage('E', this, "This Chat obejct is not a User!");
+	}
+	
+	public Chat(JSONObject obj){
+		if (warnJSONConstructor) Logger.logMessage('W', this, "Trying to construct a Chat object with a JSON Object.\n"
+				+ "This should not be called directly, only subclasses should call this superclass constructor.\n"
+				+ "Please use the constructors of the subclasses *User* and *Group*!");
+		
+		setID(obj.getInt("id"));
+		setFlags(obj.getInt("flags"));
+		setPrintName(obj.getString("print_name"));
+		setType(obj.getString("type"));
+	}
+	
+	public Chat(String jsonString){
+		this(new JSONObject(jsonString));
+//		if (warnJSONConstructor) Logger.logMessage('W', this, "Trying to construct a Chat object with a JSON String.\n"
+//				+ "This should not be called directly, only subclasses should call this superclass constructor.\n"
+//				+ "Please use the constructors of the subclasses *User* and *Group*!");
+	}
 	
 	// ------ Setter methods ------
 	
@@ -29,6 +69,10 @@ public class Chat {
 		print_name = "chat#" + String.valueOf(id);
 	}
 	
+	public void setType(String type){
+		this.type = type;
+	}
+	
 	// ------ Getter methods ------
 	
 	public int getID(){
@@ -41,6 +85,10 @@ public class Chat {
 	
 	public String getPrintName(){
 		return print_name;
+	}
+	
+	public String getType(){
+		return type;
 	}
 	
 	// ------ Empty setter methods (so Chat class has methods of subclasses) ------
