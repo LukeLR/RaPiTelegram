@@ -10,6 +10,7 @@ public class User extends Chat {
 	protected static final String default_last_name = "User last-name";
 	
 	public User(String first_name, String last_name, String print_name, int id, int phone, int flags){
+		super();
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.print_name = print_name;
