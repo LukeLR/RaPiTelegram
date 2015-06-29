@@ -6,6 +6,7 @@ public class Group extends Chat {
 	protected int members_num = -1;
 	
 	public Group(String title, String print_name, int id, int flags, int members_num){
+		super();
 		this.title = title;
 		this.print_name = print_name;
 		this.id = id;
