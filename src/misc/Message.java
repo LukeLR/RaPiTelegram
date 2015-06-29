@@ -6,6 +6,7 @@ public class Message {
 	protected Chat from, to;
 	protected boolean service = false;
 	protected String text = "Message text";
+	protected String[] contents = null;
 	public static final String default_text = "Message text";
 	protected int id = -1;
 	protected int date = -1;
@@ -55,6 +56,12 @@ public class Message {
 	
 	public void setText(String text){
 		this.text = text;
+	}
+	
+	public void genContents(){
+		if (!text.equals(default_text)){
+			contents = text.trim().split("\\s");
+		}
 	}
 	
 	// ------ Advanced setter methods ------
@@ -195,6 +202,10 @@ public class Message {
 	
 	public String getText(){
 		return text;
+	}
+	
+	public String[] getContents(){
+		return contents;
 	}
 	
 	// ------ Advanced getter methods ------
