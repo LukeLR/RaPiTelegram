@@ -1,5 +1,7 @@
 package misc;
 
+import org.json.JSONObject;
+
 import logging.Logger;
 
 public class User extends Chat {
@@ -17,6 +19,24 @@ public class User extends Chat {
 		this.id = id;
 		this.phone = phone;
 		this.flags = flags;
+	}
+	
+	public User(JSONObject obj){
+		super(obj);
+		
+		if (getType().equals("user")){
+			// Chat is an User
+			
+			this.first_name = obj.getString("first_name");
+			this.last_name = obj.getString("last_name");
+			this.phone = obj.getInt("phone");
+		} else {
+			Logger.logMessage('E', this, "Trying to construct an User chat with a non-Userchat-JSON-String!");
+		}
+	}
+	
+	public User(String jsonString){
+		super(new JSONObject(jsonString));
 	}
 	
 	// ------ Setter Methods ------

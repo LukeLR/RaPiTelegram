@@ -3,30 +3,48 @@ package listener;
 import org.json.JSONObject;
 
 import logging.Logger;
+import misc.Message;
 import network.MessageHandler;
 
 public class Handler extends Thread{
-	private String message;
-	private String messageText;
-	private String[] messageContents;
+	private String messageString;
+	private Message message;
 	private boolean verbose = true;
+	private boolean parsingNeeded = true;
 	
-	public Handler(String message){
-		if (verbose) Logger.logMessage('I', this, "New MessageHandler created.");
+	public Handler(String messageString){
+		if (verbose) Logger.logMessage('I', this, "New MessageHandler created with messageString.");
+		this.messageString = messageString;
+		parsingNeeded = true;
+		this.start();
+	}
+	
+	public Handler(Message message){
+		if (verbose) Logger.logMessage('I', this, "New MessageHandler created with message object.");
 		this.message = message;
+		parsingNeeded = false;
 		this.start();
 	}
 	
 	public void run(){
-		parseMessage();
+		if (parsingNeeded){
+			parseMessage();
+		}
 		handleMessage();
 	}
 	
 	private void parseMessage(){
 		if (verbose) Logger.logMessage('I', this, "Parsing message...");
-		JSONObject obj = new JSONObject (message);
-		messageText = obj.getString("text");
-		messageContents = messageText.trim().split("\\s");
+		JSONObject obj = new JSONObject (messageString);
+		JSONObject fromObj = obj.getJSONObject("from");
+		JSONObject toObj   = obj.getJSONObject("to");
+		
+		if(obj.getString("event").equals("message")){
+			message.setService(obj.getBoolean("service"));
+			
+		} else {
+			Logger.logMessage('E', this, "Given JSONString is not a message. JSONString:\n" + messageString);
+		}
 		if (verbose) Logger.logMessage('I', this, "Resulting messageText: " + messageText);
 	}
 	

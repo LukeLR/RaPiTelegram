@@ -1,10 +1,13 @@
 package misc;
 
+import org.json.JSONObject;
+
 import logging.Logger;
 
 public class Message {
 	protected Chat from, to;
 	protected boolean service = false;
+	protected int flags = -1;
 	protected String text = "Message text";
 	protected String[] contents = null;
 	public static final String default_text = "Message text";
@@ -24,6 +27,28 @@ public class Message {
 		this.text = text;
 	}
 	
+	public Message(JSONObject obj){
+		if (obj.getString("event").equals("message")){
+			JSONObject fromObject = obj.getJSONObject("from");
+			JSONObject toObject = obj.getJSONObject("to");
+			
+			// reading standard fields
+			setService(obj.getBoolean("service"));
+			setFlags(obj.getInt("flags"));
+			setText(obj.getString("text"));
+			genContents();
+			setID(obj.getInt("id"));
+			setDate(obj.getInt("date"));
+			setOutgoing(obj.getBoolean("out"));
+			setUnread(obj.getBoolean("unread"));
+			
+			//reading sender fields
+			
+		} else {
+			Logger.logMessage('E', this, "Given JSONObject is no message!");
+		}
+	}
+	
 	// ------ Setter methods -------
 	
 	public void setFrom(Chat from){
@@ -36,6 +61,10 @@ public class Message {
 	
 	public void setService(boolean service){
 		this.service = service;
+	}
+	
+	public void setFlags(int flags){
+		this.flags = flags;
 	}
 	
 	public void setID(int id){
@@ -182,6 +211,10 @@ public class Message {
 	
 	public boolean getService(){
 		return service;
+	}
+	
+	public int getFlags(){
+		return flags;
 	}
 	
 	public int getID(){
