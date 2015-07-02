@@ -36,7 +36,7 @@ public class User extends Chat {
 	}
 	
 	public User(String jsonString){
-		super(new JSONObject(jsonString));
+		this(new JSONObject(jsonString));
 	}
 	
 	// ------ Setter Methods ------
