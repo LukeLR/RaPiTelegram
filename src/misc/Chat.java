@@ -15,7 +15,7 @@ public class Chat {
 	private boolean warnJSONConstructor = true;
 	
 	public Chat(){
-		
+		// Empty Constructor
 	}
 	
 	public Chat(int id, int flags, String print_name, String type){
