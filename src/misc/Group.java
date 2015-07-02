@@ -1,9 +1,15 @@
 package misc;
 
+import logging.Logger;
+
+import org.json.JSONObject;
+
 public class Group extends Chat {
 	protected String title = "Chat title";
 	public static final String default_title = "Chat title";
 	protected int members_num = -1;
+	
+	private boolean verbose = false;
 	
 	public Group(String title, String print_name, int id, int flags, int members_num){
 		super();
@@ -12,6 +18,26 @@ public class Group extends Chat {
 		this.id = id;
 		this.flags = flags;
 		this.members_num = members_num;
+	}
+	
+	public Group(JSONObject obj){
+		super(obj);
+		if (verbose) Logger.logMessage('I', this, "Constructing Group by JSON!");
+		
+		if(obj.getString("type").equals("user")){
+			// Chat is a group chat
+			
+			this.title = obj.getString("title");
+			this.members_num = obj.getInt("members_num");
+		} else {
+			// Chat is not a group chat
+			Logger.logMessage('E', this, "Trying to construct a Group chat with a non-group-chat-JSON-String!");
+		}
+	}
+	
+	public Group(String jsonString){
+		this(new JSONObject(jsonString));
+		if (verbose) Logger.logMessage('I', this, "Constructed Group by JSONString...");
 	}
 	
 	/// ------ Setter methods ------
