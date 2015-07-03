@@ -81,7 +81,7 @@ public class Handler extends Thread{
 	//------ Begin of command-related methods ------
 	
 	private void ping(){
-		
+		notifier.send("ping!");
 	}
 	
 	private void echo(){
