@@ -10,6 +10,8 @@ public class Main {
 		Notifier n = new Notifier();
 //		NetworkServer ns = new NetworkServer(n, 1234);
 		NetworkClient nc = new NetworkClient(n, "localhost", 1234);
+//		n.setServer(ns);
+		n.setClient(nc);
 //		ns.start();
 //		n.setServer(ns); //gets executed, because NetworkListener is a Thread
 //		nc.send("Test!");
