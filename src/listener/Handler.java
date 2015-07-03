@@ -126,7 +126,7 @@ public class Handler extends Thread{
 	//------ Begin of command-related methods ------
 	
 	private void ping(){
-		notifier.send("received ping!");
+		notifier.send("msg " + message.getFromPrintName() + " ping received!");
 	}
 	
 	private void echo(){
