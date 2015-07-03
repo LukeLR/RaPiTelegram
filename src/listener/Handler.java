@@ -42,12 +42,12 @@ public class Handler extends Thread{
 		} else {
 			Logger.logMessage('E', this, "Given JSONString is not a message. JSONString:\n" + messageString);
 		}
-		if (verbose) Logger.logMessage('I', this, "Resulting messageText: " + messageText);
+		if (verbose) Logger.logMessage('I', this, "Resulting messageText: " + message.getText());
 	}
 	
 	private void handleMessage(){
-		if (verbose) Logger.logMessage('I', this, "Handling command: " + messageContents[0]);
-		switch(messageContents[0]){
+		if (verbose) Logger.logMessage('I', this, "Handling command: " + message.getContents()[0]);
+		switch(message.getContents()[0]){
 		case "ping": this.ping(); break;
 		case "PING": this.ping(); break;
 		case "Ping": this.ping(); break;
@@ -106,8 +106,8 @@ public class Handler extends Thread{
 	}
 	
 	private void healthreport(){
-		if (messageContents.length < 1){
-			switch(messageContents[1]){
+		if (message.getContents().length < 1){
+			switch(message.getContents()[1]){
 			case "now": break; //make a new healthreport now
 			}
 		} else {
