@@ -27,6 +27,20 @@ public class Message {
 		this.out = out;
 		this.unread = unread;
 		this.text = text;
+		genContents();
+	}
+	
+	public Message(){
+		this.from = new Chat();
+		this.to = new Chat();
+		this.service = false;
+		this.flags = -1;
+		this.text = "Message text";
+		genContents();
+		this.id = -1;
+		this.date = -1;
+		this.out = false;
+		this.unread = true;
 	}
 	
 	public Message(JSONObject obj){
