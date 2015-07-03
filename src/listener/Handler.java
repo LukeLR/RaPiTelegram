@@ -12,6 +12,7 @@ public class Handler extends Thread{
 	private Message message;
 	private boolean parsingNeeded = true;
 	private boolean raw = false;
+	private boolean parsedWell = false;
 	
 	private boolean verbose = true;
 	
@@ -38,6 +39,7 @@ public class Handler extends Thread{
 		this.message = message;
 		this.notifier = notifier;
 		parsingNeeded = false;
+		parsedWell = true;
 		this.start();
 	}
 	
@@ -54,43 +56,54 @@ public class Handler extends Thread{
 			message = new Message();
 			message.setText(messageString);
 		} else {
-			JSONObject obj = new JSONObject (messageString);
-			
-			if(obj.getString("event").equals("message")){
-				message = new Message(obj);			
+			String[] contents = messageString.trim().split("\\s");
+			if (contents[0].equals("ANSWER")){
+				Logger.logMessage('W', this, "Message is ANSWER xxx, skipping parsing & handling");
+				parsedWell = false;
 			} else {
-				Logger.logMessage('E', this, "Given JSONString is not a message. JSONString:\n" + messageString);
+				JSONObject obj = new JSONObject (messageString);
+				
+				if(obj.getString("event").equals("message")){
+					message = new Message(obj);			
+				} else {
+					Logger.logMessage('E', this, "Given JSONString is not a message. JSONString:\n" + messageString);
+				}
+				if (verbose) Logger.logMessage('I', this, "Resulting messageText: " + message.getText());
+				parsedWell = true;
 			}
-			if (verbose) Logger.logMessage('I', this, "Resulting messageText: " + message.getText());
 		}
 	}
 	
 	private void handleMessage(){
-		if (verbose) Logger.logMessage('I', this, "Handling command: " + message.getContents()[0]);
-		switch(message.getContents()[0]){
-		case "ping": this.ping(); break;
-		case "PING": this.ping(); break;
-		case "Ping": this.ping(); break;
-		case "echo": this.echo(); break;
-		case "Echo": this.echo(); break;
-		case "ECHO": this.echo(); break;
-		case "exit": this.exit(); break;
-		case "Exit": this.exit(); break;
-		case "switchOn": this.switchOn(); break;
-		case "switchon": this.switchOn(); break;
-		case "SwitchOn": this.switchOn(); break;
-		case "Switchon": this.switchOn(); break;
-		case "switchOff": this.switchOff(); break;
-		case "switchoff": this.switchOff(); break;
-		case "SwitchOff": this.switchOff(); break;
-		case "Switchoff": this.switchOff(); break;
-		case "delay": this.postpone(); break;
-		case "postpone": this.postpone(); break;
-		case "help": this.help(); break;
-		case "info": this.help(); break;
-		case "healthreport": this.healthreport(); break;
-		case "shutdown": this.shutdown(); break;
-		case "restart": this.restart(); break;
+		if (parsedWell){
+			if (verbose) Logger.logMessage('I', this, "Handling command: " + message.getContents()[0]);
+			switch(message.getContents()[0]){
+			case "ping": this.ping(); break;
+			case "PING": this.ping(); break;
+			case "Ping": this.ping(); break;
+			case "echo": this.echo(); break;
+			case "Echo": this.echo(); break;
+			case "ECHO": this.echo(); break;
+			case "exit": this.exit(); break;
+			case "Exit": this.exit(); break;
+			case "switchOn": this.switchOn(); break;
+			case "switchon": this.switchOn(); break;
+			case "SwitchOn": this.switchOn(); break;
+			case "Switchon": this.switchOn(); break;
+			case "switchOff": this.switchOff(); break;
+			case "switchoff": this.switchOff(); break;
+			case "SwitchOff": this.switchOff(); break;
+			case "Switchoff": this.switchOff(); break;
+			case "delay": this.postpone(); break;
+			case "postpone": this.postpone(); break;
+			case "help": this.help(); break;
+			case "info": this.help(); break;
+			case "healthreport": this.healthreport(); break;
+			case "shutdown": this.shutdown(); break;
+			case "restart": this.restart(); break;
+			}
+		} else {
+			Logger.logMessage('W', this, "Message was not parsed well. Exiting.");
 		}
 	}
 	
