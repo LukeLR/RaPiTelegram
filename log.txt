@@ -48,3 +48,201 @@ Please use the constructors of the subclasses *User* and *Group*!
 43 [I][logging.LogManager][exit]: Saving Log File
 44 [I][logging.LogManager][exit]: No Log file exists, creating new one: log.txt
 45 [I][util.FileHandler][exit]: Writing StringBuilder to log.txt
+
+
+============================================== new Instance on 20150704014950 ============================================== ------ dumping channel: default ------Log channel: default
+1 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+0 [I][network.NetworkClient][logMessage]: Starting listening to 192.168.2.101 on port 1604.
+
+ ------ dumping channel: default ------Log channel: default
+2 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+1 [I][network.NetworkClient][logMessage]: Sending message: main_session
+
+ ------ dumping channel: default ------Log channel: default
+3 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+2 [I][network.NetworkClient][logMessage]: received: ANSWER 261
+
+ ------ dumping channel: default ------Log channel: default
+4 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+3 [I][listener.Notifier][logMessage]: got notifyString: (0) ANSWER 261
+
+ ------ dumping channel: default ------Log channel: default
+5 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+4 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is JSON
+
+ ------ dumping channel: default ------Log channel: default
+6 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+5 [I][network.NetworkClient][logMessage]: received: {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-07-04 01:54:44"}
+
+ ------ dumping channel: default ------Log channel: default
+8 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+6 [I][listener.Handler][logMessage]: Parsing message 0...
+
+ ------ dumping channel: default ------Log channel: default
+8 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+7 [I][listener.Notifier][logMessage]: got notifyString: (1) {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-07-04 01:54:44"}
+
+ ------ dumping channel: default ------Log channel: default
+9 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+8 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is JSON
+
+ ------ dumping channel: default ------Log channel: default
+10 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+9 [I][network.NetworkClient][logMessage]: received: 
+
+ ------ dumping channel: default ------Log channel: default
+12 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+10 [I][listener.Handler][logMessage]: Parsing message 1...
+
+ ------ dumping channel: default ------Log channel: default
+12 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+11 [I][listener.Notifier][logMessage]: got notifyString: (2) 
+
+ ------ dumping channel: default ------Log channel: default
+13 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+12 [I][listener.Handler][<init>]: New MessageHandler 2 created with messageString. Content is JSON
+
+ ------ dumping channel: default ------Log channel: default
+14 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+13 [I][listener.Handler][logMessage]: Parsing message 2...
+
+ ------ dumping channel: default ------Log channel: default
+16 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+14 [E][listener.Handler][logMessage]: Parsing of JSON for ID 0 failed!
+
+ ------ dumping channel: default ------Log channel: default
+16 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+15 [E][listener.Handler][logMessage]: Parsing of JSON for ID 2 failed!
+
+ ------ dumping channel: default ------Log channel: default
+18 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+16 [W][listener.Handler][logMessage]: Message 0 was not parsed well. Exiting.
+
+ ------ dumping channel: default ------Log channel: default
+18 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+17 [W][listener.Handler][logMessage]: Message 2 was not parsed well. Exiting.
+
+ ------ dumping channel: default ------Log channel: default
+19 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+18 [E][listener.Handler][logMessage]: Given JSONString 1 is not a message. JSONString:
+{"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-07-04 01:54:44"}
+
+ ------ dumping channel: default ------Log channel: default
+20 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+19 [W][listener.Handler][logMessage]: Message 1 was not parsed well. Exiting.
+
+ ------ dumping channel: default ------Log channel: default
+21 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+20 [I][network.NetworkClient][logMessage]: received: ANSWER 487
+
+ ------ dumping channel: default ------Log channel: default
+22 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+21 [I][listener.Notifier][logMessage]: got notifyString: (3) ANSWER 487
+
+ ------ dumping channel: default ------Log channel: default
+23 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+22 [I][listener.Handler][<init>]: New MessageHandler 3 created with messageString. Content is JSON
+
+ ------ dumping channel: default ------Log channel: default
+25 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+23 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 257, "text": "kick", "id": 5077, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1435967390, "out": false, "unread": true}
+
+ ------ dumping channel: default ------Log channel: default
+25 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+24 [I][listener.Handler][logMessage]: Parsing message 3...
+
+ ------ dumping channel: default ------Log channel: default
+27 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+25 [I][listener.Notifier][logMessage]: got notifyString: (4) {"event": "message", "service": false, "flags": 257, "text": "kick", "id": 5077, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1435967390, "out": false, "unread": true}
+
+ ------ dumping channel: default ------Log channel: default
+27 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+26 [E][listener.Handler][logMessage]: Parsing of JSON for ID 3 failed!
+
+ ------ dumping channel: default ------Log channel: default
+29 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+27 [I][listener.Handler][<init>]: New MessageHandler 4 created with messageString. Content is JSON
+
+ ------ dumping channel: default ------Log channel: default
+29 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+28 [W][listener.Handler][logMessage]: Message 3 was not parsed well. Exiting.
+
+ ------ dumping channel: default ------Log channel: default
+31 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+29 [I][network.NetworkClient][logMessage]: received: 
+
+ ------ dumping channel: default ------Log channel: default
+31 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+30 [I][listener.Handler][logMessage]: Parsing message 4...
+
+ ------ dumping channel: default ------Log channel: default
+32 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+31 [I][listener.Notifier][logMessage]: got notifyString: (5) 
+
+ ------ dumping channel: default ------Log channel: default
+33 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+32 [I][listener.Handler][<init>]: New MessageHandler 5 created with messageString. Content is JSON
+
+ ------ dumping channel: default ------Log channel: default
+34 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+33 [I][listener.Handler][logMessage]: Parsing message 5...
+
+ ------ dumping channel: default ------Log channel: default
+35 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+34 [E][listener.Handler][logMessage]: Parsing of JSON for ID 5 failed!
+
+ ------ dumping channel: default ------Log channel: default
+36 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+35 [W][listener.Handler][logMessage]: Message 5 was not parsed well. Exiting.
+
+ ------ dumping channel: default ------Log channel: default
+37 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+36 [I][misc.Message][<init>]: Constructing Message by JSON!
+
+ ------ dumping channel: default ------Log channel: default
+38 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+37 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+
+ ------ dumping channel: default ------Log channel: default
+39 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+38 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+
+ ------ dumping channel: default ------Log channel: default
+40 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+39 [I][listener.Handler][logMessage]: Resulting messageText 4: kick
+
+ ------ dumping channel: default ------Log channel: default
+41 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+40 [I][listener.Handler][logMessage]: Handling command 4: kick
+
+ ------ dumping channel: default ------Log channel: default
+42 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+41 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+
+ ------ dumping channel: default ------Log channel: default
+43 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+42 [I][logging.LogManager][exit]: Saving Log File
+
+ ------ dumping channel: default ------Log channel: default
+44 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+43 [I][logging.LogManager][exit]: LogFile exists: log.txt
+
+ ------ dumping channel: default ------Log channel: default
+45 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+44 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+
+ ------ dumping channel: default ------Log channel: default
+46 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+45 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+
+ ------ dumping channel: default ------Log channel: default
+47 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+46 [I][util.TimeHandler][exit]: Returning TimeArray 20150704014950
+
+ ------ dumping channel: default ------Log channel: default
+48 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
+47 [I][util.TimeHandler][exit]: 20150704014950
