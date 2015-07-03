@@ -11,14 +11,25 @@ public class Handler extends Thread{
 	private Notifier notifier;
 	private Message message;
 	private boolean parsingNeeded = true;
+	private boolean raw = false;
 	
 	private boolean verbose = true;
 	
 	public Handler(String messageString, Notifier notifier){
-		if (verbose) Logger.logMessage('I', this, "New MessageHandler created with messageString.");
+		this(messageString, false, notifier);
+	}
+	
+	public Handler(String messageString, boolean raw, Notifier notifier){
+		if (raw){
+			if (verbose) Logger.logMessage('I', this, "New MessageHandler created with messageString. Content is raw.");
+		} else {
+			if (verbose) Logger.logMessage('I', this, "New MessageHandler created with messageString. Content is JSON");
+		}
+		
 		this.messageString = messageString;
 		this.notifier = notifier;
 		parsingNeeded = true;
+		this.raw = raw;
 		this.start();
 	}
 	
@@ -39,14 +50,19 @@ public class Handler extends Thread{
 	
 	private void parseMessage(){
 		if (verbose) Logger.logMessage('I', this, "Parsing message...");
-		JSONObject obj = new JSONObject (messageString);
-		
-		if(obj.getString("event").equals("message")){
-			message = new Message(obj);			
+		if (raw){
+			message = new Message();
+			message.setText(messageString);
 		} else {
-			Logger.logMessage('E', this, "Given JSONString is not a message. JSONString:\n" + messageString);
+			JSONObject obj = new JSONObject (messageString);
+			
+			if(obj.getString("event").equals("message")){
+				message = new Message(obj);			
+			} else {
+				Logger.logMessage('E', this, "Given JSONString is not a message. JSONString:\n" + messageString);
+			}
+			if (verbose) Logger.logMessage('I', this, "Resulting messageText: " + message.getText());
 		}
-		if (verbose) Logger.logMessage('I', this, "Resulting messageText: " + message.getText());
 	}
 	
 	private void handleMessage(){
