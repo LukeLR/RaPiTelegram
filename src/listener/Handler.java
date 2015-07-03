@@ -60,7 +60,9 @@ public class Handler extends Thread{
 //			if (contents[0].equals("ANSWER")){
 //				Logger.logMessage('W', this, "Message is ANSWER xxx, skipping parsing & handling");
 //				parsedWell = false;
-//			if net.sf.json.util.
+			if (net.sf.json.util.JSONUtils.mayBeJSON(messageString)){
+				Logger.logMessage('W', this, "Message is no valid JSON, skipping parsing & handling");
+				parsedWell = false;
 			} else {
 				JSONObject obj = new JSONObject (messageString);
 				
