@@ -8,21 +8,24 @@ import network.MessageHandler;
 
 public class Handler extends Thread{
 	private String messageString;
+	private Notifier notifier;
 	private Message message;
 	private boolean parsingNeeded = true;
 	
 	private boolean verbose = true;
 	
-	public Handler(String messageString){
+	public Handler(String messageString, Notifier notifier){
 		if (verbose) Logger.logMessage('I', this, "New MessageHandler created with messageString.");
 		this.messageString = messageString;
+		this.notifier = notifier;
 		parsingNeeded = true;
 		this.start();
 	}
 	
-	public Handler(Message message){
+	public Handler(Message message, Notifier notifier){
 		if (verbose) Logger.logMessage('I', this, "New MessageHandler created with message object.");
 		this.message = message;
+		this.notifier = notifier;
 		parsingNeeded = false;
 		this.start();
 	}
