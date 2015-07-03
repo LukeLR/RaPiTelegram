@@ -5,13 +5,13 @@ import org.json.JSONObject;
 import logging.Logger;
 
 public class User extends Chat {
-	protected int phone = -1;
+	protected long phone = -1;
 	protected String first_name = "User first-name";
 	protected static final String default_first_name = "User first-name";
 	protected String last_name = "User last-name";
 	protected static final String default_last_name = "User last-name";
 	
-	public User(String first_name, String last_name, String print_name, int id, int phone, int flags){
+	public User(String first_name, String last_name, String print_name, int id, long phone, int flags){
 		super();
 		this.first_name = first_name;
 		this.last_name = last_name;
@@ -29,7 +29,8 @@ public class User extends Chat {
 			
 			this.first_name = obj.getString("first_name");
 			this.last_name = obj.getString("last_name");
-			this.phone = obj.getInt("phone");
+			// Phone Number is to long for int
+			this.phone = obj.getLong("phone");
 		} else {
 			Logger.logMessage('E', this, "Trying to construct an User chat with a non-Userchat-JSON-String!");
 		}
@@ -41,7 +42,7 @@ public class User extends Chat {
 	
 	// ------ Setter Methods ------
 	
-	public void setPhone(int phone){
+	public void setPhone(long phone){
 		this.phone = phone;
 	}
 	
@@ -71,7 +72,7 @@ public class User extends Chat {
 	
 	// ------ Getter methods ------
 	
-	public int getPhone(){
+	public long getPhone(){
 		return phone;
 	}
 	

@@ -123,7 +123,7 @@ public class Chat {
 	
 	// ------ Empty getter methods (so Chat class has methods of subclasses) ------
 	
-	public int getPhone() throws FieldNotFoundException{
+	public long getPhone() throws FieldNotFoundException{
 		if (sendAdditionalErrorMessages) Logger.logMessage('E', this, "This object has no phone number!");
 		throw new FieldNotFoundException("This object has no phone number!");
 	}
