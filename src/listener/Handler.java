@@ -9,8 +9,9 @@ import network.MessageHandler;
 public class Handler extends Thread{
 	private String messageString;
 	private Message message;
-	private boolean verbose = true;
 	private boolean parsingNeeded = true;
+	
+	private boolean verbose = true;
 	
 	public Handler(String messageString){
 		if (verbose) Logger.logMessage('I', this, "New MessageHandler created with messageString.");
