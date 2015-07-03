@@ -14,33 +14,36 @@ public class Handler extends Thread{
 	private boolean parsingNeeded = true;
 	private boolean raw = false;
 	private boolean parsedWell = false;
+	private int id = -1;
 	
 	private boolean verbose = true;
 	
-	public Handler(String messageString, Notifier notifier){
-		this(messageString, false, notifier);
+	public Handler(String messageString, Notifier notifier, int id){
+		this(messageString, false, notifier, id);
 	}
 	
-	public Handler(String messageString, boolean raw, Notifier notifier){
+	public Handler(String messageString, boolean raw, Notifier notifier, int id){
 		if (raw){
-			if (verbose) Logger.logMessage('I', this, "New MessageHandler created with messageString. Content is raw.");
+			if (verbose) Logger.logMessage('I', this, "New MessageHandler " + String.valueOf(id) + " created with messageString. Content is raw.");
 		} else {
-			if (verbose) Logger.logMessage('I', this, "New MessageHandler created with messageString. Content is JSON");
+			if (verbose) Logger.logMessage('I', this, "New MessageHandler " + String.valueOf(id) + " created with messageString. Content is JSON");
 		}
 		
 		this.messageString = messageString;
 		this.notifier = notifier;
 		parsingNeeded = true;
 		this.raw = raw;
+		this.id = id;
 		this.start();
 	}
 	
-	public Handler(Message message, Notifier notifier){
-		if (verbose) Logger.logMessage('I', this, "New MessageHandler created with message object.");
+	public Handler(Message message, Notifier notifier, int id){
+		if (verbose) Logger.logMessage('I', this, "New MessageHandler created with message object. ID: " + String.valueOf(id));
 		this.message = message;
 		this.notifier = notifier;
 		parsingNeeded = false;
 		parsedWell = true;
+		this.id = id;
 		this.start();
 	}
 	
@@ -52,7 +55,7 @@ public class Handler extends Thread{
 	}
 	
 	private void parseMessage(){
-		if (verbose) Logger.logMessage('I', this, "Parsing message...");
+		if (verbose) Logger.logMessage('I', this, "Parsing message " + String.valueOf(id) + "...");
 		if (raw){
 			message = new Message();
 			message.setText(messageString);
@@ -70,21 +73,26 @@ public class Handler extends Thread{
 				JSONObject obj = new JSONObject (messageString);
 				
 				if(obj.getString("event").equals("message")){
-					message = new Message(obj);			
+					message = new Message(obj);
+					if (verbose) Logger.logMessage('I', this, "Resulting messageText " + String.valueOf(id)+ ": " + message.getText());
+					parsedWell = true;
 				} else {
-					Logger.logMessage('E', this, "Given JSONString is not a message. JSONString:\n" + messageString);
+					Logger.logMessage('E', this, "Given JSONString " + String.valueOf(id) + " is not a message. JSONString:\n" + messageString);
+					parsedWell = false;
 				}
-				if (verbose) Logger.logMessage('I', this, "Resulting messageText: " + message.getText());
-				parsedWell = true;
 			} catch (JSONException ex){
-				Logger.logMessage('E', this, "Parsing of JSON failed!");
+				Logger.logMessage('E', this, "Parsing of JSON for ID " + String.valueOf(id) + " failed!");
+				ex.printStackTrace();
+			} catch (Exception ex){
+				Logger.logMessage('E', this, "Parsing of JSON for ID " + String.valueOf(id) + " failed in a general exception!");
+				ex.printStackTrace();
 			}
 		}
 	}
 	
 	private void handleMessage(){
 		if (parsedWell){
-			if (verbose) Logger.logMessage('I', this, "Handling command: " + message.getContents()[0]);
+			if (verbose) Logger.logMessage('I', this, "Handling command " + String.valueOf(id) + ": " + message.getContents()[0]);
 			switch(message.getContents()[0]){
 			case "ping": this.ping(); break;
 			case "PING": this.ping(); break;
@@ -111,7 +119,7 @@ public class Handler extends Thread{
 			case "restart": this.restart(); break;
 			}
 		} else {
-			Logger.logMessage('W', this, "Message was not parsed well. Exiting.");
+			Logger.logMessage('W', this, "Message " + String.valueOf(id) + " was not parsed well. Exiting.");
 		}
 	}
 	

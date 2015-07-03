@@ -9,6 +9,8 @@ public class Notifier implements network.NetworkNotifier {
 	private NetworkServer server = null;
 	private NetworkClient client = null;
 	
+	private int lastID = 0;
+	
 	private boolean verbose = true;
 	
 	public Notifier(){
@@ -56,11 +58,12 @@ public class Notifier implements network.NetworkNotifier {
 	}
 	
 	public void onNotify(String notifyString) {
-		Logger.logMessage('I', this, "got notifyString: " + notifyString);
+		Logger.logMessage('I', this, "got notifyString: (" + String.valueOf(lastID) + ") " + notifyString);
 //		if (bidirectional = true && server != null){
 //			server.send(notifyString);
 //		}
 		
-		new Handler(notifyString, this);
+		new Handler(notifyString, this, lastID);
+		lastID++;
 	}
 }
