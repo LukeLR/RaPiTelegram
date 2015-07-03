@@ -17,6 +17,7 @@ public class Main {
 		Notifier n = new Notifier();
 //		NetworkServer ns = new NetworkServer(n, 1234);
 		NetworkClient nc = new NetworkClient(n, args[0], Integer.parseInt(args[1]));
+		nc.send("main_session");
 //		n.setServer(ns);
 		n.setClient(nc);
 //		ns.start();
