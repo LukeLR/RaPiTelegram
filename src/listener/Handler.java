@@ -56,10 +56,11 @@ public class Handler extends Thread{
 			message = new Message();
 			message.setText(messageString);
 		} else {
-			String[] contents = messageString.trim().split("\\s");
-			if (contents[0].equals("ANSWER")){
-				Logger.logMessage('W', this, "Message is ANSWER xxx, skipping parsing & handling");
-				parsedWell = false;
+//			String[] contents = messageString.trim().split("\\s");
+//			if (contents[0].equals("ANSWER")){
+//				Logger.logMessage('W', this, "Message is ANSWER xxx, skipping parsing & handling");
+//				parsedWell = false;
+//			if net.sf.json.util.
 			} else {
 				JSONObject obj = new JSONObject (messageString);
 				
