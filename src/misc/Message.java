@@ -16,6 +16,8 @@ public class Message {
 	protected boolean out = false;
 	protected boolean unread = true;
 	
+	private boolean verbose = true;
+	
 	public Message(Chat from, Chat to, boolean service, int id, int date, boolean out, boolean unread, String text){
 		this.from = from;
 		this.to = to;
@@ -28,6 +30,8 @@ public class Message {
 	}
 	
 	public Message(JSONObject obj){
+		if (verbose) Logger.logMessage('I', this, "Constructing Message by JSON!");
+		
 		if (obj.getString("event").equals("message")){
 			JSONObject fromObject = obj.getJSONObject("from");
 			JSONObject toObject = obj.getJSONObject("to");
@@ -44,9 +48,36 @@ public class Message {
 			
 			//reading sender fields
 			
+			if (fromObject.getString("type").equals("user")){
+				// from-chat is an user
+				from = new User(fromObject);
+			} else if (fromObject.getString("type").equals("chat")){
+				// from-chat is a group chat
+				from = new Group(fromObject);
+			} else {
+				Logger.logMessage('E', this, "From-Object is neither user nor group chat!");
+			}
+			
+			// reading receipient fields
+			
+			if (toObject.getString("type").equals("user")){
+				// to-chat is an user
+				to = new User(toObject);
+			} else if (toObject.getString("type").equals("chat")){
+				// to-chat is a group chat
+				to = new Group(toObject);
+			} else {
+				Logger.logMessage('E', this, "To-Object is neither user nor group chat!");
+			}
+			
 		} else {
 			Logger.logMessage('E', this, "Given JSONObject is no message!");
 		}
+	}
+	
+	public Message(String jsonString){
+		this(new JSONObject(jsonString));
+		if (verbose) Logger.logMessage('I', this, "Constructed Message by JSONString.");
 	}
 	
 	// ------ Setter methods -------

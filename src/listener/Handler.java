@@ -36,12 +36,9 @@ public class Handler extends Thread{
 	private void parseMessage(){
 		if (verbose) Logger.logMessage('I', this, "Parsing message...");
 		JSONObject obj = new JSONObject (messageString);
-		JSONObject fromObj = obj.getJSONObject("from");
-		JSONObject toObj   = obj.getJSONObject("to");
 		
 		if(obj.getString("event").equals("message")){
-			message.setService(obj.getBoolean("service"));
-			
+			message = new Message(obj);			
 		} else {
 			Logger.logMessage('E', this, "Given JSONString is not a message. JSONString:\n" + messageString);
 		}
