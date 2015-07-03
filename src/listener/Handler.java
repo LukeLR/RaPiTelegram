@@ -82,10 +82,10 @@ public class Handler extends Thread{
 				}
 			} catch (JSONException ex){
 				Logger.logMessage('E', this, "Parsing of JSON for ID " + String.valueOf(id) + " failed!");
-				ex.printStackTrace();
+//				ex.printStackTrace();
 			} catch (Exception ex){
 				Logger.logMessage('E', this, "Parsing of JSON for ID " + String.valueOf(id) + " failed in a general exception!");
-				ex.printStackTrace();
+//				ex.printStackTrace();
 			}
 		}
 	}
