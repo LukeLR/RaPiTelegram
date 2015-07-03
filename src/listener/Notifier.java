@@ -61,6 +61,6 @@ public class Notifier implements network.NetworkNotifier {
 //			server.send(notifyString);
 //		}
 		
-		new Handler(notifyString, true, this);
+		new Handler(notifyString, this);
 	}
 }
