@@ -1,10 +1,10 @@
 package listener;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import logging.Logger;
 import misc.Message;
-import net.sf.json.util.JSONUtils;
 import network.MessageHandler;
 
 public class Handler extends Thread{
@@ -64,7 +64,9 @@ public class Handler extends Thread{
 //			if (JSONUtils.mayBeJSON(messageString)){
 //				Logger.logMessage('W', this, "Message is no valid JSON, skipping parsing & handling");
 //				parsedWell = false;
-			} else {
+//			} else {
+			try {
+				
 				JSONObject obj = new JSONObject (messageString);
 				
 				if(obj.getString("event").equals("message")){
@@ -74,6 +76,8 @@ public class Handler extends Thread{
 				}
 				if (verbose) Logger.logMessage('I', this, "Resulting messageText: " + message.getText());
 				parsedWell = true;
+			} catch (JSONException ex){
+				Logger.logMessage('E', this, "Parsing of JSON failed!");
 			}
 		}
 	}
