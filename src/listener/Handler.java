@@ -4,6 +4,7 @@ import org.json.JSONObject;
 
 import logging.Logger;
 import misc.Message;
+import net.sf.json.util.JSONUtils;
 import network.MessageHandler;
 
 public class Handler extends Thread{
@@ -60,7 +61,7 @@ public class Handler extends Thread{
 //			if (contents[0].equals("ANSWER")){
 //				Logger.logMessage('W', this, "Message is ANSWER xxx, skipping parsing & handling");
 //				parsedWell = false;
-			if (net.sf.json.util.JSONUtils.mayBeJSON(messageString)){
+			if (JSONUtils.mayBeJSON(messageString)){
 				Logger.logMessage('W', this, "Message is no valid JSON, skipping parsing & handling");
 				parsedWell = false;
 			} else {
