@@ -1,5 +1,7 @@
 package listener;
 
+import java.util.logging.LogManager;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -100,8 +102,8 @@ public class Handler extends Thread{
 			case "echo": this.echo(); break;
 			case "Echo": this.echo(); break;
 			case "ECHO": this.echo(); break;
-			case "exit": this.exit(); break;
-			case "Exit": this.exit(); break;
+			case "kick": this.exit(); break;
+			case "Kick": this.exit(); break;
 			case "switchOn": this.switchOn(); break;
 			case "switchon": this.switchOn(); break;
 			case "SwitchOn": this.switchOn(); break;
@@ -135,6 +137,7 @@ public class Handler extends Thread{
 	
 	private void exit(){
 		Logger.logMessage('I', this, "Received Exit-command over network. Exiting.");
+		logging.LogManager.saveLogFile("log.txt");
 		System.exit(0);
 	}
 	
