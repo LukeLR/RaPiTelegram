@@ -7,9 +7,16 @@ import network.NetworkNotifier;
 
 public class Main {
 	public static void main(String[] args){
+		
+		if (args.length != 2) {
+            System.err.println(
+                "Usage: java <application> <host name> <port number>");
+            System.exit(1);
+        }
+		
 		Notifier n = new Notifier();
 //		NetworkServer ns = new NetworkServer(n, 1234);
-		NetworkClient nc = new NetworkClient(n, "localhost", 1234);
+		NetworkClient nc = new NetworkClient(n, args[0], Integer.parseInt(args[1]));
 //		n.setServer(ns);
 		n.setClient(nc);
 //		ns.start();
