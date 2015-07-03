@@ -15,7 +15,10 @@ public class Chat {
 	private boolean warnJSONConstructor = true;
 	
 	public Chat(){
-		// Empty Constructor
+		this.id = -1;
+		this.flags = -1;
+		this.print_name = default_print_name;
+		this.type = "none";
 	}
 	
 	public Chat(int id, int flags, String print_name, String type){
