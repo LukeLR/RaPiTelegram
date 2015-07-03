@@ -96,7 +96,7 @@ public class Chat {
 	
 	// ------ Empty setter methods (so Chat class has methods of subclasses) ------
 	
-	public void setPhone(int phone) throws FieldNotFoundException{
+	public void setPhone(long phone) throws FieldNotFoundException{
 		if (sendAdditionalErrorMessages) Logger.logMessage('E', this, "This object doesn't save phone numbers!");
 		throw new FieldNotFoundException("This object doesn't save phone numbers!");
 	}

@@ -213,7 +213,7 @@ public class Message {
 		to.setPrintName(to_print_name);
 	}
 	
-	public void setToPhone(int to_phone){
+	public void setToPhone(long to_phone){
 		try{
 			to.setPhone(to_phone);
 		} catch (FieldNotFoundException ex){
@@ -221,7 +221,7 @@ public class Message {
 		}
 	}
 	
-	public void setFromPhone(int from_phone){
+	public void setFromPhone(long from_phone){
 		try{
 			from.setPhone(from_phone);
 		} catch (FieldNotFoundException ex){
@@ -367,7 +367,7 @@ public class Message {
 		}
 	}
 	
-	public int getFromPhone(){
+	public long getFromPhone(){
 		try{
 			return from.getPhone();
 		} catch (FieldNotFoundException ex){
@@ -376,7 +376,7 @@ public class Message {
 		}
 	}
 	
-	public int getToPhone(){
+	public long getToPhone(){
 		try{
 			return to.getPhone();
 		} catch (FieldNotFoundException ex){
