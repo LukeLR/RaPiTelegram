@@ -49,7 +49,7 @@ Please use the constructors of the subclasses *User* and *Group*!
 44 [I][logging.LogManager][exit]: No Log file exists, creating new one: log.txt
 45 [I][util.FileHandler][exit]: Writing StringBuilder to log.txt
 
-
+asdf
 ============================================== new Instance on 20150704014950 ============================================== ------ dumping channel: default ------Log channel: default
 1 [ W ][ Logger ][ logMessage ]: Log for channel default does not exist. Trying to create a new one!
 0 [I][network.NetworkClient][logMessage]: Starting listening to 192.168.2.101 on port 1604.
