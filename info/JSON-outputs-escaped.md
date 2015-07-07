@@ -1,3 +1,21 @@
+/**
+ * This file is part of RaPiTelegram.
+ *
+ * RaPiTelegram is free software: you can redistribute it and/or modify
+ * it under the terms of the cc-by-nc-sa (Creative Commons Attribution-
+ * NonCommercial-ShareAlike) as released by the Creative Commons
+ * organisation, version 3.0.
+ *
+ * RaPiTelegram is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY.
+ *
+ * You should have received a copy of the cc-by-nc-sa-license along
+ * with this LukeUtils. If not, see
+ * <https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode>.
+ *
+ * Copyright Lukas Rose 2013 - 2015
+ */
+
 #Sample JSON-Outputs from telegram:
 ##message
 {\"event\": \"message\", \"service\": false, \"flags\": 257, \"text\": \"hi\", \"id\": 4666, \"from\": {\"username\": \"my_username\", \"flags\": 259, \"id\": 12345678, \"first_name\": \"Ich\", \"phone\": \"4915781234567\", \"print_name\": \"Ich\", \"last_name\": \"\", \"type\": \"user\"}, \"to\": {\"username\": \"RPi_username\", \"flags\": 267, \"id\": 87654321, \"first_name\": \"Raspberry\", \"phone\": \"4912345678901\", \"print_name\": \"Raspberry_Pi\", \"last_name\": \"Pi\", \"type\": \"user\"}, \"date\": 1435076540, \"out\": false, \"unread\": true}
@@ -9,10 +27,10 @@
 {\"event\": \"message\", \"fwd_date\": 1435076540, \"fwd_from\": {\"username\": \"my_username\", \"flags\": 259, \"id\": 12345678, \"first_name\": \"Ich\", \"phone\": \"4915781234567\", \"print_name\": \"Ich\", \"last_name\": \"\", \"type\": \"user\"}, \"service\": false, \"flags\": 259, \"text\": \"hi\", \"id\": 4667, \"from\": {\"username\": \"RPi_username\", \"flags\": 267, \"id\": 87654321, \"first_name\": \"Raspberry\", \"phone\": \"4912345678901\", \"print_name\": \"Raspberry_Pi\", \"last_name\": \"Pi\", \"type\": \"user\"}, \"to\": {\"title\": \"RaPi-Nachrichtenlog\", \"flags\": 256, \"id\": 16617964, \"print_name\": \"RaPi-Nachrichtenlog\", \"members_num\": 2, \"type\": \"chat\", \"admin\": {\"id\": 0, \"print_name\": \"user#0\", \"type\": \"user\"}}, \"date\": 1435076540, \"out\": true, \"unread\": true}
 
 ##outgoing message
-{\"event\": \"message\", \"service\": false, \"flags\": 16643, \"text\": \"Ich verstehe dich nicht 😨 Was soll ich tun?? 😰\", \"id\": 4668, \"from\": {\"username\": \"RPi_username\", \"flags\": 267, \"id\": 87654321, \"first_name\": \"Raspberry\", \"phone\": \"4912345678901\", \"print_name\": \"Raspberry_Pi\", \"last_name\": \"Pi\", \"type\": \"user\"}, \"to\": {\"username\": \"my_username\", \"flags\": 259, \"id\": 12345678, \"first_name\": \"Ich\", \"phone\": \"4915781234567\", \"print_name\": \"Ich\", \"last_name\": \"\", \"type\": \"user\"}, \"date\": 1435076540, \"out\": true, \"unread\": true}
+{\"event\": \"message\", \"service\": false, \"flags\": 16643, \"text\": \"Ich verstehe dich nicht ���� Was soll ich tun?? ����\", \"id\": 4668, \"from\": {\"username\": \"RPi_username\", \"flags\": 267, \"id\": 87654321, \"first_name\": \"Raspberry\", \"phone\": \"4912345678901\", \"print_name\": \"Raspberry_Pi\", \"last_name\": \"Pi\", \"type\": \"user\"}, \"to\": {\"username\": \"my_username\", \"flags\": 259, \"id\": 12345678, \"first_name\": \"Ich\", \"phone\": \"4915781234567\", \"print_name\": \"Ich\", \"last_name\": \"\", \"type\": \"user\"}, \"date\": 1435076540, \"out\": true, \"unread\": true}
 
 ##read on outgoing message
-{\"event\": \"read\", \"service\": false, \"flags\": 16642, \"text\": \"Ich verstehe dich nicht 😨 Was soll ich tun?? 😰\", \"id\": 4668, \"from\": {\"username\": \"RPi_username\", \"flags\": 267, \"id\": 87654321, \"first_name\": \"Raspberry\", \"phone\": \"4912345678901\", \"print_name\": \"Raspberry_Pi\", \"last_name\": \"Pi\", \"type\": \"user\"}, \"to\": {\"username\": \"my_username\", \"flags\": 259, \"id\": 12345678, \"first_name\": \"Ich\", \"phone\": \"4915781234567\", \"print_name\": \"Ich\", \"last_name\": \"\", \"type\": \"user\"}, \"date\": 1435076540, \"out\": true, \"unread\": false}
+{\"event\": \"read\", \"service\": false, \"flags\": 16642, \"text\": \"Ich verstehe dich nicht ���� Was soll ich tun?? ����\", \"id\": 4668, \"from\": {\"username\": \"RPi_username\", \"flags\": 267, \"id\": 87654321, \"first_name\": \"Raspberry\", \"phone\": \"4912345678901\", \"print_name\": \"Raspberry_Pi\", \"last_name\": \"Pi\", \"type\": \"user\"}, \"to\": {\"username\": \"my_username\", \"flags\": 259, \"id\": 12345678, \"first_name\": \"Ich\", \"phone\": \"4915781234567\", \"print_name\": \"Ich\", \"last_name\": \"\", \"type\": \"user\"}, \"date\": 1435076540, \"out\": true, \"unread\": false}
 
 ##offline-status
 {\"event\": \"online-status\", \"user\": {\"username\": \"my_username\", \"flags\": 259, \"id\": 12345678, \"first_name\": \"Ich\", \"phone\": \"4915781234567\", \"print_name\": \"Ich\", \"last_name\": \"\", \"type\": \"user\"}, \"online\": false, \"state\": -1, \"when\": \"2015-06-23 18:22:26\"}
