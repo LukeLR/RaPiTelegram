@@ -29,6 +29,7 @@ import network.MessageHandler;
 
 public class Handler extends Thread{
 	private String messageString;
+	private String answerCommand;
 	private Notifier notifier;
 	private Message message;
 	private boolean parsingNeeded = true;
@@ -71,7 +72,11 @@ public class Handler extends Thread{
 		if (parsingNeeded){
 			parseMessage();
 		}
-		handleMessage(message.getContents()[0]);
+		if (parsedWell){
+			handleMessage(message.getContents()[0]);	
+		} else {
+			Logger.logMessage('W', this, "Message " + String.valueOf(id) + " was not parsed well. Exiting.");
+		}
 	}
 	
 	private void parseMessage(){
@@ -90,13 +95,13 @@ public class Handler extends Thread{
 //				parsedWell = false;
 //			} else {
 			try {
-				
 				JSONObject obj = new JSONObject (messageString);
 				
 				if(obj.getString("event").equals("message")){
 					message = new Message(obj);
 					if (verbose) Logger.logMessage('I', this, "Resulting messageText " + String.valueOf(id)+ ": " + message.getText());
 					parsedWell = true;
+					answerCommand = "msg " + message.getFromPrintName() + " ";
 				} else {
 					Logger.logMessage('E', this, "Given JSONString " + String.valueOf(id) + " is not a message. JSONString:\n" + messageString);
 					parsedWell = false;
@@ -112,42 +117,38 @@ public class Handler extends Thread{
 	}
 	
 	private void handleMessage(String command){
-		if (parsedWell){
-			if (verbose) Logger.logMessage('I', this, "Handling command " + String.valueOf(id) + ": " + command);
-			switch(command){
-			case "ping": this.ping(); break;
-			case "PING": this.ping(); break;
-			case "Ping": this.ping(); break;
-			case "echo": this.echo(); break;
-			case "Echo": this.echo(); break;
-			case "ECHO": this.echo(); break;
-			case "kick": this.exit(); break;
-			case "Kick": this.exit(); break;
-			case "switchOn": this.switchOn(); break;
-			case "switchon": this.switchOn(); break;
-			case "SwitchOn": this.switchOn(); break;
-			case "Switchon": this.switchOn(); break;
-			case "switchOff": this.switchOff(); break;
-			case "switchoff": this.switchOff(); break;
-			case "SwitchOff": this.switchOff(); break;
-			case "Switchoff": this.switchOff(); break;
-			case "delay": this.postpone(); break;
-			case "postpone": this.postpone(); break;
-			case "help": this.help(); break;
-			case "info": this.help(); break;
-			case "healthreport": this.healthreport(); break;
-			case "shutdown": this.shutdown(); break;
-			case "restart": this.restart(); break;
-			}
-		} else {
-			Logger.logMessage('W', this, "Message " + String.valueOf(id) + " was not parsed well. Exiting.");
+		if (verbose) Logger.logMessage('I', this, "Handling command " + String.valueOf(id) + ": " + command);
+		switch(command){
+		case "ping": this.ping(); break;
+		case "PING": this.ping(); break;
+		case "Ping": this.ping(); break;
+		case "echo": this.echo(); break;
+		case "Echo": this.echo(); break;
+		case "ECHO": this.echo(); break;
+		case "kick": this.exit(); break;
+		case "Kick": this.exit(); break;
+		case "switchOn": this.switchOn(); break;
+		case "switchon": this.switchOn(); break;
+		case "SwitchOn": this.switchOn(); break;
+		case "Switchon": this.switchOn(); break;
+		case "switchOff": this.switchOff(); break;
+		case "switchoff": this.switchOff(); break;
+		case "SwitchOff": this.switchOff(); break;
+		case "Switchoff": this.switchOff(); break;
+		case "delay": this.postpone(); break;
+		case "postpone": this.postpone(); break;
+		case "help": this.help(); break;
+		case "info": this.help(); break;
+		case "healthreport": this.healthreport(); break;
+		case "shutdown": this.shutdown(); break;
+		case "restart": this.restart(); break;
 		}
 	}
 	
 	//------ Begin of command-related methods ------
 	
 	private void ping(){
-		notifier.send("msg " + message.getFromPrintName() + " ping received!");
+		notifier.send(answerCommand + "ping received!");
 	}
 	
 	private void echo(){
@@ -170,14 +171,23 @@ public class Handler extends Thread{
 	
 	private void postpone(){
 		if (message.getContents().length < 2){
+			String info = "Executing postpone-command...";
+			if (verbose) Logger.logMessage('I', this, info);
+			notifier.send(answerCommand + info);
 			try {
 				long offset = Long.parseLong(message.getContents()[1]);
 				Thread.sleep(offset);
 				handleMessage(message.getContents()[2]);
 			} catch (Exception ex){
 				//TODO: find possible exceptions
-				Logger.logException(this, "err0r when trying to postpone command execution", ex);
+				String error = "err0r when trying to postpone command execution";
+				Logger.logException(this, error, ex);
+				notifier.send(answerCommand + error);
 			}
+		} else {
+			String error = "usage: postpone <offset> <command> [command options]..";
+			Logger.logMessage('E', this, "not enough arguments given for postpone command. " + error);
+			notifier.send(answerCommand + error);
 		}
 	}
 	

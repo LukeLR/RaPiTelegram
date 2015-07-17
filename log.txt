@@ -1337,3 +1337,75 @@ Log channel: socket
 6 [<] ping
 7 [>c] msg Chat print-name ping received!
 8 [<] kick
+
+
+==========================================
+===== new Instance on 20150717114713 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][network.NetworkClient][logMessage]: Starting listening to localhost on port 1234.
+1 [I][network.NetworkClient][logMessage]: Sending message: main_session
+2 [I][network.NetworkClient][logMessage]: received: ping
+3 [I][listener.Notifier][logMessage]: got notifyString: (0) ping
+4 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is JSON
+5 [I][listener.Handler][logMessage]: Parsing message 0...
+6 [E][listener.Handler][logMessage]: Parsing of JSON for ID 0 failed!
+7 [W][listener.Handler][logMessage]: Message 0 was not parsed well. Exiting.
+8 [I][network.NetworkClient][logMessage]: received: raw
+9 [I][listener.Notifier][logMessage]: got notifyString: (1) raw
+10 [I][listener.Notifier][send]: Sending message over client (auto)
+11 [I][network.NetworkClient][send]: Sending message: Raw mode is now true
+12 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is raw.
+13 [I][listener.Handler][logMessage]: Parsing message 1...
+14 [I][listener.Handler][logMessage]: Handling command 1: raw
+15 [I][network.NetworkClient][logMessage]: received: ping
+16 [I][listener.Notifier][logMessage]: got notifyString: (2) ping
+17 [I][listener.Handler][<init>]: New MessageHandler 2 created with messageString. Content is raw.
+18 [I][listener.Handler][logMessage]: Parsing message 2...
+19 [I][listener.Handler][logMessage]: Handling command 2: ping
+20 [I][listener.Notifier][ping]: Sending message over client (auto)
+21 [I][network.NetworkClient][ping]: Sending message: msg Chat print-name ping received!
+22 [I][network.NetworkClient][logMessage]: received: postpone 1000 ping
+23 [I][listener.Notifier][logMessage]: got notifyString: (3) postpone 1000 ping
+24 [I][listener.Handler][<init>]: New MessageHandler 3 created with messageString. Content is raw.
+25 [I][listener.Handler][logMessage]: Parsing message 3...
+26 [I][listener.Handler][logMessage]: Handling command 3: postpone
+27 [I][network.NetworkClient][logMessage]: received: postpone 1 ping
+28 [I][listener.Notifier][logMessage]: got notifyString: (4) postpone 1 ping
+29 [I][listener.Handler][<init>]: New MessageHandler 4 created with messageString. Content is raw.
+30 [I][listener.Handler][logMessage]: Parsing message 4...
+31 [I][listener.Handler][logMessage]: Handling command 4: postpone
+32 [I][network.NetworkClient][logMessage]: received: ping
+33 [I][listener.Notifier][logMessage]: got notifyString: (5) ping
+34 [I][listener.Handler][<init>]: New MessageHandler 5 created with messageString. Content is raw.
+35 [I][listener.Handler][logMessage]: Parsing message 5...
+36 [I][listener.Handler][logMessage]: Handling command 5: ping
+37 [I][listener.Notifier][ping]: Sending message over client (auto)
+38 [I][network.NetworkClient][ping]: Sending message: msg Chat print-name ping received!
+39 [I][network.NetworkClient][logMessage]: received: kick
+40 [I][listener.Notifier][logMessage]: got notifyString: (6) kick
+41 [I][listener.Handler][<init>]: New MessageHandler 6 created with messageString. Content is raw.
+42 [I][listener.Handler][logMessage]: Parsing message 6...
+43 [I][listener.Handler][logMessage]: Handling command 6: kick
+44 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+45 [I][logging.LogManager][exit]: Saving Log File
+46 [I][logging.LogManager][exit]: LogFile exists: log.txt
+47 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+48 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+49 [I][util.TimeHandler][exit]: Returning TimeArray 20150717114713
+50 [I][util.TimeHandler][exit]: 20150717114713
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] ping
+1 [<] raw
+2 [>c] Raw mode is now true
+3 [<] ping
+4 [>c] msg Chat print-name ping received!
+5 [<] postpone 1000 ping
+6 [<] postpone 1 ping
+7 [<] ping
+8 [>c] msg Chat print-name ping received!
+9 [<] kick
