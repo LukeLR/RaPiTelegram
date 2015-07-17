@@ -1178,3 +1178,162 @@ Log channel: default
 31 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
 32 [I][util.TimeHandler][exit]: Returning TimeArray 20150717111037
 33 [I][util.TimeHandler][exit]: 20150717111037
+
+
+==========================================
+===== new Instance on 20150717112201 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+1 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+0 [I][network.NetworkClient][logMessage]: Starting listening to localhost on port 1234.1 [I][network.NetworkClient][logMessage]: Sending message: main_session
+2 [I][network.NetworkClient][logMessage]: received: raw
+3 [I][listener.Notifier][logMessage]: got notifyString: (0) raw
+5 [I][listener.Notifier][send]: Sending message over client (auto)
+6 [I][network.NetworkClient][send]: Sending message: Raw mode is now true
+8 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is raw.
+9 [I][listener.Handler][logMessage]: Parsing message 0...
+10 [I][listener.Handler][logMessage]: Handling command 0: raw
+11 [I][network.NetworkClient][logMessage]: received: kick
+12 [I][listener.Notifier][logMessage]: got notifyString: (1) kick
+14 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is raw.
+15 [I][listener.Handler][logMessage]: Parsing message 1...
+16 [I][listener.Handler][logMessage]: Handling command 1: kick
+17 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+18 [I][logging.LogManager][exit]: Saving Log File
+19 [I][logging.LogManager][exit]: LogFile exists: log.txt
+20 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+21 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+22 [I][util.TimeHandler][exit]: Returning TimeArray 20150717112201
+23 [I][util.TimeHandler][exit]: 20150717112201
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+5 [W][Logger][logMessage]: Log for channel socket does not exist. Trying to create a new one!
+4 [<] raw7 [>c] Raw mode is now true
+13 [<] kick
+
+
+==========================================
+===== new Instance on 20150717112214 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+1 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+0 [I][network.NetworkClient][logMessage]: Starting listening to localhost on port 1234.1 [I][network.NetworkClient][logMessage]: Sending message: main_session
+2 [I][network.NetworkClient][logMessage]: received: raw
+3 [I][listener.Notifier][logMessage]: got notifyString: (0) raw
+5 [I][listener.Notifier][send]: Sending message over client (auto)
+6 [I][network.NetworkClient][send]: Sending message: Raw mode is now true
+8 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is raw.
+9 [I][listener.Handler][logMessage]: Parsing message 0...
+10 [I][listener.Handler][logMessage]: Handling command 0: raw
+11 [I][network.NetworkClient][logMessage]: received: ping
+12 [I][listener.Notifier][logMessage]: got notifyString: (1) ping
+14 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is raw.
+15 [I][listener.Handler][logMessage]: Parsing message 1...
+16 [I][listener.Handler][logMessage]: Handling command 1: ping
+17 [I][listener.Notifier][ping]: Sending message over client (auto)
+18 [I][network.NetworkClient][ping]: Sending message: msg Chat print-name ping received!
+20 [I][network.NetworkClient][logMessage]: received: ping
+21 [I][listener.Notifier][logMessage]: got notifyString: (2) ping
+23 [I][listener.Handler][<init>]: New MessageHandler 2 created with messageString. Content is raw.
+24 [I][listener.Handler][logMessage]: Parsing message 2...
+25 [I][listener.Handler][logMessage]: Handling command 2: ping
+26 [I][listener.Notifier][ping]: Sending message over client (auto)
+27 [I][network.NetworkClient][ping]: Sending message: msg Chat print-name ping received!
+29 [I][network.NetworkClient][logMessage]: received: ping
+30 [I][listener.Notifier][logMessage]: got notifyString: (3) ping
+32 [I][listener.Handler][<init>]: New MessageHandler 3 created with messageString. Content is raw.
+33 [I][listener.Handler][logMessage]: Parsing message 3...
+34 [I][listener.Handler][logMessage]: Handling command 3: ping
+35 [I][listener.Notifier][ping]: Sending message over client (auto)
+36 [I][network.NetworkClient][ping]: Sending message: msg Chat print-name ping received!
+38 [I][network.NetworkClient][logMessage]: received: kick
+39 [I][listener.Notifier][logMessage]: got notifyString: (4) kick
+41 [I][listener.Handler][<init>]: New MessageHandler 4 created with messageString. Content is raw.
+42 [I][listener.Handler][logMessage]: Parsing message 4...
+43 [I][listener.Handler][logMessage]: Handling command 4: kick
+44 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+45 [I][logging.LogManager][exit]: Saving Log File
+46 [I][logging.LogManager][exit]: LogFile exists: log.txt
+47 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+48 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+49 [I][util.TimeHandler][exit]: Returning TimeArray 20150717112214
+50 [I][util.TimeHandler][exit]: 20150717112214
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+5 [W][Logger][logMessage]: Log for channel socket does not exist. Trying to create a new one!
+4 [<] raw7 [>c] Raw mode is now true
+13 [<] ping
+19 [>c] msg Chat print-name ping received!
+22 [<] ping
+28 [>c] msg Chat print-name ping received!
+31 [<] ping
+37 [>c] msg Chat print-name ping received!
+40 [<] kick
+
+
+==========================================
+===== new Instance on 20150717113326 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][network.NetworkClient][logMessage]: Starting listening to localhost on port 1234.
+1 [I][network.NetworkClient][logMessage]: Sending message: main_session
+2 [I][network.NetworkClient][logMessage]: received: raw
+3 [I][listener.Notifier][logMessage]: got notifyString: (0) raw
+4 [I][listener.Notifier][send]: Sending message over client (auto)
+5 [I][network.NetworkClient][send]: Sending message: Raw mode is now true
+6 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is raw.
+7 [I][listener.Handler][logMessage]: Parsing message 0...
+8 [I][listener.Handler][logMessage]: Handling command 0: raw
+9 [I][network.NetworkClient][logMessage]: received: ping
+10 [I][listener.Notifier][logMessage]: got notifyString: (1) ping
+11 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is raw.
+12 [I][listener.Handler][logMessage]: Parsing message 1...
+13 [I][listener.Handler][logMessage]: Handling command 1: ping
+14 [I][listener.Notifier][ping]: Sending message over client (auto)
+15 [I][network.NetworkClient][ping]: Sending message: msg Chat print-name ping received!
+16 [I][network.NetworkClient][logMessage]: received: ping
+17 [I][listener.Notifier][logMessage]: got notifyString: (2) ping
+18 [I][listener.Handler][<init>]: New MessageHandler 2 created with messageString. Content is raw.
+19 [I][listener.Handler][logMessage]: Parsing message 2...
+20 [I][listener.Handler][logMessage]: Handling command 2: ping
+21 [I][listener.Notifier][ping]: Sending message over client (auto)
+22 [I][network.NetworkClient][ping]: Sending message: msg Chat print-name ping received!
+23 [I][network.NetworkClient][logMessage]: received: ping
+24 [I][listener.Notifier][logMessage]: got notifyString: (3) ping
+25 [I][listener.Handler][<init>]: New MessageHandler 3 created with messageString. Content is raw.
+26 [I][listener.Handler][logMessage]: Parsing message 3...
+27 [I][listener.Handler][logMessage]: Handling command 3: ping
+28 [I][listener.Notifier][ping]: Sending message over client (auto)
+29 [I][network.NetworkClient][ping]: Sending message: msg Chat print-name ping received!
+30 [I][network.NetworkClient][logMessage]: received: kick
+31 [I][listener.Notifier][logMessage]: got notifyString: (4) kick
+32 [I][listener.Handler][<init>]: New MessageHandler 4 created with messageString. Content is raw.
+33 [I][listener.Handler][logMessage]: Parsing message 4...
+34 [I][listener.Handler][logMessage]: Handling command 4: kick
+35 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+36 [I][logging.LogManager][exit]: Saving Log File
+37 [I][logging.LogManager][exit]: LogFile exists: log.txt
+38 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+39 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+40 [I][util.TimeHandler][exit]: Returning TimeArray 20150717113326
+41 [I][util.TimeHandler][exit]: 20150717113326
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] raw
+1 [>c] Raw mode is now true
+2 [<] ping
+3 [>c] msg Chat print-name ping received!
+4 [<] ping
+5 [>c] msg Chat print-name ping received!
+6 [<] ping
+7 [>c] msg Chat print-name ping received!
+8 [<] kick

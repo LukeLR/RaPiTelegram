@@ -71,7 +71,7 @@ public class Handler extends Thread{
 		if (parsingNeeded){
 			parseMessage();
 		}
-		handleMessage();
+		handleMessage(message.getContents()[0]);
 	}
 	
 	private void parseMessage(){
@@ -111,10 +111,10 @@ public class Handler extends Thread{
 		}
 	}
 	
-	private void handleMessage(){
+	private void handleMessage(String command){
 		if (parsedWell){
-			if (verbose) Logger.logMessage('I', this, "Handling command " + String.valueOf(id) + ": " + message.getContents()[0]);
-			switch(message.getContents()[0]){
+			if (verbose) Logger.logMessage('I', this, "Handling command " + String.valueOf(id) + ": " + command);
+			switch(command){
 			case "ping": this.ping(); break;
 			case "PING": this.ping(); break;
 			case "Ping": this.ping(); break;
@@ -169,7 +169,16 @@ public class Handler extends Thread{
 	}
 	
 	private void postpone(){
-		
+		if (message.getContents().length < 2){
+			try {
+				long offset = Long.parseLong(message.getContents()[1]);
+				Thread.sleep(offset);
+				handleMessage(message.getContents()[2]);
+			} catch (Exception ex){
+				//TODO: find possible exceptions
+				Logger.logException(this, "err0r when trying to postpone command execution", ex);
+			}
+		}
 	}
 	
 	private void help(){
