@@ -50,11 +50,14 @@ public class Notifier implements network.NetworkNotifier {
 		if (client != null){
 			if (verbose) Logger.logMessage('I', this, "Sending message over client (auto)");
 			client.send(message);
+			Logger.logMessage(">c", message, "socket");
 		} else if (server != null){
 			if (verbose) Logger.logMessage('I', this, "Sending message over server (auto)");
 			server.send(message);
+			Logger.logMessage(">s", message, "socket");
 		} else {
 			Logger.logMessage('E', this, "Error when trying to send message: Neither client nor server are set.");
+			Logger.logMessage(">!", message, "socket");
 		}
 	}
 	
@@ -62,6 +65,7 @@ public class Notifier implements network.NetworkNotifier {
 		if (server != null){
 			if (verbose) Logger.logMessage('I', this, "Sending message over server (forced)");
 			server.send (message);
+			Logger.logMessage(">s!", message, "socket");
 		} else {
 			Logger.logMessage('E', this, "Error when trying to send message over server: Server not set!");
 		}
@@ -71,6 +75,7 @@ public class Notifier implements network.NetworkNotifier {
 		if (client != null){
 			if (verbose) Logger.logMessage('I', this, "Sending message over client (forced)");
 			client.send(message);
+			Logger.logMessage(">c!", message, "socket");
 		} else {
 			Logger.logMessage('E', this, "Error when trying to send message over client: Client not set!");
 		}
@@ -78,6 +83,7 @@ public class Notifier implements network.NetworkNotifier {
 	
 	public void onNotify(String notifyString) {
 		Logger.logMessage('I', this, "got notifyString: (" + String.valueOf(lastID) + ") " + notifyString);
+		Logger.logMessage('<', notifyString, "socket");
 //		if (bidirectional = true && server != null){
 //			server.send(notifyString);
 //		}
