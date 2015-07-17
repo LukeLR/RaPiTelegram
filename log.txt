@@ -1409,3 +1409,367 @@ Log channel: socket
 7 [<] ping
 8 [>c] msg Chat print-name ping received!
 9 [<] kick
+
+
+==========================================
+===== new Instance on 20150717115531 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][network.NetworkClient][logMessage]: Starting listening to localhost on port 1234.
+1 [I][network.NetworkClient][logMessage]: Sending message: main_session
+2 [I][network.NetworkClient][logMessage]: received: raw
+3 [I][listener.Notifier][logMessage]: got notifyString: (0) raw
+4 [I][listener.Notifier][send]: Sending message over client (auto)
+5 [I][network.NetworkClient][send]: Sending message: Raw mode is now true
+6 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is raw.
+7 [I][listener.Handler][logMessage]: Parsing message 0...
+8 [I][listener.Handler][logMessage]: Handling command 0: raw
+9 [I][network.NetworkClient][logMessage]: received: ping
+10 [I][listener.Notifier][logMessage]: got notifyString: (1) ping
+11 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is raw.
+12 [I][listener.Handler][logMessage]: Parsing message 1...
+13 [I][listener.Handler][logMessage]: Handling command 1: ping
+14 [I][listener.Notifier][ping]: Sending message over client (auto)
+15 [I][network.NetworkClient][ping]: Sending message: nullping received!
+16 [I][network.NetworkClient][logMessage]: received: postpone 1 ping
+17 [I][listener.Notifier][logMessage]: got notifyString: (2) postpone 1 ping
+18 [I][listener.Handler][<init>]: New MessageHandler 2 created with messageString. Content is raw.
+19 [I][listener.Handler][logMessage]: Parsing message 2...
+20 [I][listener.Handler][logMessage]: Handling command 2: postpone
+21 [E][listener.Handler][postpone]: not enough arguments given for postpone command. usage: postpone <offset> <command> [command options]..
+22 [I][listener.Notifier][postpone]: Sending message over client (auto)
+23 [I][network.NetworkClient][postpone]: Sending message: nullusage: postpone <offset> <command> [command options]..
+24 [I][network.NetworkClient][logMessage]: received: postpone 1 ping 1
+25 [I][listener.Notifier][logMessage]: got notifyString: (3) postpone 1 ping 1
+26 [I][listener.Handler][<init>]: New MessageHandler 3 created with messageString. Content is raw.
+27 [I][listener.Handler][logMessage]: Parsing message 3...
+28 [I][listener.Handler][logMessage]: Handling command 3: postpone
+29 [E][listener.Handler][postpone]: not enough arguments given for postpone command. usage: postpone <offset> <command> [command options]..
+30 [I][listener.Notifier][postpone]: Sending message over client (auto)
+31 [I][network.NetworkClient][postpone]: Sending message: nullusage: postpone <offset> <command> [command options]..
+32 [I][network.NetworkClient][logMessage]: received: postpone 1
+33 [I][listener.Notifier][logMessage]: got notifyString: (4) postpone 1
+34 [I][listener.Handler][<init>]: New MessageHandler 4 created with messageString. Content is raw.
+35 [I][listener.Handler][logMessage]: Parsing message 4...
+36 [I][listener.Handler][logMessage]: Handling command 4: postpone
+37 [E][listener.Handler][postpone]: not enough arguments given for postpone command. usage: postpone <offset> <command> [command options]..
+38 [I][listener.Notifier][postpone]: Sending message over client (auto)
+39 [I][network.NetworkClient][postpone]: Sending message: nullusage: postpone <offset> <command> [command options]..
+40 [I][network.NetworkClient][logMessage]: received: postpone
+41 [I][listener.Notifier][logMessage]: got notifyString: (5) postpone
+42 [I][listener.Handler][<init>]: New MessageHandler 5 created with messageString. Content is raw.
+43 [I][listener.Handler][logMessage]: Parsing message 5...
+44 [I][listener.Handler][logMessage]: Handling command 5: postpone
+45 [I][listener.Handler][postpone]: Executing postpone-command...
+46 [I][listener.Notifier][postpone]: Sending message over client (auto)
+47 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+48 [E][listener.Handler][postpone]: err0r when trying to postpone command execution
+49 [E][listener.Handler][postpone]: listener.Handler.postpone(Handler.java:178)
+50 [E][listener.Handler][postpone]: listener.Handler.handleMessage(Handler.java:139)
+51 [E][listener.Handler][postpone]: listener.Handler.run(Handler.java:76)
+52 [I][listener.Notifier][postpone]: Sending message over client (auto)
+53 [I][network.NetworkClient][postpone]: Sending message: nullerr0r when trying to postpone command execution
+54 [I][network.NetworkClient][logMessage]: received: kick
+55 [I][listener.Notifier][logMessage]: got notifyString: (6) kick
+56 [I][listener.Handler][<init>]: New MessageHandler 6 created with messageString. Content is raw.
+57 [I][listener.Handler][logMessage]: Parsing message 6...
+58 [I][listener.Handler][logMessage]: Handling command 6: kick
+59 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+60 [I][logging.LogManager][exit]: Saving Log File
+61 [I][logging.LogManager][exit]: LogFile exists: log.txt
+62 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+63 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+64 [I][util.TimeHandler][exit]: Returning TimeArray 20150717115531
+65 [I][util.TimeHandler][exit]: 20150717115531
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] raw
+1 [>c] Raw mode is now true
+2 [<] ping
+3 [>c] nullping received!
+4 [<] postpone 1 ping
+5 [>c] nullusage: postpone <offset> <command> [command options]..
+6 [<] postpone 1 ping 1
+7 [>c] nullusage: postpone <offset> <command> [command options]..
+8 [<] postpone 1
+9 [>c] nullusage: postpone <offset> <command> [command options]..
+10 [<] postpone
+11 [>c] nullExecuting postpone-command...
+12 [>c] nullerr0r when trying to postpone command execution
+13 [<] kick
+
+
+==========================================
+===== new Instance on 20150717115628 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][network.NetworkClient][logMessage]: Starting listening to localhost on port 1234.
+1 [I][network.NetworkClient][logMessage]: Sending message: main_session
+2 [I][network.NetworkClient][logMessage]: received: raw
+3 [I][listener.Notifier][logMessage]: got notifyString: (0) raw
+4 [I][listener.Notifier][send]: Sending message over client (auto)
+5 [I][network.NetworkClient][send]: Sending message: Raw mode is now true
+6 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is raw.
+7 [I][listener.Handler][logMessage]: Parsing message 0...
+8 [I][listener.Handler][logMessage]: Handling command 0: raw
+9 [I][network.NetworkClient][logMessage]: received: ping
+10 [I][listener.Notifier][logMessage]: got notifyString: (1) ping
+11 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is raw.
+12 [I][listener.Handler][logMessage]: Parsing message 1...
+13 [I][listener.Handler][logMessage]: Handling command 1: ping
+14 [I][listener.Notifier][ping]: Sending message over client (auto)
+15 [I][network.NetworkClient][ping]: Sending message: nullping received!
+16 [I][network.NetworkClient][logMessage]: received: postpone 1 ping
+17 [I][listener.Notifier][logMessage]: got notifyString: (2) postpone 1 ping
+18 [I][listener.Handler][<init>]: New MessageHandler 2 created with messageString. Content is raw.
+19 [I][listener.Handler][logMessage]: Parsing message 2...
+20 [I][listener.Handler][logMessage]: Handling command 2: postpone
+21 [I][listener.Handler][postpone]: Executing postpone-command...
+22 [I][listener.Notifier][postpone]: Sending message over client (auto)
+23 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+24 [I][listener.Handler][postpone]: Handling command 2: ping
+25 [I][listener.Notifier][postpone]: Sending message over client (auto)
+26 [I][network.NetworkClient][postpone]: Sending message: nullping received!
+27 [I][network.NetworkClient][logMessage]: received: postpone 1000 ping
+28 [I][listener.Notifier][logMessage]: got notifyString: (3) postpone 1000 ping
+29 [I][listener.Handler][<init>]: New MessageHandler 3 created with messageString. Content is raw.
+30 [I][listener.Handler][logMessage]: Parsing message 3...
+31 [I][listener.Handler][logMessage]: Handling command 3: postpone
+32 [I][listener.Handler][postpone]: Executing postpone-command...
+33 [I][listener.Notifier][postpone]: Sending message over client (auto)
+34 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+35 [I][listener.Handler][postpone]: Handling command 3: ping
+36 [I][listener.Notifier][postpone]: Sending message over client (auto)
+37 [I][network.NetworkClient][postpone]: Sending message: nullping received!
+38 [I][network.NetworkClient][logMessage]: received: postpone 10000 ping
+39 [I][listener.Notifier][logMessage]: got notifyString: (4) postpone 10000 ping
+40 [I][listener.Handler][<init>]: New MessageHandler 4 created with messageString. Content is raw.
+41 [I][listener.Handler][logMessage]: Parsing message 4...
+42 [I][listener.Handler][logMessage]: Handling command 4: postpone
+43 [I][listener.Handler][postpone]: Executing postpone-command...
+44 [I][listener.Notifier][postpone]: Sending message over client (auto)
+45 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+46 [I][listener.Handler][postpone]: Handling command 4: ping
+47 [I][listener.Notifier][postpone]: Sending message over client (auto)
+48 [I][network.NetworkClient][postpone]: Sending message: nullping received!
+49 [I][network.NetworkClient][logMessage]: received: postpone 2000 kick
+50 [I][listener.Notifier][logMessage]: got notifyString: (5) postpone 2000 kick
+51 [I][listener.Handler][<init>]: New MessageHandler 5 created with messageString. Content is raw.
+52 [I][listener.Handler][logMessage]: Parsing message 5...
+53 [I][listener.Handler][logMessage]: Handling command 5: postpone
+54 [I][listener.Handler][postpone]: Executing postpone-command...
+55 [I][listener.Notifier][postpone]: Sending message over client (auto)
+56 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+57 [I][listener.Handler][postpone]: Handling command 5: kick
+58 [I][listener.Handler][postpone]: Received Exit-command over network. Exiting.
+59 [I][logging.LogManager][postpone]: Saving Log File
+60 [I][logging.LogManager][postpone]: LogFile exists: log.txt
+61 [I][logging.LogManager][postpone]: Appending to LogFile log.txt
+62 [I][util.FileHandler][postpone]: Reading StringBuilder from log.txt
+63 [I][util.TimeHandler][postpone]: Returning TimeArray 20150717115628
+64 [I][util.TimeHandler][postpone]: 20150717115628
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] raw
+1 [>c] Raw mode is now true
+2 [<] ping
+3 [>c] nullping received!
+4 [<] postpone 1 ping
+5 [>c] nullExecuting postpone-command...
+6 [>c] nullping received!
+7 [<] postpone 1000 ping
+8 [>c] nullExecuting postpone-command...
+9 [>c] nullping received!
+10 [<] postpone 10000 ping
+11 [>c] nullExecuting postpone-command...
+12 [>c] nullping received!
+13 [<] postpone 2000 kick
+14 [>c] nullExecuting postpone-command...
+
+
+==========================================
+===== new Instance on 20150717115741 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][network.NetworkClient][logMessage]: Starting listening to localhost on port 1234.
+1 [I][network.NetworkClient][logMessage]: Sending message: main_session
+2 [I][network.NetworkClient][logMessage]: received: postpone
+3 [I][listener.Notifier][logMessage]: got notifyString: (0) postpone
+4 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is JSON
+5 [I][listener.Handler][logMessage]: Parsing message 0...
+6 [E][listener.Handler][logMessage]: Parsing of JSON for ID 0 failed!
+7 [W][listener.Handler][logMessage]: Message 0 was not parsed well. Exiting.
+8 [I][network.NetworkClient][logMessage]: received: raw
+9 [I][listener.Notifier][logMessage]: got notifyString: (1) raw
+10 [I][listener.Notifier][send]: Sending message over client (auto)
+11 [I][network.NetworkClient][send]: Sending message: Raw mode is now true
+12 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is raw.
+13 [I][listener.Handler][logMessage]: Parsing message 1...
+14 [I][listener.Handler][logMessage]: Handling command 1: raw
+15 [I][network.NetworkClient][logMessage]: received: postpone
+16 [I][listener.Notifier][logMessage]: got notifyString: (2) postpone
+17 [I][listener.Handler][<init>]: New MessageHandler 2 created with messageString. Content is raw.
+18 [I][listener.Handler][logMessage]: Parsing message 2...
+19 [I][listener.Handler][logMessage]: Handling command 2: postpone
+20 [E][listener.Handler][postpone]: not enough arguments given for postpone command. usage: postpone <offset> <command> [command options]..
+21 [I][listener.Notifier][postpone]: Sending message over client (auto)
+22 [I][network.NetworkClient][postpone]: Sending message: nullusage: postpone <offset> <command> [command options]..
+23 [I][network.NetworkClient][logMessage]: received: postpone 1000
+24 [I][listener.Notifier][logMessage]: got notifyString: (3) postpone 1000
+25 [I][listener.Handler][<init>]: New MessageHandler 3 created with messageString. Content is raw.
+26 [I][listener.Handler][logMessage]: Parsing message 3...
+27 [I][listener.Handler][logMessage]: Handling command 3: postpone
+28 [E][listener.Handler][postpone]: not enough arguments given for postpone command. usage: postpone <offset> <command> [command options]..
+29 [I][listener.Notifier][postpone]: Sending message over client (auto)
+30 [I][network.NetworkClient][postpone]: Sending message: nullusage: postpone <offset> <command> [command options]..
+31 [I][network.NetworkClient][logMessage]: received: postpone 1000 postpone 1000 ping
+32 [I][listener.Notifier][logMessage]: got notifyString: (4) postpone 1000 postpone 1000 ping
+33 [I][listener.Handler][<init>]: New MessageHandler 4 created with messageString. Content is raw.
+34 [I][listener.Handler][logMessage]: Parsing message 4...
+35 [I][listener.Handler][logMessage]: Handling command 4: postpone
+36 [I][listener.Handler][postpone]: Executing postpone-command...
+37 [I][listener.Notifier][postpone]: Sending message over client (auto)
+38 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+39 [I][listener.Handler][postpone]: Handling command 4: postpone
+40 [I][listener.Handler][postpone]: Executing postpone-command...
+41 [I][listener.Notifier][postpone]: Sending message over client (auto)
+42 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+43 [I][listener.Handler][postpone]: Handling command 4: postpone
+44 [I][listener.Handler][postpone]: Executing postpone-command...
+45 [I][listener.Notifier][postpone]: Sending message over client (auto)
+46 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+47 [I][listener.Handler][postpone]: Handling command 4: postpone
+48 [I][listener.Handler][postpone]: Executing postpone-command...
+49 [I][listener.Notifier][postpone]: Sending message over client (auto)
+50 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+51 [I][listener.Handler][postpone]: Handling command 4: postpone
+52 [I][listener.Handler][postpone]: Executing postpone-command...
+53 [I][listener.Notifier][postpone]: Sending message over client (auto)
+54 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+55 [I][listener.Handler][postpone]: Handling command 4: postpone
+56 [I][listener.Handler][postpone]: Executing postpone-command...
+57 [I][listener.Notifier][postpone]: Sending message over client (auto)
+58 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+59 [I][listener.Handler][postpone]: Handling command 4: postpone
+60 [I][listener.Handler][postpone]: Executing postpone-command...
+61 [I][listener.Notifier][postpone]: Sending message over client (auto)
+62 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+63 [I][listener.Handler][postpone]: Handling command 4: postpone
+64 [I][listener.Handler][postpone]: Executing postpone-command...
+65 [I][listener.Notifier][postpone]: Sending message over client (auto)
+66 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+67 [I][listener.Handler][postpone]: Handling command 4: postpone
+68 [I][listener.Handler][postpone]: Executing postpone-command...
+69 [I][listener.Notifier][postpone]: Sending message over client (auto)
+70 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+71 [I][listener.Handler][postpone]: Handling command 4: postpone
+72 [I][listener.Handler][postpone]: Executing postpone-command...
+73 [I][listener.Notifier][postpone]: Sending message over client (auto)
+74 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+75 [I][listener.Handler][postpone]: Handling command 4: postpone
+76 [I][listener.Handler][postpone]: Executing postpone-command...
+77 [I][listener.Notifier][postpone]: Sending message over client (auto)
+78 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+79 [I][listener.Handler][postpone]: Handling command 4: postpone
+80 [I][listener.Handler][postpone]: Executing postpone-command...
+81 [I][listener.Notifier][postpone]: Sending message over client (auto)
+82 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+83 [I][listener.Handler][postpone]: Handling command 4: postpone
+84 [I][listener.Handler][postpone]: Executing postpone-command...
+85 [I][listener.Notifier][postpone]: Sending message over client (auto)
+86 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+87 [I][listener.Handler][postpone]: Handling command 4: postpone
+88 [I][listener.Handler][postpone]: Executing postpone-command...
+89 [I][listener.Notifier][postpone]: Sending message over client (auto)
+90 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+91 [I][listener.Handler][postpone]: Handling command 4: postpone
+92 [I][listener.Handler][postpone]: Executing postpone-command...
+93 [I][listener.Notifier][postpone]: Sending message over client (auto)
+94 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+95 [I][listener.Handler][postpone]: Handling command 4: postpone
+96 [I][listener.Handler][postpone]: Executing postpone-command...
+97 [I][listener.Notifier][postpone]: Sending message over client (auto)
+98 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+99 [I][listener.Handler][postpone]: Handling command 4: postpone
+100 [I][listener.Handler][postpone]: Executing postpone-command...
+101 [I][listener.Notifier][postpone]: Sending message over client (auto)
+102 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+103 [I][listener.Handler][postpone]: Handling command 4: postpone
+104 [I][listener.Handler][postpone]: Executing postpone-command...
+105 [I][listener.Notifier][postpone]: Sending message over client (auto)
+106 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+107 [I][listener.Handler][postpone]: Handling command 4: postpone
+108 [I][listener.Handler][postpone]: Executing postpone-command...
+109 [I][listener.Notifier][postpone]: Sending message over client (auto)
+110 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+111 [I][listener.Handler][postpone]: Handling command 4: postpone
+112 [I][listener.Handler][postpone]: Executing postpone-command...
+113 [I][listener.Notifier][postpone]: Sending message over client (auto)
+114 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+115 [I][listener.Handler][postpone]: Handling command 4: postpone
+116 [I][listener.Handler][postpone]: Executing postpone-command...
+117 [I][listener.Notifier][postpone]: Sending message over client (auto)
+118 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+119 [I][listener.Handler][postpone]: Handling command 4: postpone
+120 [I][listener.Handler][postpone]: Executing postpone-command...
+121 [I][listener.Notifier][postpone]: Sending message over client (auto)
+122 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+123 [I][listener.Handler][postpone]: Handling command 4: postpone
+124 [I][listener.Handler][postpone]: Executing postpone-command...
+125 [I][listener.Notifier][postpone]: Sending message over client (auto)
+126 [I][network.NetworkClient][postpone]: Sending message: nullExecuting postpone-command...
+127 [I][network.NetworkClient][logMessage]: received: kick
+128 [I][listener.Notifier][logMessage]: got notifyString: (5) kick
+129 [I][listener.Handler][<init>]: New MessageHandler 5 created with messageString. Content is raw.
+130 [I][listener.Handler][logMessage]: Parsing message 5...
+131 [I][listener.Handler][logMessage]: Handling command 5: kick
+132 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+133 [I][logging.LogManager][exit]: Saving Log File
+134 [I][logging.LogManager][exit]: LogFile exists: log.txt
+135 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+136 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+137 [I][util.TimeHandler][exit]: Returning TimeArray 20150717115741
+138 [I][util.TimeHandler][exit]: 20150717115741
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] postpone
+1 [<] raw
+2 [>c] Raw mode is now true
+3 [<] postpone
+4 [>c] nullusage: postpone <offset> <command> [command options]..
+5 [<] postpone 1000
+6 [>c] nullusage: postpone <offset> <command> [command options]..
+7 [<] postpone 1000 postpone 1000 ping
+8 [>c] nullExecuting postpone-command...
+9 [>c] nullExecuting postpone-command...
+10 [>c] nullExecuting postpone-command...
+11 [>c] nullExecuting postpone-command...
+12 [>c] nullExecuting postpone-command...
+13 [>c] nullExecuting postpone-command...
+14 [>c] nullExecuting postpone-command...
+15 [>c] nullExecuting postpone-command...
+16 [>c] nullExecuting postpone-command...
+17 [>c] nullExecuting postpone-command...
+18 [>c] nullExecuting postpone-command...
+19 [>c] nullExecuting postpone-command...
+20 [>c] nullExecuting postpone-command...
+21 [>c] nullExecuting postpone-command...
+22 [>c] nullExecuting postpone-command...
+23 [>c] nullExecuting postpone-command...
+24 [>c] nullExecuting postpone-command...
+25 [>c] nullExecuting postpone-command...
+26 [>c] nullExecuting postpone-command...
+27 [>c] nullExecuting postpone-command...
+28 [>c] nullExecuting postpone-command...
+29 [>c] nullExecuting postpone-command...
+30 [>c] nullExecuting postpone-command...
+31 [<] kick

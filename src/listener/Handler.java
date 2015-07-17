@@ -36,6 +36,7 @@ public class Handler extends Thread{
 	private boolean raw = false;
 	private boolean parsedWell = false;
 	private int id = -1;
+	private int commandDepthParsed = 0;
 	
 	private boolean verbose = true;
 	
@@ -170,14 +171,15 @@ public class Handler extends Thread{
 	}
 	
 	private void postpone(){
-		if (message.getContents().length < 2){
+		if (message.getContents().length > 2){
 			String info = "Executing postpone-command...";
 			if (verbose) Logger.logMessage('I', this, info);
 			notifier.send(answerCommand + info);
 			try {
 				long offset = Long.parseLong(message.getContents()[1]);
 				Thread.sleep(offset);
-				handleMessage(message.getContents()[2]);
+				commandDepthParsed = commandDepthParsed + 2;
+				handleMessage(message.getContents()[commandDepthParsed]);
 			} catch (Exception ex){
 				//TODO: find possible exceptions
 				String error = "err0r when trying to postpone command execution";
