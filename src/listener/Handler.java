@@ -79,6 +79,7 @@ public class Handler extends Thread{
 		if (raw){
 			message = new Message();
 			message.setText(messageString);
+			parsedWell = true;
 		} else {
 //			String[] contents = messageString.trim().split("\\s");
 //			if (contents[0].equals("ANSWER")){
