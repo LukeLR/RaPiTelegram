@@ -30,6 +30,7 @@ public class Notifier implements network.NetworkNotifier {
 	private int lastID = 0;
 	
 	private boolean verbose = true;
+	private boolean raw = false;
 	
 	public Notifier(){
 		
@@ -80,8 +81,10 @@ public class Notifier implements network.NetworkNotifier {
 //		if (bidirectional = true && server != null){
 //			server.send(notifyString);
 //		}
-		
-		new Handler(notifyString, this, lastID);
+		if (notifyString.equals("raw") || notifyString.equals("Raw") || notifyString.equals("RAW")){
+			raw = !raw;
+		}
+		new Handler(notifyString, raw, this, lastID);
 		lastID++;
 	}
 }
