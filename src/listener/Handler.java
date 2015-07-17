@@ -29,7 +29,7 @@ import network.MessageHandler;
 
 public class Handler extends Thread{
 	private String messageString;
-	private String answerCommand;
+	private String answerCommand = "";
 	private Notifier notifier;
 	private Message message;
 	private boolean parsingNeeded = true;
