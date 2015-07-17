@@ -83,6 +83,7 @@ public class Notifier implements network.NetworkNotifier {
 //		}
 		if (notifyString.equals("raw") || notifyString.equals("Raw") || notifyString.equals("RAW")){
 			raw = !raw;
+			send("Raw mode is now " + String.valueOf(raw));
 		}
 		new Handler(notifyString, raw, this, lastID);
 		lastID++;
