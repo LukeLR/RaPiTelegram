@@ -207,6 +207,18 @@ public class Handler extends Thread{
 		}
 	}
 	
+	private void info(){
+		try{
+			StringBuilder info = FileHandler.readStringBuilder("information");
+			notifier.send(answerCommand + info.toString());
+		} catch (Exception ex){
+			//TODO: find possible exceptions
+			String error = "Error when reading info file.";
+			Logger.logMessage('E', this, error);
+			notifier.send(answerCommand + error);
+		}
+	}
+	
 	private void healthreport(){
 		if (message.getContents().length < 1){
 			switch(message.getContents()[1]){
