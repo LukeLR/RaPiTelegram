@@ -18,6 +18,7 @@
 
 package listener;
 
+import java.io.IOException;
 import java.util.logging.LogManager;
 
 import org.json.JSONException;
@@ -154,7 +155,14 @@ public class Handler extends Thread{
 	}
 	
 	private void echo(){
-		
+		if (message.getContents().length > 1){
+			if (verbose) Logger.logMessage('I', this, "Executing echo command");
+			notifier.send(answerCommand + message.getContents()[1]);
+		} else {
+			String error = "usage: echo <message>; see help for more information.";
+			Logger.logMessage('E', this, "not enough arguments for echo command. " + error);
+			notifier.send(answerCommand + error);
+		}
 	}
 	
 	private void exit(){
@@ -164,11 +172,37 @@ public class Handler extends Thread{
 	}
 	
 	private void switchOn(){
-		
+		if (message.getContents().length > 2){
+			if (verbose) Logger.logMessage('I', this, "Executing switchOn command");
+			try {
+				Runtime.getRuntime().exec("send " + message.getContents()[1] + " " + message.getContents()[2] + " 1");
+			} catch (IOException e) {
+				String error = "Error when trying to execute send command";
+				Logger.logException('E', error, e);
+				notifier.send(answerCommand + error + " " + e.getMessage() + System.lineSeparator() + e.getStackTrace());
+			}
+		} else {
+			String error = "usage: switchOn <systemID> <unitID>; see help for more information.";
+			Logger.logMessage('E', "not enough arguments for switchOn command. " + error);
+			notifier.send(answerCommand + error);
+		}
 	}
 	
 	private void switchOff(){
-		
+		if (message.getContents().length > 2){
+			if (verbose) Logger.logMessage('I', this, "Executing switchOff command");
+			try {
+				Runtime.getRuntime().exec("send " + message.getContents()[1] + " " + message.getContents()[2] + " 0");
+			} catch (IOException e) {
+				String error = "Error when trying to execute send command";
+				Logger.logException('E', error, e);
+				notifier.send(answerCommand + error + " " + e.getMessage() + System.lineSeparator() + e.getStackTrace());
+			}
+		} else {
+			String error = "usage: switchOff <systemID> <unitID>; see help for more information.";
+			Logger.logMessage('E', "not enough arguments for switchOn command. " + error);
+			notifier.send(answerCommand + error);
+		}
 	}
 	
 	private void postpone(){
@@ -188,7 +222,7 @@ public class Handler extends Thread{
 				notifier.send(answerCommand + error);
 			}
 		} else {
-			String error = "usage: postpone <offset> <command> [command options]..";
+			String error = "usage: postpone <offset> <command> [command options]..; see help for more information.";
 			Logger.logMessage('E', this, "not enough arguments given for postpone command. " + error);
 			notifier.send(answerCommand + error);
 		}

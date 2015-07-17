@@ -2073,3 +2073,199 @@ switch <systemID> <unitID> <state> _switch a socket to *state* (433MHz)
    unitID: 5-digit unit ID (as set in socket)
    state: 0 for off, 1 for on
 5 [<] kick
+
+
+==========================================
+===== new Instance on 20150717005810 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][network.NetworkClient][logMessage]: Starting listening to localhost on port 1234.
+1 [I][network.NetworkClient][logMessage]: Sending message: main_session
+2 [I][network.NetworkClient][logMessage]: received: raw
+3 [I][listener.Notifier][logMessage]: got notifyString: (0) raw
+4 [I][listener.Notifier][send]: Sending message over client (auto)
+5 [I][network.NetworkClient][send]: Sending message: Raw mode is now true
+6 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is raw.
+7 [I][listener.Handler][logMessage]: Parsing message 0...
+8 [I][listener.Handler][logMessage]: Handling command 0: raw
+9 [I][network.NetworkClient][logMessage]: received: help
+10 [I][listener.Notifier][logMessage]: got notifyString: (1) help
+11 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is raw.
+12 [I][listener.Handler][logMessage]: Parsing message 1...
+13 [I][listener.Handler][logMessage]: Handling command 1: help
+14 [I][util.FileHandler][help]: Reading StringBuilder from information
+15 [I][util.FileHandler][help]: Reading StringBuilder from commandHelp
+16 [I][listener.Notifier][help]: Sending message over client (auto)
+17 [I][network.NetworkClient][help]: Sending message: ================== info ==================
+This is LukeLR's Telegram bot for his raspberry pi.---------------- commands ----------------
+echo <message> _answer with the given message (for connection testing)
+   message: the message that should be answered.
+healthreport <now> _send a healthreport as .txt file
+   now: if "now" is passed, a new healthreport is created instead of sending the last one.
+help _display this help message
+info _display bot information
+kick _exit bot (kick from telegram)
+ping _return a ping message (for connection testing)
+postpone <delay> <command> [command options]... _execute a command after *delay*
+   delay: delay (in milliseconds)
+   command: command that should be executed
+   command options: optional, if command needs options
+restart _restart the system
+shutdown _shutdown the system
+switchOff <systemID> <unitID> _switch off a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switchOn <systemID> <unitID> _switch on a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switch <systemID> <unitID> <state> _switch a socket to *state* (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+   state: 0 for off, 1 for on
+18 [I][network.NetworkClient][logMessage]: received: ping
+19 [I][listener.Notifier][logMessage]: got notifyString: (2) ping
+20 [I][listener.Handler][<init>]: New MessageHandler 2 created with messageString. Content is raw.
+21 [I][listener.Handler][logMessage]: Parsing message 2...
+22 [I][listener.Handler][logMessage]: Handling command 2: ping
+23 [I][listener.Notifier][ping]: Sending message over client (auto)
+24 [I][network.NetworkClient][ping]: Sending message: ping received!
+25 [I][network.NetworkClient][logMessage]: received: postpone 1000 ping
+26 [I][listener.Notifier][logMessage]: got notifyString: (3) postpone 1000 ping
+27 [I][listener.Handler][<init>]: New MessageHandler 3 created with messageString. Content is raw.
+28 [I][listener.Handler][logMessage]: Parsing message 3...
+29 [I][listener.Handler][logMessage]: Handling command 3: postpone
+30 [I][listener.Handler][postpone]: Executing postpone-command...
+31 [I][listener.Notifier][postpone]: Sending message over client (auto)
+32 [I][network.NetworkClient][postpone]: Sending message: Executing postpone-command...
+33 [I][listener.Handler][postpone]: Handling command 3: ping
+34 [I][listener.Notifier][postpone]: Sending message over client (auto)
+35 [I][network.NetworkClient][postpone]: Sending message: ping received!
+36 [I][network.NetworkClient][logMessage]: received: kick
+37 [I][listener.Notifier][logMessage]: got notifyString: (4) kick
+38 [I][listener.Handler][<init>]: New MessageHandler 4 created with messageString. Content is raw.
+39 [I][listener.Handler][logMessage]: Parsing message 4...
+40 [I][listener.Handler][logMessage]: Handling command 4: kick
+41 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+42 [I][logging.LogManager][exit]: Saving Log File
+43 [I][logging.LogManager][exit]: LogFile exists: log.txt
+44 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+45 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+46 [I][util.TimeHandler][exit]: Returning TimeArray 20150717005810
+47 [I][util.TimeHandler][exit]: 20150717005810
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] raw
+1 [>c] Raw mode is now true
+2 [<] help
+3 [>c] ================== info ==================
+This is LukeLR's Telegram bot for his raspberry pi.---------------- commands ----------------
+echo <message> _answer with the given message (for connection testing)
+   message: the message that should be answered.
+healthreport <now> _send a healthreport as .txt file
+   now: if "now" is passed, a new healthreport is created instead of sending the last one.
+help _display this help message
+info _display bot information
+kick _exit bot (kick from telegram)
+ping _return a ping message (for connection testing)
+postpone <delay> <command> [command options]... _execute a command after *delay*
+   delay: delay (in milliseconds)
+   command: command that should be executed
+   command options: optional, if command needs options
+restart _restart the system
+shutdown _shutdown the system
+switchOff <systemID> <unitID> _switch off a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switchOn <systemID> <unitID> _switch on a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switch <systemID> <unitID> <state> _switch a socket to *state* (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+   state: 0 for off, 1 for on
+4 [<] ping
+5 [>c] ping received!
+6 [<] postpone 1000 ping
+7 [>c] Executing postpone-command...
+8 [>c] ping received!
+9 [<] kick
+
+
+==========================================
+===== new Instance on 20150717010134 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][network.NetworkClient][logMessage]: Starting listening to localhost on port 1234.
+1 [I][network.NetworkClient][logMessage]: Sending message: main_session
+2 [I][network.NetworkClient][logMessage]: received: rwa
+3 [I][listener.Notifier][logMessage]: got notifyString: (0) rwa
+4 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is JSON
+5 [I][listener.Handler][logMessage]: Parsing message 0...
+6 [E][listener.Handler][logMessage]: Parsing of JSON for ID 0 failed!
+7 [W][listener.Handler][logMessage]: Message 0 was not parsed well. Exiting.
+8 [I][network.NetworkClient][logMessage]: received: raw
+9 [I][listener.Notifier][logMessage]: got notifyString: (1) raw
+10 [I][listener.Notifier][send]: Sending message over client (auto)
+11 [I][network.NetworkClient][send]: Sending message: Raw mode is now true
+12 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is raw.
+13 [I][listener.Handler][logMessage]: Parsing message 1...
+14 [I][listener.Handler][logMessage]: Handling command 1: raw
+15 [I][network.NetworkClient][logMessage]: received: switchOn
+16 [I][listener.Notifier][logMessage]: got notifyString: (2) switchOn
+17 [I][listener.Handler][<init>]: New MessageHandler 2 created with messageString. Content is raw.
+18 [I][listener.Handler][logMessage]: Parsing message 2...
+19 [I][listener.Handler][logMessage]: Handling command 2: switchOn
+20 [E] not enough arguments for switchOn command. usage: switchOn <systemID> <unitID>; see help for more information.
+21 [I][listener.Notifier][switchOn]: Sending message over client (auto)
+22 [I][network.NetworkClient][switchOn]: Sending message: usage: switchOn <systemID> <unitID>; see help for more information.
+23 [I][network.NetworkClient][logMessage]: received: 
+24 [I][listener.Notifier][logMessage]: got notifyString: (3) 
+25 [I][listener.Handler][<init>]: New MessageHandler 3 created with messageString. Content is raw.
+26 [I][listener.Handler][logMessage]: Parsing message 3...
+27 [I][listener.Handler][logMessage]: Handling command 3: 
+28 [I][network.NetworkClient][logMessage]: received: switchOn 10010 00001
+29 [I][listener.Notifier][logMessage]: got notifyString: (4) switchOn 10010 00001
+30 [I][listener.Handler][<init>]: New MessageHandler 4 created with messageString. Content is raw.
+31 [I][listener.Handler][logMessage]: Parsing message 4...
+32 [I][listener.Handler][logMessage]: Handling command 4: switchOn
+33 [E][java.lang.Character][switchOn]: Error when trying to execute send command
+34 [E][java.lang.Character][switchOn]: java.lang.ProcessBuilder.start(ProcessBuilder.java:1041)
+35 [E][java.lang.Character][switchOn]: java.lang.Runtime.exec(Runtime.java:617)
+36 [E][java.lang.Character][switchOn]: java.lang.Runtime.exec(Runtime.java:450)
+37 [E][java.lang.Character][switchOn]: java.lang.Runtime.exec(Runtime.java:347)
+38 [E][java.lang.Character][switchOn]: listener.Handler.switchOn(Handler.java:170)
+39 [E][java.lang.Character][switchOn]: listener.Handler.handleMessage(Handler.java:133)
+40 [E][java.lang.Character][switchOn]: listener.Handler.run(Handler.java:79)
+41 [I][listener.Notifier][switchOn]: Sending message over client (auto)
+42 [I][network.NetworkClient][switchOn]: Sending message: Error when trying to execute send command Cannot run program "send": error=2, No such file or directory
+[Ljava.lang.StackTraceElement;@5d08e435
+43 [I][network.NetworkClient][logMessage]: received: kick
+44 [I][listener.Notifier][logMessage]: got notifyString: (5) kick
+45 [I][listener.Handler][<init>]: New MessageHandler 5 created with messageString. Content is raw.
+46 [I][listener.Handler][logMessage]: Parsing message 5...
+47 [I][listener.Handler][logMessage]: Handling command 5: kick
+48 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+49 [I][logging.LogManager][exit]: Saving Log File
+50 [I][logging.LogManager][exit]: LogFile exists: log.txt
+51 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+52 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+53 [I][util.TimeHandler][exit]: Returning TimeArray 20150717010134
+54 [I][util.TimeHandler][exit]: 20150717010134
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] rwa
+1 [<] raw
+2 [>c] Raw mode is now true
+3 [<] switchOn
+4 [>c] usage: switchOn <systemID> <unitID>; see help for more information.
+5 [<] 
+6 [<] switchOn 10010 00001
+7 [>c] Error when trying to execute send command Cannot run program "send": error=2, No such file or directory
+[Ljava.lang.StackTraceElement;@5d08e435
+8 [<] kick
