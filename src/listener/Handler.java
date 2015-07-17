@@ -23,6 +23,7 @@ import java.util.logging.LogManager;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import util.FileHandler;
 import logging.Logger;
 import misc.Message;
 import network.MessageHandler;
@@ -194,7 +195,16 @@ public class Handler extends Thread{
 	}
 	
 	private void help(){
-		
+		try{
+			StringBuilder info = FileHandler.readStringBuilder("information");
+			info.append(FileHandler.readStringBuilder("commandHelp"));
+			notifier.send(answerCommand + info.toString());
+		} catch (Exception ex){
+			//TODO: find possible exceptions
+			String error = "Error when reading help file.";
+			Logger.logMessage('E', this, error);
+			notifier.send(answerCommand + error);
+		}
 	}
 	
 	private void healthreport(){

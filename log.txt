@@ -1871,3 +1871,205 @@ Log channel: socket
 13 [>c] nullExecuting postpone-command...
 14 [>c] nullping received!
 15 [<] kick
+
+
+==========================================
+===== new Instance on 20150717002028 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][network.NetworkClient][logMessage]: Starting listening to localhost on port 1234.
+1 [I][network.NetworkClient][logMessage]: Sending message: main_session
+2 [I][network.NetworkClient][logMessage]: received: raw
+3 [I][listener.Notifier][logMessage]: got notifyString: (0) raw
+4 [I][listener.Notifier][send]: Sending message over client (auto)
+5 [I][network.NetworkClient][send]: Sending message: Raw mode is now true
+6 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is raw.
+7 [I][listener.Handler][logMessage]: Parsing message 0...
+8 [I][listener.Handler][logMessage]: Handling command 0: raw
+9 [I][network.NetworkClient][logMessage]: received: help
+10 [I][listener.Notifier][logMessage]: got notifyString: (1) help
+11 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is raw.
+12 [I][listener.Handler][logMessage]: Parsing message 1...
+13 [I][listener.Handler][logMessage]: Handling command 1: help
+14 [I][util.FileHandler][help]: Reading StringBuilder from commandHelp
+15 [I][listener.Notifier][help]: Sending message over client (auto)
+16 [I][network.NetworkClient][help]: Sending message: ================== help ==================
+This is LukeLR's Telegram bot for his raspberry pi.
+
+---------------- commands ----------------
+echo <message> _answer with the given message (for connection testing)
+   message: the message that should be answered.
+healthreport <now> _send a healthreport as .txt file
+   now: if "now" is passed, a new healthreport is created instead of sending the last one.
+help _display this help message
+info _display bot information
+kick _exit bot (kick from telegram)
+ping _return a ping message (for connection testing)
+postpone <delay> <command> [command options]... _execute a command after *delay*
+   delay: delay (in milliseconds)
+   command: command that should be executed
+   command options: optional, if command needs options
+restart _restart the system
+shutdown _shutdown the system
+switchOff <systemID> <unitID> _switch off a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switchOn <systemID> <unitID> _switch on a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switch <systemID> <unitID> <state> _switch a socket to *state* (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+   state: 0 for off, 1 for on
+17 [I][network.NetworkClient][logMessage]: received: kick
+18 [I][listener.Notifier][logMessage]: got notifyString: (2) kick
+19 [I][listener.Handler][<init>]: New MessageHandler 2 created with messageString. Content is raw.
+20 [I][listener.Handler][logMessage]: Parsing message 2...
+21 [I][listener.Handler][logMessage]: Handling command 2: kick
+22 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+23 [I][logging.LogManager][exit]: Saving Log File
+24 [I][logging.LogManager][exit]: LogFile exists: log.txt
+25 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+26 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+27 [I][util.TimeHandler][exit]: Returning TimeArray 20150717002028
+28 [I][util.TimeHandler][exit]: 20150717002028
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] raw
+1 [>c] Raw mode is now true
+2 [<] help
+3 [>c] ================== help ==================
+This is LukeLR's Telegram bot for his raspberry pi.
+
+---------------- commands ----------------
+echo <message> _answer with the given message (for connection testing)
+   message: the message that should be answered.
+healthreport <now> _send a healthreport as .txt file
+   now: if "now" is passed, a new healthreport is created instead of sending the last one.
+help _display this help message
+info _display bot information
+kick _exit bot (kick from telegram)
+ping _return a ping message (for connection testing)
+postpone <delay> <command> [command options]... _execute a command after *delay*
+   delay: delay (in milliseconds)
+   command: command that should be executed
+   command options: optional, if command needs options
+restart _restart the system
+shutdown _shutdown the system
+switchOff <systemID> <unitID> _switch off a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switchOn <systemID> <unitID> _switch on a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switch <systemID> <unitID> <state> _switch a socket to *state* (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+   state: 0 for off, 1 for on
+4 [<] kick
+
+
+==========================================
+===== new Instance on 20150717002251 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][network.NetworkClient][logMessage]: Starting listening to localhost on port 1234.
+1 [I][network.NetworkClient][logMessage]: Sending message: main_session
+2 [I][network.NetworkClient][logMessage]: received: help
+3 [I][listener.Notifier][logMessage]: got notifyString: (0) help
+4 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is JSON
+5 [I][listener.Handler][logMessage]: Parsing message 0...
+6 [E][listener.Handler][logMessage]: Parsing of JSON for ID 0 failed!
+7 [W][listener.Handler][logMessage]: Message 0 was not parsed well. Exiting.
+8 [I][network.NetworkClient][logMessage]: received: raw
+9 [I][listener.Notifier][logMessage]: got notifyString: (1) raw
+10 [I][listener.Notifier][send]: Sending message over client (auto)
+11 [I][network.NetworkClient][send]: Sending message: Raw mode is now true
+12 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is raw.
+13 [I][listener.Handler][logMessage]: Parsing message 1...
+14 [I][listener.Handler][logMessage]: Handling command 1: raw
+15 [I][network.NetworkClient][logMessage]: received: help
+16 [I][listener.Notifier][logMessage]: got notifyString: (2) help
+17 [I][listener.Handler][<init>]: New MessageHandler 2 created with messageString. Content is raw.
+18 [I][listener.Handler][logMessage]: Parsing message 2...
+19 [I][listener.Handler][logMessage]: Handling command 2: help
+20 [I][util.FileHandler][help]: Reading StringBuilder from information
+21 [I][util.FileHandler][help]: Reading StringBuilder from commandHelp
+22 [I][listener.Notifier][help]: Sending message over client (auto)
+23 [I][network.NetworkClient][help]: Sending message: ================== info ==================
+This is LukeLR's Telegram bot for his raspberry pi.---------------- commands ----------------
+echo <message> _answer with the given message (for connection testing)
+   message: the message that should be answered.
+healthreport <now> _send a healthreport as .txt file
+   now: if "now" is passed, a new healthreport is created instead of sending the last one.
+help _display this help message
+info _display bot information
+kick _exit bot (kick from telegram)
+ping _return a ping message (for connection testing)
+postpone <delay> <command> [command options]... _execute a command after *delay*
+   delay: delay (in milliseconds)
+   command: command that should be executed
+   command options: optional, if command needs options
+restart _restart the system
+shutdown _shutdown the system
+switchOff <systemID> <unitID> _switch off a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switchOn <systemID> <unitID> _switch on a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switch <systemID> <unitID> <state> _switch a socket to *state* (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+   state: 0 for off, 1 for on
+24 [I][network.NetworkClient][logMessage]: received: kick
+25 [I][listener.Notifier][logMessage]: got notifyString: (3) kick
+26 [I][listener.Handler][<init>]: New MessageHandler 3 created with messageString. Content is raw.
+27 [I][listener.Handler][logMessage]: Parsing message 3...
+28 [I][listener.Handler][logMessage]: Handling command 3: kick
+29 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+30 [I][logging.LogManager][exit]: Saving Log File
+31 [I][logging.LogManager][exit]: LogFile exists: log.txt
+32 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+33 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+34 [I][util.TimeHandler][exit]: Returning TimeArray 20150717002251
+35 [I][util.TimeHandler][exit]: 20150717002251
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] help
+1 [<] raw
+2 [>c] Raw mode is now true
+3 [<] help
+4 [>c] ================== info ==================
+This is LukeLR's Telegram bot for his raspberry pi.---------------- commands ----------------
+echo <message> _answer with the given message (for connection testing)
+   message: the message that should be answered.
+healthreport <now> _send a healthreport as .txt file
+   now: if "now" is passed, a new healthreport is created instead of sending the last one.
+help _display this help message
+info _display bot information
+kick _exit bot (kick from telegram)
+ping _return a ping message (for connection testing)
+postpone <delay> <command> [command options]... _execute a command after *delay*
+   delay: delay (in milliseconds)
+   command: command that should be executed
+   command options: optional, if command needs options
+restart _restart the system
+shutdown _shutdown the system
+switchOff <systemID> <unitID> _switch off a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switchOn <systemID> <unitID> _switch on a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switch <systemID> <unitID> <state> _switch a socket to *state* (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+   state: 0 for off, 1 for on
+5 [<] kick

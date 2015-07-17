@@ -1,0 +1,25 @@
+---------------- commands ----------------
+echo <message> _answer with the given message (for connection testing)
+   message: the message that should be answered.
+healthreport <now> _send a healthreport as .txt file
+   now: if "now" is passed, a new healthreport is created instead of sending the last one.
+help _display this help message
+info _display bot information
+kick _exit bot (kick from telegram)
+ping _return a ping message (for connection testing)
+postpone <delay> <command> [command options]... _execute a command after *delay*
+   delay: delay (in milliseconds)
+   command: command that should be executed
+   command options: optional, if command needs options
+restart _restart the system
+shutdown _shutdown the system
+switchOff <systemID> <unitID> _switch off a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switchOn <systemID> <unitID> _switch on a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switch <systemID> <unitID> <state> _switch a socket to *state* (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+   state: 0 for off, 1 for on
