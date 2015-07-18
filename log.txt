@@ -2269,3 +2269,129 @@ Log channel: socket
 7 [>c] Error when trying to execute send command Cannot run program "send": error=2, No such file or directory
 [Ljava.lang.StackTraceElement;@5d08e435
 8 [<] kick
+
+
+==========================================
+===== new Instance on 20150717011119 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][network.NetworkClient][logMessage]: Starting listening to localhost on port 1234.
+1 [I][network.NetworkClient][logMessage]: Sending message: main_session
+2 [I][network.NetworkClient][logMessage]: received: raw
+3 [I][listener.Notifier][logMessage]: got notifyString: (0) raw
+4 [I][listener.Notifier][send]: Sending message over client (auto)
+5 [I][network.NetworkClient][send]: Sending message: Raw mode is now true
+6 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is raw.
+7 [I][listener.Handler][logMessage]: Parsing message 0...
+8 [I][listener.Handler][logMessage]: Handling command 0: raw
+9 [I][network.NetworkClient][logMessage]: received: switchOn
+10 [I][listener.Notifier][logMessage]: got notifyString: (1) switchOn
+11 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is raw.
+12 [I][listener.Handler][logMessage]: Parsing message 1...
+13 [I][listener.Handler][logMessage]: Handling command 1: switchOn
+14 [E] not enough arguments for switchOn command. usage: switchOn <systemID> <unitID>; see help for more information.
+15 [I][listener.Notifier][switchOn]: Sending message over client (auto)
+16 [I][network.NetworkClient][switchOn]: Sending message: usage: switchOn <systemID> <unitID>; see help for more information.
+17 [I][network.NetworkClient][logMessage]: received: echo
+18 [I][listener.Notifier][logMessage]: got notifyString: (2) echo
+19 [I][listener.Handler][<init>]: New MessageHandler 2 created with messageString. Content is raw.
+20 [I][listener.Handler][logMessage]: Parsing message 2...
+21 [I][listener.Handler][logMessage]: Handling command 2: echo
+22 [E][listener.Handler][echo]: not enough arguments for echo command. usage: echo <message>; see help for more information.
+23 [I][listener.Notifier][echo]: Sending message over client (auto)
+24 [I][network.NetworkClient][echo]: Sending message: usage: echo <message>; see help for more information.
+25 [I][network.NetworkClient][logMessage]: received: echo help
+26 [I][listener.Notifier][logMessage]: got notifyString: (3) echo help
+27 [I][listener.Handler][<init>]: New MessageHandler 3 created with messageString. Content is raw.
+28 [I][listener.Handler][logMessage]: Parsing message 3...
+29 [I][listener.Handler][logMessage]: Handling command 3: echo
+30 [I][listener.Handler][echo]: Executing echo command
+31 [I][listener.Notifier][echo]: Sending message over client (auto)
+32 [I][network.NetworkClient][echo]: Sending message: help
+33 [I][network.NetworkClient][logMessage]: received: help
+34 [I][listener.Notifier][logMessage]: got notifyString: (4) help
+35 [I][listener.Handler][<init>]: New MessageHandler 4 created with messageString. Content is raw.
+36 [I][listener.Handler][logMessage]: Parsing message 4...
+37 [I][listener.Handler][logMessage]: Handling command 4: help
+38 [I][util.FileHandler][help]: Reading StringBuilder from information
+39 [I][util.FileHandler][help]: Reading StringBuilder from commandHelp
+40 [I][listener.Notifier][help]: Sending message over client (auto)
+41 [I][network.NetworkClient][help]: Sending message: ================== info ==================
+This is LukeLR's Telegram bot for his raspberry pi.---------------- commands ----------------
+echo <message> _answer with the given message (for connection testing)
+   message: the message that should be answered.
+healthreport <now> _send a healthreport as .txt file
+   now: if "now" is passed, a new healthreport is created instead of sending the last one.
+help _display this help message
+info _display bot information
+kick _exit bot (kick from telegram)
+ping _return a ping message (for connection testing)
+postpone <delay> <command> [command options]... _execute a command after *delay*
+   delay: delay (in milliseconds)
+   command: command that should be executed
+   command options: optional, if command needs options
+restart _restart the system
+shutdown _shutdown the system
+switchOff <systemID> <unitID> _switch off a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switchOn <systemID> <unitID> _switch on a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switch <systemID> <unitID> <state> _switch a socket to *state* (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+   state: 0 for off, 1 for on
+42 [I][network.NetworkClient][logMessage]: received: kick
+43 [I][listener.Notifier][logMessage]: got notifyString: (5) kick
+44 [I][listener.Handler][<init>]: New MessageHandler 5 created with messageString. Content is raw.
+45 [I][listener.Handler][logMessage]: Parsing message 5...
+46 [I][listener.Handler][logMessage]: Handling command 5: kick
+47 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+48 [I][logging.LogManager][exit]: Saving Log File
+49 [I][logging.LogManager][exit]: LogFile exists: log.txt
+50 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+51 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+52 [I][util.TimeHandler][exit]: Returning TimeArray 20150717011119
+53 [I][util.TimeHandler][exit]: 20150717011119
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] raw
+1 [>c] Raw mode is now true
+2 [<] switchOn
+3 [>c] usage: switchOn <systemID> <unitID>; see help for more information.
+4 [<] echo
+5 [>c] usage: echo <message>; see help for more information.
+6 [<] echo help
+7 [>c] help
+8 [<] help
+9 [>c] ================== info ==================
+This is LukeLR's Telegram bot for his raspberry pi.---------------- commands ----------------
+echo <message> _answer with the given message (for connection testing)
+   message: the message that should be answered.
+healthreport <now> _send a healthreport as .txt file
+   now: if "now" is passed, a new healthreport is created instead of sending the last one.
+help _display this help message
+info _display bot information
+kick _exit bot (kick from telegram)
+ping _return a ping message (for connection testing)
+postpone <delay> <command> [command options]... _execute a command after *delay*
+   delay: delay (in milliseconds)
+   command: command that should be executed
+   command options: optional, if command needs options
+restart _restart the system
+shutdown _shutdown the system
+switchOff <systemID> <unitID> _switch off a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switchOn <systemID> <unitID> _switch on a socket (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+switch <systemID> <unitID> <state> _switch a socket to *state* (433MHz)
+   systemID: 5-digit system ID (as set in sockets)
+   unitID: 5-digit unit ID (as set in socket)
+   state: 0 for off, 1 for on
+10 [<] kick
