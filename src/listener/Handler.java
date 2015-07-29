@@ -41,6 +41,8 @@ public class Handler extends Thread{
 	private int commandDepthParsed = 0;
 	
 	private boolean verbose = true;
+	private boolean skipOwn = true;
+	private int ownID = 54916622;
 	
 	public Handler(String messageString, Notifier notifier, int id){
 		this(messageString, false, notifier, id);
@@ -115,6 +117,13 @@ public class Handler extends Thread{
 			} catch (Exception ex){
 				Logger.logMessage('E', this, "Parsing of JSON for ID " + String.valueOf(id) + " failed in a general exception!");
 //				ex.printStackTrace();
+			}
+		}
+		
+		if (skipOwn && parsedWell){
+			if (message.getFrom().getID() == ownID){
+				if (verbose) Logger.logMessage('I', this, "Message " + String.valueOf(id) + " is mine. Skipping.");
+				parsedWell = false;
 			}
 		}
 	}
