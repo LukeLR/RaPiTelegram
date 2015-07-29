@@ -8124,3 +8124,1528 @@ Log channel: socket
 4 [<] {"event": "message", "service": false, "flags": 257, "text": "kick", "id": 5378, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438211003, "out": false, "unread": true}
 5 [<] 
 6 [<] ANSWER 717
+
+
+==========================================
+===== new Instance on 20150730012119 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][network.NetworkClient][logMessage]: Starting listening to 192.168.2.101 on port 1604.
+1 [I][network.NetworkClient][logMessage]: Sending message: main_session
+2 [I][network.NetworkClient][logMessage]: received: ANSWER 261
+3 [I][listener.Notifier][logMessage]: got notifyString: (0) ANSWER 261
+4 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is JSON
+5 [I][network.NetworkClient][logMessage]: received: {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-07-30 01:24:29"}
+5 [I][listener.Handler][logMessage]: Parsing message 0...
+7 [I][listener.Notifier][logMessage]: got notifyString: (1) {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-07-30 01:24:29"}
+8 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is JSON
+9 [I][network.NetworkClient][logMessage]: received: 
+10 [I][listener.Handler][logMessage]: Parsing message 1...
+10 [I][listener.Notifier][logMessage]: got notifyString: (2) 
+12 [I][listener.Handler][<init>]: New MessageHandler 2 created with messageString. Content is JSON
+13 [I][listener.Handler][logMessage]: Parsing message 2...
+14 [E][listener.Handler][logMessage]: Parsing of JSON for ID 0 failed!
+14 [E][listener.Handler][logMessage]: Parsing of JSON for ID 2 failed!
+15 [W][listener.Handler][logMessage]: Message 0 was not parsed well. Exiting.
+16 [W][listener.Handler][logMessage]: Message 2 was not parsed well. Exiting.
+18 [E][listener.Handler][logMessage]: Given JSONString 1 is not a message. JSONString:
+{"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-07-30 01:24:29"}
+19 [W][listener.Handler][logMessage]: Message 1 was not parsed well. Exiting.
+20 [I][network.NetworkClient][logMessage]: received: ANSWER 505
+21 [I][listener.Notifier][logMessage]: got notifyString: (3) ANSWER 505
+22 [I][listener.Handler][<init>]: New MessageHandler 3 created with messageString. Content is JSON
+23 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 257, "text": "postpone 6000 postpone", "id": 5469, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438211975, "out": false, "unread": true}
+23 [I][listener.Handler][logMessage]: Parsing message 3...
+24 [I][listener.Notifier][logMessage]: got notifyString: (4) {"event": "message", "service": false, "flags": 257, "text": "postpone 6000 postpone", "id": 5469, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438211975, "out": false, "unread": true}
+25 [E][listener.Handler][logMessage]: Parsing of JSON for ID 3 failed!
+27 [W][listener.Handler][logMessage]: Message 3 was not parsed well. Exiting.
+27 [I][listener.Handler][<init>]: New MessageHandler 4 created with messageString. Content is JSON
+29 [I][network.NetworkClient][logMessage]: received: 
+30 [I][listener.Handler][logMessage]: Parsing message 4...
+30 [I][listener.Notifier][logMessage]: got notifyString: (5) 
+32 [I][listener.Handler][<init>]: New MessageHandler 5 created with messageString. Content is JSON
+33 [I][listener.Handler][logMessage]: Parsing message 5...
+34 [E][listener.Handler][logMessage]: Parsing of JSON for ID 5 failed!
+35 [W][listener.Handler][logMessage]: Message 5 was not parsed well. Exiting.
+36 [I][misc.Message][<init>]: Constructing Message by JSON!
+37 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+38 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+39 [I][listener.Handler][logMessage]: Resulting messageText 4: postpone 6000 postpone
+40 [I][listener.Handler][logMessage]: Handling command 4: postpone
+41 [I][listener.Handler][postpone]: Executing postpone-command...
+42 [I][listener.Notifier][postpone]: Sending message over client (auto)
+43 [I][network.NetworkClient][postpone]: Sending message: msg Lukas Executing postpone-command...
+44 [I][network.NetworkClient][logMessage]: received: ANSWER 735
+45 [I][listener.Notifier][logMessage]: got notifyString: (6) ANSWER 735
+46 [I][listener.Handler][<init>]: New MessageHandler 6 created with messageString. Content is JSON
+47 [I][network.NetworkClient][logMessage]: received: {"event": "message", "fwd_date": 1438211975, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "postpone 6000 postpone", "id": 5470, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438211975, "out": true, "unread": true}
+47 [I][listener.Handler][logMessage]: Parsing message 6...
+49 [I][listener.Notifier][logMessage]: got notifyString: (7) {"event": "message", "fwd_date": 1438211975, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "postpone 6000 postpone", "id": 5470, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438211975, "out": true, "unread": true}
+49 [E][listener.Handler][logMessage]: Parsing of JSON for ID 6 failed!
+51 [W][listener.Handler][logMessage]: Message 6 was not parsed well. Exiting.
+51 [I][listener.Handler][<init>]: New MessageHandler 7 created with messageString. Content is JSON
+53 [I][network.NetworkClient][logMessage]: received: 
+53 [I][listener.Handler][logMessage]: Parsing message 7...
+54 [I][listener.Notifier][logMessage]: got notifyString: (8) 
+56 [I][listener.Handler][<init>]: New MessageHandler 8 created with messageString. Content is JSON
+57 [I][network.NetworkClient][logMessage]: received: ANSWER 536
+58 [I][listener.Handler][logMessage]: Parsing message 8...
+58 [I][listener.Notifier][logMessage]: got notifyString: (9) ANSWER 536
+60 [E][listener.Handler][logMessage]: Parsing of JSON for ID 8 failed!
+61 [W][listener.Handler][logMessage]: Message 8 was not parsed well. Exiting.
+61 [I][listener.Handler][<init>]: New MessageHandler 9 created with messageString. Content is JSON
+63 [I][misc.Message][<init>]: Constructing Message by JSON!
+64 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5471, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211975, "out": true, "unread": true}
+64 [I][listener.Handler][logMessage]: Parsing message 9...
+64 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+67 [I][listener.Notifier][logMessage]: got notifyString: (10) {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5471, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211975, "out": true, "unread": true}
+67 [E][listener.Handler][logMessage]: Parsing of JSON for ID 9 failed!
+69 [W][misc.Group][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+69 [W][listener.Handler][logMessage]: Message 9 was not parsed well. Exiting.
+70 [E][misc.Group][<init>]: Trying to construct a Group chat with a non-group-chat-JSON-String!
+72 [I][listener.Handler][<init>]: New MessageHandler 10 created with messageString. Content is JSON
+72 [I][listener.Handler][logMessage]: Resulting messageText 7: postpone 6000 postpone
+74 [I][listener.Handler][logMessage]: Message 7 is mine. Skipping.
+74 [I][network.NetworkClient][logMessage]: received: 
+75 [W][listener.Handler][logMessage]: Message 7 was not parsed well. Exiting.
+75 [I][listener.Handler][logMessage]: Parsing message 10...
+78 [I][listener.Notifier][logMessage]: got notifyString: (11) 
+79 [I][listener.Handler][<init>]: New MessageHandler 11 created with messageString. Content is JSON
+80 [I][listener.Handler][logMessage]: Parsing message 11...
+81 [I][misc.Message][<init>]: Constructing Message by JSON!
+81 [E][listener.Handler][logMessage]: Parsing of JSON for ID 11 failed!
+83 [W][listener.Handler][logMessage]: Message 11 was not parsed well. Exiting.
+84 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+85 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+86 [I][listener.Handler][logMessage]: Resulting messageText 10: Ich verstehe dich nicht 😨 Was soll ich tun?? 😰
+87 [I][listener.Handler][logMessage]: Message 10 is mine. Skipping.
+88 [W][listener.Handler][logMessage]: Message 10 was not parsed well. Exiting.
+89 [I][network.NetworkClient][logMessage]: received: ANSWER 513
+90 [I][listener.Notifier][logMessage]: got notifyString: (12) ANSWER 513
+91 [I][listener.Handler][<init>]: New MessageHandler 12 created with messageString. Content is JSON
+92 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5472, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211975, "out": true, "unread": true}
+92 [I][listener.Handler][logMessage]: Parsing message 12...
+94 [I][listener.Notifier][logMessage]: got notifyString: (13) {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5472, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211975, "out": true, "unread": true}
+94 [E][listener.Handler][logMessage]: Parsing of JSON for ID 12 failed!
+96 [W][listener.Handler][logMessage]: Message 12 was not parsed well. Exiting.
+97 [I][listener.Handler][<init>]: New MessageHandler 13 created with messageString. Content is JSON
+98 [I][network.NetworkClient][logMessage]: received: 
+99 [I][listener.Handler][logMessage]: Parsing message 13...
+99 [I][listener.Notifier][logMessage]: got notifyString: (14) 
+101 [I][listener.Handler][<init>]: New MessageHandler 14 created with messageString. Content is JSON
+102 [I][network.NetworkClient][logMessage]: received: ANSWER 22
+103 [I][listener.Handler][logMessage]: Parsing message 14...
+103 [I][listener.Notifier][logMessage]: got notifyString: (15) ANSWER 22
+105 [E][listener.Handler][logMessage]: Parsing of JSON for ID 14 failed!
+105 [I][misc.Message][<init>]: Constructing Message by JSON!
+107 [W][listener.Handler][logMessage]: Message 14 was not parsed well. Exiting.
+107 [I][listener.Handler][<init>]: New MessageHandler 15 created with messageString. Content is JSON
+109 [I][network.NetworkClient][logMessage]: received: {"result": "SUCCESS"}
+ject.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+110 [I][listener.Handler][logMessage]: Parsing message 15...
+110 [I][listener.Notifier][logMessage]: got notifyString: (16) {"result": "SUCCESS"}
+112 [E][listener.Handler][logMessage]: Parsing of JSON for ID 15 failed!
+112 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+114 [I][listener.Handler][<init>]: New MessageHandler 16 created with messageString. Content is JSON
+114 [I][listener.Handler][logMessage]: Resulting messageText 13: Executing postpone-command...
+113 [W][listener.Handler][logMessage]: Message 15 was not parsed well. Exiting.
+117 [I][listener.Handler][logMessage]: Parsing message 16...
+117 [I][network.NetworkClient][logMessage]: received: 
+117 [I][listener.Handler][logMessage]: Message 13 is mine. Skipping.
+120 [I][listener.Notifier][logMessage]: got notifyString: (17) 
+120 [W][listener.Handler][logMessage]: Message 13 was not parsed well. Exiting.
+122 [E][listener.Handler][logMessage]: Parsing of JSON for ID 16 failed!
+122 [I][listener.Handler][<init>]: New MessageHandler 17 created with messageString. Content is JSON
+123 [W][listener.Handler][logMessage]: Message 16 was not parsed well. Exiting.
+125 [I][listener.Handler][logMessage]: Parsing message 17...
+126 [E][listener.Handler][logMessage]: Parsing of JSON for ID 17 failed!
+127 [W][listener.Handler][logMessage]: Message 17 was not parsed well. Exiting.
+128 [I][network.NetworkClient][logMessage]: received: ANSWER 511
+129 [I][listener.Notifier][logMessage]: got notifyString: (18) ANSWER 511
+130 [I][listener.Handler][<init>]: New MessageHandler 18 created with messageString. Content is JSON
+131 [I][network.NetworkClient][logMessage]: received: {"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5472, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211975, "out": true, "unread": false}
+132 [I][listener.Handler][logMessage]: Parsing message 18...
+132 [I][listener.Notifier][logMessage]: got notifyString: (19) {"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5472, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211975, "out": true, "unread": false}
+134 [E][listener.Handler][logMessage]: Parsing of JSON for ID 18 failed!
+135 [W][listener.Handler][logMessage]: Message 18 was not parsed well. Exiting.
+135 [I][listener.Handler][<init>]: New MessageHandler 19 created with messageString. Content is JSON
+137 [I][network.NetworkClient][logMessage]: received: 
+138 [I][listener.Handler][logMessage]: Parsing message 19...
+138 [I][listener.Notifier][logMessage]: got notifyString: (20) 
+140 [I][listener.Handler][<init>]: New MessageHandler 20 created with messageString. Content is JSON
+141 [I][listener.Handler][logMessage]: Parsing message 20...
+142 [E][listener.Handler][logMessage]: Parsing of JSON for ID 20 failed!
+143 [W][listener.Handler][logMessage]: Message 20 was not parsed well. Exiting.
+143 [E][listener.Handler][logMessage]: Given JSONString 19 is not a message. JSONString:
+{"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5472, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211975, "out": true, "unread": false}
+145 [W][listener.Handler][logMessage]: Message 19 was not parsed well. Exiting.
+146 [I][listener.Handler][postpone]: Handling command 4: postpone
+147 [E][listener.Handler][postpone]: not enough arguments given for postpone command. usage: postpone <offset> <command> [command options]..; see help for more information.
+148 [I][listener.Notifier][postpone]: Sending message over client (auto)
+149 [I][network.NetworkClient][postpone]: Sending message: msg Lukas usage: postpone <offset> <command> [command options]..; see help for more information.
+150 [I][network.NetworkClient][logMessage]: received: ANSWER 570
+151 [I][listener.Notifier][logMessage]: got notifyString: (21) ANSWER 570
+152 [I][listener.Handler][<init>]: New MessageHandler 21 created with messageString. Content is JSON
+153 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5473, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211981, "out": true, "unread": true}
+154 [I][listener.Handler][logMessage]: Parsing message 21...
+154 [I][listener.Notifier][logMessage]: got notifyString: (22) {"event": "message", "service": false, "flags": 16643, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5473, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211981, "out": true, "unread": true}
+156 [E][listener.Handler][logMessage]: Parsing of JSON for ID 21 failed!
+157 [I][listener.Handler][<init>]: New MessageHandler 22 created with messageString. Content is JSON
+157 [W][listener.Handler][logMessage]: Message 21 was not parsed well. Exiting.
+159 [I][network.NetworkClient][logMessage]: received: 
+159 [I][listener.Handler][logMessage]: Parsing message 22...
+160 [I][listener.Notifier][logMessage]: got notifyString: (23) 
+162 [I][listener.Handler][<init>]: New MessageHandler 23 created with messageString. Content is JSON
+163 [I][network.NetworkClient][logMessage]: received: ANSWER 22
+164 [I][listener.Handler][logMessage]: Parsing message 23...
+164 [I][listener.Notifier][logMessage]: got notifyString: (24) ANSWER 22
+166 [E][listener.Handler][logMessage]: Parsing of JSON for ID 23 failed!
+167 [I][listener.Handler][<init>]: New MessageHandler 24 created with messageString. Content is JSON
+167 [W][listener.Handler][logMessage]: Message 23 was not parsed well. Exiting.
+167 [I][misc.Message][<init>]: Constructing Message by JSON!
+170 [I][network.NetworkClient][logMessage]: received: {"result": "SUCCESS"}
+170 [I][listener.Handler][logMessage]: Parsing message 24...
+171 [I][listener.Notifier][logMessage]: got notifyString: (25) {"result": "SUCCESS"}
+173 [E][listener.Handler][logMessage]: Parsing of JSON for ID 24 failed!
+173 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+174 [W][listener.Handler][logMessage]: Message 24 was not parsed well. Exiting.
+175 [I][listener.Handler][<init>]: New MessageHandler 25 created with messageString. Content is JSON
+177 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+178 [I][listener.Handler][logMessage]: Parsing message 25...
+178 [I][network.NetworkClient][logMessage]: received: 
+178 [I][listener.Handler][logMessage]: Resulting messageText 22: usage: postpone <offset> <command> [command options]..; see help for more information.
+181 [I][listener.Notifier][logMessage]: got notifyString: (26) 
+181 [I][listener.Handler][logMessage]: Message 22 is mine. Skipping.
+182 [E][listener.Handler][logMessage]: Parsing of JSON for ID 25 failed!
+184 [I][listener.Handler][<init>]: New MessageHandler 26 created with messageString. Content is JSON
+184 [W][listener.Handler][logMessage]: Message 25 was not parsed well. Exiting.
+184 [W][listener.Handler][logMessage]: Message 22 was not parsed well. Exiting.
+187 [I][listener.Handler][logMessage]: Parsing message 26...
+188 [E][listener.Handler][logMessage]: Parsing of JSON for ID 26 failed!
+189 [W][listener.Handler][logMessage]: Message 26 was not parsed well. Exiting.
+190 [I][network.NetworkClient][logMessage]: received: ANSWER 568
+191 [I][listener.Notifier][logMessage]: got notifyString: (27) ANSWER 568
+192 [I][listener.Handler][<init>]: New MessageHandler 27 created with messageString. Content is JSON
+193 [I][network.NetworkClient][logMessage]: received: {"event": "read", "service": false, "flags": 16642, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5473, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211981, "out": true, "unread": false}
+194 [I][listener.Handler][logMessage]: Parsing message 27...
+194 [I][listener.Notifier][logMessage]: got notifyString: (28) {"event": "read", "service": false, "flags": 16642, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5473, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211981, "out": true, "unread": false}
+196 [E][listener.Handler][logMessage]: Parsing of JSON for ID 27 failed!
+196 [I][listener.Handler][<init>]: New MessageHandler 28 created with messageString. Content is JSON
+197 [W][listener.Handler][logMessage]: Message 27 was not parsed well. Exiting.
+199 [I][network.NetworkClient][logMessage]: received: 
+200 [I][listener.Handler][logMessage]: Parsing message 28...
+200 [I][listener.Notifier][logMessage]: got notifyString: (29) 
+202 [I][listener.Handler][<init>]: New MessageHandler 29 created with messageString. Content is JSON
+203 [I][listener.Handler][logMessage]: Parsing message 29...
+204 [E][listener.Handler][logMessage]: Parsing of JSON for ID 29 failed!
+205 [W][listener.Handler][logMessage]: Message 29 was not parsed well. Exiting.
+206 [E][listener.Handler][logMessage]: Given JSONString 28 is not a message. JSONString:
+{"event": "read", "service": false, "flags": 16642, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5473, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211981, "out": true, "unread": false}
+207 [W][listener.Handler][logMessage]: Message 28 was not parsed well. Exiting.
+208 [I][network.NetworkClient][logMessage]: received: ANSWER 510
+209 [I][listener.Notifier][logMessage]: got notifyString: (30) ANSWER 510
+210 [I][listener.Handler][<init>]: New MessageHandler 30 created with messageString. Content is JSON
+211 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 257, "text": "postpone 1000 postpone 1000", "id": 5474, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438211992, "out": false, "unread": true}
+212 [I][listener.Handler][logMessage]: Parsing message 30...
+212 [I][listener.Notifier][logMessage]: got notifyString: (31) {"event": "message", "service": false, "flags": 257, "text": "postpone 1000 postpone 1000", "id": 5474, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438211992, "out": false, "unread": true}
+214 [E][listener.Handler][logMessage]: Parsing of JSON for ID 30 failed!
+215 [W][listener.Handler][logMessage]: Message 30 was not parsed well. Exiting.
+215 [I][listener.Handler][<init>]: New MessageHandler 31 created with messageString. Content is JSON
+217 [I][network.NetworkClient][logMessage]: received: 
+217 [I][listener.Handler][logMessage]: Parsing message 31...
+218 [I][listener.Notifier][logMessage]: got notifyString: (32) 
+220 [I][listener.Handler][<init>]: New MessageHandler 32 created with messageString. Content is JSON
+221 [I][listener.Handler][logMessage]: Parsing message 32...
+222 [E][listener.Handler][logMessage]: Parsing of JSON for ID 32 failed!
+223 [W][listener.Handler][logMessage]: Message 32 was not parsed well. Exiting.
+223 [I][misc.Message][<init>]: Constructing Message by JSON!
+225 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+226 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+227 [I][listener.Handler][logMessage]: Resulting messageText 31: postpone 1000 postpone 1000
+228 [I][listener.Handler][logMessage]: Handling command 31: postpone
+229 [I][listener.Handler][postpone]: Executing postpone-command...
+230 [I][listener.Notifier][postpone]: Sending message over client (auto)
+231 [I][network.NetworkClient][postpone]: Sending message: msg Lukas Executing postpone-command...
+232 [I][network.NetworkClient][logMessage]: received: ANSWER 740
+233 [I][listener.Notifier][logMessage]: got notifyString: (33) ANSWER 740
+234 [I][listener.Handler][<init>]: New MessageHandler 33 created with messageString. Content is JSON
+235 [I][network.NetworkClient][logMessage]: received: {"event": "message", "fwd_date": 1438211992, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "postpone 1000 postpone 1000", "id": 5475, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438211992, "out": true, "unread": true}
+235 [I][listener.Handler][logMessage]: Parsing message 33...
+237 [I][listener.Notifier][logMessage]: got notifyString: (34) {"event": "message", "fwd_date": 1438211992, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "postpone 1000 postpone 1000", "id": 5475, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438211992, "out": true, "unread": true}
+237 [E][listener.Handler][logMessage]: Parsing of JSON for ID 33 failed!
+239 [W][listener.Handler][logMessage]: Message 33 was not parsed well. Exiting.
+240 [I][listener.Handler][<init>]: New MessageHandler 34 created with messageString. Content is JSON
+241 [I][network.NetworkClient][logMessage]: received: 
+242 [I][listener.Handler][logMessage]: Parsing message 34...
+242 [I][listener.Notifier][logMessage]: got notifyString: (35) 
+244 [I][listener.Handler][<init>]: New MessageHandler 35 created with messageString. Content is JSON
+245 [I][network.NetworkClient][logMessage]: received: ANSWER 536
+246 [I][listener.Handler][logMessage]: Parsing message 35...
+246 [I][listener.Notifier][logMessage]: got notifyString: (36) ANSWER 536
+248 [E][listener.Handler][logMessage]: Parsing of JSON for ID 35 failed!
+249 [W][listener.Handler][logMessage]: Message 35 was not parsed well. Exiting.
+249 [I][listener.Handler][<init>]: New MessageHandler 36 created with messageString. Content is JSON
+251 [I][misc.Message][<init>]: Constructing Message by JSON!
+252 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5476, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211992, "out": true, "unread": true}
+252 [I][listener.Handler][logMessage]: Parsing message 36...
+253 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+255 [E][listener.Handler][logMessage]: Parsing of JSON for ID 36 failed!
+255 [W][misc.Group][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+255 [I][listener.Notifier][logMessage]: got notifyString: (37) {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5476, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211992, "out": true, "unread": true}
+258 [E][misc.Group][<init>]: Trying to construct a Group chat with a non-group-chat-JSON-String!
+258 [W][listener.Handler][logMessage]: Message 36 was not parsed well. Exiting.
+259 [I][listener.Handler][logMessage]: Resulting messageText 34: postpone 1000 postpone 1000
+261 [I][listener.Handler][logMessage]: Message 34 is mine. Skipping.
+261 [I][listener.Handler][<init>]: New MessageHandler 37 created with messageString. Content is JSON
+263 [W][listener.Handler][logMessage]: Message 34 was not parsed well. Exiting.
+264 [I][listener.Handler][logMessage]: Parsing message 37...
+264 [I][network.NetworkClient][logMessage]: received: 
+266 [I][listener.Notifier][logMessage]: got notifyString: (38) 
+267 [I][listener.Handler][<init>]: New MessageHandler 38 created with messageString. Content is JSON
+268 [I][listener.Handler][logMessage]: Parsing message 38...
+269 [E][listener.Handler][logMessage]: Parsing of JSON for ID 38 failed!
+269 [I][misc.Message][<init>]: Constructing Message by JSON!
+271 [W][listener.Handler][logMessage]: Message 38 was not parsed well. Exiting.
+272 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+273 [I][network.NetworkClient][logMessage]: received: ANSWER 513
+273 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+275 [I][listener.Notifier][logMessage]: got notifyString: (39) ANSWER 513
+275 [I][listener.Handler][logMessage]: Resulting messageText 37: Ich verstehe dich nicht 😨 Was soll ich tun?? 😰
+277 [I][listener.Handler][logMessage]: Message 37 is mine. Skipping.
+278 [I][listener.Handler][<init>]: New MessageHandler 39 created with messageString. Content is JSON
+278 [W][listener.Handler][logMessage]: Message 37 was not parsed well. Exiting.
+280 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5477, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211992, "out": true, "unread": true}
+280 [I][listener.Handler][logMessage]: Parsing message 39...
+282 [I][listener.Notifier][logMessage]: got notifyString: (40) {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5477, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211992, "out": true, "unread": true}
+282 [E][listener.Handler][logMessage]: Parsing of JSON for ID 39 failed!
+284 [W][listener.Handler][logMessage]: Message 39 was not parsed well. Exiting.
+285 [I][listener.Handler][<init>]: New MessageHandler 40 created with messageString. Content is JSON
+286 [I][network.NetworkClient][logMessage]: received: 
+286 [I][listener.Handler][logMessage]: Parsing message 40...
+288 [I][listener.Notifier][logMessage]: got notifyString: (41) 
+289 [I][listener.Handler][<init>]: New MessageHandler 41 created with messageString. Content is JSON
+290 [I][network.NetworkClient][logMessage]: received: ANSWER 22
+291 [I][listener.Handler][logMessage]: Parsing message 41...
+291 [I][listener.Notifier][logMessage]: got notifyString: (42) ANSWER 22
+292 [E][listener.Handler][logMessage]: Parsing of JSON for ID 41 failed!
+292 [I][misc.Message][<init>]: Constructing Message by JSON!
+295 [W][listener.Handler][logMessage]: Message 41 was not parsed well. Exiting.
+296 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+296 [I][listener.Handler][<init>]: New MessageHandler 42 created with messageString. Content is JSON
+298 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+299 [I][network.NetworkClient][logMessage]: received: {"result": "SUCCESS"}
+299 [I][listener.Handler][logMessage]: Resulting messageText 40: Executing postpone-command...
+300 [I][listener.Notifier][logMessage]: got notifyString: (43) {"result": "SUCCESS"}
+300 [I][listener.Handler][logMessage]: Parsing message 42...
+303 [E][listener.Handler][logMessage]: Parsing of JSON for ID 42 failed!
+303 [I][listener.Handler][logMessage]: Message 40 is mine. Skipping.
+305 [W][listener.Handler][logMessage]: Message 42 was not parsed well. Exiting.
+305 [I][listener.Handler][<init>]: New MessageHandler 43 created with messageString. Content is JSON
+306 [W][listener.Handler][logMessage]: Message 40 was not parsed well. Exiting.
+308 [I][network.NetworkClient][logMessage]: received: 
+309 [I][listener.Handler][logMessage]: Parsing message 43...
+309 [I][listener.Notifier][logMessage]: got notifyString: (44) 
+311 [E][listener.Handler][logMessage]: Parsing of JSON for ID 43 failed!
+312 [I][listener.Handler][<init>]: New MessageHandler 44 created with messageString. Content is JSON
+312 [W][listener.Handler][logMessage]: Message 43 was not parsed well. Exiting.
+314 [I][listener.Handler][logMessage]: Parsing message 44...
+315 [E][listener.Handler][logMessage]: Parsing of JSON for ID 44 failed!
+316 [W][listener.Handler][logMessage]: Message 44 was not parsed well. Exiting.
+317 [I][listener.Handler][postpone]: Handling command 31: postpone
+318 [E][listener.Handler][postpone]: not enough arguments given for postpone command. usage: postpone <offset> <command> [command options]..; see help for more information.
+319 [I][listener.Notifier][postpone]: Sending message over client (auto)
+320 [I][network.NetworkClient][postpone]: Sending message: msg Lukas usage: postpone <offset> <command> [command options]..; see help for more information.
+321 [I][network.NetworkClient][logMessage]: received: ANSWER 570
+322 [I][listener.Notifier][logMessage]: got notifyString: (45) ANSWER 570
+323 [I][listener.Handler][<init>]: New MessageHandler 45 created with messageString. Content is JSON
+324 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5478, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211993, "out": true, "unread": true}
+325 [I][listener.Handler][logMessage]: Parsing message 45...
+325 [I][listener.Notifier][logMessage]: got notifyString: (46) {"event": "message", "service": false, "flags": 16643, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5478, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211993, "out": true, "unread": true}
+327 [E][listener.Handler][logMessage]: Parsing of JSON for ID 45 failed!
+328 [W][listener.Handler][logMessage]: Message 45 was not parsed well. Exiting.
+328 [I][listener.Handler][<init>]: New MessageHandler 46 created with messageString. Content is JSON
+330 [I][network.NetworkClient][logMessage]: received: 
+330 [I][listener.Handler][logMessage]: Parsing message 46...
+332 [I][listener.Notifier][logMessage]: got notifyString: (47) 
+333 [I][listener.Handler][<init>]: New MessageHandler 47 created with messageString. Content is JSON
+334 [I][network.NetworkClient][logMessage]: received: ANSWER 22
+335 [I][listener.Handler][logMessage]: Parsing message 47...
+335 [I][listener.Notifier][logMessage]: got notifyString: (48) ANSWER 22
+337 [I][misc.Message][<init>]: Constructing Message by JSON!
+337 [E][listener.Handler][logMessage]: Parsing of JSON for ID 47 failed!
+338 [I][listener.Handler][<init>]: New MessageHandler 48 created with messageString. Content is JSON
+340 [W][listener.Handler][logMessage]: Message 47 was not parsed well. Exiting.
+340 [I][network.NetworkClient][logMessage]: received: {"result": "SUCCESS"}
+341 [I][listener.Handler][logMessage]: Parsing message 48...
+342 [I][listener.Notifier][logMessage]: got notifyString: (49) {"result": "SUCCESS"}
+342 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+345 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+345 [E][listener.Handler][logMessage]: Parsing of JSON for ID 48 failed!
+346 [I][listener.Handler][logMessage]: Resulting messageText 46: usage: postpone <offset> <command> [command options]..; see help for more information.
+348 [I][listener.Handler][logMessage]: Message 46 is mine. Skipping.
+348 [W][listener.Handler][logMessage]: Message 48 was not parsed well. Exiting.
+348 [I][listener.Handler][<init>]: New MessageHandler 49 created with messageString. Content is JSON
+351 [W][listener.Handler][logMessage]: Message 46 was not parsed well. Exiting.
+352 [I][network.NetworkClient][logMessage]: received: 
+353 [I][listener.Handler][logMessage]: Parsing message 49...
+353 [I][listener.Notifier][logMessage]: got notifyString: (50) 
+355 [E][listener.Handler][logMessage]: Parsing of JSON for ID 49 failed!
+356 [I][listener.Handler][<init>]: New MessageHandler 50 created with messageString. Content is JSON
+356 [W][listener.Handler][logMessage]: Message 49 was not parsed well. Exiting.
+358 [I][listener.Handler][logMessage]: Parsing message 50...
+359 [E][listener.Handler][logMessage]: Parsing of JSON for ID 50 failed!
+360 [W][listener.Handler][logMessage]: Message 50 was not parsed well. Exiting.
+361 [I][network.NetworkClient][logMessage]: received: ANSWER 511
+362 [I][listener.Notifier][logMessage]: got notifyString: (51) ANSWER 511
+363 [I][listener.Handler][<init>]: New MessageHandler 51 created with messageString. Content is JSON
+364 [I][network.NetworkClient][logMessage]: received: {"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5477, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211992, "out": true, "unread": false}
+365 [I][listener.Handler][logMessage]: Parsing message 51...
+365 [I][listener.Notifier][logMessage]: got notifyString: (52) {"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5477, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211992, "out": true, "unread": false}
+367 [E][listener.Handler][logMessage]: Parsing of JSON for ID 51 failed!
+368 [W][listener.Handler][logMessage]: Message 51 was not parsed well. Exiting.
+368 [I][listener.Handler][<init>]: New MessageHandler 52 created with messageString. Content is JSON
+370 [I][network.NetworkClient][logMessage]: received: 
+371 [I][listener.Handler][logMessage]: Parsing message 52...
+371 [I][listener.Notifier][logMessage]: got notifyString: (53) 
+373 [I][listener.Handler][<init>]: New MessageHandler 53 created with messageString. Content is JSON
+374 [I][listener.Handler][logMessage]: Parsing message 53...
+375 [E][listener.Handler][logMessage]: Parsing of JSON for ID 53 failed!
+                                                                                376 [E][listener.Handler][logMessage]: Given JSONString 52 is not a message. JSONString:
+{"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5477, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211992, "out": true, "unread": false}
+378 [W][listener.Handler][logMessage]: Message 52 was not parsed well. Exiting.
+379 [I][network.NetworkClient][logMessage]: received: ANSWER 515
+380 [I][listener.Notifier][logMessage]: got notifyString: (54) ANSWER 515
+381 [I][listener.Handler][<init>]: New MessageHandler 54 created with messageString. Content is JSON
+382 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 257, "text": "postpone 1000 postpone 1000 echo", "id": 5479, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212006, "out": false, "unread": true}
+383 [I][listener.Handler][logMessage]: Parsing message 54...
+383 [I][listener.Notifier][logMessage]: got notifyString: (55) {"event": "message", "service": false, "flags": 257, "text": "postpone 1000 postpone 1000 echo", "id": 5479, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212006, "out": false, "unread": true}
+385 [E][listener.Handler][logMessage]: Parsing of JSON for ID 54 failed!
+386 [W][listener.Handler][logMessage]: Message 54 was not parsed well. Exiting.
+386 [I][listener.Handler][<init>]: New MessageHandler 55 created with messageString. Content is JSON
+388 [I][network.NetworkClient][logMessage]: received: 
+389 [I][listener.Handler][logMessage]: Parsing message 55...
+389 [I][listener.Notifier][logMessage]: got notifyString: (56) 
+391 [I][listener.Handler][<init>]: New MessageHandler 56 created with messageString. Content is JSON
+392 [I][listener.Handler][logMessage]: Parsing message 56...
+393 [E][listener.Handler][logMessage]: Parsing of JSON for ID 56 failed!
+394 [W][listener.Handler][logMessage]: Message 56 was not parsed well. Exiting.
+395 [I][misc.Message][<init>]: Constructing Message by JSON!
+396 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+397 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+398 [I][listener.Handler][logMessage]: Resulting messageText 55: postpone 1000 postpone 1000 echo
+399 [I][listener.Handler][logMessage]: Handling command 55: postpone
+400 [I][listener.Handler][postpone]: Executing postpone-command...
+401 [I][listener.Notifier][postpone]: Sending message over client (auto)
+402 [I][network.NetworkClient][postpone]: Sending message: msg Lukas Executing postpone-command...
+403 [I][network.NetworkClient][logMessage]: received: ANSWER 745
+404 [I][listener.Notifier][logMessage]: got notifyString: (57) ANSWER 745
+405 [I][listener.Handler][<init>]: New MessageHandler 57 created with messageString. Content is JSON
+406 [I][network.NetworkClient][logMessage]: received: {"event": "message", "fwd_date": 1438212006, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "postpone 1000 postpone 1000 echo", "id": 5480, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438212006, "out": true, "unread": true}
+407 [I][listener.Handler][logMessage]: Parsing message 57...
+407 [I][listener.Notifier][logMessage]: got notifyString: (58) {"event": "message", "fwd_date": 1438212006, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "postpone 1000 postpone 1000 echo", "id": 5480, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438212006, "out": true, "unread": true}
+409 [E][listener.Handler][logMessage]: Parsing of JSON for ID 57 failed!
+410 [W][listener.Handler][logMessage]: Message 57 was not parsed well. Exiting.
+410 [I][listener.Handler][<init>]: New MessageHandler 58 created with messageString. Content is JSON
+412 [I][network.NetworkClient][logMessage]: received: 
+413 [I][listener.Handler][logMessage]: Parsing message 58...
+413 [I][listener.Notifier][logMessage]: got notifyString: (59) 
+415 [I][listener.Handler][<init>]: New MessageHandler 59 created with messageString. Content is JSON
+416 [I][network.NetworkClient][logMessage]: received: ANSWER 536
+417 [I][listener.Handler][logMessage]: Parsing message 59...
+417 [I][listener.Notifier][logMessage]: got notifyString: (60) ANSWER 536
+419 [E][listener.Handler][logMessage]: Parsing of JSON for ID 59 failed!
+420 [W][listener.Handler][logMessage]: Message 59 was not parsed well. Exiting.
+420 [I][listener.Handler][<init>]: New MessageHandler 60 created with messageString. Content is JSON
+422 [I][misc.Message][<init>]: Constructing Message by JSON!
+422 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5481, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212006, "out": true, "unread": true}
+422 [I][listener.Handler][logMessage]: Parsing message 60...
+425 [I][listener.Notifier][logMessage]: got notifyString: (61) {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5481, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212006, "out": true, "unread": true}
+425 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+425 [E][listener.Handler][logMessage]: Parsing of JSON for ID 60 failed!
+428 [W][misc.Group][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+428 [W][listener.Handler][logMessage]: Message 60 was not parsed well. Exiting.
+430 [E][misc.Group][<init>]: Trying to construct a Group chat with a non-group-chat-JSON-String!
+431 [I][listener.Handler][<init>]: New MessageHandler 61 created with messageString. Content is JSON
+431 [I][listener.Handler][logMessage]: Resulting messageText 58: postpone 1000 postpone 1000 echo
+433 [I][listener.Handler][logMessage]: Message 58 is mine. Skipping.
+433 [I][listener.Handler][logMessage]: Parsing message 61...
+435 [W][listener.Handler][logMessage]: Message 58 was not parsed well. Exiting.
+433 [I][network.NetworkClient][logMessage]: received: 
+437 [I][listener.Notifier][logMessage]: got notifyString: (62) 
+438 [I][listener.Handler][<init>]: New MessageHandler 62 created with messageString. Content is JSON
+439 [I][network.NetworkClient][logMessage]: received: ANSWER 513
+440 [I][listener.Handler][logMessage]: Parsing message 62...
+440 [I][listener.Notifier][logMessage]: got notifyString: (63) ANSWER 513
+442 [I][misc.Message][<init>]: Constructing Message by JSON!
+443 [E][listener.Handler][logMessage]: Parsing of JSON for ID 62 failed!
+444 [I][listener.Handler][<init>]: New MessageHandler 63 created with messageString. Content is JSON
+444 [W][listener.Handler][logMessage]: Message 62 was not parsed well. Exiting.
+445 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+447 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5482, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212006, "out": true, "unread": true}
+448 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+447 [I][listener.Handler][logMessage]: Parsing message 63...
+448 [I][listener.Notifier][logMessage]: got notifyString: (64) {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5482, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212006, "out": true, "unread": true}
+451 [I][listener.Handler][logMessage]: Resulting messageText 61: Ich verstehe dich nicht 😨 Was soll ich tun?? 😰
+451 [I][listener.Handler][<init>]: New MessageHandler 64 created with messageString. Content is JSON
+451 [E][listener.Handler][logMessage]: Parsing of JSON for ID 63 failed!
+453 [I][listener.Handler][logMessage]: Message 61 is mine. Skipping.
+454 [I][listener.Handler][logMessage]: Parsing message 64...
+454 [W][listener.Handler][logMessage]: Message 63 was not parsed well. Exiting.
+454 [I][network.NetworkClient][logMessage]: received: 
+456 [W][listener.Handler][logMessage]: Message 61 was not parsed well. Exiting.
+459 [I][listener.Notifier][logMessage]: got notifyString: (65) 
+460 [I][listener.Handler][<init>]: New MessageHandler 65 created with messageString. Content is JSON
+461 [I][network.NetworkClient][logMessage]: received: ANSWER 22
+462 [I][listener.Handler][logMessage]: Parsing message 65...
+462 [I][listener.Notifier][logMessage]: got notifyString: (66) ANSWER 22
+462 [I][misc.Message][<init>]: Constructing Message by JSON!
+464 [E][listener.Handler][logMessage]: Parsing of JSON for ID 65 failed!
+466 [W][listener.Handler][logMessage]: Message 65 was not parsed well. Exiting.
+466 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+466 [I][listener.Handler][<init>]: New MessageHandler 66 created with messageString. Content is JSON
+469 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+470 [I][listener.Handler][logMessage]: Parsing message 66...
+469 [I][network.NetworkClient][logMessage]: received: {"result": "SUCCESS"}
+470 [I][listener.Handler][logMessage]: Resulting messageText 64: Executing postpone-command...
+472 [I][listener.Notifier][logMessage]: got notifyString: (67) {"result": "SUCCESS"}
+472 [E][listener.Handler][logMessage]: Parsing of JSON for ID 66 failed!
+475 [W][listener.Handler][logMessage]: Message 66 was not parsed well. Exiting.
+474 [I][listener.Handler][logMessage]: Message 64 is mine. Skipping.
+475 [I][listener.Handler][<init>]: New MessageHandler 67 created with messageString. Content is JSON
+478 [W][listener.Handler][logMessage]: Message 64 was not parsed well. Exiting.
+479 [I][network.NetworkClient][logMessage]: received: 
+480 [I][listener.Handler][logMessage]: Parsing message 67...
+480 [I][listener.Notifier][logMessage]: got notifyString: (68) 
+482 [E][listener.Handler][logMessage]: Parsing of JSON for ID 67 failed!
+483 [I][listener.Handler][<init>]: New MessageHandler 68 created with messageString. Content is JSON
+483 [W][listener.Handler][logMessage]: Message 67 was not parsed well. Exiting.
+485 [I][listener.Handler][logMessage]: Parsing message 68...
+486 [E][listener.Handler][logMessage]: Parsing of JSON for ID 68 failed!
+487 [W][listener.Handler][logMessage]: Message 68 was not parsed well. Exiting.
+488 [I][listener.Handler][postpone]: Handling command 55: postpone
+489 [I][listener.Handler][postpone]: Executing postpone-command...
+490 [I][listener.Notifier][postpone]: Sending message over client (auto)
+491 [I][network.NetworkClient][postpone]: Sending message: msg Lukas Executing postpone-command...
+492 [I][network.NetworkClient][logMessage]: received: ANSWER 513
+493 [I][listener.Notifier][logMessage]: got notifyString: (69) ANSWER 513
+494 [I][listener.Handler][<init>]: New MessageHandler 69 created with messageString. Content is JSON
+495 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5483, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212007, "out": true, "unread": true}
+496 [I][listener.Notifier][logMessage]: got notifyString: (70) {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5483, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212007, "out": true, "unread": true}
+497 [I][listener.Handler][logMessage]: Parsing message 69...
+498 [E][listener.Handler][logMessage]: Parsing of JSON for ID 69 failed!
+498 [I][listener.Handler][<init>]: New MessageHandler 70 created with messageString. Content is JSON
+500 [W][listener.Handler][logMessage]: Message 69 was not parsed well. Exiting.
+501 [I][network.NetworkClient][logMessage]: received: 
+502 [I][listener.Handler][logMessage]: Parsing message 70...
+502 [I][listener.Notifier][logMessage]: got notifyString: (71) 
+504 [I][listener.Handler][<init>]: New MessageHandler 71 created with messageString. Content is JSON
+505 [I][network.NetworkClient][logMessage]: received: ANSWER 22
+506 [I][listener.Handler][logMessage]: Parsing message 71...
+506 [I][misc.Message][<init>]: Constructing Message by JSON!
+507 [E][listener.Handler][logMessage]: Parsing of JSON for ID 71 failed!
+507 [I][listener.Notifier][logMessage]: got notifyString: (72) ANSWER 22
+510 [W][listener.Handler][logMessage]: Message 71 was not parsed well. Exiting.
+511 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+511 [I][listener.Handler][<init>]: New MessageHandler 72 created with messageString. Content is JSON
+513 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+514 [I][network.NetworkClient][logMessage]: received: {"result": "SUCCESS"}
+515 [I][listener.Handler][logMessage]: Resulting messageText 70: Executing postpone-command...
+515 [I][listener.Handler][logMessage]: Parsing message 72...
+516 [I][listener.Handler][logMessage]: Message 70 is mine. Skipping.
+516 [I][listener.Notifier][logMessage]: got notifyString: (73) {"result": "SUCCESS"}
+518 [W][listener.Handler][logMessage]: Message 70 was not parsed well. Exiting.
+519 [E][listener.Handler][logMessage]: Parsing of JSON for ID 72 failed!
+521 [I][listener.Handler][<init>]: New MessageHandler 73 created with messageString. Content is JSON
+521 [W][listener.Handler][logMessage]: Message 72 was not parsed well. Exiting.
+523 [I][network.NetworkClient][logMessage]: received: 
+524 [I][listener.Handler][logMessage]: Parsing message 73...
+524 [I][listener.Notifier][logMessage]: got notifyString: (74) 
+526 [E][listener.Handler][logMessage]: Parsing of JSON for ID 73 failed!
+527 [I][listener.Handler][<init>]: New MessageHandler 74 created with messageString. Content is JSON
+527 [W][listener.Handler][logMessage]: Message 73 was not parsed well. Exiting.
+529 [I][listener.Handler][logMessage]: Parsing message 74...
+530 [E][listener.Handler][logMessage]: Parsing of JSON for ID 74 failed!
+531 [W][listener.Handler][logMessage]: Message 74 was not parsed well. Exiting.
+532 [I][network.NetworkClient][logMessage]: received: ANSWER 511
+533 [I][listener.Notifier][logMessage]: got notifyString: (75) ANSWER 511
+534 [I][listener.Handler][<init>]: New MessageHandler 75 created with messageString. Content is JSON
+535 [I][network.NetworkClient][logMessage]: received: {"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5482, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212006, "out": true, "unread": false}
+536 [I][listener.Handler][logMessage]: Parsing message 75...
+536 [I][listener.Notifier][logMessage]: got notifyString: (76) {"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5482, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212006, "out": true, "unread": false}
+538 [E][listener.Handler][logMessage]: Parsing of JSON for ID 75 failed!
+539 [W][listener.Handler][logMessage]: Message 75 was not parsed well. Exiting.
+539 [I][listener.Handler][<init>]: New MessageHandler 76 created with messageString. Content is JSON
+541 [I][network.NetworkClient][logMessage]: received: 
+542 [I][listener.Handler][logMessage]: Parsing message 76...
+542 [I][listener.Notifier][logMessage]: got notifyString: (77) 
+544 [I][listener.Handler][<init>]: New MessageHandler 77 created with messageString. Content is JSON
+545 [I][listener.Handler][logMessage]: Parsing message 77...
+546 [E][listener.Handler][logMessage]: Given JSONString 76 is not a message. JSONString:
+{"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5482, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212006, "out": true, "unread": false}
+546 [E][listener.Handler][logMessage]: Parsing of JSON for ID 77 failed!
+548 [W][listener.Handler][logMessage]: Message 76 was not parsed well. Exiting.
+548 [W][listener.Handler][logMessage]: Message 77 was not parsed well. Exiting.
+550 [I][listener.Handler][postpone]: Handling command 55: echo
+551 [I][listener.Handler][postpone]: Executing echo command
+552 [I][listener.Notifier][postpone]: Sending message over client (auto)
+553 [I][network.NetworkClient][postpone]: Sending message: msg Lukas 1000
+554 [I][network.NetworkClient][logMessage]: received: ANSWER 488
+555 [I][listener.Notifier][logMessage]: got notifyString: (78) ANSWER 488
+556 [I][listener.Handler][<init>]: New MessageHandler 78 created with messageString. Content is JSON
+557 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "1000", "id": 5484, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212008, "out": true, "unread": true}
+557 [I][listener.Handler][logMessage]: Parsing message 78...
+558 [I][listener.Notifier][logMessage]: got notifyString: (79) {"event": "message", "service": false, "flags": 16643, "text": "1000", "id": 5484, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212008, "out": true, "unread": true}
+559 [E][listener.Handler][logMessage]: Parsing of JSON for ID 78 failed!
+561 [I][listener.Handler][<init>]: New MessageHandler 79 created with messageString. Content is JSON
+561 [W][listener.Handler][logMessage]: Message 78 was not parsed well. Exiting.
+563 [I][network.NetworkClient][logMessage]: received: 
+564 [I][listener.Handler][logMessage]: Parsing message 79...
+564 [I][listener.Notifier][logMessage]: got notifyString: (80) 
+566 [I][listener.Handler][<init>]: New MessageHandler 80 created with messageString. Content is JSON
+567 [I][network.NetworkClient][logMessage]: received: ANSWER 22
+568 [I][listener.Handler][logMessage]: Parsing message 80...
+568 [I][listener.Notifier][logMessage]: got notifyString: (81) ANSWER 22
+570 [I][misc.Message][<init>]: Constructing Message by JSON!
+570 [E][listener.Handler][logMessage]: Parsing of JSON for ID 80 failed!
+571 [I][listener.Handler][<init>]: New MessageHandler 81 created with messageString. Content is JSON
+573 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+573 [W][listener.Handler][logMessage]: Message 80 was not parsed well. Exiting.
+575 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+575 [I][network.NetworkClient][logMessage]: received: {"result": "SUCCESS"}
+575 [I][listener.Handler][logMessage]: Parsing message 81...
+578 [I][listener.Notifier][logMessage]: got notifyString: (82) {"result": "SUCCESS"}
+578 [I][listener.Handler][logMessage]: Resulting messageText 79: 1000
+579 [E][listener.Handler][logMessage]: Parsing of JSON for ID 81 failed!
+581 [I][listener.Handler][logMessage]: Message 79 is mine. Skipping.
+581 [W][listener.Handler][logMessage]: Message 81 was not parsed well. Exiting.
+581 [I][listener.Handler][<init>]: New MessageHandler 82 created with messageString. Content is JSON
+582 [W][listener.Handler][logMessage]: Message 79 was not parsed well. Exiting.
+585 [I][network.NetworkClient][logMessage]: received: 
+586 [I][listener.Handler][logMessage]: Parsing message 82...
+586 [I][listener.Notifier][logMessage]: got notifyString: (83) 
+588 [E][listener.Handler][logMessage]: Parsing of JSON for ID 82 failed!
+589 [I][listener.Handler][<init>]: New MessageHandler 83 created with messageString. Content is JSON
+589 [W][listener.Handler][logMessage]: Message 82 was not parsed well. Exiting.
+591 [I][listener.Handler][logMessage]: Parsing message 83...
+592 [E][listener.Handler][logMessage]: Parsing of JSON for ID 83 failed!
+593 [W][listener.Handler][logMessage]: Message 83 was not parsed well. Exiting.
+594 [I][network.NetworkClient][logMessage]: received: ANSWER 486
+595 [I][listener.Notifier][logMessage]: got notifyString: (84) ANSWER 486
+596 [I][listener.Handler][<init>]: New MessageHandler 84 created with messageString. Content is JSON
+597 [I][network.NetworkClient][logMessage]: received: {"event": "read", "service": false, "flags": 16642, "text": "1000", "id": 5484, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212008, "out": true, "unread": false}
+598 [I][listener.Handler][logMessage]: Parsing message 84...
+598 [I][listener.Notifier][logMessage]: got notifyString: (85) {"event": "read", "service": false, "flags": 16642, "text": "1000", "id": 5484, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212008, "out": true, "unread": false}
+600 [E][listener.Handler][logMessage]: Parsing of JSON for ID 84 failed!
+601 [W][listener.Handler][logMessage]: Message 84 was not parsed well. Exiting.
+601 [I][listener.Handler][<init>]: New MessageHandler 85 created with messageString. Content is JSON
+603 [I][network.NetworkClient][logMessage]: received: 
+604 [I][listener.Handler][logMessage]: Parsing message 85...
+604 [I][listener.Notifier][logMessage]: got notifyString: (86) 
+606 [I][listener.Handler][<init>]: New MessageHandler 86 created with messageString. Content is JSON
+607 [I][listener.Handler][logMessage]: Parsing message 86...
+608 [E][listener.Handler][logMessage]: Given JSONString 85 is not a message. JSONString:
+{"event": "read", "service": false, "flags": 16642, "text": "1000", "id": 5484, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212008, "out": true, "unread": false}
+608 [E][listener.Handler][logMessage]: Parsing of JSON for ID 86 failed!
+610 [W][listener.Handler][logMessage]: Message 85 was not parsed well. Exiting.
+610 [W][listener.Handler][logMessage]: Message 86 was not parsed well. Exiting.
+612 [I][network.NetworkClient][logMessage]: received: ANSWER 263
+613 [I][listener.Notifier][logMessage]: got notifyString: (87) ANSWER 263
+614 [I][listener.Handler][<init>]: New MessageHandler 87 created with messageString. Content is JSON
+615 [I][network.NetworkClient][logMessage]: received: {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": false, "state": -1, "when": "2015-07-30 01:20:15"}
+616 [I][listener.Handler][logMessage]: Parsing message 87...
+616 [I][listener.Notifier][logMessage]: got notifyString: (88) {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": false, "state": -1, "when": "2015-07-30 01:20:15"}
+618 [E][listener.Handler][logMessage]: Parsing of JSON for ID 87 failed!
+619 [W][listener.Handler][logMessage]: Message 87 was not parsed well. Exiting.
+619 [I][listener.Handler][<init>]: New MessageHandler 88 created with messageString. Content is JSON
+621 [I][network.NetworkClient][logMessage]: received: 
+622 [I][listener.Handler][logMessage]: Parsing message 88...
+622 [I][listener.Notifier][logMessage]: got notifyString: (89) 
+624 [I][listener.Handler][<init>]: New MessageHandler 89 created with messageString. Content is JSON
+625 [E][listener.Handler][logMessage]: Given JSONString 88 is not a message. JSONString:
+{"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": false, "state": -1, "when": "2015-07-30 01:20:15"}
+626 [W][listener.Handler][logMessage]: Message 88 was not parsed well. Exiting.
+627 [I][listener.Handler][logMessage]: Parsing message 89...
+628 [E][listener.Handler][logMessage]: Parsing of JSON for ID 89 failed!
+629 [W][listener.Handler][logMessage]: Message 89 was not parsed well. Exiting.
+630 [I][network.NetworkClient][logMessage]: received: ANSWER 261
+631 [I][listener.Notifier][logMessage]: got notifyString: (90) ANSWER 261
+632 [I][listener.Handler][<init>]: New MessageHandler 90 created with messageString. Content is JSON
+633 [I][network.NetworkClient][logMessage]: received: {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-07-30 01:26:15"}
+634 [I][listener.Handler][logMessage]: Parsing message 90...
+634 [I][listener.Notifier][logMessage]: got notifyString: (91) {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-07-30 01:26:15"}
+636 [E][listener.Handler][logMessage]: Parsing of JSON for ID 90 failed!
+636 [I][listener.Handler][<init>]: New MessageHandler 91 created with messageString. Content is JSON
+638 [W][listener.Handler][logMessage]: Message 90 was not parsed well. Exiting.
+639 [I][network.NetworkClient][logMessage]: received: 
+639 [I][listener.Handler][logMessage]: Parsing message 91...
+641 [I][listener.Notifier][logMessage]: got notifyString: (92) 
+642 [E][listener.Handler][logMessage]: Given JSONString 91 is not a message. JSONString:
+{"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-07-30 01:26:15"}
+642 [I][listener.Handler][<init>]: New MessageHandler 92 created with messageString. Content is JSON
+644 [W][listener.Handler][logMessage]: Message 91 was not parsed well. Exiting.
+645 [I][listener.Handler][logMessage]: Parsing message 92...
+646 [E][listener.Handler][logMessage]: Parsing of JSON for ID 92 failed!
+647 [W][listener.Handler][logMessage]: Message 92 was not parsed well. Exiting.
+648 [I][network.NetworkClient][logMessage]: received: ANSWER 487
+649 [I][listener.Notifier][logMessage]: got notifyString: (93) ANSWER 487
+650 [I][listener.Handler][<init>]: New MessageHandler 93 created with messageString. Content is JSON
+651 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 257, "text": "kicj", "id": 5485, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212078, "out": false, "unread": true}
+652 [I][listener.Handler][logMessage]: Parsing message 93...
+652 [I][listener.Notifier][logMessage]: got notifyString: (94) {"event": "message", "service": false, "flags": 257, "text": "kicj", "id": 5485, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212078, "out": false, "unread": true}
+654 [E][listener.Handler][logMessage]: Parsing of JSON for ID 93 failed!
+655 [W][listener.Handler][logMessage]: Message 93 was not parsed well. Exiting.
+655 [I][listener.Handler][<init>]: New MessageHandler 94 created with messageString. Content is JSON
+657 [I][network.NetworkClient][logMessage]: received: 
+658 [I][listener.Handler][logMessage]: Parsing message 94...
+658 [I][listener.Notifier][logMessage]: got notifyString: (95) 
+660 [I][listener.Handler][<init>]: New MessageHandler 95 created with messageString. Content is JSON
+661 [I][listener.Handler][logMessage]: Parsing message 95...
+662 [I][misc.Message][<init>]: Constructing Message by JSON!
+662 [E][listener.Handler][logMessage]: Parsing of JSON for ID 95 failed!
+664 [W][listener.Handler][logMessage]: Message 95 was not parsed well. Exiting.
+664 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+666 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+667 [I][listener.Handler][logMessage]: Resulting messageText 94: kicj
+668 [I][listener.Handler][logMessage]: Handling command 94: kicj
+669 [I][network.NetworkClient][logMessage]: received: ANSWER 717
+670 [I][listener.Notifier][logMessage]: got notifyString: (96) ANSWER 717
+671 [I][listener.Handler][<init>]: New MessageHandler 96 created with messageString. Content is JSON
+672 [I][network.NetworkClient][logMessage]: received: {"event": "message", "fwd_date": 1438212078, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "kicj", "id": 5486, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438212078, "out": true, "unread": true}
+673 [I][listener.Handler][logMessage]: Parsing message 96...
+673 [I][listener.Notifier][logMessage]: got notifyString: (97) {"event": "message", "fwd_date": 1438212078, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "kicj", "id": 5486, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438212078, "out": true, "unread": true}
+674 [E][listener.Handler][logMessage]: Parsing of JSON for ID 96 failed!
+676 [W][listener.Handler][logMessage]: Message 96 was not parsed well. Exiting.
+676 [I][listener.Handler][<init>]: New MessageHandler 97 created with messageString. Content is JSON
+678 [I][network.NetworkClient][logMessage]: received: 
+678 [I][listener.Handler][logMessage]: Parsing message 97...
+679 [I][listener.Notifier][logMessage]: got notifyString: (98) 
+681 [I][listener.Handler][<init>]: New MessageHandler 98 created with messageString. Content is JSON
+682 [I][network.NetworkClient][logMessage]: received: ANSWER 536
+683 [I][listener.Handler][logMessage]: Parsing message 98...
+683 [I][listener.Notifier][logMessage]: got notifyString: (99) ANSWER 536
+685 [E][listener.Handler][logMessage]: Parsing of JSON for ID 98 failed!
+686 [I][misc.Message][<init>]: Constructing Message by JSON!
+686 [W][listener.Handler][logMessage]: Message 98 was not parsed well. Exiting.
+688 [I][listener.Handler][<init>]: New MessageHandler 99 created with messageString. Content is JSON
+688 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+690 [W][misc.Group][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+690 [I][listener.Handler][logMessage]: Parsing message 99...
+690 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5487, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212078, "out": true, "unread": true}
+693 [I][listener.Notifier][logMessage]: got notifyString: (100) {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5487, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212078, "out": true, "unread": true}
+693 [E][misc.Group][<init>]: Trying to construct a Group chat with a non-group-chat-JSON-String!
+693 [E][listener.Handler][logMessage]: Parsing of JSON for ID 99 failed!
+696 [I][listener.Handler][logMessage]: Resulting messageText 97: kicj
+697 [I][listener.Handler][logMessage]: Message 97 is mine. Skipping.
+697 [W][listener.Handler][logMessage]: Message 99 was not parsed well. Exiting.
+698 [W][listener.Handler][logMessage]: Message 97 was not parsed well. Exiting.
+699 [I][listener.Handler][<init>]: New MessageHandler 100 created with messageString. Content is JSON
+701 [I][network.NetworkClient][logMessage]: received: 
+702 [I][listener.Handler][logMessage]: Parsing message 100...
+702 [I][listener.Notifier][logMessage]: got notifyString: (101) 
+704 [I][listener.Handler][<init>]: New MessageHandler 101 created with messageString. Content is JSON
+705 [I][listener.Handler][logMessage]: Parsing message 101...
+706 [E][listener.Handler][logMessage]: Parsing of JSON for ID 101 failed!
+706 [I][misc.Message][<init>]: Constructing Message by JSON!
+708 [W][listener.Handler][logMessage]: Message 101 was not parsed well. Exiting.
+709 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+710 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+711 [I][listener.Handler][logMessage]: Resulting messageText 100: Ich verstehe dich nicht 😨 Was soll ich tun?? 😰
+712 [I][listener.Handler][logMessage]: Message 100 is mine. Skipping.
+713 [W][listener.Handler][logMessage]: Message 100 was not parsed well. Exiting.
+714 [I][network.NetworkClient][logMessage]: received: ANSWER 487
+715 [I][listener.Notifier][logMessage]: got notifyString: (102) ANSWER 487
+716 [I][listener.Handler][<init>]: New MessageHandler 102 created with messageString. Content is JSON
+717 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 257, "text": "kick", "id": 5488, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212079, "out": false, "unread": true}
+718 [I][listener.Notifier][logMessage]: got notifyString: (103) {"event": "message", "service": false, "flags": 257, "text": "kick", "id": 5488, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212079, "out": false, "unread": true}
+718 [I][listener.Handler][logMessage]: Parsing message 102...
+720 [E][listener.Handler][logMessage]: Parsing of JSON for ID 102 failed!
+720 [I][listener.Handler][<init>]: New MessageHandler 103 created with messageString. Content is JSON
+722 [W][listener.Handler][logMessage]: Message 102 was not parsed well. Exiting.
+723 [I][network.NetworkClient][logMessage]: received: 
+723 [I][listener.Handler][logMessage]: Parsing message 103...
+724 [I][listener.Notifier][logMessage]: got notifyString: (104) 
+726 [I][listener.Handler][<init>]: New MessageHandler 104 created with messageString. Content is JSON
+727 [I][listener.Handler][logMessage]: Parsing message 104...
+728 [I][misc.Message][<init>]: Constructing Message by JSON!
+728 [E][listener.Handler][logMessage]: Parsing of JSON for ID 104 failed!
+730 [W][listener.Handler][logMessage]: Message 104 was not parsed well. Exiting.
+730 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+732 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+733 [I][listener.Handler][logMessage]: Resulting messageText 103: kick
+734 [I][listener.Handler][logMessage]: Handling command 103: kick
+735 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+736 [I][logging.LogManager][exit]: Saving Log File
+737 [I][logging.LogManager][exit]: LogFile exists: log.txt
+738 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+739 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+740 [I][util.TimeHandler][exit]: Returning TimeArray 20150730012119
+741 [I][util.TimeHandler][exit]: 20150730012119
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] ANSWER 261
+1 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-07-30 01:24:29"}
+2 [<] 
+3 [<] ANSWER 505
+4 [<] {"event": "message", "service": false, "flags": 257, "text": "postpone 6000 postpone", "id": 5469, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438211975, "out": false, "unread": true}
+5 [<] 
+6 [>c] msg Lukas Executing postpone-command...
+7 [<] ANSWER 735
+8 [<] {"event": "message", "fwd_date": 1438211975, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "postpone 6000 postpone", "id": 5470, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438211975, "out": true, "unread": true}
+9 [<] 
+10 [<] ANSWER 536
+11 [<] {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5471, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211975, "out": true, "unread": true}
+12 [<] 
+13 [<] ANSWER 513
+14 [<] {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5472, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211975, "out": true, "unread": true}
+15 [<] 
+16 [<] ANSWER 22
+17 [<] {"result": "SUCCESS"}
+18 [<] 
+19 [<] ANSWER 511
+20 [<] {"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5472, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211975, "out": true, "unread": false}
+21 [<] 
+22 [>c] msg Lukas usage: postpone <offset> <command> [command options]..; see help for more information.
+23 [<] ANSWER 570
+24 [<] {"event": "message", "service": false, "flags": 16643, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5473, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211981, "out": true, "unread": true}
+25 [<] 
+26 [<] ANSWER 22
+27 [<] {"result": "SUCCESS"}
+28 [<] 
+29 [<] ANSWER 568
+30 [<] {"event": "read", "service": false, "flags": 16642, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5473, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211981, "out": true, "unread": false}
+31 [<] 
+32 [<] ANSWER 510
+33 [<] {"event": "message", "service": false, "flags": 257, "text": "postpone 1000 postpone 1000", "id": 5474, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438211992, "out": false, "unread": true}
+34 [<] 
+35 [>c] msg Lukas Executing postpone-command...
+36 [<] ANSWER 740
+37 [<] {"event": "message", "fwd_date": 1438211992, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "postpone 1000 postpone 1000", "id": 5475, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438211992, "out": true, "unread": true}
+38 [<] 
+39 [<] ANSWER 536
+40 [<] {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5476, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211992, "out": true, "unread": true}
+41 [<] 
+42 [<] ANSWER 513
+43 [<] {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5477, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211992, "out": true, "unread": true}
+44 [<] 
+45 [<] ANSWER 22
+46 [<] {"result": "SUCCESS"}
+47 [<] 
+48 [>c] msg Lukas usage: postpone <offset> <command> [command options]..; see help for more information.
+49 [<] ANSWER 570
+50 [<] {"event": "message", "service": false, "flags": 16643, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5478, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211993, "out": true, "unread": true}
+51 [<] 
+52 [<] ANSWER 22
+53 [<] {"result": "SUCCESS"}
+54 [<] 
+55 [<] ANSWER 511
+56 [<] {"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5477, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438211992, "out": true, "unread": false}
+57 [<] 
+58 [<] ANSWER 515
+59 [<] {"event": "message", "service": false, "flags": 257, "text": "postpone 1000 postpone 1000 echo", "id": 5479, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212006, "out": false, "unread": true}
+60 [<] 
+61 [>c] msg Lukas Executing postpone-command...
+62 [<] ANSWER 745
+63 [<] {"event": "message", "fwd_date": 1438212006, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "postpone 1000 postpone 1000 echo", "id": 5480, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438212006, "out": true, "unread": true}
+64 [<] 
+65 [<] ANSWER 536
+66 [<] {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5481, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212006, "out": true, "unread": true}
+67 [<] 
+68 [<] ANSWER 513
+69 [<] {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5482, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212006, "out": true, "unread": true}
+70 [<] 
+71 [<] ANSWER 22
+72 [<] {"result": "SUCCESS"}
+73 [<] 
+74 [>c] msg Lukas Executing postpone-command...
+75 [<] ANSWER 513
+76 [<] {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5483, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212007, "out": true, "unread": true}
+77 [<] 
+78 [<] ANSWER 22
+79 [<] {"result": "SUCCESS"}
+80 [<] 
+81 [<] ANSWER 511
+82 [<] {"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5482, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212006, "out": true, "unread": false}
+83 [<] 
+84 [>c] msg Lukas 1000
+85 [<] ANSWER 488
+86 [<] {"event": "message", "service": false, "flags": 16643, "text": "1000", "id": 5484, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212008, "out": true, "unread": true}
+87 [<] 
+88 [<] ANSWER 22
+89 [<] {"result": "SUCCESS"}
+90 [<] 
+91 [<] ANSWER 486
+92 [<] {"event": "read", "service": false, "flags": 16642, "text": "1000", "id": 5484, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212008, "out": true, "unread": false}
+93 [<] 
+94 [<] ANSWER 263
+95 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": false, "state": -1, "when": "2015-07-30 01:20:15"}
+96 [<] 
+97 [<] ANSWER 261
+98 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-07-30 01:26:15"}
+99 [<] 
+100 [<] ANSWER 487
+101 [<] {"event": "message", "service": false, "flags": 257, "text": "kicj", "id": 5485, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212078, "out": false, "unread": true}
+102 [<] 
+103 [<] ANSWER 717
+104 [<] {"event": "message", "fwd_date": 1438212078, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "kicj", "id": 5486, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438212078, "out": true, "unread": true}
+105 [<] 
+106 [<] ANSWER 536
+107 [<] {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5487, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212078, "out": true, "unread": true}
+108 [<] 
+109 [<] ANSWER 487
+110 [<] {"event": "message", "service": false, "flags": 257, "text": "kick", "id": 5488, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212079, "out": false, "unread": true}
+111 [<] 
+
+
+==========================================
+===== new Instance on 20150730012855 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][network.NetworkClient][logMessage]: Starting listening to 192.168.2.101 on port 1604.
+1 [I][network.NetworkClient][logMessage]: Sending message: main_session
+2 [I][network.NetworkClient][logMessage]: received: ANSWER 261
+3 [I][listener.Notifier][logMessage]: got notifyString: (0) ANSWER 261
+4 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is JSON
+5 [I][network.NetworkClient][logMessage]: received: {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-07-30 01:33:31"}
+5 [I][listener.Handler][logMessage]: Parsing message 0...
+7 [I][listener.Notifier][logMessage]: got notifyString: (1) {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-07-30 01:33:31"}
+8 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is JSON
+9 [I][network.NetworkClient][logMessage]: received: 
+10 [I][listener.Handler][logMessage]: Parsing message 1...
+10 [I][listener.Notifier][logMessage]: got notifyString: (2) 
+12 [I][listener.Handler][<init>]: New MessageHandler 2 created with messageString. Content is JSON
+13 [I][listener.Handler][logMessage]: Parsing message 2...
+14 [E][listener.Handler][logMessage]: Parsing of JSON for ID 2 failed!
+14 [E][listener.Handler][logMessage]: Parsing of JSON for ID 0 failed!
+16 [W][listener.Handler][logMessage]: Message 2 was not parsed well. Exiting.
+16 [W][listener.Handler][logMessage]: Message 0 was not parsed well. Exiting.
+18 [E][listener.Handler][logMessage]: Given JSONString 1 is not a message. JSONString:
+{"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-07-30 01:33:31"}
+19 [W][listener.Handler][logMessage]: Message 1 was not parsed well. Exiting.
+20 [I][network.NetworkClient][logMessage]: received: ANSWER 510
+21 [I][listener.Notifier][logMessage]: got notifyString: (3) ANSWER 510
+22 [I][listener.Handler][<init>]: New MessageHandler 3 created with messageString. Content is JSON
+23 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 257, "text": "postpone 6000 postpone 6000", "id": 5491, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212517, "out": false, "unread": true}
+23 [I][listener.Handler][logMessage]: Parsing message 3...
+25 [I][listener.Notifier][logMessage]: got notifyString: (4) {"event": "message", "service": false, "flags": 257, "text": "postpone 6000 postpone 6000", "id": 5491, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212517, "out": false, "unread": true}
+26 [E][listener.Handler][logMessage]: Parsing of JSON for ID 3 failed!
+27 [W][listener.Handler][logMessage]: Message 3 was not parsed well. Exiting.
+27 [I][listener.Handler][<init>]: New MessageHandler 4 created with messageString. Content is JSON
+29 [I][network.NetworkClient][logMessage]: received: 
+30 [I][listener.Handler][logMessage]: Parsing message 4...
+30 [I][listener.Notifier][logMessage]: got notifyString: (5) 
+32 [I][listener.Handler][<init>]: New MessageHandler 5 created with messageString. Content is JSON
+33 [I][listener.Handler][logMessage]: Parsing message 5...
+34 [E][listener.Handler][logMessage]: Parsing of JSON for ID 5 failed!
+35 [W][listener.Handler][logMessage]: Message 5 was not parsed well. Exiting.
+36 [I][misc.Message][<init>]: Constructing Message by JSON!
+37 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+38 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+39 [I][listener.Handler][logMessage]: Resulting messageText 4: postpone 6000 postpone 6000
+40 [I][listener.Handler][logMessage]: Handling command 4: postpone
+41 [I][listener.Handler][postpone]: Executing postpone-command...
+42 [I][listener.Notifier][postpone]: Sending message over client (auto)
+43 [I][network.NetworkClient][postpone]: Sending message: msg Lukas Executing postpone-command...
+44 [I][network.NetworkClient][logMessage]: received: ANSWER 740
+45 [I][listener.Notifier][logMessage]: got notifyString: (6) ANSWER 740
+46 [I][listener.Handler][<init>]: New MessageHandler 6 created with messageString. Content is JSON
+47 [I][network.NetworkClient][logMessage]: received: {"event": "message", "fwd_date": 1438212517, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "postpone 6000 postpone 6000", "id": 5492, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438212517, "out": true, "unread": true}
+47 [I][listener.Handler][logMessage]: Parsing message 6...
+49 [I][listener.Notifier][logMessage]: got notifyString: (7) {"event": "message", "fwd_date": 1438212517, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "postpone 6000 postpone 6000", "id": 5492, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438212517, "out": true, "unread": true}
+49 [E][listener.Handler][logMessage]: Parsing of JSON for ID 6 failed!
+51 [W][listener.Handler][logMessage]: Message 6 was not parsed well. Exiting.
+52 [I][listener.Handler][<init>]: New MessageHandler 7 created with messageString. Content is JSON
+53 [I][network.NetworkClient][logMessage]: received: 
+53 [I][listener.Handler][logMessage]: Parsing message 7...
+55 [I][listener.Notifier][logMessage]: got notifyString: (8) 
+56 [I][listener.Handler][<init>]: New MessageHandler 8 created with messageString. Content is JSON
+57 [I][network.NetworkClient][logMessage]: received: ANSWER 536
+57 [I][listener.Handler][logMessage]: Parsing message 8...
+59 [I][listener.Notifier][logMessage]: got notifyString: (9) ANSWER 536
+59 [E][listener.Handler][logMessage]: Parsing of JSON for ID 8 failed!
+61 [W][listener.Handler][logMessage]: Message 8 was not parsed well. Exiting.
+62 [I][listener.Handler][<init>]: New MessageHandler 9 created with messageString. Content is JSON
+62 [I][misc.Message][<init>]: Constructing Message by JSON!
+64 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5493, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212517, "out": true, "unread": true}
+64 [I][listener.Handler][logMessage]: Parsing message 9...
+65 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+67 [I][listener.Notifier][logMessage]: got notifyString: (10) {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5493, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212517, "out": true, "unread": true}
+67 [E][listener.Handler][logMessage]: Parsing of JSON for ID 9 failed!
+68 [W][misc.Group][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+70 [W][listener.Handler][logMessage]: Message 9 was not parsed well. Exiting.
+70 [I][listener.Handler][<init>]: New MessageHandler 10 created with messageString. Content is JSON
+71 [E][misc.Group][<init>]: Trying to construct a Group chat with a non-group-chat-JSON-String!
+73 [I][listener.Handler][logMessage]: Parsing message 10...
+73 [I][network.NetworkClient][logMessage]: received: 
+73 [I][listener.Handler][logMessage]: Resulting messageText 7: postpone 6000 postpone 6000
+76 [I][listener.Notifier][logMessage]: got notifyString: (11) 
+76 [I][listener.Handler][logMessage]: Message 7 is mine. Skipping.
+78 [W][listener.Handler][logMessage]: Message 7 was not parsed well. Exiting.
+79 [I][listener.Handler][<init>]: New MessageHandler 11 created with messageString. Content is JSON
+80 [I][misc.Message][<init>]: Constructing Message by JSON!
+81 [I][listener.Handler][logMessage]: Parsing message 11...
+82 [E][listener.Handler][logMessage]: Parsing of JSON for ID 11 failed!
+83 [W][listener.Handler][logMessage]: Message 11 was not parsed well. Exiting.
+84 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+85 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+86 [I][listener.Handler][logMessage]: Resulting messageText 10: Ich verstehe dich nicht 😨 Was soll ich tun?? 😰
+87 [I][listener.Handler][logMessage]: Message 10 is mine. Skipping.
+88 [W][listener.Handler][logMessage]: Message 10 was not parsed well. Exiting.
+89 [I][network.NetworkClient][logMessage]: received: ANSWER 513
+90 [I][listener.Notifier][logMessage]: got notifyString: (12) ANSWER 513
+91 [I][listener.Handler][<init>]: New MessageHandler 12 created with messageString. Content is JSON
+92 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5494, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212517, "out": true, "unread": true}
+92 [I][listener.Handler][logMessage]: Parsing message 12...
+94 [I][listener.Notifier][logMessage]: got notifyString: (13) {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5494, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212517, "out": true, "unread": true}
+95 [E][listener.Handler][logMessage]: Parsing of JSON for ID 12 failed!
+96 [W][listener.Handler][logMessage]: Message 12 was not parsed well. Exiting.
+96 [I][listener.Handler][<init>]: New MessageHandler 13 created with messageString. Content is JSON
+98 [I][network.NetworkClient][logMessage]: received: 
+99 [I][listener.Handler][logMessage]: Parsing message 13...
+99 [I][listener.Notifier][logMessage]: got notifyString: (14) 
+101 [I][listener.Handler][<init>]: New MessageHandler 14 created with messageString. Content is JSON
+102 [I][network.NetworkClient][logMessage]: received: ANSWER 22
+103 [I][listener.Handler][logMessage]: Parsing message 14...
+103 [I][listener.Notifier][logMessage]: got notifyString: (15) ANSWER 22
+105 [E][listener.Handler][logMessage]: Parsing of JSON for ID 14 failed!
+105 [I][misc.Message][<init>]: Constructing Message by JSON!
+107 [W][listener.Handler][logMessage]: Message 14 was not parsed well. Exiting.
+107 [I][listener.Handler][<init>]: New MessageHandler 15 created with messageString. Content is JSON
+109 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+110 [I][network.NetworkClient][logMessage]: received: {"result": "SUCCESS"}
+110 [I][listener.Handler][logMessage]: Parsing message 15...
+112 [I][listener.Notifier][logMessage]: got notifyString: (16) {"result": "SUCCESS"}
+112 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+113 [E][listener.Handler][logMessage]: Parsing of JSON for ID 15 failed!
+114 [I][listener.Handler][logMessage]: Resulting messageText 13: Executing postpone-command...
+115 [I][listener.Handler][<init>]: New MessageHandler 16 created with messageString. Content is JSON
+116 [W][listener.Handler][logMessage]: Message 15 was not parsed well. Exiting.
+118 [I][listener.Handler][logMessage]: Message 13 is mine. Skipping.
+119 [W][listener.Handler][logMessage]: Message 13 was not parsed well. Exiting.
+119 [I][listener.Handler][logMessage]: Parsing message 16...
+118 [I][network.NetworkClient][logMessage]: received: 
+122 [I][listener.Notifier][logMessage]: got notifyString: (17) 
+123 [E][listener.Handler][logMessage]: Parsing of JSON for ID 16 failed!
+124 [I][listener.Handler][<init>]: New MessageHandler 17 created with messageString. Content is JSON
+124 [W][listener.Handler][logMessage]: Message 16 was not parsed well. Exiting.
+126 [I][listener.Handler][logMessage]: Parsing message 17...
+127 [E][listener.Handler][logMessage]: Parsing of JSON for ID 17 failed!
+128 [W][listener.Handler][logMessage]: Message 17 was not parsed well. Exiting.
+129 [I][network.NetworkClient][logMessage]: received: ANSWER 511
+130 [I][listener.Notifier][logMessage]: got notifyString: (18) ANSWER 511
+131 [I][listener.Handler][<init>]: New MessageHandler 18 created with messageString. Content is JSON
+132 [I][network.NetworkClient][logMessage]: received: {"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5494, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212517, "out": true, "unread": false}
+133 [I][listener.Handler][logMessage]: Parsing message 18...
+133 [I][listener.Notifier][logMessage]: got notifyString: (19) {"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5494, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212517, "out": true, "unread": false}
+135 [E][listener.Handler][logMessage]: Parsing of JSON for ID 18 failed!
+136 [W][listener.Handler][logMessage]: Message 18 was not parsed well. Exiting.
+136 [I][listener.Handler][<init>]: New MessageHandler 19 created with messageString. Content is JSON
+138 [I][network.NetworkClient][logMessage]: received: 
+139 [I][listener.Handler][logMessage]: Parsing message 19...
+139 [I][listener.Notifier][logMessage]: got notifyString: (20) 
+141 [I][listener.Handler][<init>]: New MessageHandler 20 created with messageString. Content is JSON
+142 [I][listener.Handler][logMessage]: Parsing message 20...
+143 [E][listener.Handler][logMessage]: Parsing of JSON for ID 20 failed!
+144 [W][listener.Handler][logMessage]: Message 20 was not parsed well. Exiting.
+144 [E][listener.Handler][logMessage]: Given JSONString 19 is not a message. JSONString:
+{"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5494, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212517, "out": true, "unread": false}
+146 [W][listener.Handler][logMessage]: Message 19 was not parsed well. Exiting.
+147 [I][listener.Handler][postpone]: Handling command 4: postpone
+148 [E][listener.Handler][postpone]: not enough arguments given for postpone command. usage: postpone <offset> <command> [command options]..; see help for more information.
+149 [I][listener.Notifier][postpone]: Sending message over client (auto)
+150 [I][network.NetworkClient][postpone]: Sending message: msg Lukas usage: postpone <offset> <command> [command options]..; see help for more information.
+151 [I][network.NetworkClient][logMessage]: received: ANSWER 570
+152 [I][listener.Notifier][logMessage]: got notifyString: (21) ANSWER 570
+153 [I][listener.Handler][<init>]: New MessageHandler 21 created with messageString. Content is JSON
+154 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5495, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212523, "out": true, "unread": true}
+155 [I][listener.Handler][logMessage]: Parsing message 21...
+155 [I][listener.Notifier][logMessage]: got notifyString: (22) {"event": "message", "service": false, "flags": 16643, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5495, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212523, "out": true, "unread": true}
+157 [E][listener.Handler][logMessage]: Parsing of JSON for ID 21 failed!
+158 [W][listener.Handler][logMessage]: Message 21 was not parsed well. Exiting.
+158 [I][listener.Handler][<init>]: New MessageHandler 22 created with messageString. Content is JSON
+160 [I][network.NetworkClient][logMessage]: received: 
+161 [I][listener.Handler][logMessage]: Parsing message 22...
+161 [I][listener.Notifier][logMessage]: got notifyString: (23) 
+163 [I][listener.Handler][<init>]: New MessageHandler 23 created with messageString. Content is JSON
+164 [I][network.NetworkClient][logMessage]: received: ANSWER 22
+164 [I][listener.Handler][logMessage]: Parsing message 23...
+166 [I][listener.Notifier][logMessage]: got notifyString: (24) ANSWER 22
+166 [E][listener.Handler][logMessage]: Parsing of JSON for ID 23 failed!
+168 [I][misc.Message][<init>]: Constructing Message by JSON!
+168 [I][listener.Handler][<init>]: New MessageHandler 24 created with messageString. Content is JSON
+169 [W][listener.Handler][logMessage]: Message 23 was not parsed well. Exiting.
+171 [I][network.NetworkClient][logMessage]: received: {"result": "SUCCESS"}
+172 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+172 [I][listener.Handler][logMessage]: Parsing message 24...
+172 [I][listener.Notifier][logMessage]: got notifyString: (25) {"result": "SUCCESS"}
+174 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+175 [E][listener.Handler][logMessage]: Parsing of JSON for ID 24 failed!
+177 [I][listener.Handler][<init>]: New MessageHandler 25 created with messageString. Content is JSON
+177 [I][listener.Handler][logMessage]: Resulting messageText 22: usage: postpone <offset> <command> [command options]..; see help for more information.
+178 [W][listener.Handler][logMessage]: Message 24 was not parsed well. Exiting.
+180 [I][network.NetworkClient][logMessage]: received: 
+180 [I][listener.Handler][logMessage]: Parsing message 25...
+182 [I][listener.Notifier][logMessage]: got notifyString: (26) 
+182 [I][listener.Handler][logMessage]: Message 22 is mine. Skipping.
+182 [E][listener.Handler][logMessage]: Parsing of JSON for ID 25 failed!
+185 [W][listener.Handler][logMessage]: Message 22 was not parsed well. Exiting.
+185 [W][listener.Handler][logMessage]: Message 25 was not parsed well. Exiting.
+186 [I][listener.Handler][<init>]: New MessageHandler 26 created with messageString. Content is JSON
+188 [I][listener.Handler][logMessage]: Parsing message 26...
+189 [E][listener.Handler][logMessage]: Parsing of JSON for ID 26 failed!
+190 [W][listener.Handler][logMessage]: Message 26 was not parsed well. Exiting.
+191 [I][network.NetworkClient][logMessage]: received: ANSWER 568
+192 [I][listener.Notifier][logMessage]: got notifyString: (27) ANSWER 568
+193 [I][listener.Handler][<init>]: New MessageHandler 27 created with messageString. Content is JSON
+194 [I][network.NetworkClient][logMessage]: received: {"event": "read", "service": false, "flags": 16642, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5495, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212523, "out": true, "unread": false}
+195 [I][listener.Handler][logMessage]: Parsing message 27...
+195 [I][listener.Notifier][logMessage]: got notifyString: (28) {"event": "read", "service": false, "flags": 16642, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5495, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212523, "out": true, "unread": false}
+197 [E][listener.Handler][logMessage]: Parsing of JSON for ID 27 failed!
+198 [I][listener.Handler][<init>]: New MessageHandler 28 created with messageString. Content is JSON
+198 [W][listener.Handler][logMessage]: Message 27 was not parsed well. Exiting.
+200 [I][network.NetworkClient][logMessage]: received: 
+201 [I][listener.Handler][logMessage]: Parsing message 28...
+201 [I][listener.Notifier][logMessage]: got notifyString: (29) 
+203 [I][listener.Handler][<init>]: New MessageHandler 29 created with messageString. Content is JSON
+204 [I][listener.Handler][logMessage]: Parsing message 29...
+205 [E][listener.Handler][logMessage]: Parsing of JSON for ID 29 failed!
+206 [W][listener.Handler][logMessage]: Message 29 was not parsed well. Exiting.
+207 [E][listener.Handler][logMessage]: Given JSONString 28 is not a message. JSONString:
+{"event": "read", "service": false, "flags": 16642, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5495, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212523, "out": true, "unread": false}
+208 [W][listener.Handler][logMessage]: Message 28 was not parsed well. Exiting.
+209 [I][network.NetworkClient][logMessage]: received: ANSWER 506
+210 [I][listener.Notifier][logMessage]: got notifyString: (30) ANSWER 506
+211 [I][listener.Handler][<init>]: New MessageHandler 30 created with messageString. Content is JSON
+212 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 257, "text": "postpone 3000 echo test", "id": 5496, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212528, "out": false, "unread": true}
+213 [I][listener.Handler][logMessage]: Parsing message 30...
+213 [I][listener.Notifier][logMessage]: got notifyString: (31) {"event": "message", "service": false, "flags": 257, "text": "postpone 3000 echo test", "id": 5496, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212528, "out": false, "unread": true}
+215 [E][listener.Handler][logMessage]: Parsing of JSON for ID 30 failed!
+216 [W][listener.Handler][logMessage]: Message 30 was not parsed well. Exiting.
+216 [I][listener.Handler][<init>]: New MessageHandler 31 created with messageString. Content is JSON
+218 [I][network.NetworkClient][logMessage]: received: 
+219 [I][listener.Handler][logMessage]: Parsing message 31...
+219 [I][listener.Notifier][logMessage]: got notifyString: (32) 
+221 [I][listener.Handler][<init>]: New MessageHandler 32 created with messageString. Content is JSON
+222 [I][listener.Handler][logMessage]: Parsing message 32...
+223 [E][listener.Handler][logMessage]: Parsing of JSON for ID 32 failed!
+224 [W][listener.Handler][logMessage]: Message 32 was not parsed well. Exiting.
+225 [I][misc.Message][<init>]: Constructing Message by JSON!
+226 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+227 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+228 [I][listener.Handler][logMessage]: Resulting messageText 31: postpone 3000 echo test
+229 [I][listener.Handler][logMessage]: Handling command 31: postpone
+230 [I][listener.Handler][postpone]: Executing postpone-command...
+231 [I][listener.Notifier][postpone]: Sending message over client (auto)
+232 [I][network.NetworkClient][postpone]: Sending message: msg Lukas Executing postpone-command...
+233 [I][network.NetworkClient][logMessage]: received: ANSWER 736
+234 [I][listener.Notifier][logMessage]: got notifyString: (33) ANSWER 736
+235 [I][listener.Handler][<init>]: New MessageHandler 33 created with messageString. Content is JSON
+236 [I][network.NetworkClient][logMessage]: received: {"event": "message", "fwd_date": 1438212528, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "postpone 3000 echo test", "id": 5497, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438212528, "out": true, "unread": true}
+236 [I][listener.Handler][logMessage]: Parsing message 33...
+238 [I][listener.Notifier][logMessage]: got notifyString: (34) {"event": "message", "fwd_date": 1438212528, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "postpone 3000 echo test", "id": 5497, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438212528, "out": true, "unread": true}
+238 [E][listener.Handler][logMessage]: Parsing of JSON for ID 33 failed!
+240 [W][listener.Handler][logMessage]: Message 33 was not parsed well. Exiting.
+241 [I][listener.Handler][<init>]: New MessageHandler 34 created with messageString. Content is JSON
+242 [I][network.NetworkClient][logMessage]: received: 
+242 [I][listener.Handler][logMessage]: Parsing message 34...
+243 [I][listener.Notifier][logMessage]: got notifyString: (35) 
+245 [I][listener.Handler][<init>]: New MessageHandler 35 created with messageString. Content is JSON
+246 [I][network.NetworkClient][logMessage]: received: ANSWER 536
+247 [I][listener.Handler][logMessage]: Parsing message 35...
+247 [I][listener.Notifier][logMessage]: got notifyString: (36) ANSWER 536
+249 [E][listener.Handler][logMessage]: Parsing of JSON for ID 35 failed!
+250 [W][listener.Handler][logMessage]: Message 35 was not parsed well. Exiting.
+250 [I][listener.Handler][<init>]: New MessageHandler 36 created with messageString. Content is JSON
+252 [I][misc.Message][<init>]: Constructing Message by JSON!
+253 [I][listener.Handler][logMessage]: Parsing message 36...
+253 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5498, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212528, "out": true, "unread": true}
+255 [I][listener.Notifier][logMessage]: got notifyString: (37) {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5498, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212528, "out": true, "unread": true}
+255 [E][listener.Handler][logMessage]: Parsing of JSON for ID 36 failed!
+255 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+258 [W][misc.Group][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+259 [E][misc.Group][<init>]: Trying to construct a Group chat with a non-group-chat-JSON-String!
+258 [I][listener.Handler][<init>]: New MessageHandler 37 created with messageString. Content is JSON
+260 [I][listener.Handler][logMessage]: Resulting messageText 34: postpone 3000 echo test
+260 [W][listener.Handler][logMessage]: Message 36 was not parsed well. Exiting.
+263 [I][network.NetworkClient][logMessage]: received: 
+264 [I][listener.Notifier][logMessage]: got notifyString: (38) 
+264 [I][listener.Handler][logMessage]: Message 34 is mine. Skipping.
+264 [I][listener.Handler][logMessage]: Parsing message 37...
+266 [W][listener.Handler][logMessage]: Message 34 was not parsed well. Exiting.
+268 [I][listener.Handler][<init>]: New MessageHandler 38 created with messageString. Content is JSON
+269 [I][listener.Handler][logMessage]: Parsing message 38...
+270 [E][listener.Handler][logMessage]: Parsing of JSON for ID 38 failed!
+271 [I][misc.Message][<init>]: Constructing Message by JSON!
+271 [W][listener.Handler][logMessage]: Message 38 was not parsed well. Exiting.
+273 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+274 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+275 [I][listener.Handler][logMessage]: Resulting messageText 37: Ich verstehe dich nicht 😨 Was soll ich tun?? 😰
+276 [I][listener.Handler][logMessage]: Message 37 is mine. Skipping.
+277 [W][listener.Handler][logMessage]: Message 37 was not parsed well. Exiting.
+278 [I][network.NetworkClient][logMessage]: received: ANSWER 269
+279 [I][listener.Notifier][logMessage]: got notifyString: (39) ANSWER 269
+280 [I][listener.Handler][<init>]: New MessageHandler 39 created with messageString. Content is JSON
+281 [I][listener.Handler][logMessage]: Parsing message 39...
+282 [E][listener.Handler][logMessage]: Parsing of JSON for ID 39 failed!
+281 [I][network.NetworkClient][logMessage]: received: {"event": "online-status", "user": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "online": true, "state": 1, "when": "2015-07-30 01:33:37"}
+283 [W][listener.Handler][logMessage]: Message 39 was not parsed well. Exiting.
+285 [I][listener.Notifier][logMessage]: got notifyString: (40) {"event": "online-status", "user": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "online": true, "state": 1, "when": "2015-07-30 01:33:37"}
+286 [I][listener.Handler][<init>]: New MessageHandler 40 created with messageString. Content is JSON
+287 [I][network.NetworkClient][logMessage]: received: 
+288 [I][listener.Notifier][logMessage]: got notifyString: (41) 
+288 [I][listener.Handler][logMessage]: Parsing message 40...
+290 [I][listener.Handler][<init>]: New MessageHandler 41 created with messageString. Content is JSON
+291 [E][listener.Handler][logMessage]: Given JSONString 40 is not a message. JSONString:
+{"event": "online-status", "user": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "online": true, "state": 1, "when": "2015-07-30 01:33:37"}
+291 [I][listener.Handler][logMessage]: Parsing message 41...
+291 [I][network.NetworkClient][logMessage]: received: ANSWER 513
+294 [I][listener.Notifier][logMessage]: got notifyString: (42) ANSWER 513
+293 [W][listener.Handler][logMessage]: Message 40 was not parsed well. Exiting.
+296 [E][listener.Handler][logMessage]: Parsing of JSON for ID 41 failed!
+297 [W][listener.Handler][logMessage]: Message 41 was not parsed well. Exiting.
+298 [I][listener.Handler][<init>]: New MessageHandler 42 created with messageString. Content is JSON
+299 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5499, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212528, "out": true, "unread": true}
+299 [I][listener.Handler][logMessage]: Parsing message 42...
+301 [I][listener.Notifier][logMessage]: got notifyString: (43) {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5499, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212528, "out": true, "unread": true}
+301 [E][listener.Handler][logMessage]: Parsing of JSON for ID 42 failed!
+303 [W][listener.Handler][logMessage]: Message 42 was not parsed well. Exiting.
+303 [I][listener.Handler][<init>]: New MessageHandler 43 created with messageString. Content is JSON
+305 [I][network.NetworkClient][logMessage]: received: 
+306 [I][listener.Notifier][logMessage]: got notifyString: (44) 
+307 [I][listener.Handler][<init>]: New MessageHandler 44 created with messageString. Content is JSON
+307 [I][listener.Handler][logMessage]: Parsing message 43...
+309 [I][network.NetworkClient][logMessage]: received: ANSWER 22
+310 [I][listener.Notifier][logMessage]: got notifyString: (45) ANSWER 22
+310 [I][listener.Handler][logMessage]: Parsing message 44...
+312 [E][listener.Handler][logMessage]: Parsing of JSON for ID 44 failed!
+313 [I][misc.Message][<init>]: Constructing Message by JSON!
+313 [I][listener.Handler][<init>]: New MessageHandler 45 created with messageString. Content is JSON
+314 [W][listener.Handler][logMessage]: Message 44 was not parsed well. Exiting.
+316 [I][network.NetworkClient][logMessage]: received: {"result": "SUCCESS"}
+316 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+317 [I][listener.Handler][logMessage]: Parsing message 45...
+319 [E][listener.Handler][logMessage]: Parsing of JSON for ID 45 failed!
+319 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+321 [I][listener.Handler][logMessage]: Resulting messageText 43: Executing postpone-command...
+319 [I][listener.Notifier][logMessage]: got notifyString: (46) {"result": "SUCCESS"}
+322 [W][listener.Handler][logMessage]: Message 45 was not parsed well. Exiting.
+324 [I][listener.Handler][logMessage]: Message 43 is mine. Skipping.
+325 [I][listener.Handler][<init>]: New MessageHandler 46 created with messageString. Content is JSON
+325 [W][listener.Handler][logMessage]: Message 43 was not parsed well. Exiting.
+327 [I][network.NetworkClient][logMessage]: received: 
+327 [I][listener.Handler][logMessage]: Parsing message 46...
+329 [I][listener.Notifier][logMessage]: got notifyString: (47) 
+330 [E][listener.Handler][logMessage]: Parsing of JSON for ID 46 failed!
+331 [W][listener.Handler][logMessage]: Message 46 was not parsed well. Exiting.
+331 [I][listener.Handler][<init>]: New MessageHandler 47 created with messageString. Content is JSON
+333 [I][listener.Handler][logMessage]: Parsing message 47...
+334 [E][listener.Handler][logMessage]: Parsing of JSON for ID 47 failed!
+335 [W][listener.Handler][logMessage]: Message 47 was not parsed well. Exiting.
+336 [I][network.NetworkClient][logMessage]: received: ANSWER 511
+337 [I][listener.Notifier][logMessage]: got notifyString: (48) ANSWER 511
+338 [I][listener.Handler][<init>]: New MessageHandler 48 created with messageString. Content is JSON
+339 [I][network.NetworkClient][logMessage]: received: {"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5499, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212528, "out": true, "unread": false}
+340 [I][listener.Handler][logMessage]: Parsing message 48...
+340 [I][listener.Notifier][logMessage]: got notifyString: (49) {"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5499, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212528, "out": true, "unread": false}
+342 [E][listener.Handler][logMessage]: Parsing of JSON for ID 48 failed!
+342 [I][listener.Handler][<init>]: New MessageHandler 49 created with messageString. Content is JSON
+344 [W][listener.Handler][logMessage]: Message 48 was not parsed well. Exiting.
+345 [I][network.NetworkClient][logMessage]: received: 
+346 [I][listener.Notifier][logMessage]: got notifyString: (50) 
+346 [I][listener.Handler][logMessage]: Parsing message 49...
+348 [I][listener.Handler][<init>]: New MessageHandler 50 created with messageString. Content is JSON
+349 [I][listener.Handler][logMessage]: Parsing message 50...
+350 [E][listener.Handler][logMessage]: Parsing of JSON for ID 50 failed!
+351 [W][listener.Handler][logMessage]: Message 50 was not parsed well. Exiting.
+352 [E][listener.Handler][logMessage]: Given JSONString 49 is not a message. JSONString:
+{"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5499, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212528, "out": true, "unread": false}
+353 [W][listener.Handler][logMessage]: Message 49 was not parsed well. Exiting.
+354 [I][listener.Handler][postpone]: Handling command 31: echo
+355 [I][listener.Handler][postpone]: Executing echo command
+356 [I][listener.Notifier][postpone]: Sending message over client (auto)
+357 [I][network.NetworkClient][postpone]: Sending message: msg Lukas test
+358 [I][network.NetworkClient][logMessage]: received: ANSWER 488
+359 [I][listener.Notifier][logMessage]: got notifyString: (51) ANSWER 488
+360 [I][listener.Handler][<init>]: New MessageHandler 51 created with messageString. Content is JSON
+361 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 16643, "text": "test", "id": 5500, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212531, "out": true, "unread": true}
+362 [I][listener.Handler][logMessage]: Parsing message 51...
+362 [I][listener.Notifier][logMessage]: got notifyString: (52) {"event": "message", "service": false, "flags": 16643, "text": "test", "id": 5500, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212531, "out": true, "unread": true}
+364 [E][listener.Handler][logMessage]: Parsing of JSON for ID 51 failed!
+364 [I][listener.Handler][<init>]: New MessageHandler 52 created with messageString. Content is JSON
+365 [W][listener.Handler][logMessage]: Message 51 was not parsed well. Exiting.
+367 [I][network.NetworkClient][logMessage]: received: 
+368 [I][listener.Handler][logMessage]: Parsing message 52...
+368 [I][listener.Notifier][logMessage]: got notifyString: (53) 
+370 [I][listener.Handler][<init>]: New MessageHandler 53 created with messageString. Content is JSON
+371 [I][network.NetworkClient][logMessage]: received: ANSWER 22
+371 [I][listener.Handler][logMessage]: Parsing message 53...
+373 [I][listener.Notifier][logMessage]: got notifyString: (54) ANSWER 22
+373 [I][misc.Message][<init>]: Constructing Message by JSON!
+373 [E][listener.Handler][logMessage]: Parsing of JSON for ID 53 failed!
+376 [W][listener.Handler][logMessage]: Message 53 was not parsed well. Exiting.
+376 [I][listener.Handler][<init>]: New MessageHandler 54 created with messageString. Content is JSON
+376 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+379 [I][network.NetworkClient][logMessage]: received: {"result": "SUCCESS"}
+380 [I][listener.Notifier][logMessage]: got notifyString: (55) {"result": "SUCCESS"}
+380 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+380 [I][listener.Handler][logMessage]: Parsing message 54...
+383 [I][listener.Handler][<init>]: New MessageHandler 55 created with messageString. Content is JSON
+383 [I][listener.Handler][logMessage]: Resulting messageText 52: test
+384 [E][listener.Handler][logMessage]: Parsing of JSON for ID 54 failed!
+386 [I][listener.Handler][logMessage]: Message 52 is mine. Skipping.
+387 [I][listener.Handler][logMessage]: Parsing message 55...
+387 [W][listener.Handler][logMessage]: Message 52 was not parsed well. Exiting.
+386 [I][network.NetworkClient][logMessage]: received: 
+388 [W][listener.Handler][logMessage]: Message 54 was not parsed well. Exiting.
+391 [E][listener.Handler][logMessage]: Parsing of JSON for ID 55 failed!
+391 [I][listener.Notifier][logMessage]: got notifyString: (56) 
+393 [W][listener.Handler][logMessage]: Message 55 was not parsed well. Exiting.
+394 [I][listener.Handler][<init>]: New MessageHandler 56 created with messageString. Content is JSON
+395 [I][listener.Handler][logMessage]: Parsing message 56...
+396 [E][listener.Handler][logMessage]: Parsing of JSON for ID 56 failed!
+397 [W][listener.Handler][logMessage]: Message 56 was not parsed well. Exiting.
+398 [I][network.NetworkClient][logMessage]: received: ANSWER 486
+399 [I][listener.Notifier][logMessage]: got notifyString: (57) ANSWER 486
+400 [I][listener.Handler][<init>]: New MessageHandler 57 created with messageString. Content is JSON
+401 [I][network.NetworkClient][logMessage]: received: {"event": "read", "service": false, "flags": 16642, "text": "test", "id": 5500, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212531, "out": true, "unread": false}
+402 [I][listener.Handler][logMessage]: Parsing message 57...
+402 [I][listener.Notifier][logMessage]: got notifyString: (58) {"event": "read", "service": false, "flags": 16642, "text": "test", "id": 5500, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212531, "out": true, "unread": false}
+404 [E][listener.Handler][logMessage]: Parsing of JSON for ID 57 failed!
+405 [I][listener.Handler][<init>]: New MessageHandler 58 created with messageString. Content is JSON
+405 [W][listener.Handler][logMessage]: Message 57 was not parsed well. Exiting.
+407 [I][network.NetworkClient][logMessage]: received: 
+408 [I][listener.Handler][logMessage]: Parsing message 58...
+408 [I][listener.Notifier][logMessage]: got notifyString: (59) 
+410 [I][listener.Handler][<init>]: New MessageHandler 59 created with messageString. Content is JSON
+411 [I][listener.Handler][logMessage]: Parsing message 59...
+412 [E][listener.Handler][logMessage]: Parsing of JSON for ID 59 failed!
+413 [W][listener.Handler][logMessage]: Message 59 was not parsed well. Exiting.
+414 [E][listener.Handler][logMessage]: Given JSONString 58 is not a message. JSONString:
+{"event": "read", "service": false, "flags": 16642, "text": "test", "id": 5500, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212531, "out": true, "unread": false}
+415 [W][listener.Handler][logMessage]: Message 58 was not parsed well. Exiting.
+416 [I][network.NetworkClient][logMessage]: received: ANSWER 487
+417 [I][listener.Notifier][logMessage]: got notifyString: (60) ANSWER 487
+418 [I][listener.Handler][<init>]: New MessageHandler 60 created with messageString. Content is JSON
+419 [I][network.NetworkClient][logMessage]: received: {"event": "message", "service": false, "flags": 257, "text": "kick", "id": 5501, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212535, "out": false, "unread": true}
+419 [I][listener.Handler][logMessage]: Parsing message 60...
+421 [I][listener.Notifier][logMessage]: got notifyString: (61) {"event": "message", "service": false, "flags": 257, "text": "kick", "id": 5501, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212535, "out": false, "unread": true}
+421 [E][listener.Handler][logMessage]: Parsing of JSON for ID 60 failed!
+423 [W][listener.Handler][logMessage]: Message 60 was not parsed well. Exiting.
+424 [I][listener.Handler][<init>]: New MessageHandler 61 created with messageString. Content is JSON
+425 [I][network.NetworkClient][logMessage]: received: 
+426 [I][listener.Handler][logMessage]: Parsing message 61...
+426 [I][listener.Notifier][logMessage]: got notifyString: (62) 
+428 [I][listener.Handler][<init>]: New MessageHandler 62 created with messageString. Content is JSON
+429 [I][listener.Handler][logMessage]: Parsing message 62...
+430 [E][listener.Handler][logMessage]: Parsing of JSON for ID 62 failed!
+431 [W][listener.Handler][logMessage]: Message 62 was not parsed well. Exiting.
+432 [I][misc.Message][<init>]: Constructing Message by JSON!
+433 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+434 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+435 [I][listener.Handler][logMessage]: Resulting messageText 61: kick
+436 [I][listener.Handler][logMessage]: Handling command 61: kick
+437 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+438 [I][logging.LogManager][exit]: Saving Log File
+439 [I][logging.LogManager][exit]: LogFile exists: log.txt
+440 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+441 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+442 [I][util.TimeHandler][exit]: Returning TimeArray 20150730012855
+443 [I][util.TimeHandler][exit]: 20150730012855
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] ANSWER 261
+1 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-07-30 01:33:31"}
+2 [<] 
+3 [<] ANSWER 510
+4 [<] {"event": "message", "service": false, "flags": 257, "text": "postpone 6000 postpone 6000", "id": 5491, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212517, "out": false, "unread": true}
+5 [<] 
+6 [>c] msg Lukas Executing postpone-command...
+7 [<] ANSWER 740
+8 [<] {"event": "message", "fwd_date": 1438212517, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "postpone 6000 postpone 6000", "id": 5492, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438212517, "out": true, "unread": true}
+9 [<] 
+10 [<] ANSWER 536
+11 [<] {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5493, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212517, "out": true, "unread": true}
+12 [<] 
+13 [<] ANSWER 513
+14 [<] {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5494, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212517, "out": true, "unread": true}
+15 [<] 
+16 [<] ANSWER 22
+17 [<] {"result": "SUCCESS"}
+18 [<] 
+19 [<] ANSWER 511
+20 [<] {"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5494, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212517, "out": true, "unread": false}
+21 [<] 
+22 [>c] msg Lukas usage: postpone <offset> <command> [command options]..; see help for more information.
+23 [<] ANSWER 570
+24 [<] {"event": "message", "service": false, "flags": 16643, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5495, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212523, "out": true, "unread": true}
+25 [<] 
+26 [<] ANSWER 22
+27 [<] {"result": "SUCCESS"}
+28 [<] 
+29 [<] ANSWER 568
+30 [<] {"event": "read", "service": false, "flags": 16642, "text": "usage: postpone <offset> <command> [command options]..; see help for more information.", "id": 5495, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212523, "out": true, "unread": false}
+31 [<] 
+32 [<] ANSWER 506
+33 [<] {"event": "message", "service": false, "flags": 257, "text": "postpone 3000 echo test", "id": 5496, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212528, "out": false, "unread": true}
+34 [<] 
+35 [>c] msg Lukas Executing postpone-command...
+36 [<] ANSWER 736
+37 [<] {"event": "message", "fwd_date": 1438212528, "fwd_from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "service": false, "flags": 259, "text": "postpone 3000 echo test", "id": 5497, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"title": "RaPi-Nachrichtenlog", "flags": 256, "id": 16617964, "print_name": "RaPi-Nachrichtenlog", "members_num": 2, "type": "chat", "admin": {"id": 0, "print_name": "user#0", "type": "user"}}, "date": 1438212528, "out": true, "unread": true}
+38 [<] 
+39 [<] ANSWER 536
+40 [<] {"event": "message", "service": false, "flags": 16643, "text": "Ich verstehe dich nicht 😨 Was soll ich tun?? 😰", "id": 5498, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212528, "out": true, "unread": true}
+41 [<] 
+42 [<] ANSWER 269
+43 [<] {"event": "online-status", "user": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "online": true, "state": 1, "when": "2015-07-30 01:33:37"}
+44 [<] 
+45 [<] ANSWER 513
+46 [<] {"event": "message", "service": false, "flags": 16643, "text": "Executing postpone-command...", "id": 5499, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212528, "out": true, "unread": true}
+47 [<] 
+48 [<] ANSWER 22
+49 [<] {"result": "SUCCESS"}
+50 [<] 
+51 [<] ANSWER 511
+52 [<] {"event": "read", "service": false, "flags": 16642, "text": "Executing postpone-command...", "id": 5499, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212528, "out": true, "unread": false}
+53 [<] 
+54 [>c] msg Lukas test
+55 [<] ANSWER 488
+56 [<] {"event": "message", "service": false, "flags": 16643, "text": "test", "id": 5500, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212531, "out": true, "unread": true}
+57 [<] 
+58 [<] ANSWER 22
+59 [<] {"result": "SUCCESS"}
+60 [<] 
+61 [<] ANSWER 486
+62 [<] {"event": "read", "service": false, "flags": 16642, "text": "test", "id": 5500, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1438212531, "out": true, "unread": false}
+63 [<] 
+64 [<] ANSWER 487
+65 [<] {"event": "message", "service": false, "flags": 257, "text": "kick", "id": 5501, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1438212535, "out": false, "unread": true}
+66 [<] 
