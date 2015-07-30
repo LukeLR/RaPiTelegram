@@ -185,7 +185,7 @@ public class Handler extends Thread{
 		if (message.length > 2){
 			if (verbose) Logger.logMessage('I', this, "Executing switchOn command");
 			try {
-				Runtime.getRuntime().exec("send " + message[1] + " " + message[2] + " 1");
+				Runtime.getRuntime().exec("sudo send " + message[1] + " " + message[2] + " 1");
 			} catch (IOException e) {
 				String error = "Error when trying to execute send command";
 				Logger.logException('E', error, e);
@@ -202,7 +202,7 @@ public class Handler extends Thread{
 		if (message.length > 2){
 			if (verbose) Logger.logMessage('I', this, "Executing switchOff command");
 			try {
-				Runtime.getRuntime().exec("send " + message[1] + " " + message[2] + " 0");
+				Runtime.getRuntime().exec("sudo send " + message[1] + " " + message[2] + " 0");
 			} catch (IOException e) {
 				String error = "Error when trying to execute send command";
 				Logger.logException('E', error, e);
