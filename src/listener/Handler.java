@@ -150,6 +150,7 @@ public class Handler extends Thread{
 		case "Switchoff": this.switchOff(message); break;
 		case "switch": this.switchPower(message); break;
 		case "Switch": this.switchPower(message); break;
+		case "manageSwitch": this.manageSwitch(message); break;
 		case "delay": this.postpone(message); break;
 		case "postpone": this.postpone(message); break;
 		case "help": this.help(message); break;
@@ -185,7 +186,12 @@ public class Handler extends Thread{
 		System.exit(0);
 	}
 	
+	private void manageSwitch(String[] message){
+		
+	}
+	
 	private void switchPower(String[] message){
+//		if (message.length > )
 		if (message.length > 3){
 			String infoString = "Executing switch command";
 			if (verbose) Logger.logMessage('I', this, infoString);
@@ -207,7 +213,7 @@ public class Handler extends Thread{
 	}
 	
 	private void switchOn(String[] message){
-		if (message.length > 2){
+//		if (message.length > 2){
 //			if (verbose) Logger.logMessage('I', this, "Executing switchOn command");
 //			try {
 //				Runtime.getRuntime().exec("sudo send " + message[1] + " " + message[2] + " 1");
@@ -221,15 +227,15 @@ public class Handler extends Thread{
 				messageNew[i] = message[i];
 			}
 			messageNew[messageNew.length - 1] = "1";
-		} else {
-			String error = "usage: switchOn <systemID> <unitID>; see help for more information.";
-			Logger.logMessage('E', "not enough arguments for switchOn command. " + error);
-			notifier.send(answerCommand + error);
-		}
+//		} else {
+//			String error = "usage: switchOn <systemID> <unitID>; see help for more information.";
+//			Logger.logMessage('E', "not enough arguments for switchOn command. " + error);
+//			notifier.send(answerCommand + error);
+//		}
 	}
 	
 	private void switchOff(String[] message){
-		if (message.length > 2){
+//		if (message.length > 2){
 //			if (verbose) Logger.logMessage('I', this, "Executing switchOff command");
 //			try {
 //				Runtime.getRuntime().exec("sudo send " + message[1] + " " + message[2] + " 0");
@@ -243,11 +249,11 @@ public class Handler extends Thread{
 				messageNew[i] = message[i];
 			}
 			messageNew[messageNew.length - 1] = "0";
-		} else {
-			String error = "usage: switchOff <systemID> <unitID>; see help for more information.";
-			Logger.logMessage('E', "not enough arguments for switchOn command. " + error);
-			notifier.send(answerCommand + error);
-		}
+//		} else {
+//			String error = "usage: switchOff <systemID> <unitID>; see help for more information.";
+//			Logger.logMessage('E', "not enough arguments for switchOn command. " + error);
+//			notifier.send(answerCommand + error);
+//		}
 	}
 	
 	private void postpone(String[] message){
