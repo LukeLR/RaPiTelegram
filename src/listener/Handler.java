@@ -148,6 +148,8 @@ public class Handler extends Thread{
 		case "switchoff": this.switchOff(message); break;
 		case "SwitchOff": this.switchOff(message); break;
 		case "Switchoff": this.switchOff(message); break;
+		case "switch": this.switchPower(message); break;
+		case "Switch": this.switchPower(message); break;
 		case "delay": this.postpone(message); break;
 		case "postpone": this.postpone(message); break;
 		case "help": this.help(message); break;
@@ -176,21 +178,49 @@ public class Handler extends Thread{
 	}
 	
 	private void exit(String[] message){
-		Logger.logMessage('I', this, "Received Exit-command over network. Exiting.");
+		String infoString = "Received Exit-command over network. Exiting.";
+		notifier.send(answerCommand + infoString);
+		Logger.logMessage('I', this, infoString);
 		logging.LogManager.saveLogFile("log.txt");
 		System.exit(0);
 	}
 	
-	private void switchOn(String[] message){
-		if (message.length > 2){
-			if (verbose) Logger.logMessage('I', this, "Executing switchOn command");
+	private void switchPower(String[] message){
+		if (message.length > 3){
+			String infoString = "Executing switch command";
+			if (verbose) Logger.logMessage('I', this, infoString);
+			notifier.send(answerCommand + infoString);
+			
+			if (verbose) Logger.logMessage('I', this, "infoString");
 			try {
-				Runtime.getRuntime().exec("sudo send " + message[1] + " " + message[2] + " 1");
+				Runtime.getRuntime().exec("sudo send " + message[1] + " " + message[2] + " " + message[3]);
 			} catch (IOException e) {
 				String error = "Error when trying to execute send command";
 				Logger.logException('E', error, e);
 				notifier.send(answerCommand + error + " " + e.getMessage() + System.lineSeparator() + e.getStackTrace());
 			}
+		} else {
+			String error = "usage: switchOn <systemID> <unitID>; switchOff <systemID> <unitID>; switch <systemID> <unitID> <state>; see help for more information."; //TODO: Multi-line messages
+			Logger.logMessage('E', "not enough arguments for switchOn command. " + error);
+			notifier.send(answerCommand + error);
+		}
+	}
+	
+	private void switchOn(String[] message){
+		if (message.length > 2){
+//			if (verbose) Logger.logMessage('I', this, "Executing switchOn command");
+//			try {
+//				Runtime.getRuntime().exec("sudo send " + message[1] + " " + message[2] + " 1");
+//			} catch (IOException e) {
+//				String error = "Error when trying to execute send command";
+//				Logger.logException('E', error, e);
+//				notifier.send(answerCommand + error + " " + e.getMessage() + System.lineSeparator() + e.getStackTrace());
+//			}
+			String[] messageNew = new String[message.length + 1];
+			for (int i = 0; i < message.length; i++){
+				messageNew[i] = message[i];
+			}
+			messageNew[messageNew.length - 1] = "1";
 		} else {
 			String error = "usage: switchOn <systemID> <unitID>; see help for more information.";
 			Logger.logMessage('E', "not enough arguments for switchOn command. " + error);
@@ -200,14 +230,19 @@ public class Handler extends Thread{
 	
 	private void switchOff(String[] message){
 		if (message.length > 2){
-			if (verbose) Logger.logMessage('I', this, "Executing switchOff command");
-			try {
-				Runtime.getRuntime().exec("sudo send " + message[1] + " " + message[2] + " 0");
-			} catch (IOException e) {
-				String error = "Error when trying to execute send command";
-				Logger.logException('E', error, e);
-				notifier.send(answerCommand + error + " " + e.getMessage() + System.lineSeparator() + e.getStackTrace());
+//			if (verbose) Logger.logMessage('I', this, "Executing switchOff command");
+//			try {
+//				Runtime.getRuntime().exec("sudo send " + message[1] + " " + message[2] + " 0");
+//			} catch (IOException e) {
+//				String error = "Error when trying to execute send command";
+//				Logger.logException('E', error, e);
+//				notifier.send(answerCommand + error + " " + e.getMessage() + System.lineSeparator() + e.getStackTrace());
+//			}
+			String[] messageNew = new String[message.length + 1];
+			for (int i = 0; i < message.length; i++){
+				messageNew[i] = message[i];
 			}
+			messageNew[messageNew.length - 1] = "0";
 		} else {
 			String error = "usage: switchOff <systemID> <unitID>; see help for more information.";
 			Logger.logMessage('E', "not enough arguments for switchOn command. " + error);
