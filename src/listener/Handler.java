@@ -28,6 +28,7 @@ import org.json.JSONObject;
 import util.FileHandler;
 import logging.Logger;
 import misc.Account;
+import misc.AccountManager;
 import misc.Message;
 import network.MessageHandler;
 
@@ -132,6 +133,19 @@ public class Handler extends Thread{
 	}
 	
 	private void handleMessage(String[] message){
+		if (verbose) Logger.logMessage('I', this, "Loading account for sender ID " + String.valueOf(this.message.getFromID()));
+		Account dummy = new Account("Dummy", this.message.getFromID());
+		acc = AccountManager.getAccount(dummy);
+		if (acc == null){
+			Logger.logMessage('W', this, "Account for sender ID " + String.valueOf(this.message.getFromID()) + " doesn't exist yet. Creating one!");
+			dummy.setName(this.message.getFromPrintName());
+			acc = dummy;
+			AccountManager.addAccount(acc);
+		} else {
+			if (verbose) Logger.logMessage('I', this, "Account for sender ID " + String.valueOf(this.message.getFromID()) + " found with name " + acc.getName() + "!");
+		}
+		dummy = null;
+		
 		if (verbose) Logger.logMessage('I', this, "Handling command " + String.valueOf(id) + ": " + message[0]);
 		switch(message[0]){
 		case "ping": this.ping(message); break;
@@ -185,6 +199,7 @@ public class Handler extends Thread{
 		notifier.send(answerCommand + infoString);
 		Logger.logMessage('I', this, infoString);
 		logging.LogManager.saveLogFile("log.txt");
+		AccountManager.saveAccounts();
 		System.exit(0);
 	}
 	
