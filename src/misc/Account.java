@@ -1,8 +1,10 @@
 package misc;
 
+import java.io.Serializable;
+
 import logging.Logger;
 
-public class Account {
+public class Account implements Serializable{
 	private String name = "null";
 	private int id = -1;
 	
@@ -38,7 +40,7 @@ public class Account {
 	
 	public boolean equals(Object compare){
 		try{
-			return ((Account) compare).getName().equals(getName());
+			return ((Account) compare).getID() == getID();
 		} catch (Exception ex){
 			Logger.logMessage('W', this, "Comparing failed! Is the comparison object of type 'Account'?");
 			return false;

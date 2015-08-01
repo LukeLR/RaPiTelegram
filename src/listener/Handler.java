@@ -27,6 +27,7 @@ import org.json.JSONObject;
 
 import util.FileHandler;
 import logging.Logger;
+import misc.Account;
 import misc.Message;
 import network.MessageHandler;
 
@@ -44,6 +45,7 @@ public class Handler extends Thread{
 	private boolean verbose = true;
 	private boolean skipOwn = true;
 	private int ownID = 54916622;
+	private Account acc = null;
 	
 	public Handler(String messageString, Notifier notifier, int id){
 		this(messageString, false, notifier, id);
