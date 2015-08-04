@@ -13,6 +13,7 @@ import logging.Logger;
 
 public class AccountManager {
 	public static List<Account> accounts = new LinkedList();
+	public static List<AccountOnlineManager> acos= new LinkedList();
 	public static String filename = "accounts.dat";
 	
 	public static void addAccount(Account acc){
@@ -50,6 +51,10 @@ public class AccountManager {
 		} else {
 			Logger.logMessage('I', new AccountManager(), "Creating new Accounts");
 			accounts = new LinkedList();
+		}
+		
+		for (int i = 0; i < accounts.size(); i++){
+			
 		}
 	}
 

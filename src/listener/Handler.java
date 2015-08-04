@@ -138,13 +138,21 @@ public class Handler extends Thread{
 		acc = AccountManager.getAccount(dummy);
 		if (acc == null){
 			Logger.logMessage('W', this, "Account for sender ID " + String.valueOf(this.message.getFromID()) + " doesn't exist yet. Creating one!");
-			dummy.setName(this.message.getFromPrintName());
+			dummy.setAccountName(this.message.getFromPrintName());
 			acc = dummy;
 			AccountManager.addAccount(acc);
 		} else {
-			if (verbose) Logger.logMessage('I', this, "Account for sender ID " + String.valueOf(this.message.getFromID()) + " found with name " + acc.getName() + "!");
+			if (verbose) Logger.logMessage('I', this, "Account for sender ID " + String.valueOf(this.message.getFromID()) + " found with name " + acc.getAccountName() + "!");
 		}
 		dummy = null;
+		acc.setHandler(this);
+		
+		if (acc.getAccountState() == Account.STATE_LOGGEDOFF){
+			if (verbose) Logger.logMessage('I', this, "Sending welcome back because of message " + String.valueOf(id));
+			notifier.send(answerCommand + "Welcome back, " + acc.getAccountName());
+		}
+		
+		acc.setOnline();
 		
 		if (verbose) Logger.logMessage('I', this, "Handling command " + String.valueOf(id) + ": " + message[0]);
 		switch(message[0]){
@@ -338,5 +346,9 @@ public class Handler extends Thread{
 	
 	private void restart(String[] message){
 		
+	}
+	
+	public void sendMessage(String messageText){
+		notifier.send(answerCommand + messageText);
 	}
 }
