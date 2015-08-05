@@ -96,7 +96,7 @@ public class AccountPrivileges {
 		}
 	}
 	
-	public String getPrivString(int privID){
+	public static String getPrivString(int privID){
 		switch (privID){
 		case 0: return "access";
 		case 1: return "cmd_ping";

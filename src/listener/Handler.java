@@ -30,6 +30,7 @@ import logging.Logger;
 import misc.Account;
 import misc.AccountManager;
 import misc.AccountOnlineManager;
+import misc.AccountPrivileges;
 import misc.Message;
 import network.MessageHandler;
 
@@ -95,6 +96,9 @@ public class Handler extends Thread{
 		if (raw){
 			message = new Message();
 			message.setText(messageString);
+			message.setFromFirstName("raw console");
+			message.getFrom().genPrintName();
+			message.setFromChatID(-99);
 			parsedWell = true;
 		} else {
 //			String[] contents = messageString.trim().split("\\s");
@@ -161,34 +165,38 @@ public class Handler extends Thread{
 			acos.setOnline();
 		}
 		
-		if (verbose) Logger.logMessage('I', this, "Handling command " + String.valueOf(id) + ": " + message[0]);
-		switch(message[0]){
-		case "ping": this.ping(message); break;
-		case "PING": this.ping(message); break;
-		case "Ping": this.ping(message); break;
-		case "echo": this.echo(message); break;
-		case "Echo": this.echo(message); break;
-		case "ECHO": this.echo(message); break;
-		case "kick": this.exit(message); break;
-		case "Kick": this.exit(message); break;
-		case "switchOn": this.switchOn(message); break;
-		case "switchon": this.switchOn(message); break;
-		case "SwitchOn": this.switchOn(message); break;
-		case "Switchon": this.switchOn(message); break;
-		case "switchOff": this.switchOff(message); break;
-		case "switchoff": this.switchOff(message); break;
-		case "SwitchOff": this.switchOff(message); break;
-		case "Switchoff": this.switchOff(message); break;
-		case "switch": this.switchPower(message); break;
-		case "Switch": this.switchPower(message); break;
-		case "manageSwitch": this.manageSwitch(message); break;
-		case "delay": this.postpone(message); break;
-		case "postpone": this.postpone(message); break;
-		case "help": this.help(message); break;
-		case "info": this.help(message); break;
-		case "healthreport": this.healthreport(message); break;
-		case "shutdown": this.shutdown(message); break;
-		case "restart": this.restart(message); break;
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_ACCESS)){
+			if (verbose) Logger.logMessage('I', this, "Handling command " + String.valueOf(id) + ": " + message[0]);
+			switch(message[0]){
+			case "ping": this.ping(message); break;
+			case "PING": this.ping(message); break;
+			case "Ping": this.ping(message); break;
+			case "echo": this.echo(message); break;
+			case "Echo": this.echo(message); break;
+			case "ECHO": this.echo(message); break;
+			case "kick": this.exit(message); break;
+			case "Kick": this.exit(message); break;
+			case "switchOn": this.switchOn(message); break;
+			case "switchon": this.switchOn(message); break;
+			case "SwitchOn": this.switchOn(message); break;
+			case "Switchon": this.switchOn(message); break;
+			case "switchOff": this.switchOff(message); break;
+			case "switchoff": this.switchOff(message); break;
+			case "SwitchOff": this.switchOff(message); break;
+			case "Switchoff": this.switchOff(message); break;
+			case "switch": this.switchPower(message); break;
+			case "Switch": this.switchPower(message); break;
+			case "manageSwitch": this.manageSwitch(message); break;
+			case "delay": this.postpone(message); break;
+			case "postpone": this.postpone(message); break;
+			case "help": this.help(message); break;
+			case "info": this.help(message); break;
+			case "healthreport": this.healthreport(message); break;
+			case "shutdown": this.shutdown(message); break;
+			case "restart": this.restart(message); break;
+			}
+		} else {
+			Logger.logMessage('I', this, "Account " + acc.getAccountName() + " has no " + AccountPrivileges.getPrivString(AccountPrivileges.PERM_ACCESS) + "-permission. Not handling.");
 		}
 	}
 	
