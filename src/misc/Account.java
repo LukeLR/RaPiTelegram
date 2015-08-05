@@ -11,7 +11,9 @@ public class Account implements Serializable{
 	private String accountName = "null";
 	private int accountID = -1;
 	private int accountState = 0;
-	private int accountPrivileges = 0;
+//	private int accountPrivileges = 0;
+	
+	private
 	
 //	private Thread t = null;
 	private Handler currentHandler = null;
