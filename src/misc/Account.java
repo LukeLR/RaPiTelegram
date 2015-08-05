@@ -61,7 +61,7 @@ public class Account implements Serializable{
 		this.accountState = accountState;
 	}
 	
-	public void setAccountPrivileges(int privID, boolean state, Account acc){
+	public void setAccountPrivilege(int privID, boolean state, Account acc){
 		priv.setPriv(privID, state, acc);
 	}
 	
@@ -92,7 +92,7 @@ public class Account implements Serializable{
 	}
 	
 	
-	public boolean hasAccountPrivileges(int privID){
+	public boolean hasAccountPrivilege(int privID){
 		return priv.hasPriv(privID);
 	}
 	
