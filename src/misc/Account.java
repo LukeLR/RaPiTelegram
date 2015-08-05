@@ -5,7 +5,7 @@ import java.io.Serializable;
 import listener.Handler;
 import logging.Logger;
 
-public class Account implements Runnable, Serializable{
+public class Account implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private String accountName = "null";
@@ -72,25 +72,6 @@ public class Account implements Runnable, Serializable{
 		this.accountPrivileges = accountPrivileges;
 	}
 	
-//	public void setOnline(){
-//		if (this.accountState == this.STATE_LOGGEDOFF){
-//			accountState = this.STATE_LOGGEDIN;
-//			t = new Thread(this);
-//			t.start();
-//		} else {
-//			t.interrupt();
-////			try {
-////				Thread.sleep(1000);
-////			} catch (InterruptedException e) {
-////				// TODO Auto-generated catch block
-////				e.printStackTrace();
-////			}
-//			t = new Thread(this);
-//			t.start();
-//		}
-//		this.accountState = this.STATE_LOGGEDIN;
-//	}
-	
 	public void setHandler(Handler h){
 		currentHandler = h;
 	}
@@ -130,32 +111,6 @@ public class Account implements Runnable, Serializable{
 	}
 	
 	// ------ others: ------
-	
-	public void run(){
-		System.err.println("Calling run");
-		
-		if (currentHandler != null){
-			currentHandler.sendMessage("Calling run");
-		}
-		
-		//This will set the user to STATE_LOGGEDOFF after a given time
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		if (!t.isInterrupted()){
-			System.err.println("User offline");
-			
-			if (currentHandler != null){
-				currentHandler.sendMessage("User offline");
-			}
-			
-			accountState = this.STATE_LOGGEDOFF;
-		}
-	}
 	
 	public boolean equals(Object compare){
 		try{

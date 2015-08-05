@@ -12,8 +12,8 @@ import java.io.IOException;
 import logging.Logger;
 
 public class AccountManager {
-	public static List<Account> accounts = new LinkedList();
-	public static List<AccountOnlineManager> acos= new LinkedList();
+	public static List<Account> accounts = new LinkedList<Account>();
+	public static List<AccountOnlineManager> acos= new LinkedList<AccountOnlineManager>();
 	public static String filename = "accounts.dat";
 	
 	public static void addAccount(Account acc){
@@ -33,6 +33,7 @@ public class AccountManager {
 		return accounts;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public static void loadAccounts(String filename){
 		File constantsFile = new File (filename);
 		if (constantsFile.exists()){
@@ -50,7 +51,7 @@ public class AccountManager {
 			}
 		} else {
 			Logger.logMessage('I', new AccountManager(), "Creating new Accounts");
-			accounts = new LinkedList();
+			accounts = new LinkedList<Account>();
 		}
 		
 		for (int i = 0; i < accounts.size(); i++){
@@ -109,5 +110,12 @@ public class AccountManager {
 	public void deleteAccounts (){
 		Logger.logMessage('I', new AccountManager(), "Deleting Constants with default filename " + filename);
 		deleteAccounts(filename); //Invoking deleteAccounts() with default filename
+	}
+	
+	public void initOnlineManagers(){
+		acos = new LinkedList<AccountOnlineManager>();
+		for (int i = 0; i < accounts.size(); i++){
+			acos.add(new AccountOnlineManager(accounts.get(i), 5000));
+		}
 	}
 }

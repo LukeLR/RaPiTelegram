@@ -20,9 +20,7 @@ package main;
 
 import listener.Notifier;
 import misc.AccountManager;
-import network.NetworkServer;
 import network.NetworkClient;
-import network.NetworkNotifier;
 
 public class Main {
 	public static void main(String[] args){

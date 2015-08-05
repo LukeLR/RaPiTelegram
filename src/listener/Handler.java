@@ -318,6 +318,7 @@ public class Handler extends Thread{
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private void info(String[] message){
 		try{
 			StringBuilder info = FileHandler.readStringBuilder("information");

@@ -23,6 +23,7 @@ import network.NetworkServer;
 import logging.Logger;
 
 public class Notifier implements network.NetworkNotifier {
+	@SuppressWarnings("unused")
 	private boolean bidirectional = false;
 	private NetworkServer server = null;
 	private NetworkClient client = null;
