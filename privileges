@@ -1,0 +1,14 @@
+0 access; give_access; 
+1 cmd_ping; give_cmd_ping;
+2 cmd_echo; ...
+3 cmd_kick;
+4 cmd_switchOn;
+5 cmd_switchOff;
+6 cmd_addSwitch;
+7 cmd_removeSwitch;
+8 cmd_postpone;
+9 cmd_help;
+10 cmd_info;
+11 cmd_healthreport;
+12 cmd_shutdown;
+13 cmd_restart;

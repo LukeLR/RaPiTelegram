@@ -13,7 +13,7 @@ public class Account implements Serializable{
 	private int accountState = 0;
 //	private int accountPrivileges = 0;
 	
-	private
+	private AccountPrivileges priv = new AccountPrivileges(this);
 	
 //	private Thread t = null;
 	private Handler currentHandler = null;
@@ -26,34 +26,25 @@ public class Account implements Serializable{
 	
 	// ------ Constructors: ------
 	
-	public Account(String accountName, int accountID, int accountPrivileges, int accountState){
+	public Account(String accountName, int accountID, int accountState){
 		this.accountName = accountName;
 		this.accountID = accountID;
 		this.accountState = accountState;
-		this.accountPrivileges = accountPrivileges;
-//		this.setDaemon(true);
-	}
-	
-	public Account(String accountName, int accountID, int accountPrivileges){
-		this.accountName = accountName;
-		this.accountID = accountID;
-		this.accountState = 0;
-		this.accountPrivileges = accountPrivileges;
-//		this.setDaemon(true);
+		this.priv = new AccountPrivileges(this);
 	}
 	
 	public Account(String accountName, int accountID){
 		this.accountName = accountName;
 		this.accountID = accountID;
 		this.accountState = 0;
-//		this.setDaemon(true);
+		this.priv = new AccountPrivileges(this);
 	}
 	
 	public Account(int accountID){
 		this.accountName = "null";
 		this.accountID = accountID;
 		this.accountState = 0;
-//		this.setDaemon(true);
+		this.priv = new AccountPrivileges(this);
 	}
 	
 	// ------ Setter methods: ------
@@ -70,8 +61,8 @@ public class Account implements Serializable{
 		this.accountState = accountState;
 	}
 	
-	public void setAccountPrivileges(int accountPrivileges){
-		this.accountPrivileges = accountPrivileges;
+	public void setAccountPrivileges(int privID, boolean state, Account acc){
+		priv.setPriv(privID, state, acc);
 	}
 	
 	public void setHandler(Handler h){
@@ -100,16 +91,17 @@ public class Account implements Serializable{
 		return accountState;
 	}
 	
-	public int getAccountPrivileges(){
-		return accountPrivileges;
-	}
 	
-	public boolean hasAccountPrivileges(int checkPrivileges){
-		return accountPrivileges >= checkPrivileges;
+	public boolean hasAccountPrivileges(int privID){
+		return priv.hasPriv(privID);
 	}
 	
 	public Handler getHandler(){
 		return currentHandler;
+	}
+	
+	public AccountPrivileges getPriv(){
+		return priv;
 	}
 	
 	// ------ others: ------

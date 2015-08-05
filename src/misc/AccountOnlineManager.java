@@ -19,9 +19,11 @@ public class AccountOnlineManager implements Runnable {
 			if (t != null && t.isAlive()){
 				t.interrupt();
 				t = new Thread(this);
+				t.setDaemon(true);
 				t.start();
 			} else {
 				t = new Thread(this);
+				t.setDaemon(true);
 				t.start();
 			}
 			if (verbose) Logger.logMessage('I', this, "Account " + acc.getAccountName() + " now online! Offline in " + 
@@ -30,9 +32,11 @@ public class AccountOnlineManager implements Runnable {
 			if (t != null && t.isAlive()){
 				t.interrupt();
 				t = new Thread(this);
+				t.setDaemon(true);
 				t.start();
 			} else {
 				t = new Thread(this);
+				t.setDaemon(true);
 				t.start();
 			}
 			if (verbose) Logger.logMessage('I', this, "Account " + acc.getAccountName() + " was already online." + 
