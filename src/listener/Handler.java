@@ -29,6 +29,7 @@ import util.FileHandler;
 import logging.Logger;
 import misc.Account;
 import misc.AccountManager;
+import misc.AccountOnlineManager;
 import misc.Message;
 import network.MessageHandler;
 
@@ -47,6 +48,7 @@ public class Handler extends Thread{
 	private boolean skipOwn = true;
 	private int ownID = 54916622;
 	private Account acc = null;
+	private AccountOnlineManager acos = null;
 	
 	public Handler(String messageString, Notifier notifier, int id){
 		this(messageString, false, notifier, id);
@@ -152,7 +154,12 @@ public class Handler extends Thread{
 			notifier.send(answerCommand + "Welcome back, " + acc.getAccountName());
 		}
 		
-		acc.setOnline();
+		acos = AccountManager.getAccountOnlineManager(acc);
+		if (acos == null){
+			Logger.logMessage('E', this, "No account online manager found for Account " + acc.getAccountName() + ". No online timer set.");
+		} else {
+			acos.setOnline();
+		}
 		
 		if (verbose) Logger.logMessage('I', this, "Handling command " + String.valueOf(id) + ": " + message[0]);
 		switch(message[0]){

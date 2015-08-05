@@ -2,8 +2,10 @@ package test;
 
 import java.util.List;
 
+import logging.Logger;
 import misc.Account;
 import misc.AccountManager;
+import misc.AccountOnlineManager;
 
 public class AccountsTest {
 	public static void main(String[] args){
@@ -29,21 +31,26 @@ public class AccountsTest {
 		AccountManager.addAccount(acc1);
 		AccountManager.addAccount(acc2);
 		
-		acc1.setOnline();
-		try {
-			Thread.sleep(6000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		AccountOnlineManager acos1 = AccountManager.getAccountOnlineManager(acc1);
+		if (acos1 == null){
+			Logger.logMessage('E', new AccountsTest(), "No account online manager found for " + acc1.getAccountName() + ". No timer set.");
+		} else {
+			acos1.setOnline();
+			try {
+				Thread.sleep(6000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			acos1.setOnline();
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			acos1.setOnline();
 		}
-		acc1.setOnline();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		acc1.setOnline();
 		
 //		AccountManager.saveAccounts();
 	}

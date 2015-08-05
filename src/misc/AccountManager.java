@@ -15,9 +15,11 @@ public class AccountManager {
 	public static List<Account> accounts = new LinkedList<Account>();
 	public static List<AccountOnlineManager> acos= new LinkedList<AccountOnlineManager>();
 	public static String filename = "accounts.dat";
+	public static long interval = 5000;
 	
 	public static void addAccount(Account acc){
 		accounts.add(acc);
+		acos.add(new AccountOnlineManager(acc, interval));
 	}
 	
 	public static Account getAccount(Account dummy){
@@ -26,6 +28,16 @@ public class AccountManager {
 			return null;
 		} else {
 			return accounts.get(index);
+		}
+	}
+	
+	public static AccountOnlineManager getAccountOnlineManager(Account find){
+		AccountOnlineManager dummy = new AccountOnlineManager(find, 5000);
+		int index = acos.indexOf(dummy);
+		if (index == -1){
+			return null;
+		} else {
+			return acos.get(index);
 		}
 	}
 	
@@ -54,9 +66,7 @@ public class AccountManager {
 			accounts = new LinkedList<Account>();
 		}
 		
-		for (int i = 0; i < accounts.size(); i++){
-			
-		}
+		AccountManager.initOnlineManagers();
 	}
 
 	public static void loadAccounts(){
@@ -78,7 +88,7 @@ public class AccountManager {
 	}
 
 	public static void saveAccounts(){
-		Logger.logMessage('I', new AccountManager(), "Saving Constants to default filename " + filename);
+		Logger.logMessage('I', new AccountManager(), "Saving Accounts to default filename " + filename);
 		saveAccounts (filename); //Invoking saveAccounts with default filename
 	}
 
@@ -112,10 +122,10 @@ public class AccountManager {
 		deleteAccounts(filename); //Invoking deleteAccounts() with default filename
 	}
 	
-	public void initOnlineManagers(){
+	public static void initOnlineManagers(){
 		acos = new LinkedList<AccountOnlineManager>();
 		for (int i = 0; i < accounts.size(); i++){
-			acos.add(new AccountOnlineManager(accounts.get(i), 5000));
+			acos.add(new AccountOnlineManager(accounts.get(i), interval));
 		}
 	}
 }
