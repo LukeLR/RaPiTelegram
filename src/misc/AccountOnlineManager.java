@@ -50,15 +50,20 @@ public class AccountOnlineManager implements Runnable {
 	@SuppressWarnings("static-access")
 	@Override
 	public void run() {
+		boolean interrupted = false;
 		try {
 			Thread.currentThread().sleep(interval);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 //			e.printStackTrace();
 			Logger.logMessage('W', this, "Sleep interrupted.");
+			interrupted = true;
 		}
-		acc.setAccountState(Account.STATE_LOGGEDOFF);
-		if (verbose) Logger.logMessage('I', this, "Account " + acc.getAccountName() + " offline!");
+		
+		if (!interrupted){
+			acc.setAccountState(Account.STATE_LOGGEDOFF);
+			if (verbose) Logger.logMessage('I', this, "Account " + acc.getAccountName() + " offline!");
+		}
 	}
 	
 	public Account getAccount(){
