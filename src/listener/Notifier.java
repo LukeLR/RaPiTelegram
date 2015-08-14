@@ -30,7 +30,7 @@ public class Notifier implements network.NetworkNotifier {
 	
 	private int lastID = 0;
 	
-	private boolean verbose = true;
+	private boolean verbose = false;
 	private boolean raw = false;
 	
 	public Notifier(){
@@ -83,7 +83,7 @@ public class Notifier implements network.NetworkNotifier {
 	}
 	
 	public void onNotify(String notifyString) {
-		Logger.logMessage('I', this, "got notifyString: (" + String.valueOf(lastID) + ") " + notifyString);
+		if (verbose) Logger.logMessage('I', this, "got notifyString: (" + String.valueOf(lastID) + ") " + notifyString);
 		Logger.logMessage('<', notifyString, "socket");
 //		if (bidirectional = true && server != null){
 //			server.send(notifyString);
