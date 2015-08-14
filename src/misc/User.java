@@ -44,7 +44,7 @@ public class User extends Chat {
 		this.first_name = User.default_first_name;
 		this.last_name = User.default_last_name;
 		this.print_name = User.default_print_name;
-		this.genPrintName();
+//		this.genPrintName(); Doesn't work, when all values are set to default values.
 		this.id = -1;
 		this.phone = -1;
 		this.flags = -1;
