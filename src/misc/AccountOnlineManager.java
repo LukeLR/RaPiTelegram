@@ -54,7 +54,8 @@ public class AccountOnlineManager implements Runnable {
 			Thread.currentThread().sleep(interval);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+//			e.printStackTrace();
+			Logger.logMessage('W', this, "Sleep interrupted.");
 		}
 		acc.setAccountState(Account.STATE_LOGGEDOFF);
 		if (verbose) Logger.logMessage('I', this, "Account " + acc.getAccountName() + " offline!");
