@@ -31,7 +31,9 @@ import misc.Account;
 import misc.AccountManager;
 import misc.AccountOnlineManager;
 import misc.AccountPrivileges;
+import misc.Chat;
 import misc.Message;
+import misc.User;
 import network.MessageHandler;
 
 public class Handler extends Thread{
@@ -95,6 +97,7 @@ public class Handler extends Thread{
 		if (verbose) Logger.logMessage('I', this, "Parsing message " + String.valueOf(id) + "...");
 		if (raw){
 			message = new Message();
+			message.setFrom(new User());
 			message.setText(messageString);
 			message.setFromFirstName("raw console");
 			message.getFrom().genPrintName();

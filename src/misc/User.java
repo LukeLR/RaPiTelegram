@@ -39,6 +39,17 @@ public class User extends Chat {
 		this.flags = flags;
 	}
 	
+	public User(){
+		super();
+		this.first_name = User.default_first_name;
+		this.last_name = User.default_last_name;
+		this.print_name = User.default_print_name;
+		this.genPrintName();
+		this.id = -1;
+		this.phone = -1;
+		this.flags = -1;
+	}
+	
 	public User(JSONObject obj){
 		super(obj);
 		
