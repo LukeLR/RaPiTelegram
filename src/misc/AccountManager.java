@@ -59,7 +59,7 @@ public class AccountManager {
 //				return new Constants();
 			} catch (IOException | ClassNotFoundException e) {
 //				Logger.logException(new AccountManager(), "Error loading Accounts!", e);
-				Logger.logMessage('E', this, "Error loading Accounts! Creating new ones.");
+				Logger.logMessage('E', new AccountManager(), "Error loading Accounts! Creating new ones.");
 //				accounts = new LinkedList();
 			}
 		} else {
