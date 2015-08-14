@@ -2,7 +2,7 @@ package misc;
 
 import java.io.Serializable;
 
-import listener.Handler;
+//import listener.Handler;
 import logging.Logger;
 
 public class Account implements Serializable{
@@ -16,7 +16,7 @@ public class Account implements Serializable{
 	private AccountPrivileges priv = new AccountPrivileges(this);
 	
 //	private Thread t = null;
-	private Handler currentHandler = null;
+//	private Handler currentHandler = null;
 	
 	public static int STATE_LOGGEDOFF = 0;
 	public static int STATE_LOGGEDIN = 1;
@@ -65,13 +65,13 @@ public class Account implements Serializable{
 		priv.setPriv(privID, state, acc);
 	}
 	
-	public void setHandler(Handler h){
-		currentHandler = h;
-	}
-	
-	public void removeHandler(){
-		currentHandler = null;
-	}
+//	public void setHandler(Handler h){
+//		currentHandler = h;
+//	}
+//	
+//	public void removeHandler(){
+//		currentHandler = null;
+//	}
 	
 	// ------ Getter methods: ------
 	
@@ -96,9 +96,9 @@ public class Account implements Serializable{
 		return priv.hasPriv(privID);
 	}
 	
-	public Handler getHandler(){
-		return currentHandler;
-	}
+//	public Handler getHandler(){
+//		return currentHandler;
+//	}
 	
 	public AccountPrivileges getPriv(){
 		return priv;

@@ -1,8 +1,10 @@
 package misc;
 
+import java.io.Serializable;
+
 import logging.Logger;
 
-public class AccountPrivileges {
+public class AccountPrivileges implements Serializable {
 	private Account acc = null;
 	private boolean verbose = false;
 	
@@ -50,6 +52,8 @@ public class AccountPrivileges {
 	public static int PERM_CMD_HEALTHREPORT = 11;
 	public static int PERM_CMD_SHUTDOWN = 12;
 	public static int PERM_CMD_RESTART = 13;
+	
+	public static int MOST_PERMISSION_ID = 13;
 	
 	public AccountPrivileges(Account acc){
 		this.acc = acc;
@@ -147,6 +151,41 @@ public class AccountPrivileges {
 		} else {
 			Logger.logMessage('E', this, "Account " + acc.getAccountName() + " is not allowed to set privilege " + getPrivString(privID) + " for Account " + this.acc.getAccountName() + "!");
 			Logger.logMessage('E', this, "Account " + acc.getAccountName() + " is not allowed to set privilege " + getPrivString(privID) + " for Account " + this.acc.getAccountName() + "!");
+			return false;
+		}
+	}
+	
+	public boolean setGivePriv(int privID, boolean state, Account acc){
+		boolean err = false;
+		if (acc.getAccountID() == -631648677){
+			switch(privID){
+			case 0: give_access = state; break;
+			case 1: give_cmd_ping = state; break;
+			case 2: give_cmd_echo = state; break;
+			case 3: give_cmd_kick = state; break;
+			case 4: give_cmd_switchOn = state; break;
+			case 5: give_cmd_switchOff = state; break;
+			case 6: give_cmd_addSwitch = state; break;
+			case 7: give_cmd_removeSwitch = state; break;
+			case 8: give_cmd_postpone = state; break;
+			case 9: give_cmd_help = state; break;
+			case 10: give_cmd_info = state; break;
+			case 11: give_cmd_healthreport = state; break;
+			case 12: give_cmd_shutdown = state; break;
+			case 13: give_cmd_restart = state; break;
+			default: Logger.logMessage('W', this, "Wrong privID passed to setGivePriv: " + String.valueOf(privID) + " Exiting!");
+					 Logger.logMessage('E', this, "Wrong privID passed to setGivePriv: " + String.valueOf(privID) + " Exiting!", "priv");
+					 err = true; break;
+			}
+			if (!err){
+				Logger.logMessage('W', this, "Setting " + getPrivString(privID) + "-give-privilege of Account " + this.acc.getAccountName() + " to " + String.valueOf(state) + ".", "priv");
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			Logger.logMessage('E', this, "Account " + acc.getAccountName() + " is not allowed to be given give-privilege " + getPrivString(privID) + " for Account " + this.acc.getAccountName() + "!");
+			Logger.logMessage('E', this, "Account " + acc.getAccountName() + " is not allowed to be given give-privilege " + getPrivString(privID) + " for Account " + this.acc.getAccountName() + "!");
 			return false;
 		}
 	}

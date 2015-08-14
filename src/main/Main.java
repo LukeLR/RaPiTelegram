@@ -20,6 +20,8 @@ package main;
 
 import listener.Notifier;
 import misc.AccountManager;
+import misc.InputReader;
+import misc.NotifierManager;
 import network.NetworkClient;
 
 public class Main {
@@ -32,6 +34,7 @@ public class Main {
 		AccountManager.loadAccounts();
 		
 		Notifier n = new Notifier();
+		NotifierManager.setNotifier(n);
 //		NetworkServer ns = new NetworkServer(n, 1234);
 		NetworkClient nc = new NetworkClient(n, args[0], Integer.parseInt(args[1]));
 		nc.send("main_session");
@@ -41,5 +44,7 @@ public class Main {
 //		n.setServer(ns); //gets executed, because NetworkListener is a Thread
 //		nc.send("Test!");
 //		nc.send("Asdf!");
+		InputReader in = new InputReader();
+		in.start();
 	}
 }

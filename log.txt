@@ -10839,3 +10839,312 @@ Log channel: socket
 5 [<] 
 6 [>c] msg Lukas Welcome back, Dummy
 7 [>c] msg Lukas Received Exit-command over network. Exiting.
+
+
+==========================================
+===== new Instance on 20150814024854 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][misc.AccountManager][logMessage]: Loading Accounts from default filename accounts.dat
+1 [I][misc.AccountManager][loadAccounts]: Loading Accounts from accounts.dat
+2 [E][misc.AccountManager][loadAccounts]: Error loading Accounts! Creating new ones.
+3 [I][misc.AccountManager][loadAccounts]: Creating new Accounts
+4 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is JSON
+5 [I][listener.Handler][logMessage]: Parsing message 0...
+6 [I][misc.Message][<init>]: Constructing Message by JSON!
+7 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+8 [I][listener.Handler][logMessage]: Resulting messageText 0: kick
+9 [I][listener.Handler][logMessage]: Loading account for sender ID -631648677
+10 [I][listener.Handler][logMessage]: Account for sender ID -631648677 found with name console!
+11 [I][listener.Handler][logMessage]: Sending welcome back because of message 0
+12 [I][misc.AccountOnlineManager][setOnline]: Account console now online! Offline in 5000 milliseconds!
+13 [I][listener.Handler][logMessage]: Handling command 0: kick
+14 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+15 [I][logging.LogManager][exit]: Saving Log File
+16 [I][logging.LogManager][exit]: LogFile exists: log.txt
+17 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+18 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+19 [I][util.TimeHandler][exit]: Returning TimeArray 20150814024854
+20 [I][util.TimeHandler][exit]: 20150814024854
+
+
+ ------ dumping channel: priv ------
+Log channel: priv
+0 [W][misc.AccountPrivileges][loadAccounts]: Setting access-give-privilege of Account console to true.
+1 [I][misc.AccountPrivileges][loadAccounts]: Setting access-privilege of Account console to true.
+2 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_ping-give-privilege of Account console to true.
+3 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_ping-privilege of Account console to true.
+4 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_echo-give-privilege of Account console to true.
+5 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_echo-privilege of Account console to true.
+6 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_kick-give-privilege of Account console to true.
+7 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_kick-privilege of Account console to true.
+8 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOn-give-privilege of Account console to true.
+9 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOn-privilege of Account console to true.
+10 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOff-give-privilege of Account console to true.
+11 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOff-privilege of Account console to true.
+12 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_addSwitch-give-privilege of Account console to true.
+13 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_addSwitch-privilege of Account console to true.
+14 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_removeSwitch-give-privilege of Account console to true.
+15 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_removeSwitch-privilege of Account console to true.
+16 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_postpone-give-privilege of Account console to true.
+17 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_postpone-privilege of Account console to true.
+18 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_help-give-privilege of Account console to true.
+19 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_help-privilege of Account console to true.
+20 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_info-give-privilege of Account console to true.
+21 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_info-privilege of Account console to true.
+22 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_healthreport-give-privilege of Account console to true.
+23 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_healthreport-privilege of Account console to true.
+24 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_shutdown-give-privilege of Account console to true.
+25 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_shutdown-privilege of Account console to true.
+26 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_restart-give-privilege of Account console to true.
+27 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_restart-privilege of Account console to true.
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] {"text":"kick","event":"message","service":"false","from":{"id":-631648677,"first_name":"console","username":"console","print_name":"console","type":"user"}}
+1 [>c] msg console Welcome back, console
+2 [>c] msg console Received Exit-command over network. Exiting.
+
+
+==========================================
+===== new Instance on 20150814024931 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][misc.AccountManager][logMessage]: Loading Accounts from default filename accounts.dat
+1 [I][misc.AccountManager][loadAccounts]: Loading Accounts from accounts.dat
+2 [E][misc.AccountManager][loadAccounts]: Error loading Accounts! Creating new ones.
+3 [I][misc.AccountManager][loadAccounts]: Creating new Accounts
+4 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is JSON
+5 [I][listener.Handler][logMessage]: Parsing message 0...
+6 [I][misc.Message][<init>]: Constructing Message by JSON!
+7 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+8 [I][listener.Handler][logMessage]: Resulting messageText 0: kick
+9 [I][listener.Handler][logMessage]: Loading account for sender ID -631648677
+10 [I][listener.Handler][logMessage]: Account for sender ID -631648677 found with name console!
+11 [I][listener.Handler][logMessage]: Sending welcome back because of message 0
+12 [I][misc.AccountOnlineManager][setOnline]: Account console now online! Offline in 5000 milliseconds!
+13 [I][listener.Handler][logMessage]: Handling command 0: kick
+14 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+15 [I][logging.LogManager][exit]: Saving Log File
+16 [I][logging.LogManager][exit]: LogFile exists: log.txt
+17 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+18 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+19 [I][util.TimeHandler][exit]: Returning TimeArray 20150814024931
+20 [I][util.TimeHandler][exit]: 20150814024931
+
+
+ ------ dumping channel: priv ------
+Log channel: priv
+0 [W][misc.AccountPrivileges][loadAccounts]: Setting access-give-privilege of Account console to true.
+1 [I][misc.AccountPrivileges][loadAccounts]: Setting access-privilege of Account console to true.
+2 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_ping-give-privilege of Account console to true.
+3 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_ping-privilege of Account console to true.
+4 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_echo-give-privilege of Account console to true.
+5 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_echo-privilege of Account console to true.
+6 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_kick-give-privilege of Account console to true.
+7 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_kick-privilege of Account console to true.
+8 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOn-give-privilege of Account console to true.
+9 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOn-privilege of Account console to true.
+10 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOff-give-privilege of Account console to true.
+11 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOff-privilege of Account console to true.
+12 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_addSwitch-give-privilege of Account console to true.
+13 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_addSwitch-privilege of Account console to true.
+14 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_removeSwitch-give-privilege of Account console to true.
+15 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_removeSwitch-privilege of Account console to true.
+16 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_postpone-give-privilege of Account console to true.
+17 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_postpone-privilege of Account console to true.
+18 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_help-give-privilege of Account console to true.
+19 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_help-privilege of Account console to true.
+20 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_info-give-privilege of Account console to true.
+21 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_info-privilege of Account console to true.
+22 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_healthreport-give-privilege of Account console to true.
+23 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_healthreport-privilege of Account console to true.
+24 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_shutdown-give-privilege of Account console to true.
+25 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_shutdown-privilege of Account console to true.
+26 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_restart-give-privilege of Account console to true.
+27 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_restart-privilege of Account console to true.
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] {"text":"kick","event":"message","service":"false","from":{"id":-631648677,"first_name":"console","username":"console","print_name":"console","type":"user"}}
+1 [>c] msg console Welcome back, console
+2 [>c] msg console Received Exit-command over network. Exiting.
+
+
+==========================================
+===== new Instance on 20150814025123 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][misc.AccountManager][logMessage]: Loading Accounts from default filename accounts.dat
+1 [I][misc.AccountManager][loadAccounts]: Loading Accounts from accounts.dat
+2 [E][misc.AccountManager][loadAccounts]: Error loading Accounts! Creating new ones.
+3 [I][misc.AccountManager][loadAccounts]: Creating new Accounts
+4 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is JSON
+5 [I][listener.Handler][logMessage]: Parsing message 0...
+6 [I][misc.Message][<init>]: Constructing Message by JSON!
+7 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+8 [I][listener.Handler][logMessage]: Resulting messageText 0: kick
+9 [I][listener.Handler][logMessage]: Loading account for sender ID -631648677
+10 [I][listener.Handler][logMessage]: Account for sender ID -631648677 found with name console!
+11 [I][listener.Handler][logMessage]: Sending welcome back because of message 0
+12 [I][misc.AccountOnlineManager][setOnline]: Account console now online! Offline in 5000 milliseconds!
+13 [I][listener.Handler][logMessage]: Handling command 0: kick
+14 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+15 [I][logging.LogManager][exit]: Saving Log File
+16 [I][logging.LogManager][exit]: LogFile exists: log.txt
+17 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+18 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+19 [I][util.TimeHandler][exit]: Returning TimeArray 20150814025123
+20 [I][util.TimeHandler][exit]: 20150814025123
+
+
+ ------ dumping channel: priv ------
+Log channel: priv
+0 [W][misc.AccountPrivileges][loadAccounts]: Setting access-give-privilege of Account console to true.
+1 [I][misc.AccountPrivileges][loadAccounts]: Setting access-privilege of Account console to true.
+2 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_ping-give-privilege of Account console to true.
+3 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_ping-privilege of Account console to true.
+4 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_echo-give-privilege of Account console to true.
+5 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_echo-privilege of Account console to true.
+6 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_kick-give-privilege of Account console to true.
+7 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_kick-privilege of Account console to true.
+8 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOn-give-privilege of Account console to true.
+9 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOn-privilege of Account console to true.
+10 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOff-give-privilege of Account console to true.
+11 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOff-privilege of Account console to true.
+12 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_addSwitch-give-privilege of Account console to true.
+13 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_addSwitch-privilege of Account console to true.
+14 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_removeSwitch-give-privilege of Account console to true.
+15 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_removeSwitch-privilege of Account console to true.
+16 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_postpone-give-privilege of Account console to true.
+17 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_postpone-privilege of Account console to true.
+18 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_help-give-privilege of Account console to true.
+19 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_help-privilege of Account console to true.
+20 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_info-give-privilege of Account console to true.
+21 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_info-privilege of Account console to true.
+22 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_healthreport-give-privilege of Account console to true.
+23 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_healthreport-privilege of Account console to true.
+24 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_shutdown-give-privilege of Account console to true.
+25 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_shutdown-privilege of Account console to true.
+26 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_restart-give-privilege of Account console to true.
+27 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_restart-privilege of Account console to true.
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] {"text":"kick","event":"message","service":"false","from":{"id":-631648677,"first_name":"console","username":"console","print_name":"console","type":"user"}}
+1 [>c] msg console Welcome back, console
+2 [>c] msg console Received Exit-command over network. Exiting.
+
+
+==========================================
+===== new Instance on 20150814025149 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][misc.AccountManager][logMessage]: Loading Accounts from default filename accounts.dat
+1 [I][misc.AccountManager][loadAccounts]: Loading Accounts from accounts.dat
+2 [E][misc.AccountManager][loadAccounts]: Error loading Accounts! Creating new ones.
+3 [I][misc.AccountManager][loadAccounts]: Creating new Accounts
+4 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is JSON
+5 [I][listener.Handler][logMessage]: Parsing message 0...
+6 [I][misc.Message][<init>]: Constructing Message by JSON!
+7 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+8 [I][listener.Handler][logMessage]: Resulting messageText 0: kick
+9 [I][listener.Handler][logMessage]: Loading account for sender ID -631648677
+10 [I][listener.Handler][logMessage]: Account for sender ID -631648677 found with name console!
+11 [I][listener.Handler][logMessage]: Sending welcome back because of message 0
+12 [I][misc.AccountOnlineManager][setOnline]: Account console now online! Offline in 5000 milliseconds!
+13 [I][listener.Handler][logMessage]: Handling command 0: kick
+14 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+15 [I][logging.LogManager][exit]: Saving Log File
+16 [I][logging.LogManager][exit]: LogFile exists: log.txt
+17 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+18 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+19 [I][util.TimeHandler][exit]: Returning TimeArray 20150814025149
+20 [I][util.TimeHandler][exit]: 20150814025149
+
+
+ ------ dumping channel: priv ------
+Log channel: priv
+0 [W][misc.AccountPrivileges][loadAccounts]: Setting access-give-privilege of Account console to true.
+1 [I][misc.AccountPrivileges][loadAccounts]: Setting access-privilege of Account console to true.
+2 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_ping-give-privilege of Account console to true.
+3 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_ping-privilege of Account console to true.
+4 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_echo-give-privilege of Account console to true.
+5 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_echo-privilege of Account console to true.
+6 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_kick-give-privilege of Account console to true.
+7 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_kick-privilege of Account console to true.
+8 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOn-give-privilege of Account console to true.
+9 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOn-privilege of Account console to true.
+10 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOff-give-privilege of Account console to true.
+11 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOff-privilege of Account console to true.
+12 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_addSwitch-give-privilege of Account console to true.
+13 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_addSwitch-privilege of Account console to true.
+14 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_removeSwitch-give-privilege of Account console to true.
+15 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_removeSwitch-privilege of Account console to true.
+16 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_postpone-give-privilege of Account console to true.
+17 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_postpone-privilege of Account console to true.
+18 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_help-give-privilege of Account console to true.
+19 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_help-privilege of Account console to true.
+20 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_info-give-privilege of Account console to true.
+21 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_info-privilege of Account console to true.
+22 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_healthreport-give-privilege of Account console to true.
+23 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_healthreport-privilege of Account console to true.
+24 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_shutdown-give-privilege of Account console to true.
+25 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_shutdown-privilege of Account console to true.
+26 [W][misc.AccountPrivileges][loadAccounts]: Setting cmd_restart-give-privilege of Account console to true.
+27 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_restart-privilege of Account console to true.
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] {"text":"kick","event":"message","service":"false","from":{"id":-631648677,"first_name":"console","username":"console","print_name":"console","type":"user"}}
+1 [>c] msg console Welcome back, console
+2 [>c] msg console Received Exit-command over network. Exiting.
+
+
+==========================================
+===== new Instance on 20150814025157 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][misc.AccountManager][logMessage]: Loading Accounts from default filename accounts.dat
+1 [I][misc.AccountManager][loadAccounts]: Loading Accounts from accounts.dat
+2 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is JSON
+3 [I][listener.Handler][logMessage]: Parsing message 0...
+4 [I][misc.Message][<init>]: Constructing Message by JSON!
+5 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+6 [I][listener.Handler][logMessage]: Resulting messageText 0: kick
+7 [I][listener.Handler][logMessage]: Loading account for sender ID -631648677
+8 [I][listener.Handler][logMessage]: Account for sender ID -631648677 found with name console!
+9 [I][misc.AccountOnlineManager][setOnline]: Account console was already online. Resetting online timer. Offline in 5000 milliseconds!
+10 [I][listener.Handler][logMessage]: Handling command 0: kick
+11 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+12 [I][logging.LogManager][exit]: Saving Log File
+13 [I][logging.LogManager][exit]: LogFile exists: log.txt
+14 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+15 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+16 [I][util.TimeHandler][exit]: Returning TimeArray 20150814025157
+17 [I][util.TimeHandler][exit]: 20150814025157
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] {"text":"kick","event":"message","service":"false","from":{"id":-631648677,"first_name":"console","username":"console","print_name":"console","type":"user"}}
+1 [>c] msg console Received Exit-command over network. Exiting.

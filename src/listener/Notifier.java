@@ -18,6 +18,8 @@
 
 package listener;
 
+import org.json.JSONObject;
+
 import network.NetworkClient;
 import network.NetworkServer;
 import logging.Logger;

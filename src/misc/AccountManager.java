@@ -60,14 +60,25 @@ public class AccountManager {
 			} catch (IOException | ClassNotFoundException e) {
 //				Logger.logException(new AccountManager(), "Error loading Accounts!", e);
 				Logger.logMessage('E', new AccountManager(), "Error loading Accounts! Creating new ones.");
+				createNewAccounts();
 //				accounts = new LinkedList();
 			}
 		} else {
-			Logger.logMessage('I', new AccountManager(), "Creating new Accounts");
-			accounts = new LinkedList<Account>();
+			createNewAccounts();
 		}
 		
 		AccountManager.initOnlineManagers();
+	}
+	
+	public static void createNewAccounts(){
+		Logger.logMessage('I', new AccountManager(), "Creating new Accounts");
+		accounts = new LinkedList<Account>();
+		Account aaa = new Account("console", -631648677);
+		for (int i = 0; i <= AccountPrivileges.MOST_PERMISSION_ID; i++){
+			aaa.getPriv().setGivePriv(i, true, aaa);
+			aaa.getPriv().setPriv(i, true, aaa);
+		}
+		accounts.add(aaa);
 	}
 
 	public static void loadAccounts(){

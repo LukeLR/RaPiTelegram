@@ -56,10 +56,10 @@ public class User extends Chat {
 		if (getType().equals("user")){
 			// Chat is an User
 			
-			this.first_name = obj.getString("first_name");
-			this.last_name = obj.getString("last_name");
+			this.first_name = obj.has("first_name") ? obj.getString("first_name") : User.default_first_name;
+			this.last_name = obj.has("last_name") ? obj.getString("last_name") : User.default_last_name;
 			// Phone Number is to long for int
-			this.phone = obj.getLong("phone");
+			this.phone = obj.has("phone") ? obj.getLong("phone") : -1;
 		} else {
 			Logger.logMessage('E', this, "Trying to construct an User chat with a non-Userchat-JSON-String!");
 		}

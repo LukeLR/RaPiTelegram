@@ -42,11 +42,11 @@ public class Group extends Chat {
 		super(obj);
 		if (verbose) Logger.logMessage('I', this, "Constructing Group by JSON!");
 		
-		if(obj.getString("type").equals("user")){
+		if(obj.has("type") ? obj.getString("type").equals("chat") : false){
 			// Chat is a group chat
 			
-			this.title = obj.getString("title");
-			this.members_num = obj.getInt("members_num");
+			this.title = obj.has("title") ? obj.getString("title") : Group.default_title;
+			this.members_num = obj.has("members_num") ? obj.getInt("members_num") : -1;
 		} else {
 			// Chat is not a group chat
 			Logger.logMessage('E', this, "Trying to construct a Group chat with a non-group-chat-JSON-String!");

@@ -126,7 +126,7 @@ public class Handler extends Thread{
 				}
 			} catch (JSONException ex){
 				Logger.logMessage('E', this, "Parsing of JSON for ID " + String.valueOf(id) + " failed!");
-//				ex.printStackTrace();
+				ex.printStackTrace();
 			} catch (Exception ex){
 				Logger.logMessage('E', this, "Parsing of JSON for ID " + String.valueOf(id) + " failed in a general exception!");
 //				ex.printStackTrace();
@@ -154,7 +154,7 @@ public class Handler extends Thread{
 			if (verbose) Logger.logMessage('I', this, "Account for sender ID " + String.valueOf(this.message.getFromID()) + " found with name " + acc.getAccountName() + "!");
 		}
 		dummy = null;
-		acc.setHandler(this);
+//		acc.setHandler(this);
 		
 		if (acc.getAccountState() == Account.STATE_LOGGEDOFF){
 			if (verbose) Logger.logMessage('I', this, "Sending welcome back because of message " + String.valueOf(id));
