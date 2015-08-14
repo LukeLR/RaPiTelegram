@@ -18,6 +18,9 @@
 
 package listener;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import org.json.JSONObject;
 
 import network.NetworkClient;
@@ -29,8 +32,12 @@ public class Notifier implements network.NetworkNotifier {
 	private boolean bidirectional = false;
 	private NetworkServer server = null;
 	private NetworkClient client = null;
+	private List<Handler> userInfoQueue = new LinkedList();
+	private Queue
 	
 	private int lastID = 0;
+	
+	private String answerCommand = "";
 	
 	private boolean verbose = false;
 	private boolean raw = false;
@@ -96,5 +103,13 @@ public class Notifier implements network.NetworkNotifier {
 		}
 		new Handler(notifyString, raw, this, lastID);
 		lastID++;
+	}
+	
+	public void setAnswerCommand (String answerCommand){
+		this.answerCommand = answerCommand;
+	}
+	
+	public String getAnswerCommand (){
+		return answerCommand;
 	}
 }

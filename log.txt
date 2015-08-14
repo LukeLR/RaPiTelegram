@@ -11148,3 +11148,658 @@ Please use the constructors of the subclasses *User* and *Group*!
 Log channel: socket
 0 [<] {"text":"kick","event":"message","service":"false","from":{"id":-631648677,"first_name":"console","username":"console","print_name":"console","type":"user"}}
 1 [>c] msg console Received Exit-command over network. Exiting.
+
+
+==========================================
+===== new Instance on 20150815010205 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][misc.AccountManager][logMessage]: Loading Accounts from default filename accounts.dat
+1 [I][misc.AccountManager][loadAccounts]: Loading Accounts from accounts.dat
+2 [E][misc.AccountManager][loadAccounts]: Error loading Accounts! Creating new ones.
+3 [I][misc.AccountManager][loadAccounts]: Creating new Accounts
+4 [W][misc.AccountPrivileges][loadAccounts]: Account console with ID -631648677 is trying to give Account console with ID -631648677 admin privileges of level -1
+5 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is JSON
+6 [I][listener.Handler][logMessage]: Parsing message 0...
+6 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is JSON
+8 [I][listener.Handler][<init>]: New MessageHandler 2 created with messageString. Content is JSON
+8 [I][listener.Handler][logMessage]: Parsing message 1...
+10 [I][listener.Handler][logMessage]: Parsing message 2...
+11 [E][listener.Handler][logMessage]: Parsing of JSON for ID 0 failed!
+11 [E][listener.Handler][logMessage]: Parsing of JSON for ID 2 failed!
+13 [W][listener.Handler][logMessage]: Message 2 was not parsed well. Exiting.
+13 [E][listener.Handler][logMessage]: Given JSONString 1 is not a message. JSONString:
+{"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-08-15 01:06:08"}
+15 [W][listener.Handler][logMessage]: Message 1 was not parsed well. Exiting.
+16 [W][listener.Handler][logMessage]: Message 0 was not parsed well. Exiting.
+17 [I][listener.Handler][<init>]: New MessageHandler 3 created with messageString. Content is JSON
+18 [I][listener.Handler][logMessage]: Parsing message 3...
+18 [I][listener.Handler][<init>]: New MessageHandler 4 created with messageString. Content is JSON
+19 [E][listener.Handler][logMessage]: Parsing of JSON for ID 3 failed!
+21 [I][listener.Handler][logMessage]: Parsing message 4...
+21 [I][listener.Handler][<init>]: New MessageHandler 5 created with messageString. Content is JSON
+23 [W][listener.Handler][logMessage]: Message 3 was not parsed well. Exiting.
+23 [I][listener.Handler][logMessage]: Parsing message 5...
+25 [E][listener.Handler][logMessage]: Parsing of JSON for ID 5 failed!
+26 [W][listener.Handler][logMessage]: Message 5 was not parsed well. Exiting.
+27 [I][misc.Message][<init>]: Constructing Message by JSON!
+28 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+29 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+30 [I][listener.Handler][logMessage]: Resulting messageText 4: ping
+31 [I][listener.Handler][logMessage]: Loading account for sender ID 16546596
+32 [W][listener.Handler][logMessage]: Account for sender ID 16546596 doesn't exist yet. Creating one!
+33 [I][listener.Handler][logMessage]: Sending welcome back because of message 4
+34 [I][misc.AccountOnlineManager][setOnline]: Account Lukas now online! Offline in 5000 milliseconds!
+35 [I][listener.Handler][logMessage]: Account Lukas has no access-permission. Not handling.
+36 [I][listener.Handler][<init>]: New MessageHandler 6 created with messageString. Content is JSON
+37 [I][listener.Handler][logMessage]: Parsing message 6...
+37 [I][listener.Handler][<init>]: New MessageHandler 7 created with messageString. Content is JSON
+38 [E][listener.Handler][logMessage]: Parsing of JSON for ID 6 failed!
+40 [I][listener.Handler][logMessage]: Parsing message 7...
+40 [I][listener.Handler][<init>]: New MessageHandler 8 created with messageString. Content is JSON
+42 [W][listener.Handler][logMessage]: Message 6 was not parsed well. Exiting.
+43 [I][listener.Handler][logMessage]: Parsing message 8...
+43 [I][listener.Handler][<init>]: New MessageHandler 9 created with messageString. Content is JSON
+44 [E][listener.Handler][logMessage]: Parsing of JSON for ID 8 failed!
+46 [I][listener.Handler][logMessage]: Parsing message 9...
+46 [I][listener.Handler][<init>]: New MessageHandler 10 created with messageString. Content is JSON
+47 [E][listener.Handler][logMessage]: Parsing of JSON for ID 9 failed!
+48 [W][listener.Handler][logMessage]: Message 8 was not parsed well. Exiting.
+49 [I][misc.Message][<init>]: Constructing Message by JSON!
+50 [I][listener.Handler][logMessage]: Parsing message 10...
+50 [I][listener.Handler][<init>]: New MessageHandler 11 created with messageString. Content is JSON
+53 [W][listener.Handler][logMessage]: Message 9 was not parsed well. Exiting.
+53 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+53 [E][listener.Handler][logMessage]: Parsing of JSON for ID 10 failed!
+53 [I][listener.Handler][logMessage]: Parsing message 11...
+56 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+57 [E][listener.Handler][logMessage]: Parsing of JSON for ID 11 failed!
+59 [I][listener.Handler][logMessage]: Resulting messageText 7: Welcome back, Lukas
+59 [W][listener.Handler][logMessage]: Message 10 was not parsed well. Exiting.
+61 [I][listener.Handler][logMessage]: Message 7 is mine. Skipping.
+62 [W][listener.Handler][logMessage]: Message 7 was not parsed well. Exiting.
+63 [W][listener.Handler][logMessage]: Message 11 was not parsed well. Exiting.
+64 [I][listener.Handler][<init>]: New MessageHandler 12 created with messageString. Content is JSON
+65 [I][listener.Handler][<init>]: New MessageHandler 13 created with messageString. Content is JSON
+65 [I][listener.Handler][logMessage]: Parsing message 12...
+67 [I][listener.Handler][logMessage]: Parsing message 13...
+67 [E][listener.Handler][logMessage]: Parsing of JSON for ID 12 failed!
+67 [I][listener.Handler][<init>]: New MessageHandler 14 created with messageString. Content is JSON
+70 [I][listener.Handler][logMessage]: Parsing message 14...
+70 [W][listener.Handler][logMessage]: Message 12 was not parsed well. Exiting.
+71 [E][listener.Handler][logMessage]: Parsing of JSON for ID 14 failed!
+73 [W][listener.Handler][logMessage]: Message 14 was not parsed well. Exiting.
+73 [E][listener.Handler][logMessage]: Given JSONString 13 is not a message. JSONString:
+{"event": "read", "service": false, "flags": 16642, "text": "Welcome back, Lukas", "id": 5867, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1439593269, "out": true, "unread": false}
+75 [W][listener.Handler][logMessage]: Message 13 was not parsed well. Exiting.
+76 [I][misc.AccountOnlineManager][logMessage]: Account Lukas offline!
+77 [I][listener.Handler][<init>]: New MessageHandler 15 created with messageString. Content is JSON
+78 [I][listener.Handler][logMessage]: Parsing message 15...
+78 [I][listener.Handler][<init>]: New MessageHandler 16 created with messageString. Content is JSON
+80 [E][listener.Handler][logMessage]: Parsing of JSON for ID 15 failed!
+81 [I][listener.Handler][logMessage]: Parsing message 16...
+81 [I][listener.Handler][<init>]: New MessageHandler 17 created with messageString. Content is JSON
+83 [W][listener.Handler][logMessage]: Message 15 was not parsed well. Exiting.
+83 [I][listener.Handler][logMessage]: Parsing message 17...
+85 [E][listener.Handler][logMessage]: Parsing of JSON for ID 17 failed!
+86 [I][misc.Message][<init>]: Constructing Message by JSON!
+87 [W][listener.Handler][logMessage]: Message 17 was not parsed well. Exiting.
+88 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+89 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+90 [I][listener.Handler][logMessage]: Resulting messageText 16: ping
+91 [I][listener.Handler][logMessage]: Loading account for sender ID 16546596
+92 [I][listener.Handler][logMessage]: Account for sender ID 16546596 found with name Lukas!
+93 [I][listener.Handler][logMessage]: Sending welcome back because of message 16
+94 [I][misc.AccountOnlineManager][setOnline]: Account Lukas now online! Offline in 5000 milliseconds!
+95 [I][listener.Handler][logMessage]: Account Lukas has no access-permission. Not handling.
+96 [I][listener.Handler][<init>]: New MessageHandler 18 created with messageString. Content is JSON
+97 [I][listener.Handler][logMessage]: Parsing message 18...
+97 [I][listener.Handler][<init>]: New MessageHandler 19 created with messageString. Content is JSON
+99 [E][listener.Handler][logMessage]: Parsing of JSON for ID 18 failed!
+100 [I][listener.Handler][logMessage]: Parsing message 19...
+100 [I][listener.Handler][<init>]: New MessageHandler 20 created with messageString. Content is JSON
+102 [W][listener.Handler][logMessage]: Message 18 was not parsed well. Exiting.
+103 [I][listener.Handler][logMessage]: Parsing message 20...
+103 [I][listener.Handler][<init>]: New MessageHandler 21 created with messageString. Content is JSON
+105 [E][listener.Handler][logMessage]: Parsing of JSON for ID 20 failed!
+106 [I][listener.Handler][logMessage]: Parsing message 21...
+106 [I][listener.Handler][<init>]: New MessageHandler 22 created with messageString. Content is JSON
+107 [E][listener.Handler][logMessage]: Parsing of JSON for ID 21 failed!
+108 [I][misc.Message][<init>]: Constructing Message by JSON!
+110 [I][listener.Handler][logMessage]: Parsing message 22...
+110 [I][listener.Handler][<init>]: New MessageHandler 23 created with messageString. Content is JSON
+110 [W][listener.Handler][logMessage]: Message 20 was not parsed well. Exiting.
+111 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+112 [E][listener.Handler][logMessage]: Parsing of JSON for ID 22 failed!
+115 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+115 [W][listener.Handler][logMessage]: Message 21 was not parsed well. Exiting.
+115 [I][listener.Handler][logMessage]: Parsing message 23...
+117 [I][listener.Handler][logMessage]: Resulting messageText 19: Welcome back, Lukas
+118 [E][listener.Handler][logMessage]: Parsing of JSON for ID 23 failed!
+119 [I][listener.Handler][logMessage]: Message 19 is mine. Skipping.
+118 [W][listener.Handler][logMessage]: Message 22 was not parsed well. Exiting.
+121 [W][listener.Handler][logMessage]: Message 19 was not parsed well. Exiting.
+123 [W][listener.Handler][logMessage]: Message 23 was not parsed well. Exiting.
+124 [I][listener.Handler][<init>]: New MessageHandler 24 created with messageString. Content is JSON
+125 [I][listener.Handler][<init>]: New MessageHandler 25 created with messageString. Content is JSON
+125 [I][listener.Handler][logMessage]: Parsing message 24...
+127 [E][listener.Handler][logMessage]: Parsing of JSON for ID 24 failed!
+127 [I][listener.Handler][logMessage]: Parsing message 25...
+127 [I][listener.Handler][<init>]: New MessageHandler 26 created with messageString. Content is JSON
+130 [I][listener.Handler][logMessage]: Parsing message 26...
+130 [W][listener.Handler][logMessage]: Message 24 was not parsed well. Exiting.
+131 [E][listener.Handler][logMessage]: Parsing of JSON for ID 26 failed!
+133 [W][listener.Handler][logMessage]: Message 26 was not parsed well. Exiting.
+133 [E][listener.Handler][logMessage]: Given JSONString 25 is not a message. JSONString:
+{"event": "read", "service": false, "flags": 16642, "text": "Welcome back, Lukas", "id": 5869, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1439593275, "out": true, "unread": false}
+135 [W][listener.Handler][logMessage]: Message 25 was not parsed well. Exiting.
+136 [I][listener.Handler][<init>]: New MessageHandler 27 created with messageString. Content is JSON
+137 [I][listener.Handler][<init>]: New MessageHandler 28 created with messageString. Content is JSON
+137 [I][listener.Handler][logMessage]: Parsing message 27...
+139 [E][listener.Handler][logMessage]: Parsing of JSON for ID 27 failed!
+139 [I][listener.Handler][<init>]: New MessageHandler 29 created with messageString. Content is JSON
+139 [I][listener.Handler][logMessage]: Parsing message 28...
+142 [I][listener.Handler][logMessage]: Parsing message 29...
+143 [W][listener.Handler][logMessage]: Message 27 was not parsed well. Exiting.
+143 [E][listener.Handler][logMessage]: Parsing of JSON for ID 29 failed!
+145 [W][listener.Handler][logMessage]: Message 29 was not parsed well. Exiting.
+145 [I][misc.Message][<init>]: Constructing Message by JSON!
+147 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+148 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+149 [I][listener.Handler][logMessage]: Resulting messageText 28: pign
+150 [I][listener.Handler][logMessage]: Loading account for sender ID 16546596
+151 [I][listener.Handler][logMessage]: Account for sender ID 16546596 found with name Lukas!
+152 [W][misc.AccountOnlineManager][logMessage]: Sleep interrupted.
+152 [I][misc.AccountOnlineManager][setOnline]: Account Lukas was already online. Resetting online timer. Offline in 5000 milliseconds!
+154 [I][listener.Handler][logMessage]: Account Lukas has no access-permission. Not handling.
+155 [I][listener.Handler][<init>]: New MessageHandler 30 created with messageString. Content is JSON
+156 [I][listener.Handler][logMessage]: Parsing message 30...
+156 [I][listener.Handler][<init>]: New MessageHandler 31 created with messageString. Content is JSON
+158 [E][listener.Handler][logMessage]: Parsing of JSON for ID 30 failed!
+159 [I][listener.Handler][logMessage]: Parsing message 31...
+159 [I][listener.Handler][<init>]: New MessageHandler 32 created with messageString. Content is JSON
+161 [I][listener.Handler][logMessage]: Parsing message 32...
+161 [W][listener.Handler][logMessage]: Message 30 was not parsed well. Exiting.
+162 [E][listener.Handler][logMessage]: Parsing of JSON for ID 32 failed!
+164 [W][listener.Handler][logMessage]: Message 32 was not parsed well. Exiting.
+164 [I][misc.Message][<init>]: Constructing Message by JSON!
+166 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+167 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+168 [I][listener.Handler][logMessage]: Resulting messageText 31: ping
+169 [I][listener.Handler][logMessage]: Loading account for sender ID 16546596
+170 [I][listener.Handler][logMessage]: Account for sender ID 16546596 found with name Lukas!
+171 [W][misc.AccountOnlineManager][logMessage]: Sleep interrupted.
+171 [I][misc.AccountOnlineManager][setOnline]: Account Lukas was already online. Resetting online timer. Offline in 5000 milliseconds!
+173 [I][listener.Handler][logMessage]: Account Lukas has no access-permission. Not handling.
+174 [I][listener.Handler][<init>]: New MessageHandler 33 created with messageString. Content is JSON
+175 [I][listener.Handler][<init>]: New MessageHandler 34 created with messageString. Content is JSON
+175 [I][listener.Handler][logMessage]: Parsing message 33...
+177 [I][listener.Handler][logMessage]: Parsing message 34...
+177 [I][listener.Handler][<init>]: New MessageHandler 35 created with messageString. Content is JSON
+177 [E][listener.Handler][logMessage]: Parsing of JSON for ID 33 failed!
+180 [I][listener.Handler][logMessage]: Parsing message 35...
+181 [E][listener.Handler][logMessage]: Parsing of JSON for ID 35 failed!
+182 [W][listener.Handler][logMessage]: Message 33 was not parsed well. Exiting.
+183 [W][listener.Handler][logMessage]: Message 35 was not parsed well. Exiting.
+183 [I][misc.Message][<init>]: Constructing Message by JSON!
+185 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+186 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+187 [I][listener.Handler][logMessage]: Resulting messageText 34: ping
+188 [I][listener.Handler][logMessage]: Loading account for sender ID 16546596
+189 [I][listener.Handler][logMessage]: Account for sender ID 16546596 found with name Lukas!
+190 [W][misc.AccountOnlineManager][logMessage]: Sleep interrupted.
+190 [I][misc.AccountOnlineManager][setOnline]: Account Lukas was already online. Resetting online timer. Offline in 5000 milliseconds!
+192 [I][listener.Handler][logMessage]: Account Lukas has no access-permission. Not handling.
+193 [I][listener.Handler][<init>]: New MessageHandler 36 created with messageString. Content is JSON
+194 [I][listener.Handler][logMessage]: Parsing message 36...
+194 [I][listener.Handler][<init>]: New MessageHandler 37 created with messageString. Content is JSON
+195 [E][listener.Handler][logMessage]: Parsing of JSON for ID 36 failed!
+197 [I][listener.Handler][<init>]: New MessageHandler 38 created with messageString. Content is JSON
+197 [I][listener.Handler][logMessage]: Parsing message 37...
+198 [W][listener.Handler][logMessage]: Message 36 was not parsed well. Exiting.
+200 [I][listener.Handler][logMessage]: Parsing message 38...
+201 [E][listener.Handler][logMessage]: Parsing of JSON for ID 38 failed!
+202 [W][listener.Handler][logMessage]: Message 38 was not parsed well. Exiting.
+203 [I][misc.Message][<init>]: Constructing Message by JSON!
+204 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+205 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+206 [I][listener.Handler][logMessage]: Resulting messageText 37: ping
+207 [I][listener.Handler][logMessage]: Loading account for sender ID 16546596
+208 [I][listener.Handler][logMessage]: Account for sender ID 16546596 found with name Lukas!
+209 [W][misc.AccountOnlineManager][logMessage]: Sleep interrupted.
+209 [I][misc.AccountOnlineManager][setOnline]: Account Lukas was already online. Resetting online timer. Offline in 5000 milliseconds!
+211 [I][listener.Handler][logMessage]: Account Lukas has no access-permission. Not handling.
+212 [I][misc.AccountOnlineManager][logMessage]: Account Lukas offline!
+213 [I][listener.Handler][<init>]: New MessageHandler 39 created with messageString. Content is JSON
+214 [I][listener.Handler][logMessage]: Parsing message 39...
+214 [I][listener.Handler][<init>]: New MessageHandler 40 created with messageString. Content is JSON
+216 [E][listener.Handler][logMessage]: Parsing of JSON for ID 39 failed!
+217 [I][listener.Handler][logMessage]: Parsing message 40...
+217 [I][listener.Handler][<init>]: New MessageHandler 41 created with messageString. Content is JSON
+219 [W][listener.Handler][logMessage]: Message 39 was not parsed well. Exiting.
+220 [I][listener.Handler][logMessage]: Parsing message 41...
+221 [E][listener.Handler][logMessage]: Parsing of JSON for ID 41 failed!
+222 [E][listener.Handler][logMessage]: Given JSONString 40 is not a message. JSONString:
+{"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": false, "state": -1, "when": "2015-08-15 01:01:28"}
+223 [W][listener.Handler][logMessage]: Message 40 was not parsed well. Exiting.
+224 [W][listener.Handler][logMessage]: Message 41 was not parsed well. Exiting.
+225 [I][listener.Handler][<init>]: New MessageHandler 42 created with messageString. Content is JSON
+226 [I][listener.Handler][logMessage]: Parsing message 42...
+227 [I][misc.Message][<init>]: Constructing Message by JSON!
+228 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+229 [I][listener.Handler][logMessage]: Resulting messageText 42: kick
+230 [I][listener.Handler][logMessage]: Loading account for sender ID -631648677
+231 [I][listener.Handler][logMessage]: Account for sender ID -631648677 found with name console!
+232 [I][listener.Handler][logMessage]: Sending welcome back because of message 42
+233 [I][misc.AccountOnlineManager][setOnline]: Account console now online! Offline in 5000 milliseconds!
+234 [I][listener.Handler][logMessage]: Handling command 42: kick
+235 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+236 [I][logging.LogManager][exit]: Saving Log File
+237 [I][logging.LogManager][exit]: LogFile exists: log.txt
+238 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+239 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+240 [I][listener.Handler][<init>]: New MessageHandler 43 created with messageString. Content is JSON
+241 [I][listener.Handler][<init>]: New MessageHandler 44 created with messageString. Content is JSON
+241 [I][listener.Handler][logMessage]: Parsing message 43...
+243 [E][listener.Handler][logMessage]: Parsing of JSON for ID 43 failed!
+244 [I][listener.Handler][logMessage]: Parsing message 44...
+244 [I][listener.Handler][<init>]: New MessageHandler 45 created with messageString. Content is JSON
+246 [W][listener.Handler][logMessage]: Message 43 was not parsed well. Exiting.
+246 [E][listener.Handler][logMessage]: Parsing of JSON for ID 44 failed!
+248 [I][listener.Handler][<init>]: New MessageHandler 46 created with messageString. Content is JSON
+249 [W][listener.Handler][logMessage]: Message 44 was not parsed well. Exiting.
+249 [I][listener.Handler][logMessage]: Parsing message 45...
+251 [E][listener.Handler][logMessage]: Parsing of JSON for ID 45 failed!
+251 [I][listener.Handler][<init>]: New MessageHandler 47 created with messageString. Content is JSON
+253 [I][listener.Handler][logMessage]: Parsing message 46...
+253 [W][listener.Handler][logMessage]: Message 45 was not parsed well. Exiting.
+254 [E][listener.Handler][logMessage]: Parsing of JSON for ID 46 failed!
+256 [I][listener.Handler][<init>]: New MessageHandler 48 created with messageString. Content is JSON
+257 [I][listener.Handler][logMessage]: Parsing message 47...
+257 [W][listener.Handler][logMessage]: Message 46 was not parsed well. Exiting.
+259 [E][listener.Handler][logMessage]: Parsing of JSON for ID 47 failed!
+259 [I][listener.Handler][logMessage]: Parsing message 48...
+261 [E][listener.Handler][logMessage]: Parsing of JSON for ID 48 failed!
+262 [W][listener.Handler][logMessage]: Message 47 was not parsed well. Exiting.
+263 [W][listener.Handler][logMessage]: Message 48 was not parsed well. Exiting.
+264 [I][util.TimeHandler][exit]: Returning TimeArray 20150815010205
+265 [I][util.TimeHandler][exit]: 20150815010205
+
+
+ ------ dumping channel: priv ------
+Log channel: priv
+0 [W][misc.AccountPrivileges][loadAccounts]: Account console with ID -631648677 is trying to give Account console with ID -631648677 admin privileges of level -1
+1 [I][misc.AccountPrivileges][loadAccounts]: Setting access-privilege of Account console to true.
+2 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_ping-privilege of Account console to true.
+3 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_echo-privilege of Account console to true.
+4 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_kick-privilege of Account console to true.
+5 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOn-privilege of Account console to true.
+6 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOff-privilege of Account console to true.
+7 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_addSwitch-privilege of Account console to true.
+8 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_removeSwitch-privilege of Account console to true.
+9 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_postpone-privilege of Account console to true.
+10 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_help-privilege of Account console to true.
+11 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_info-privilege of Account console to true.
+12 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_healthreport-privilege of Account console to true.
+13 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_shutdown-privilege of Account console to true.
+14 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_restart-privilege of Account console to true.
+15 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchPower-privilege of Account console to true.
+16 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_userID-privilege of Account console to true.
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] ANSWER 261
+1 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-08-15 01:06:08"}
+2 [<] 
+3 [<] ANSWER 487
+4 [<] {"event": "message", "service": false, "flags": 257, "text": "ping", "id": 5866, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1439593269, "out": false, "unread": true}
+5 [<] 
+6 [>c] msg Lukas Welcome back, Lukas
+7 [<] ANSWER 503
+8 [<] {"event": "message", "service": false, "flags": 16643, "text": "Welcome back, Lukas", "id": 5867, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1439593269, "out": true, "unread": true}
+9 [<] 
+10 [<] ANSWER 22
+11 [<] {"result": "SUCCESS"}
+12 [<] 
+13 [<] ANSWER 501
+14 [<] {"event": "read", "service": false, "flags": 16642, "text": "Welcome back, Lukas", "id": 5867, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1439593269, "out": true, "unread": false}
+15 [<] 
+16 [<] ANSWER 487
+17 [<] {"event": "message", "service": false, "flags": 257, "text": "ping", "id": 5868, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1439593275, "out": false, "unread": true}
+18 [<] 
+19 [>c] msg Lukas Welcome back, Lukas
+20 [<] ANSWER 503
+21 [<] {"event": "message", "service": false, "flags": 16643, "text": "Welcome back, Lukas", "id": 5869, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1439593275, "out": true, "unread": true}
+22 [<] 
+23 [<] ANSWER 22
+24 [<] {"result": "SUCCESS"}
+25 [<] 
+26 [<] ANSWER 501
+27 [<] {"event": "read", "service": false, "flags": 16642, "text": "Welcome back, Lukas", "id": 5869, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1439593275, "out": true, "unread": false}
+28 [<] 
+29 [<] ANSWER 487
+30 [<] {"event": "message", "service": false, "flags": 257, "text": "pign", "id": 5870, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1439593276, "out": false, "unread": true}
+31 [<] 
+32 [<] ANSWER 487
+33 [<] {"event": "message", "service": false, "flags": 257, "text": "ping", "id": 5871, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1439593278, "out": false, "unread": true}
+34 [<] 
+35 [<] ANSWER 487
+36 [<] {"event": "message", "service": false, "flags": 257, "text": "ping", "id": 5872, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1439593279, "out": false, "unread": true}
+37 [<] 
+38 [<] ANSWER 487
+39 [<] {"event": "message", "service": false, "flags": 257, "text": "ping", "id": 5873, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1439593280, "out": false, "unread": true}
+40 [<] 
+41 [<] ANSWER 263
+42 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": false, "state": -1, "when": "2015-08-15 01:01:28"}
+43 [<] 
+44 [<] {"text":"kick","event":"message","service":"false","from":{"id":-631648677,"first_name":"console","username":"console","print_name":"console","type":"user"}}
+45 [>c] msg console Welcome back, console
+46 [>c] msg console Received Exit-command over network. Exiting.
+47 [<] ANSWER 70
+48 [<] {"error": "can not parse arg #1", "result": "FAIL", "error_code": 38}
+49 [<] 
+50 [<] ANSWER 70
+51 [<] {"error": "can not parse arg #1", "result": "FAIL", "error_code": 38}
+52 [<] 
+
+
+==========================================
+===== new Instance on 20150815010338 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][misc.AccountManager][logMessage]: Loading Accounts from default filename accounts.dat
+1 [I][misc.AccountManager][loadAccounts]: Loading Accounts from accounts.dat
+2 [I][listener.Handler][<init>]: New MessageHandler 0 created with messageString. Content is JSON
+3 [I][listener.Handler][logMessage]: Parsing message 0...
+3 [I][listener.Handler][<init>]: New MessageHandler 1 created with messageString. Content is JSON
+5 [I][listener.Handler][logMessage]: Parsing message 1...
+5 [I][listener.Handler][<init>]: New MessageHandler 2 created with messageString. Content is JSON
+7 [I][listener.Handler][logMessage]: Parsing message 2...
+8 [E][listener.Handler][logMessage]: Parsing of JSON for ID 0 failed!
+8 [E][listener.Handler][logMessage]: Parsing of JSON for ID 2 failed!
+9 [W][listener.Handler][logMessage]: Message 0 was not parsed well. Exiting.
+10 [W][listener.Handler][logMessage]: Message 2 was not parsed well. Exiting.
+12 [E][listener.Handler][logMessage]: Given JSONString 1 is not a message. JSONString:
+{"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-08-15 01:07:10"}
+13 [W][listener.Handler][logMessage]: Message 1 was not parsed well. Exiting.
+14 [I][listener.Handler][<init>]: New MessageHandler 3 created with messageString. Content is JSON
+15 [I][listener.Handler][<init>]: New MessageHandler 4 created with messageString. Content is JSON
+15 [I][listener.Handler][logMessage]: Parsing message 3...
+17 [E][listener.Handler][logMessage]: Parsing of JSON for ID 3 failed!
+17 [I][listener.Handler][logMessage]: Parsing message 4...
+17 [I][listener.Handler][<init>]: New MessageHandler 5 created with messageString. Content is JSON
+18 [W][listener.Handler][logMessage]: Message 3 was not parsed well. Exiting.
+21 [I][listener.Handler][logMessage]: Parsing message 5...
+22 [E][listener.Handler][logMessage]: Parsing of JSON for ID 5 failed!
+23 [W][listener.Handler][logMessage]: Message 5 was not parsed well. Exiting.
+24 [I][misc.Message][<init>]: Constructing Message by JSON!
+25 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+26 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+27 [I][listener.Handler][logMessage]: Resulting messageText 4: ping
+28 [I][listener.Handler][logMessage]: Loading account for sender ID 16546596
+29 [I][listener.Handler][logMessage]: Account for sender ID 16546596 found with name Lukas!
+30 [I][listener.Handler][logMessage]: Sending welcome back because of message 4
+31 [I][misc.AccountOnlineManager][setOnline]: Account Lukas now online! Offline in 5000 milliseconds!
+32 [I][listener.Handler][logMessage]: Account Lukas has no access-permission. Not handling.
+33 [I][listener.Handler][<init>]: New MessageHandler 6 created with messageString. Content is JSON
+34 [I][listener.Handler][logMessage]: Parsing message 6...
+34 [I][listener.Handler][<init>]: New MessageHandler 7 created with messageString. Content is JSON
+36 [E][listener.Handler][logMessage]: Parsing of JSON for ID 6 failed!
+37 [W][listener.Handler][logMessage]: Message 6 was not parsed well. Exiting.
+37 [I][listener.Handler][logMessage]: Parsing message 7...
+37 [I][listener.Handler][<init>]: New MessageHandler 8 created with messageString. Content is JSON
+40 [I][listener.Handler][logMessage]: Parsing message 8...
+40 [I][listener.Handler][<init>]: New MessageHandler 9 created with messageString. Content is JSON
+41 [E][listener.Handler][logMessage]: Parsing of JSON for ID 8 failed!
+43 [W][listener.Handler][logMessage]: Message 8 was not parsed well. Exiting.
+44 [I][listener.Handler][logMessage]: Parsing message 9...
+44 [I][listener.Handler][<init>]: New MessageHandler 10 created with messageString. Content is JSON
+45 [E][listener.Handler][logMessage]: Parsing of JSON for ID 9 failed!
+46 [I][misc.Message][<init>]: Constructing Message by JSON!
+47 [W][listener.Handler][logMessage]: Message 9 was not parsed well. Exiting.
+48 [I][listener.Handler][<init>]: New MessageHandler 11 created with messageString. Content is JSON
+48 [I][listener.Handler][logMessage]: Parsing message 10...
+50 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+52 [I][listener.Handler][logMessage]: Parsing message 11...
+52 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+52 [E][listener.Handler][logMessage]: Parsing of JSON for ID 10 failed!
+53 [E][listener.Handler][logMessage]: Parsing of JSON for ID 11 failed!
+55 [I][listener.Handler][logMessage]: Resulting messageText 7: Welcome back, Lukas
+55 [W][listener.Handler][logMessage]: Message 10 was not parsed well. Exiting.
+56 [W][listener.Handler][logMessage]: Message 11 was not parsed well. Exiting.
+57 [I][listener.Handler][logMessage]: Message 7 is mine. Skipping.
+60 [W][listener.Handler][logMessage]: Message 7 was not parsed well. Exiting.
+61 [I][listener.Handler][<init>]: New MessageHandler 12 created with messageString. Content is JSON
+62 [I][listener.Handler][logMessage]: Parsing message 12...
+62 [I][listener.Handler][<init>]: New MessageHandler 13 created with messageString. Content is JSON
+64 [E][listener.Handler][logMessage]: Parsing of JSON for ID 12 failed!
+65 [W][listener.Handler][logMessage]: Message 12 was not parsed well. Exiting.
+65 [I][listener.Handler][<init>]: New MessageHandler 14 created with messageString. Content is JSON
+65 [I][listener.Handler][logMessage]: Parsing message 13...
+68 [I][listener.Handler][logMessage]: Parsing message 14...
+69 [E][listener.Handler][logMessage]: Parsing of JSON for ID 14 failed!
+70 [W][listener.Handler][logMessage]: Message 14 was not parsed well. Exiting.
+71 [I][misc.Message][<init>]: Constructing Message by JSON!
+72 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+73 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+74 [I][listener.Handler][logMessage]: Resulting messageText 13: ping
+75 [I][listener.Handler][logMessage]: Loading account for sender ID 16546596
+76 [I][listener.Handler][logMessage]: Account for sender ID 16546596 found with name Lukas!
+77 [W][misc.AccountOnlineManager][logMessage]: Sleep interrupted.
+77 [I][misc.AccountOnlineManager][setOnline]: Account Lukas was already online. Resetting online timer. Offline in 5000 milliseconds!
+79 [I][listener.Handler][logMessage]: Account Lukas has no access-permission. Not handling.
+80 [I][listener.Handler][<init>]: New MessageHandler 15 created with messageString. Content is JSON
+81 [I][listener.Handler][logMessage]: Parsing message 15...
+81 [I][listener.Handler][<init>]: New MessageHandler 16 created with messageString. Content is JSON
+83 [E][listener.Handler][logMessage]: Parsing of JSON for ID 15 failed!
+84 [W][listener.Handler][logMessage]: Message 15 was not parsed well. Exiting.
+84 [I][listener.Handler][<init>]: New MessageHandler 17 created with messageString. Content is JSON
+84 [I][listener.Handler][logMessage]: Parsing message 16...
+87 [I][listener.Handler][logMessage]: Parsing message 17...
+88 [E][listener.Handler][logMessage]: Parsing of JSON for ID 17 failed!
+89 [W][listener.Handler][logMessage]: Message 17 was not parsed well. Exiting.
+90 [E][listener.Handler][logMessage]: Given JSONString 16 is not a message. JSONString:
+{"event": "read", "service": false, "flags": 16642, "text": "Welcome back, Lukas", "id": 5875, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1439593331, "out": true, "unread": false}
+91 [W][listener.Handler][logMessage]: Message 16 was not parsed well. Exiting.
+92 [I][listener.Handler][<init>]: New MessageHandler 18 created with messageString. Content is JSON
+93 [I][listener.Handler][logMessage]: Parsing message 18...
+93 [I][listener.Handler][<init>]: New MessageHandler 19 created with messageString. Content is JSON
+95 [E][listener.Handler][logMessage]: Parsing of JSON for ID 18 failed!
+96 [W][listener.Handler][logMessage]: Message 18 was not parsed well. Exiting.
+96 [I][listener.Handler][<init>]: New MessageHandler 20 created with messageString. Content is JSON
+96 [I][listener.Handler][logMessage]: Parsing message 19...
+99 [I][listener.Handler][logMessage]: Parsing message 20...
+100 [E][listener.Handler][logMessage]: Parsing of JSON for ID 20 failed!
+101 [W][listener.Handler][logMessage]: Message 20 was not parsed well. Exiting.
+102 [I][misc.Message][<init>]: Constructing Message by JSON!
+103 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+104 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+105 [I][listener.Handler][logMessage]: Resulting messageText 19: ping
+106 [I][listener.Handler][logMessage]: Loading account for sender ID 16546596
+107 [I][listener.Handler][logMessage]: Account for sender ID 16546596 found with name Lukas!
+108 [W][misc.AccountOnlineManager][logMessage]: Sleep interrupted.
+108 [I][misc.AccountOnlineManager][setOnline]: Account Lukas was already online. Resetting online timer. Offline in 5000 milliseconds!
+110 [I][listener.Handler][logMessage]: Account Lukas has no access-permission. Not handling.
+111 [I][listener.Handler][<init>]: New MessageHandler 21 created with messageString. Content is JSON
+112 [I][listener.Handler][logMessage]: Parsing message 21...
+112 [I][listener.Handler][<init>]: New MessageHandler 22 created with messageString. Content is JSON
+114 [E][listener.Handler][logMessage]: Parsing of JSON for ID 21 failed!
+115 [I][listener.Handler][logMessage]: Parsing message 22...
+115 [W][listener.Handler][logMessage]: Message 21 was not parsed well. Exiting.
+115 [I][listener.Handler][<init>]: New MessageHandler 23 created with messageString. Content is JSON
+118 [I][listener.Handler][logMessage]: Parsing message 23...
+119 [E][listener.Handler][logMessage]: Parsing of JSON for ID 23 failed!
+120 [W][listener.Handler][logMessage]: Message 23 was not parsed well. Exiting.
+121 [I][misc.Message][<init>]: Constructing Message by JSON!
+122 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+123 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+124 [I][listener.Handler][logMessage]: Resulting messageText 22: ping
+125 [I][listener.Handler][logMessage]: Loading account for sender ID 16546596
+126 [I][listener.Handler][logMessage]: Account for sender ID 16546596 found with name Lukas!
+127 [W][misc.AccountOnlineManager][logMessage]: Sleep interrupted.
+127 [I][misc.AccountOnlineManager][setOnline]: Account Lukas was already online. Resetting online timer. Offline in 5000 milliseconds!
+129 [I][listener.Handler][logMessage]: Account Lukas has no access-permission. Not handling.
+130 [I][listener.Handler][<init>]: New MessageHandler 24 created with messageString. Content is JSON
+131 [I][listener.Handler][logMessage]: Parsing message 24...
+131 [I][listener.Handler][<init>]: New MessageHandler 25 created with messageString. Content is JSON
+132 [E][listener.Handler][logMessage]: Parsing of JSON for ID 24 failed!
+134 [W][listener.Handler][logMessage]: Message 24 was not parsed well. Exiting.
+134 [I][listener.Handler][<init>]: New MessageHandler 26 created with messageString. Content is JSON
+135 [I][listener.Handler][logMessage]: Parsing message 25...
+137 [I][listener.Handler][logMessage]: Parsing message 26...
+138 [E][listener.Handler][logMessage]: Parsing of JSON for ID 26 failed!
+139 [W][listener.Handler][logMessage]: Message 26 was not parsed well. Exiting.
+140 [I][misc.Message][<init>]: Constructing Message by JSON!
+141 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+142 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+143 [I][listener.Handler][logMessage]: Resulting messageText 25: ping
+144 [I][listener.Handler][logMessage]: Loading account for sender ID 16546596
+145 [I][listener.Handler][logMessage]: Account for sender ID 16546596 found with name Lukas!
+146 [W][misc.AccountOnlineManager][logMessage]: Sleep interrupted.
+146 [I][misc.AccountOnlineManager][setOnline]: Account Lukas was already online. Resetting online timer. Offline in 5000 milliseconds!
+148 [I][listener.Handler][logMessage]: Account Lukas has no access-permission. Not handling.
+149 [I][misc.AccountOnlineManager][logMessage]: Account Lukas offline!
+150 [I][listener.Handler][<init>]: New MessageHandler 27 created with messageString. Content is JSON
+151 [I][listener.Handler][<init>]: New MessageHandler 28 created with messageString. Content is JSON
+151 [I][listener.Handler][logMessage]: Parsing message 27...
+153 [E][listener.Handler][logMessage]: Parsing of JSON for ID 27 failed!
+153 [I][listener.Handler][<init>]: New MessageHandler 29 created with messageString. Content is JSON
+153 [I][listener.Handler][logMessage]: Parsing message 28...
+154 [W][listener.Handler][logMessage]: Message 27 was not parsed well. Exiting.
+157 [I][listener.Handler][logMessage]: Parsing message 29...
+158 [E][listener.Handler][logMessage]: Parsing of JSON for ID 29 failed!
+159 [W][listener.Handler][logMessage]: Message 29 was not parsed well. Exiting.
+159 [E][listener.Handler][logMessage]: Given JSONString 28 is not a message. JSONString:
+{"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": false, "state": -1, "when": "2015-08-15 01:02:27"}
+161 [W][listener.Handler][logMessage]: Message 28 was not parsed well. Exiting.
+162 [I][listener.Handler][<init>]: New MessageHandler 30 created with messageString. Content is JSON
+163 [I][listener.Handler][logMessage]: Parsing message 30...
+164 [I][misc.Message][<init>]: Constructing Message by JSON!
+165 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+166 [I][listener.Handler][logMessage]: Resulting messageText 30: kick
+167 [I][listener.Handler][logMessage]: Loading account for sender ID -631648677
+168 [I][listener.Handler][logMessage]: Account for sender ID -631648677 found with name console!
+169 [I][misc.AccountOnlineManager][setOnline]: Account console was already online. Resetting online timer. Offline in 5000 milliseconds!
+170 [I][listener.Handler][logMessage]: Handling command 30: kick
+171 [I][listener.Handler][exit]: Received Exit-command over network. Exiting.
+172 [I][logging.LogManager][exit]: Saving Log File
+173 [I][logging.LogManager][exit]: LogFile exists: log.txt
+174 [I][logging.LogManager][exit]: Appending to LogFile log.txt
+175 [I][util.FileHandler][exit]: Reading StringBuilder from log.txt
+176 [I][listener.Handler][<init>]: New MessageHandler 31 created with messageString. Content is JSON
+177 [I][listener.Handler][logMessage]: Parsing message 31...
+177 [I][listener.Handler][<init>]: New MessageHandler 32 created with messageString. Content is JSON
+178 [E][listener.Handler][logMessage]: Parsing of JSON for ID 31 failed!
+180 [W][listener.Handler][logMessage]: Message 31 was not parsed well. Exiting.
+180 [I][listener.Handler][<init>]: New MessageHandler 33 created with messageString. Content is JSON
+180 [I][listener.Handler][logMessage]: Parsing message 32...
+183 [I][listener.Handler][logMessage]: Parsing message 33...
+183 [E][listener.Handler][logMessage]: Parsing of JSON for ID 32 failed!
+185 [E][listener.Handler][logMessage]: Parsing of JSON for ID 33 failed!
+185 [W][listener.Handler][logMessage]: Message 32 was not parsed well. Exiting.
+186 [W][listener.Handler][logMessage]: Message 33 was not parsed well. Exiting.
+188 [I][util.TimeHandler][exit]: Returning TimeArray 20150815010338
+189 [I][util.TimeHandler][exit]: 20150815010338
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] ANSWER 261
+1 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-08-15 01:07:10"}
+2 [<] 
+3 [<] ANSWER 487
+4 [<] {"event": "message", "service": false, "flags": 257, "text": "ping", "id": 5874, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1439593331, "out": false, "unread": true}
+5 [<] 
+6 [>c] msg Lukas Welcome back, Lukas
+7 [<] ANSWER 503
+8 [<] {"event": "message", "service": false, "flags": 16643, "text": "Welcome back, Lukas", "id": 5875, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1439593331, "out": true, "unread": true}
+9 [<] 
+10 [<] ANSWER 22
+11 [<] {"result": "SUCCESS"}
+12 [<] 
+13 [<] ANSWER 487
+14 [<] {"event": "message", "service": false, "flags": 257, "text": "ping", "id": 5876, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1439593333, "out": false, "unread": true}
+15 [<] 
+16 [<] ANSWER 501
+17 [<] {"event": "read", "service": false, "flags": 16642, "text": "Welcome back, Lukas", "id": 5875, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1439593331, "out": true, "unread": false}
+18 [<] 
+19 [<] ANSWER 487
+20 [<] {"event": "message", "service": false, "flags": 257, "text": "ping", "id": 5877, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1439593334, "out": false, "unread": true}
+21 [<] 
+22 [<] ANSWER 487
+23 [<] {"event": "message", "service": false, "flags": 257, "text": "ping", "id": 5878, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1439593335, "out": false, "unread": true}
+24 [<] 
+25 [<] ANSWER 487
+26 [<] {"event": "message", "service": false, "flags": 257, "text": "ping", "id": 5879, "from": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1439593336, "out": false, "unread": true}
+27 [<] 
+28 [<] ANSWER 263
+29 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 259, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": false, "state": -1, "when": "2015-08-15 01:02:27"}
+30 [<] 
+31 [<] {"text":"kick","event":"message","service":"false","from":{"id":-631648677,"first_name":"console","username":"console","print_name":"console","type":"user"}}
+32 [>c] msg console Received Exit-command over network. Exiting.
+33 [<] ANSWER 70
+34 [<] {"error": "can not parse arg #1", "result": "FAIL", "error_code": 38}
+35 [<] 

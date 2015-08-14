@@ -74,8 +74,8 @@ public class AccountManager {
 		Logger.logMessage('I', new AccountManager(), "Creating new Accounts");
 		accounts = new LinkedList<Account>();
 		Account aaa = new Account("console", -631648677);
+		aaa.getPriv().setAdmin(AccountPrivileges.ADMIN, true, aaa);
 		for (int i = 0; i <= AccountPrivileges.MOST_PERMISSION_ID; i++){
-			aaa.getPriv().setGivePriv(i, true, aaa);
 			aaa.getPriv().setPriv(i, true, aaa);
 		}
 		accounts.add(aaa);

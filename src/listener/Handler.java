@@ -38,7 +38,6 @@ import network.MessageHandler;
 
 public class Handler extends Thread{
 	private String messageString;
-	private String answerCommand = "";
 	private Notifier notifier;
 	private Message message;
 	private boolean parsingNeeded = true;
@@ -119,14 +118,14 @@ public class Handler extends Thread{
 					message = new Message(obj);
 					if (verbose) Logger.logMessage('I', this, "Resulting messageText " + String.valueOf(id)+ ": " + message.getText());
 					parsedWell = true;
-					answerCommand = "msg " + message.getFromPrintName() + " ";
+					notifier.setAnswerCommand("msg " + message.getFromPrintName() + " ");
 				} else {
 					Logger.logMessage('E', this, "Given JSONString " + String.valueOf(id) + " is not a message. JSONString:\n" + messageString);
 					parsedWell = false;
 				}
 			} catch (JSONException ex){
 				Logger.logMessage('E', this, "Parsing of JSON for ID " + String.valueOf(id) + " failed!");
-				ex.printStackTrace();
+//				ex.printStackTrace();
 			} catch (Exception ex){
 				Logger.logMessage('E', this, "Parsing of JSON for ID " + String.valueOf(id) + " failed in a general exception!");
 //				ex.printStackTrace();
@@ -158,7 +157,7 @@ public class Handler extends Thread{
 		
 		if (acc.getAccountState() == Account.STATE_LOGGEDOFF){
 			if (verbose) Logger.logMessage('I', this, "Sending welcome back because of message " + String.valueOf(id));
-			notifier.send(answerCommand + "Welcome back, " + acc.getAccountName());
+			this.sendMessage("Welcome back, " + acc.getAccountName());
 		}
 		
 		acos = AccountManager.getAccountOnlineManager(acc);
@@ -195,6 +194,7 @@ public class Handler extends Thread{
 			case "help": this.help(message); break;
 			case "info": this.help(message); break;
 			case "healthreport": this.healthreport(message); break;
+			case "userID": this.userID(message); break;
 			case "shutdown": this.shutdown(message); break;
 			case "restart": this.restart(message); break;
 			}
@@ -206,27 +206,39 @@ public class Handler extends Thread{
 	//------ Begin of command-related methods ------
 	
 	private void ping(String[] message){
-		notifier.send(answerCommand + "ping received!");
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_PING)){
+			this.sendMessage("ping received!");
+		} else {
+			this.noPermAns("ping");
+		}
 	}
 	
 	private void echo(String[] message){
-		if (message.length > 1){
-			if (verbose) Logger.logMessage('I', this, "Executing echo command");
-			notifier.send(answerCommand + message[1]);
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_ECHO)){
+			if (message.length > 1){
+				if (verbose) Logger.logMessage('I', this, "Executing echo command");
+				this.sendMessage(message[1]);
+			} else {
+				String error = "usage: echo <message>; see help for more information.";
+				Logger.logMessage('E', this, "not enough arguments for echo command. " + error);
+				this.sendMessage(error);
+			}
 		} else {
-			String error = "usage: echo <message>; see help for more information.";
-			Logger.logMessage('E', this, "not enough arguments for echo command. " + error);
-			notifier.send(answerCommand + error);
+			this.noPermAns("echo");
 		}
 	}
 	
 	private void exit(String[] message){
-		String infoString = "Received Exit-command over network. Exiting.";
-		notifier.send(answerCommand + infoString);
-		Logger.logMessage('I', this, infoString);
-		logging.LogManager.saveLogFile("log.txt");
-		AccountManager.saveAccounts();
-		System.exit(0);
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_KICK)){
+			String infoString = "Received Exit-command over network. Exiting.";
+			this.sendMessage(infoString);
+			Logger.logMessage('I', this, infoString);
+			logging.LogManager.saveLogFile("log.txt");
+			AccountManager.saveAccounts();
+			System.exit(0);
+		} else {
+			this.noPermAns("exit");
+		}
 	}
 	
 	private void manageSwitch(String[] message){
@@ -234,29 +246,34 @@ public class Handler extends Thread{
 	}
 	
 	private void switchPower(String[] message){
-//		if (message.length > )
-		if (message.length > 3){
-			String infoString = "Executing switch command";
-			if (verbose) Logger.logMessage('I', this, infoString);
-			notifier.send(answerCommand + infoString);
-			
-			if (verbose) Logger.logMessage('I', this, "infoString");
-			try {
-				Runtime.getRuntime().exec("sudo send " + message[1] + " " + message[2] + " " + message[3]);
-			} catch (IOException e) {
-				String error = "Error when trying to execute send command";
-				Logger.logException('E', error, e);
-				notifier.send(answerCommand + error + " " + e.getMessage() + System.lineSeparator() + e.getStackTrace());
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_SWITCHPOWER)){
+//			if (message.length > )
+			if (message.length > 3){
+				String infoString = "Executing switch command";
+				if (verbose) Logger.logMessage('I', this, infoString);
+				this.sendMessage(infoString);
+				
+				if (verbose) Logger.logMessage('I', this, "infoString");
+				try {
+					Runtime.getRuntime().exec("sudo send " + message[1] + " " + message[2] + " " + message[3]);
+				} catch (IOException e) {
+					String error = "Error when trying to execute send command";
+					Logger.logException('E', error, e);
+					this.sendMessage(error + " " + e.getMessage() + System.lineSeparator() + e.getStackTrace());
+				}
+			} else {
+				String error = "usage: switchOn <systemID> <unitID>; switchOff <systemID> <unitID>; switch <systemID> <unitID> <state>; see help for more information."; //TODO: Multi-line messages
+				Logger.logMessage('E', "not enough arguments for switchOn command. " + error);
+				this.sendMessage(error);
 			}
 		} else {
-			String error = "usage: switchOn <systemID> <unitID>; switchOff <systemID> <unitID>; switch <systemID> <unitID> <state>; see help for more information."; //TODO: Multi-line messages
-			Logger.logMessage('E', "not enough arguments for switchOn command. " + error);
-			notifier.send(answerCommand + error);
+			this.noPermAns("switchPower");
 		}
 	}
 	
 	private void switchOn(String[] message){
-//		if (message.length > 2){
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_SWITCHON)){
+//			if (message.length > 2){
 //			if (verbose) Logger.logMessage('I', this, "Executing switchOn command");
 //			try {
 //				Runtime.getRuntime().exec("sudo send " + message[1] + " " + message[2] + " 1");
@@ -270,15 +287,19 @@ public class Handler extends Thread{
 				messageNew[i] = message[i];
 			}
 			messageNew[messageNew.length - 1] = "1";
-//		} else {
-//			String error = "usage: switchOn <systemID> <unitID>; see help for more information.";
-//			Logger.logMessage('E', "not enough arguments for switchOn command. " + error);
-//			notifier.send(answerCommand + error);
-//		}
+//			} else {
+//				String error = "usage: switchOn <systemID> <unitID>; see help for more information.";
+//				Logger.logMessage('E', "not enough arguments for switchOn command. " + error);
+//				notifier.send(answerCommand + error);
+//			}
+		} else {
+			this.noPermAns("switchOn");
+		}
 	}
 	
 	private void switchOff(String[] message){
-//		if (message.length > 2){
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_SWITCHOFF)){
+//			if (message.length > 2){
 //			if (verbose) Logger.logMessage('I', this, "Executing switchOff command");
 //			try {
 //				Runtime.getRuntime().exec("sudo send " + message[1] + " " + message[2] + " 0");
@@ -292,82 +313,135 @@ public class Handler extends Thread{
 				messageNew[i] = message[i];
 			}
 			messageNew[messageNew.length - 1] = "0";
-//		} else {
-//			String error = "usage: switchOff <systemID> <unitID>; see help for more information.";
-//			Logger.logMessage('E', "not enough arguments for switchOn command. " + error);
-//			notifier.send(answerCommand + error);
-//		}
+	//		} else {
+	//			String error = "usage: switchOff <systemID> <unitID>; see help for more information.";
+	//			Logger.logMessage('E', "not enough arguments for switchOn command. " + error);
+	//			notifier.send(answerCommand + error);
+	//		}
+		} else {
+			this.noPermAns("switchOff");
+		}
 	}
 	
 	private void postpone(String[] message){
-//		if ((message.getContents().length - commandDepthParsed) > 2){
-		if (message.length > 2){
-			String info = "Executing postpone-command...";
-			if (verbose) Logger.logMessage('I', this, info);
-			notifier.send(answerCommand + info);
-			try {
-				long offset = Long.parseLong(message[1]);
-				Thread.sleep(offset);
-//				commandDepthParsed = commandDepthParsed + 2;
-				handleMessage(Arrays.copyOfRange(message, 2, message.length));
-			} catch (Exception ex){
-				//TODO: find possible exceptions
-				String error = "err0r when trying to postpone command execution";
-				Logger.logException(this, error, ex);
-				notifier.send(answerCommand + error);
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_POSTPONE)){
+//			if ((message.getContents().length - commandDepthParsed) > 2){
+			if (message.length > 2){
+				String info = "Executing postpone-command...";
+				if (verbose) Logger.logMessage('I', this, info);
+				this.sendMessage(info);
+				try {
+					long offset = Long.parseLong(message[1]);
+					Thread.sleep(offset);
+//					commandDepthParsed = commandDepthParsed + 2;
+					handleMessage(Arrays.copyOfRange(message, 2, message.length));
+				} catch (Exception ex){
+					//TODO: find possible exceptions
+					String error = "err0r when trying to postpone command execution";
+					Logger.logException(this, error, ex);
+					this.sendMessage(error);
+				}
+			} else {
+				String error = "usage: postpone <offset> <command> [command options]..; see help for more information.";
+				Logger.logMessage('E', this, "not enough arguments given for postpone command. " + error);
+				this.sendMessage(error);
 			}
 		} else {
-			String error = "usage: postpone <offset> <command> [command options]..; see help for more information.";
-			Logger.logMessage('E', this, "not enough arguments given for postpone command. " + error);
-			notifier.send(answerCommand + error);
+			this.noPermAns("postpone");
 		}
 	}
 	
 	private void help(String[] message){
-		try{
-			StringBuilder info = FileHandler.readStringBuilder("information");
-			info.append(FileHandler.readStringBuilder("commandHelp"));
-			notifier.send(answerCommand + info.toString());
-		} catch (Exception ex){
-			//TODO: find possible exceptions
-			String error = "Error when reading help file.";
-			Logger.logMessage('E', this, error);
-			notifier.send(answerCommand + error);
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_INFO) && acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_HELP)){
+			try{
+				StringBuilder info = FileHandler.readStringBuilder("information");
+				info.append(FileHandler.readStringBuilder("commandHelp"));
+				this.sendMessage(info.toString());
+			} catch (Exception ex){
+				//TODO: find possible exceptions
+				String error = "Error when reading help file.";
+				Logger.logMessage('E', this, error);
+				this.sendMessage(error);
+			}
+		} else {
+			this.noPermAns("help");
 		}
 	}
 	
 	@SuppressWarnings("unused")
 	private void info(String[] message){
-		try{
-			StringBuilder info = FileHandler.readStringBuilder("information");
-			notifier.send(answerCommand + info.toString());
-		} catch (Exception ex){
-			//TODO: find possible exceptions
-			String error = "Error when reading info file.";
-			Logger.logMessage('E', this, error);
-			notifier.send(answerCommand + error);
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_INFO)){
+			try{
+				StringBuilder info = FileHandler.readStringBuilder("information");
+				this.sendMessage(info.toString());
+			} catch (Exception ex){
+				//TODO: find possible exceptions
+				String error = "Error when reading info file.";
+				Logger.logMessage('E', this, error);
+				this.sendMessage(error);
+			}
+		} else {
+			this.noPermAns("info");
 		}
 	}
 	
 	private void healthreport(String[] message){
-		if (message.length < 1){
-			switch(message[1]){
-			case "now": break; //make a new healthreport now
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_HEALTHREPORT)){
+			if (message.length < 1){
+				switch(message[1]){
+				case "now": break; //make a new healthreport now
+				}
+			} else {
+				//send the last healthreport
 			}
 		} else {
-			//send the last healthreport
+			this.noPermAns("healthreport");
+		}
+	}
+	
+	private void userID(String[] message){
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_USERID)){
+			if (message.length > 1){
+				notifier.send("user_info " + message[1]);
+			} else {
+				String error = "usage: userID <user>: returns the user ID of requested user.";
+				Logger.logMessage('E', this, "not enough arguments given for userID command. " + error);
+				this.sendMessage(error);
+			}
+		} else {
+			this.noPermAns("userID");
 		}
 	}
 	
 	private void shutdown(String[] message){
-		
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_SHUTDOWN)){
+			
+		} else {
+			this.noPermAns("shutdown");
+		}
 	}
 	
 	private void restart(String[] message){
-		
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_RESTART)){
+			
+		} else {
+			this.noPermAns("restart");
+		}
 	}
 	
-	public void sendMessage(String messageText){
-		notifier.send(answerCommand + messageText);
+	private void sendMessage(String messageText){
+		if (!raw && message.getFrom().getID() < 0){
+			Logger.logMessage('W', this, "will not answer message " + String.valueOf(id) + ", because it was internal. Message text: " + messageText);
+		} else {
+			notifier.send(notifier.getAnswerCommand() + messageText);
+		}
+	}
+	
+	private void noPermAns(String command){
+		this.sendMessage("sorry.");
+		Logger.logMessage('W', this, "User " + acc.getAccountName() + " with ID " + String.valueOf(acc.getAccountID())
+				+ " has tried to execute " + command + "-command without sufficient permission.");
+		Logger.logMessage('W', this, "User " + acc.getAccountName() + " with ID " + String.valueOf(acc.getAccountID())
+				+ " has tried to execute " + command + "-command without sufficient permission.", "priv");
 	}
 }
