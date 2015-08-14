@@ -63,6 +63,7 @@ public class AccountOnlineManager implements Runnable {
 		if (!interrupted){
 			acc.setAccountState(Account.STATE_LOGGEDOFF);
 			if (verbose) Logger.logMessage('I', this, "Account " + acc.getAccountName() + " offline!");
+			
 		}
 	}
 	
