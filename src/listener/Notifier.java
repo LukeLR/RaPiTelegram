@@ -20,7 +20,9 @@ package listener;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import network.NetworkClient;
@@ -32,8 +34,7 @@ public class Notifier implements network.NetworkNotifier {
 	private boolean bidirectional = false;
 	private NetworkServer server = null;
 	private NetworkClient client = null;
-	private List<Handler> userInfoQueue = new LinkedList();
-	private Queue
+	private Queue userInfoQueue = new LinkedList<Handler>();
 	
 	private int lastID = 0;
 	
@@ -91,18 +92,55 @@ public class Notifier implements network.NetworkNotifier {
 		}
 	}
 	
-	public void onNotify(String notifyString) {
-		if (verbose) Logger.logMessage('I', this, "got notifyString: (" + String.valueOf(lastID) + ") " + notifyString);
-		Logger.logMessage('<', notifyString, "socket");
-//		if (bidirectional = true && server != null){
-//			server.send(notifyString);
+//	public void onNotify(String notifyString) {
+//		if (verbose) Logger.logMessage('I', this, "got notifyString: (" + String.valueOf(lastID) + ") " + notifyString);
+//		Logger.logMessage('<', notifyString, "socket");
+////		if (bidirectional = true && server != null){
+////			server.send(notifyString);
+////		}
+//		if (notifyString.equals("raw") || notifyString.equals("Raw") || notifyString.equals("RAW")){
+//			raw = !raw;
+//			send("Raw mode is now " + String.valueOf(raw));
 //		}
-		if (notifyString.equals("raw") || notifyString.equals("Raw") || notifyString.equals("RAW")){
-			raw = !raw;
-			send("Raw mode is now " + String.valueOf(raw));
+//		new Handler(notifyString, raw, this, lastID);
+//		lastID++;
+//	}
+	
+	public void onNotify(String notifyString){
+		if (verbose) Logger.logMessage('I', this, "Got notifyString: (" + String.valueOf(lastID) + ") " + notifyString);
+		Logger.logMessage('<', notifyString, "socket"); //Log every incoming message to channel 'socket'.
+		if (notifyString.equals("raw") || notifyString.equals("Raw") || notifyString.equals("RAW")){ //Check if notifyString is the command to switch RAW-Mode.
+			raw = !raw; //Switch RAW-Mode if it does.
+		} else {
+			if (!raw){ //If RAW-Mode is not enabled, try to treat notifyString as a JSON String.
+				if (notifyString.startsWith("{")){ //Check if String is a JSON String. All JSON String start with '{'.
+					try{
+						JSONObject obj = new JSONObject(notifyString); //Try to pares JSON-String.
+						if (obj.has("event")){ //Check if incoming JSON has an "event".
+							if (obj.getString("event").equals("message")){ //Check if incoming JSON is a message
+								new Handler(obj, this, lastID); //Handle message if it does.
+							}
+						} else {
+							if (obj.has("type")){ //Check if incoming JSON-String has a "type".
+								if (obj.getString("type").equals("user")){ //Check if incoming JSON-String is an user-info.
+									//Notify first Handler in Queue waiting for an user_info that an user_info has arrived.
+									if (!this.userInfoQueue.isEmpty()){ //Check if there are Handlers waiting
+										((Handler)this.userInfoQueue.poll()).on_UserInfoArrive(obj); //Notify waiting Handler.
+									}
+								}
+							}
+						}
+					} catch (JSONException ex){ //Incoming notifyString probably was no correct JSON.
+						Logger.logMessage('E', this, "Error when parsing JSON for ID "
+								+ String.valueOf(lastID) + " in Notifier.");
+					} catch (Exception ex){ //Some strange other Exception appeared.
+						Logger.logMessage('E', this, "Error when parsing JSON for ID "
+								+ String.valueOf(lastID) + " in Notifier in an general exception.");
+					}
+				}
+			}
 		}
-		new Handler(notifyString, raw, this, lastID);
-		lastID++;
+		lastID ++; //Count Message ID one up.
 	}
 	
 	public void setAnswerCommand (String answerCommand){
@@ -111,5 +149,15 @@ public class Notifier implements network.NetworkNotifier {
 	
 	public String getAnswerCommand (){
 		return answerCommand;
+	}
+	
+	public void enqueueForUserInfo(Handler h){
+		if (h != null){
+			if (this.userInfoQueue != null){
+				this.userInfoQueue.add(h);
+			} else {
+				userInfoQueue = new LinkedList<Handler>();
+			}
+		}
 	}
 }
