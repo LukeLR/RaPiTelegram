@@ -37,110 +37,225 @@ import misc.User;
 import network.MessageHandler;
 
 public class Handler extends Thread{
-	private String messageString;
+//	private String messageString;
 	private Notifier notifier;
 	private Message message;
-	private boolean parsingNeeded = true;
+//	private boolean parsingNeeded = true;
 	private boolean raw = false;
-	private boolean parsedWell = false;
+//	private boolean parsedWell = false;
 	private int id = -1;
 //	private int commandDepthParsed = 0;
 	
 	private boolean verbose = true;
 	private boolean skipOwn = true;
-	private int ownID = 54916622;
+	private int ownID = 54916622; //Hardcoded, TODO: detect automatically.
 	private Account acc = null;
 	private AccountOnlineManager acos = null;
 	
-	public Handler(String messageString, Notifier notifier, int id){
-		this(messageString, false, notifier, id);
-	}
 	
-	public Handler(String messageString, boolean raw, Notifier notifier, int id){
-		if (raw){
-			if (verbose) Logger.logMessage('I', this, "New MessageHandler " + String.valueOf(id) + " created with messageString. Content is raw.");
-		} else {
-			if (verbose) Logger.logMessage('I', this, "New MessageHandler " + String.valueOf(id) + " created with messageString. Content is JSON");
-		}
-		
-		this.messageString = messageString;
+	/**
+	 * Constructor, if incoming message was parsed successfully to JSON by {@link listener.Notifier}.
+	 * 
+	 * @param obj The {@link org.json.JSONObject} that represents the message to be parsed.
+	 * @param notifier The {@link listener.Notifier} that spawned this {@link Handler}. Needed for back-communication.
+	 * @param id The ID of the message this {@link Handler} parses. Used for identification.
+	 */
+	public Handler(JSONObject obj, Notifier notifier, int id){
 		this.notifier = notifier;
-		parsingNeeded = true;
-		this.raw = raw;
 		this.id = id;
-		this.start();
+		if (this.parseMessageJSON(obj)){
+			this.handleMessage(message.getContents());
+		}
 	}
 	
-	public Handler(Message message, Notifier notifier, int id){
-		if (verbose) Logger.logMessage('I', this, "New MessageHandler created with message object. ID: " + String.valueOf(id));
-		this.message = message;
+	/**
+	 * Constructor, if incoming message couldn't be parsed to JSON by {@link listener.Notifier}. This happens, when
+	 * the incoming messageString is not in JSON, but in RAW format. A flag is set internally that the {@link misc.Message}
+	 * handled by this {@link Handler} was in RAW format.
+	 * 
+	 * @param message The messageString to be parsed by this {@link Handler}.
+	 * @param notifier The {@link listener.Notifier} that spawned this {@link Handler}. Needed for back-comminication.
+	 * @param id The ID of the message this {@link Handler} parses. Used for identification.
+	 */
+	public Handler(String message, Notifier notifier, int id){
 		this.notifier = notifier;
-		parsingNeeded = false;
-		parsedWell = true;
 		this.id = id;
-		this.start();
+		this.raw = true;
+		if (this.parseMessageRAW(message)){
+			this.handleMessage(this.message.getContents());
+		}
 	}
 	
-	public void run(){
-		if (parsingNeeded){
-			parseMessage();
-		}
-		if (parsedWell){
-			handleMessage(message.getContents());	
+// Old methods	
+//	public Handler(String messageString, Notifier notifier, int id){
+//		this(messageString, false, notifier, id);
+//	}
+//	
+//	public Handler(String messageString, boolean raw, Notifier notifier, int id){
+//		if (raw){
+//			if (verbose) Logger.logMessage('I', this, "New MessageHandler " + String.valueOf(id) + " created with messageString. Content is raw.");
+//		} else {
+//			if (verbose) Logger.logMessage('I', this, "New MessageHandler " + String.valueOf(id) + " created with messageString. Content is JSON");
+//		}
+//		
+//		this.messageString = messageString;
+//		this.notifier = notifier;
+//		parsingNeeded = true;
+//		this.raw = raw;
+//		this.id = id;
+//		this.start();
+//	}
+//	
+//	public Handler(Message message, Notifier notifier, int id){
+//		if (verbose) Logger.logMessage('I', this, "New MessageHandler created with message object. ID: " + String.valueOf(id));
+//		this.message = message;
+//		this.notifier = notifier;
+//		parsingNeeded = false;
+//		parsedWell = true;
+//		this.id = id;
+//		this.start();
+//	}
+//	
+//	public void run(){
+//		if (parsingNeeded){
+//			parseMessage();
+//		}
+//		if (parsedWell){
+//			handleMessage(message.getContents());	
+//		} else {
+//			Logger.logMessage('W', this, "Message " + String.valueOf(id) + " was not parsed well. Exiting.");
+//		}
+//	}
+	
+	/**
+	 * This method is used for parsing incoming messages, when they are provided as {@link org.json.JSONObject}.
+	 * In those cases, incoming messageStrings have successfully been tested as JSON Strings and parsed by the
+	 * Notifier.
+	 * 
+	 * @param obj The {@link org.json.JSONObject} provided that represents the message this Handler should handle.
+	 * @return True when parsing succeeded, false when not.
+	 */
+	private boolean parseMessageJSON(JSONObject obj){
+		if(obj.has("event") ? obj.getString("event").equals("message") : false){
+			message = new Message(obj);
+			if (verbose) Logger.logMessage('I', this, "Resulting messageText " + String.valueOf(id)+ ": " + message.getText());
+			notifier.setAnswerCommand("msg " + message.getFromPrintName() + " ");
+			return true;
 		} else {
-			Logger.logMessage('W', this, "Message " + String.valueOf(id) + " was not parsed well. Exiting.");
+			Logger.logMessage('E', this, "Given JSONString " + String.valueOf(id) + " is not a message.");
+			return false;
 		}
 	}
 	
-	private void parseMessage(){
-		if (verbose) Logger.logMessage('I', this, "Parsing message " + String.valueOf(id) + "...");
-		if (raw){
+	/**
+	 * This method is used for parsing incoming messageStrings, which are RAW messages (e.g. from a plain
+	 * console for debugging purposes instead of telegram cli). These messages are not formatted as JSON,
+	 * only their message content is provided. This method checks if the incoming messageString really is
+	 * a RAW message, and then passes it to {@link #parseMessageRAWFinal}.
+	 * 
+	 * @param messageString The messageString to parse.
+	 * @return True when parsing succeeded, false when not.
+	 * @see #parseMessageRAWFinal(String)
+	 */
+	private boolean parseMessageRAW(String messageString){
+		if (!messageString.startsWith("{")){ //If it starts with "{", it is probably an JSON-Object
+			return this.parseMessageRAWFinal(messageString); //Pass it to parsing.
+		} else {
+			//Try to parse messageString as a JSON-Object. If it fails, it is probably a RAW messageString.
+			try {
+				new JSONObject(messageString);
+				return false;
+			} catch (Exception ex){
+				//Couldn't parse messageString as a JSON-Object. Handle it as a RAW messageString.
+				return this.parseMessageRAWFinal(messageString); //Pass it to parsing
+			}
+		}
+	}
+	
+	/**
+	 * This method is just used internally, only after an incoming messageString has been checked for
+	 * truly being a RAW messageString. It shouldn't be used from any other place than {@link #parseMessageRAW(String)}.
+	 * 
+	 * @param messageString The messageString to be parsed.
+	 * @return True if parsing succeeded, false when not.
+	 * @see #parseMessageRAW(String)
+	 */
+	private boolean parseMessageRAWFinal(String messageString){
+		try{
 			message = new Message();
 			message.setFrom(new User());
 			message.setText(messageString);
 			message.setFromFirstName("raw console");
 			message.getFrom().genPrintName();
 			message.setFromChatID(-99);
-			parsedWell = true;
-		} else {
-//			String[] contents = messageString.trim().split("\\s");
-//			if (contents[0].equals("ANSWER")){
-//				Logger.logMessage('W', this, "Message is ANSWER xxx, skipping parsing & handling");
-//				parsedWell = false;
-//			if (JSONUtils.mayBeJSON(messageString)){
-//				Logger.logMessage('W', this, "Message is no valid JSON, skipping parsing & handling");
-//				parsedWell = false;
-//			} else {
-			try {
-				JSONObject obj = new JSONObject (messageString);
-				
-				if(obj.getString("event").equals("message")){
-					message = new Message(obj);
-					if (verbose) Logger.logMessage('I', this, "Resulting messageText " + String.valueOf(id)+ ": " + message.getText());
-					parsedWell = true;
-					notifier.setAnswerCommand("msg " + message.getFromPrintName() + " ");
-				} else {
-					Logger.logMessage('E', this, "Given JSONString " + String.valueOf(id) + " is not a message. JSONString:\n" + messageString);
-					parsedWell = false;
-				}
-			} catch (JSONException ex){
-				Logger.logMessage('E', this, "Parsing of JSON for ID " + String.valueOf(id) + " failed!");
-//				ex.printStackTrace();
-			} catch (Exception ex){
-				Logger.logMessage('E', this, "Parsing of JSON for ID " + String.valueOf(id) + " failed in a general exception!");
-//				ex.printStackTrace();
-			}
-		}
-		
-		if (skipOwn && parsedWell){
-			if (message.getFrom().getID() == ownID){
-				if (verbose) Logger.logMessage('I', this, "Message " + String.valueOf(id) + " is mine. Skipping.");
-				parsedWell = false;
-			}
+			return true;
+		} catch (Exception ex){
+			return false;
 		}
 	}
 	
-	private void handleMessage(String[] message){
+//	/**
+//	 * DEPRECATED. This method was the old way of parsing incoming messageStrings, because it recognized
+//	 * on it's own, if the incoming messageString was JSON or not. Now, the methods {@link #parseMessageRAW} and
+//	 * {@link #parseMessageJSON} are used.
+//	 * 
+//	 * @deprecated Use {@link #parseMessageRAW} and {@link #parseMessageJSON} instead,
+//	 */
+//	@Deprecated
+//	private void parseMessageString(){
+//		//DEPRECATED
+//		if (verbose) Logger.logMessage('I', this, "Parsing message " + String.valueOf(id) + "...");
+//		if (raw){
+//			message = new Message();
+//			message.setFrom(new User());
+//			message.setText(messageString);
+//			message.setFromFirstName("raw console");
+//			message.getFrom().genPrintName();
+//			message.setFromChatID(-99);
+//			parsedWell = true;
+//		} else {
+////			String[] contents = messageString.trim().split("\\s");
+////			if (contents[0].equals("ANSWER")){
+////				Logger.logMessage('W', this, "Message is ANSWER xxx, skipping parsing & handling");
+////				parsedWell = false;
+////			if (JSONUtils.mayBeJSON(messageString)){
+////				Logger.logMessage('W', this, "Message is no valid JSON, skipping parsing & handling");
+////				parsedWell = false;
+////			} else {
+//			try {
+//				JSONObject obj = new JSONObject (messageString);
+//				
+//				if(obj.getString("event").equals("message")){
+//					message = new Message(obj);
+//					if (verbose) Logger.logMessage('I', this, "Resulting messageText " + String.valueOf(id)+ ": " + message.getText());
+//					parsedWell = true;
+//					notifier.setAnswerCommand("msg " + message.getFromPrintName() + " ");
+//				} else {
+//					Logger.logMessage('E', this, "Given JSONString " + String.valueOf(id) + " is not a message. JSONString:\n" + messageString);
+//					parsedWell = false;
+//				}
+//			} catch (JSONException ex){
+//				Logger.logMessage('E', this, "Parsing of JSON for ID " + String.valueOf(id) + " failed!");
+////				ex.printStackTrace();
+//			} catch (Exception ex){
+//				Logger.logMessage('E', this, "Parsing of JSON for ID " + String.valueOf(id) + " failed in a general exception!");
+////				ex.printStackTrace();
+//			}
+//		}
+//		
+//		if (skipOwn && parsedWell){
+//			if (message.getFrom().getID() == ownID){
+//				if (verbose) Logger.logMessage('I', this, "Message " + String.valueOf(id) + " is mine. Skipping.");
+//				parsedWell = false;
+//			}
+//		}
+//	}
+	
+	/**
+	 * Used internally for the procedure to load the sender's account by his ID. It is saved internally
+	 * and used by other methods.
+	 */
+	private void detectAccount(){
 		if (verbose) Logger.logMessage('I', this, "Loading account for sender ID " + String.valueOf(this.message.getFromID()));
 		Account dummy = new Account("Dummy", this.message.getFromID());
 		acc = AccountManager.getAccount(dummy);
@@ -154,7 +269,14 @@ public class Handler extends Thread{
 		}
 		dummy = null;
 //		acc.setHandler(this);
-		
+	}
+	
+	/**
+	 * Used internally for the procedure of a) sending the User a welcome message if he was offline before, and
+	 * b) to set an offline timer to the sender's account to set him offline again after a given time. Uses
+	 * the account loaded by {@link #detectAccount()}, that was saved internally.
+	 */
+	private void dealAccountOnline(){
 		if (acc.getAccountState() == Account.STATE_LOGGEDOFF){
 			if (verbose) Logger.logMessage('I', this, "Sending welcome back because of message " + String.valueOf(id));
 			this.sendMessage("Welcome back, " + acc.getAccountName());
@@ -166,6 +288,17 @@ public class Handler extends Thread{
 		} else {
 			acos.setOnline();
 		}
+	}
+	
+	/**
+	 * The actual procedure to handle the message. It checks the message's contents for known commands, and passes
+	 * the message to the procedures to handle the specific context. Further syntax planned.
+	 * 
+	 * @param message The message to be handled.
+	 */
+	private void handleMessage(String[] message){
+		this.detectAccount();
+		this.dealAccountOnline();
 		
 		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_ACCESS)){
 			if (verbose) Logger.logMessage('I', this, "Handling command " + String.valueOf(id) + ": " + message[0]);
@@ -443,5 +576,9 @@ public class Handler extends Thread{
 				+ " has tried to execute " + command + "-command without sufficient permission.");
 		Logger.logMessage('W', this, "User " + acc.getAccountName() + " with ID " + String.valueOf(acc.getAccountID())
 				+ " has tried to execute " + command + "-command without sufficient permission.", "priv");
+	}
+	
+	public void on_UserInfoArrive(JSONObject obj){
+		//Send user_info to user that requested user_info, if someone did.
 	}
 }
