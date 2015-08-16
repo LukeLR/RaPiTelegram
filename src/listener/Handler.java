@@ -570,7 +570,7 @@ public class Handler extends Thread{
 	}
 	
 	private void sendMessage(String messageText){
-		if (!raw && message.getFrom().getID() < 0){
+		if (raw || message.getFrom().getID() < 0){
 			Logger.logMessage('W', this, "will not answer message " + String.valueOf(id) + ", because it was internal. Message text: " + messageText);
 		} else {
 			notifier.send(notifier.getAnswerCommand() + messageText);

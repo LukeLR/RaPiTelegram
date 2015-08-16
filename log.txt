@@ -12049,3 +12049,63 @@ Log channel: socket
 4 [<] {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}
 5 [<] 
 6 [<] {"service":"false","from":{"print_name":"console","id":-631648677,"type":"user","first_name":"console","username":"console"},"text":"kick","event":"message"}
+
+
+==========================================
+===== new Instance on 20150816023204 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][misc.AccountManager][logMessage]: Loading Accounts from default filename accounts.dat
+1 [I][misc.AccountManager][loadAccounts]: Loading Accounts from accounts.dat
+2 [I][listener.Handler][<init>]: New Handler for message 0 with JSONObject, raw is true.
+3 [I][misc.Message][<init>]: Constructing Message by JSON!
+4 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+5 [I][listener.Handler][<init>]: Resulting messageText 0: userinfo Lukas
+6 [I][listener.Handler][<init>]: Loading account for sender ID -631648677
+7 [I][listener.Handler][<init>]: Account for sender ID -631648677 found with name console!
+8 [I][misc.AccountOnlineManager][<init>]: Account console was already online. Resetting online timer. Offline in 5000 milliseconds!
+9 [I][listener.Handler][<init>]: Handling command 0: userinfo
+10 [I][misc.AccountOnlineManager][logMessage]: Account console offline!
+11 [I][listener.Handler][<init>]: New Handler for message 6 with JSONObject, raw is true.
+12 [I][misc.Message][<init>]: Constructing Message by JSON!
+13 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+14 [I][listener.Handler][<init>]: Resulting messageText 6: kick
+15 [I][listener.Handler][<init>]: Loading account for sender ID -631648677
+16 [I][listener.Handler][<init>]: Account for sender ID -631648677 found with name console!
+17 [I][listener.Handler][<init>]: Sending welcome back because of message 6
+18 [I][misc.AccountOnlineManager][<init>]: Account console now online! Offline in 5000 milliseconds!
+19 [I][listener.Handler][<init>]: Handling command 6: kick
+20 [I][listener.Handler][<init>]: Received Exit-command over network. Exiting.
+21 [I][logging.LogManager][<init>]: Saving Log File
+22 [I][logging.LogManager][<init>]: LogFile exists: log.txt
+23 [I][logging.LogManager][<init>]: Appending to LogFile log.txt
+24 [I][util.FileHandler][<init>]: Reading StringBuilder from log.txt
+25 [I][util.TimeHandler][<init>]: Returning TimeArray 20150816023204
+26 [I][util.TimeHandler][<init>]: 20150816023204
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] JSONObject: {"service":"false","from":{"print_name":"console","id":-631648677,"type":"user","first_name":"console","username":"console"},"text":"userinfo Lukas","event":"message"}
+1 [>c] user_info Lukas
+2 [<] ANSWER 167
+3 [<] {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}
+4 [>c] UserInfo for ID 16546596: Username: schild_kroete2, First Name: Lukas, Last Name: n.a., Print Name: Lukas, phone: n.a., flags: 2307, type: user
+5 [<] 
+6 [<] ANSWER 81
+7 [<] {"error": "can not find command 'UserInfo'", "result": "FAIL", "error_code": 38}
+8 [<] 
+9 [<] JSONObject: {"service":"false","from":{"print_name":"console","id":-631648677,"type":"user","first_name":"console","username":"console"},"text":"kick","event":"message"}
+10 [>c] msg console Welcome back, console
+11 [>c] msg console Received Exit-command over network. Exiting.
+12 [<] ANSWER 70
+13 [<] {"error": "can not parse arg #1", "result": "FAIL", "error_code": 38}
+14 [<] 
+15 [<] ANSWER 70
+16 [<] {"error": "can not parse arg #1", "result": "FAIL", "error_code": 38}
+17 [<] 
