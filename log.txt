@@ -11803,3 +11803,249 @@ Log channel: socket
 33 [<] ANSWER 70
 34 [<] {"error": "can not parse arg #1", "result": "FAIL", "error_code": 38}
 35 [<] 
+
+
+==========================================
+===== new Instance on 20150816010356 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][misc.AccountManager][logMessage]: Loading Accounts from default filename accounts.dat
+1 [I][misc.AccountManager][loadAccounts]: Loading Accounts from accounts.dat
+2 [I][misc.Message][<init>]: Constructing Message by JSON!
+3 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+4 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+5 [I][listener.Handler][<init>]: Resulting messageText 16: ping
+6 [I][listener.Handler][<init>]: Loading account for sender ID 16546596
+7 [I][listener.Handler][<init>]: Account for sender ID 16546596 found with name Lukas!
+8 [I][listener.Handler][<init>]: Sending welcome back because of message 16
+9 [I][misc.AccountOnlineManager][<init>]: Account Lukas now online! Offline in 5000 milliseconds!
+10 [I][listener.Handler][<init>]: Account Lukas has no access-permission. Not handling.
+11 [I][misc.Message][<init>]: Constructing Message by JSON!
+12 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+13 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+14 [I][listener.Handler][<init>]: Resulting messageText 19: Welcome back, Lukas
+15 [I][listener.Handler][<init>]: Loading account for sender ID 54916622
+16 [W][listener.Handler][<init>]: Account for sender ID 54916622 doesn't exist yet. Creating one!
+17 [I][listener.Handler][<init>]: Sending welcome back because of message 19
+18 [I][misc.AccountOnlineManager][<init>]: Account Raspberry_Pi now online! Offline in 5000 milliseconds!
+19 [I][listener.Handler][<init>]: Account Raspberry_Pi has no access-permission. Not handling.
+20 [I][misc.Message][<init>]: Constructing Message by JSON!
+21 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+22 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+23 [I][listener.Handler][<init>]: Resulting messageText 25: Welcome back, Raspberry_Pi
+24 [I][listener.Handler][<init>]: Loading account for sender ID 54916622
+25 [I][listener.Handler][<init>]: Account for sender ID 54916622 found with name Raspberry_Pi!
+26 [I][misc.AccountOnlineManager][<init>]: Account Raspberry_Pi was already online. Resetting online timer. Offline in 5000 milliseconds!
+27 [I][listener.Handler][<init>]: Account Raspberry_Pi has no access-permission. Not handling.
+28 [W][misc.AccountOnlineManager][logMessage]: Sleep interrupted.
+29 [I][misc.Message][<init>]: Constructing Message by JSON!
+30 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+31 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+32 [I][listener.Handler][<init>]: Resulting messageText 34: ping
+33 [I][listener.Handler][<init>]: Loading account for sender ID 16546596
+34 [I][listener.Handler][<init>]: Account for sender ID 16546596 found with name Lukas!
+35 [W][misc.AccountOnlineManager][logMessage]: Sleep interrupted.
+35 [I][misc.AccountOnlineManager][<init>]: Account Lukas was already online. Resetting online timer. Offline in 5000 milliseconds!
+37 [I][listener.Handler][<init>]: Account Lukas has no access-permission. Not handling.
+38 [I][misc.Message][<init>]: Constructing Message by JSON!
+39 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+40 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+41 [I][listener.Handler][<init>]: Resulting messageText 37: ping
+42 [I][listener.Handler][<init>]: Loading account for sender ID 16546596
+43 [I][listener.Handler][<init>]: Account for sender ID 16546596 found with name Lukas!
+44 [W][misc.AccountOnlineManager][logMessage]: Sleep interrupted.
+44 [I][misc.AccountOnlineManager][<init>]: Account Lukas was already online. Resetting online timer. Offline in 5000 milliseconds!
+46 [I][listener.Handler][<init>]: Account Lukas has no access-permission. Not handling.
+47 [I][misc.Message][<init>]: Constructing Message by JSON!
+48 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+49 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+50 [I][listener.Handler][<init>]: Resulting messageText 40: ping
+51 [I][listener.Handler][<init>]: Loading account for sender ID 16546596
+52 [I][listener.Handler][<init>]: Account for sender ID 16546596 found with name Lukas!
+53 [W][misc.AccountOnlineManager][logMessage]: Sleep interrupted.
+53 [I][misc.AccountOnlineManager][<init>]: Account Lukas was already online. Resetting online timer. Offline in 5000 milliseconds!
+55 [I][listener.Handler][<init>]: Account Lukas has no access-permission. Not handling.
+56 [I][misc.AccountOnlineManager][logMessage]: Account Raspberry_Pi offline!
+57 [I][misc.AccountOnlineManager][logMessage]: Account Lukas offline!
+58 [I][misc.Message][<init>]: Constructing Message by JSON!
+59 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+60 [I][listener.Handler][<init>]: Resulting messageText 57: ping
+61 [I][listener.Handler][<init>]: Loading account for sender ID -631648677
+62 [I][listener.Handler][<init>]: Account for sender ID -631648677 found with name console!
+63 [I][misc.AccountOnlineManager][<init>]: Account console was already online. Resetting online timer. Offline in 5000 milliseconds!
+64 [I][listener.Handler][<init>]: Handling command 57: ping
+65 [W][listener.Handler][<init>]: will not answer message 57, because it was internal. Message text: ping received!
+66 [I][misc.AccountOnlineManager][logMessage]: Account console offline!
+67 [I][misc.Message][<init>]: Constructing Message by JSON!
+68 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+69 [I][listener.Handler][<init>]: Resulting messageText 58: kick
+70 [I][listener.Handler][<init>]: Loading account for sender ID -631648677
+71 [I][listener.Handler][<init>]: Account for sender ID -631648677 found with name console!
+72 [I][listener.Handler][<init>]: Sending welcome back because of message 58
+73 [W][listener.Handler][<init>]: will not answer message 58, because it was internal. Message text: Welcome back, console
+74 [I][misc.AccountOnlineManager][<init>]: Account console now online! Offline in 5000 milliseconds!
+75 [I][listener.Handler][<init>]: Handling command 58: kick
+76 [W][listener.Handler][<init>]: will not answer message 58, because it was internal. Message text: Received Exit-command over network. Exiting.
+77 [I][listener.Handler][<init>]: Received Exit-command over network. Exiting.
+78 [I][logging.LogManager][<init>]: Saving Log File
+79 [I][logging.LogManager][<init>]: LogFile exists: log.txt
+80 [I][logging.LogManager][<init>]: Appending to LogFile log.txt
+81 [I][util.FileHandler][<init>]: Reading StringBuilder from log.txt
+82 [I][util.TimeHandler][<init>]: Returning TimeArray 20150816010356
+83 [I][util.TimeHandler][<init>]: 20150816010356
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] ANSWER 262
+1 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-08-16 01:07:32"}
+2 [<] 
+3 [<] ANSWER 264
+4 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": false, "state": -1, "when": "2015-08-16 01:02:53"}
+5 [<] 
+6 [<] ANSWER 262
+7 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-08-16 01:07:54"}
+8 [<] 
+9 [<] ANSWER 264
+10 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": false, "state": -1, "when": "2015-08-16 01:02:54"}
+11 [<] 
+12 [<] ANSWER 262
+13 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-08-16 01:07:54"}
+14 [<] 
+15 [<] ANSWER 488
+16 [<] {"event": "message", "service": false, "flags": 257, "text": "ping", "id": 5899, "from": {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1439679775, "out": false, "unread": true}
+17 [>c] msg Lukas Welcome back, Lukas
+18 [<] 
+19 [<] ANSWER 504
+20 [<] {"event": "message", "service": false, "flags": 16643, "text": "Welcome back, Lukas", "id": 5900, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1439679775, "out": true, "unread": true}
+21 [>c] msg Raspberry_Pi Welcome back, Raspberry_Pi
+22 [<] 
+23 [<] ANSWER 22
+24 [<] {"result": "SUCCESS"}
+25 [<] 
+26 [<] ANSWER 518
+27 [<] {"event": "message", "service": false, "flags": 16643, "text": "Welcome back, Raspberry_Pi", "id": 5901, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1439679775, "out": true, "unread": true}
+28 [<] 
+29 [<] ANSWER 22
+30 [<] {"result": "SUCCESS"}
+31 [<] 
+32 [<] ANSWER 502
+33 [<] {"event": "read", "service": false, "flags": 16642, "text": "Welcome back, Lukas", "id": 5900, "from": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "to": {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "date": 1439679775, "out": true, "unread": false}
+34 [<] 
+35 [<] ANSWER 488
+36 [<] {"event": "message", "service": false, "flags": 257, "text": "ping", "id": 5902, "from": {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1439679777, "out": false, "unread": true}
+37 [<] 
+38 [<] ANSWER 488
+39 [<] {"event": "message", "service": false, "flags": 257, "text": "ping", "id": 5903, "from": {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1439679778, "out": false, "unread": true}
+40 [<] 
+41 [<] ANSWER 488
+42 [<] {"event": "message", "service": false, "flags": 257, "text": "ping", "id": 5904, "from": {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "to": {"username": "RaPiLiebe", "flags": 267, "id": 54916622, "first_name": "Raspberry", "phone": "4928459452981", "print_name": "Raspberry_Pi", "last_name": "Pi", "type": "user"}, "date": 1439679779, "out": false, "unread": true}
+43 [<] 
+44 [<] ANSWER 264
+45 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": false, "state": -1, "when": "2015-08-16 01:03:15"}
+46 [<] 
+47 [<] ANSWER 262
+48 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-08-16 01:08:15"}
+49 [<] 
+50 [<] ANSWER 264
+51 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": false, "state": -1, "when": "2015-08-16 01:03:21"}
+52 [<] 
+53 [<] ANSWER 262
+54 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-08-16 01:08:33"}
+55 [<] 
+56 [<] ANSWER 264
+57 [<] {"event": "online-status", "user": {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}, "online": false, "state": -1, "when": "2015-08-16 01:03:43"}
+58 [<] 
+59 [<] {"service":"false","from":{"print_name":"console","id":-631648677,"type":"user","first_name":"console","username":"console"},"text":"ping","event":"message"}
+60 [<] {"service":"false","from":{"print_name":"console","id":-631648677,"type":"user","first_name":"console","username":"console"},"text":"kick","event":"message"}
+
+
+==========================================
+===== new Instance on 20150816020730 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][misc.AccountManager][logMessage]: Loading Accounts from default filename accounts.dat
+1 [I][misc.AccountManager][loadAccounts]: Loading Accounts from accounts.dat
+2 [I][misc.Message][<init>]: Constructing Message by JSON!
+3 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+4 [I][listener.Handler][<init>]: Resulting messageText 0: ping
+5 [I][listener.Handler][<init>]: Loading account for sender ID -631648677
+6 [I][listener.Handler][<init>]: Account for sender ID -631648677 found with name console!
+7 [I][misc.AccountOnlineManager][<init>]: Account console was already online. Resetting online timer. Offline in 5000 milliseconds!
+8 [I][listener.Handler][<init>]: Handling command 0: ping
+9 [W][listener.Handler][<init>]: will not answer message 0, because it was internal. Message text: ping received!
+10 [I][misc.AccountOnlineManager][logMessage]: Account console offline!
+11 [I][misc.Message][<init>]: Constructing Message by JSON!
+12 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+13 [I][listener.Handler][<init>]: Resulting messageText 1: userinfo Lukas
+14 [I][listener.Handler][<init>]: Loading account for sender ID -631648677
+15 [I][listener.Handler][<init>]: Account for sender ID -631648677 found with name console!
+16 [I][listener.Handler][<init>]: Sending welcome back because of message 1
+17 [W][listener.Handler][<init>]: will not answer message 1, because it was internal. Message text: Welcome back, console
+18 [I][misc.AccountOnlineManager][<init>]: Account console now online! Offline in 5000 milliseconds!
+19 [I][listener.Handler][<init>]: Handling command 1: userinfo
+20 [I][misc.AccountOnlineManager][logMessage]: Account console offline!
+21 [I][misc.Message][<init>]: Constructing Message by JSON!
+22 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+23 [I][listener.Handler][<init>]: Resulting messageText 5: kick
+24 [I][listener.Handler][<init>]: Loading account for sender ID -631648677
+25 [I][listener.Handler][<init>]: Account for sender ID -631648677 found with name console!
+26 [I][listener.Handler][<init>]: Sending welcome back because of message 5
+27 [W][listener.Handler][<init>]: will not answer message 5, because it was internal. Message text: Welcome back, console
+28 [I][misc.AccountOnlineManager][<init>]: Account console now online! Offline in 5000 milliseconds!
+29 [I][listener.Handler][<init>]: Handling command 5: kick
+30 [W][listener.Handler][<init>]: will not answer message 5, because it was internal. Message text: Received Exit-command over network. Exiting.
+31 [I][listener.Handler][<init>]: Received Exit-command over network. Exiting.
+32 [I][logging.LogManager][<init>]: Saving Log File
+33 [I][logging.LogManager][<init>]: LogFile exists: log.txt
+34 [I][logging.LogManager][<init>]: Appending to LogFile log.txt
+35 [I][util.FileHandler][<init>]: Reading StringBuilder from log.txt
+36 [I][util.TimeHandler][<init>]: Returning TimeArray 20150816020730
+37 [I][util.TimeHandler][<init>]: 20150816020730
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] {"service":"false","from":{"print_name":"console","id":-631648677,"type":"user","first_name":"console","username":"console"},"text":"ping","event":"message"}
+1 [<] {"service":"false","from":{"print_name":"console","id":-631648677,"type":"user","first_name":"console","username":"console"},"text":"userinfo Lukas","event":"message"}
+2 [>c] user_info Lukas
+3 [<] ANSWER 167
+4 [<] {"username": "schild_kroete2", "flags": 2307, "id": 16546596, "first_name": "Lukas", "phone": "4915781664674", "print_name": "Lukas", "last_name": "", "type": "user"}
+5 [<] 
+6 [<] {"service":"false","from":{"print_name":"console","id":-631648677,"type":"user","first_name":"console","username":"console"},"text":"kick","event":"message"}

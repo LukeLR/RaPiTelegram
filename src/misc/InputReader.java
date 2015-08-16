@@ -32,7 +32,7 @@ public class InputReader extends Thread {
 					from.put("print_name", "console");
 					from.put("type", "user");
 					obj.put("from", from);
-					NotifierManager.currentNotifier().onNotify(obj.toString());
+					NotifierManager.currentNotifier().onNotify(obj, true);
 				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block

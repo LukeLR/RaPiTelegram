@@ -106,7 +106,20 @@ public class Notifier implements network.NetworkNotifier {
 //		lastID++;
 //	}
 	
+	public void onNotify(JSONObject object){
+		onNotify(object, false);
+	}
+	
+	public void onNotify(JSONObject object, boolean raw){
+		Logger.logMessage('<', "JSONObject: " + object.toString(), "socket");
+		new Handler(object, this, lastID, raw);
+	}
+	
 	public void onNotify(String notifyString){
+		onNotify(notifyString, false);
+	}
+	
+	public void onNotify(String notifyString, boolean raw){
 		if (verbose) Logger.logMessage('I', this, "Got notifyString: (" + String.valueOf(lastID) + ") " + notifyString);
 		Logger.logMessage('<', notifyString, "socket"); //Log every incoming message to channel 'socket'.
 		if (notifyString.equals("raw") || notifyString.equals("Raw") || notifyString.equals("RAW")){ //Check if notifyString is the command to switch RAW-Mode.
@@ -138,6 +151,8 @@ public class Notifier implements network.NetworkNotifier {
 								+ String.valueOf(lastID) + " in Notifier in an general exception.");
 					}
 				}
+			} else {
+				new Handler(notifyString, this, lastID); //Handle RAW-Message
 			}
 		}
 		lastID ++; //Count Message ID one up.

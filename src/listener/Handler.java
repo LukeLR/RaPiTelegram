@@ -42,6 +42,7 @@ public class Handler extends Thread{
 	private Message message;
 //	private boolean parsingNeeded = true;
 	private boolean raw = false;
+	private boolean waitsForUserInfo = false;
 //	private boolean parsedWell = false;
 	private int id = -1;
 //	private int commandDepthParsed = 0;
@@ -52,6 +53,22 @@ public class Handler extends Thread{
 	private Account acc = null;
 	private AccountOnlineManager acos = null;
 	
+	/**
+	 * Constructor, if incoming message was parsed successfully to JSON by {@link listener.Notifier}.
+	 * 
+	 * @param obj The {@link org.json.JSONObject} that represents the message to be parsed.
+	 * @param notifier The {@link listener.Notifier} that spawned this {@link Handler}. Needed for back-communication.
+	 * @param id The ID of the message this {@link Handler} parses. Used for identification.
+	 * @param raw A boolean value to force RAW-mode even if a {@link org.json.JSONObject} was passed. This will supress any answers sent to telegram, assuming that this was a console message.
+	 */
+	public Handler(JSONObject obj, Notifier notifier, int id, boolean raw){
+		this.notifier = notifier;
+		this.id = id;
+		this.raw = raw;
+		if (this.parseMessageJSON(obj)){
+			this.handleMessage(message.getContents());
+		}
+	}
 	
 	/**
 	 * Constructor, if incoming message was parsed successfully to JSON by {@link listener.Notifier}.
@@ -61,11 +78,7 @@ public class Handler extends Thread{
 	 * @param id The ID of the message this {@link Handler} parses. Used for identification.
 	 */
 	public Handler(JSONObject obj, Notifier notifier, int id){
-		this.notifier = notifier;
-		this.id = id;
-		if (this.parseMessageJSON(obj)){
-			this.handleMessage(message.getContents());
-		}
+		this(obj, notifier, id, false);
 	}
 	
 	/**
@@ -302,32 +315,20 @@ public class Handler extends Thread{
 		
 		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_ACCESS)){
 			if (verbose) Logger.logMessage('I', this, "Handling command " + String.valueOf(id) + ": " + message[0]);
-			switch(message[0]){
+			switch(message[0].toLowerCase()){ //make sure everything is lowercase, for case-insensitive matching
 			case "ping": this.ping(message); break;
-			case "PING": this.ping(message); break;
-			case "Ping": this.ping(message); break;
 			case "echo": this.echo(message); break;
-			case "Echo": this.echo(message); break;
-			case "ECHO": this.echo(message); break;
 			case "kick": this.exit(message); break;
-			case "Kick": this.exit(message); break;
-			case "switchOn": this.switchOn(message); break;
 			case "switchon": this.switchOn(message); break;
-			case "SwitchOn": this.switchOn(message); break;
-			case "Switchon": this.switchOn(message); break;
-			case "switchOff": this.switchOff(message); break;
 			case "switchoff": this.switchOff(message); break;
-			case "SwitchOff": this.switchOff(message); break;
-			case "Switchoff": this.switchOff(message); break;
 			case "switch": this.switchPower(message); break;
-			case "Switch": this.switchPower(message); break;
-			case "manageSwitch": this.manageSwitch(message); break;
+			case "manageswitch": this.manageSwitch(message); break;
 			case "delay": this.postpone(message); break;
 			case "postpone": this.postpone(message); break;
 			case "help": this.help(message); break;
 			case "info": this.help(message); break;
 			case "healthreport": this.healthreport(message); break;
-			case "userID": this.userID(message); break;
+			case "userinfo": this.userInfo(message); break;
 			case "shutdown": this.shutdown(message); break;
 			case "restart": this.restart(message); break;
 			}
@@ -532,9 +533,11 @@ public class Handler extends Thread{
 		}
 	}
 	
-	private void userID(String[] message){
+	private void userInfo(String[] message){
 		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_USERID)){
 			if (message.length > 1){
+				this.waitsForUserInfo = true;
+				notifier.enqueueForUserInfo(this);
 				notifier.send("user_info " + message[1]);
 			} else {
 				String error = "usage: userID <user>: returns the user ID of requested user.";
@@ -579,6 +582,19 @@ public class Handler extends Thread{
 	}
 	
 	public void on_UserInfoArrive(JSONObject obj){
-		//Send user_info to user that requested user_info, if someone did.
+		String defaultValue = "n.a.";
+		String v = "";
+		if (this.waitsForUserInfo){ //If an user_info was requested in this Handler
+			if (obj.has("type") ? obj.getString("type").equals("user") : false){ //If the JSON-Object really is an user-info.
+				notifier.send("UserInfo for ID " + ((v = String.valueOf(obj.getIntSafe("id", -1))).equals("-1") ? defaultValue : v)
+				+ ": Username: " + ((v = obj.getStringSafe("username", defaultValue)).equals("") ? defaultValue : v)
+				+ ", First Name: " + ((v = obj.getStringSafe("first_name", defaultValue)).equals("") ? defaultValue : v)
+				+ ", Last Name: " + ((v = obj.getStringSafe("last_name", defaultValue)).equals("") ? defaultValue : v)
+				+ ", Print Name: " + ((v = obj.getStringSafe("print_name", defaultValue)).equals("") ? defaultValue : v)
+				+ ", phone: " + ((v = String.valueOf(obj.getIntSafe("phone", -1))).equals("-1") ? defaultValue : v)
+				+ ", flags: " + ((v = String.valueOf(obj.getIntSafe("flags", -1))).equals("-1") ? defaultValue : v)
+				+ ", type: " + ((v = obj.getStringSafe("type", defaultValue)).equals("") ? defaultValue : v));
+			}
+		}
 	}
 }
