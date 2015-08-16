@@ -62,6 +62,8 @@ public class Handler extends Thread{
 	 * @param raw A boolean value to force RAW-mode even if a {@link org.json.JSONObject} was passed. This will supress any answers sent to telegram, assuming that this was a console message.
 	 */
 	public Handler(JSONObject obj, Notifier notifier, int id, boolean raw){
+		if (verbose) Logger.logMessage('I', this, "New Handler for message " + String.valueOf(id)
+				+ " with JSONObject, raw is " + String.valueOf(raw) + ".");
 		this.notifier = notifier;
 		this.id = id;
 		this.raw = raw;
@@ -91,6 +93,8 @@ public class Handler extends Thread{
 	 * @param id The ID of the message this {@link Handler} parses. Used for identification.
 	 */
 	public Handler(String message, Notifier notifier, int id){
+		if (verbose) Logger.logMessage('I', this, "New Handler for message " + String.valueOf(id)
+				+ " with RAW message, raw is true.");
 		this.notifier = notifier;
 		this.id = id;
 		this.raw = true;
