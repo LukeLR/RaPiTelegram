@@ -20,6 +20,7 @@ package misc;
 
 import org.json.JSONObject;
 
+import exception.FieldNotFoundException;
 import logging.Logger;
 
 public class Chat {

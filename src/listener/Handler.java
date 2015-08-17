@@ -25,6 +25,7 @@ import java.util.logging.LogManager;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import exception.PrivilegeNotFoundException;
 import util.FileHandler;
 import logging.Logger;
 import misc.Account;
@@ -331,13 +332,20 @@ public class Handler extends Thread{
 			case "postpone": this.postpone(message); break;
 			case "help": this.help(message); break;
 			case "info": this.help(message); break;
+			case "giveprivilege": this.givePrivilege(message); break;
 			case "healthreport": this.healthreport(message); break;
 			case "userinfo": this.userInfo(message); break;
 			case "shutdown": this.shutdown(message); break;
 			case "restart": this.restart(message); break;
 			}
 		} else {
-			Logger.logMessage('I', this, "Account " + acc.getAccountName() + " has no " + AccountPrivileges.getPrivString(AccountPrivileges.PERM_ACCESS) + "-permission. Not handling.");
+			try {
+				Logger.logMessage('I', this, "Account " + acc.getAccountName() + " has no " + AccountPrivileges.getPrivString(AccountPrivileges.PERM_ACCESS) + "-permission. Not handling.");
+			} catch (PrivilegeNotFoundException e) {
+				Logger.logMessage('E', this, "Error when trying to get PrivilegeString for privilegeID "
+						+ String.valueOf(AccountPrivileges.PERM_ACCESS) + " in debug output for handleMessage(String[]).");
+				Logger.logMessage('I', this, "Account " + acc.getAccountName() + " has no ID-" + String.valueOf(AccountPrivileges.PERM_ACCESS) + "-permission. Not handling.");
+			}
 		}
 	}
 	
@@ -487,6 +495,10 @@ public class Handler extends Thread{
 		} else {
 			this.noPermAns("postpone");
 		}
+	}
+	
+	private void givePrivilege(String[] message){
+		
 	}
 	
 	private void help(String[] message){
