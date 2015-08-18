@@ -2,7 +2,9 @@ package misc;
 
 import java.io.Serializable;
 
+import exception.InsufficientPrivilegeException;
 import exception.PrivilegeNotFoundException;
+import exception.PrivilegeNotFoundRuntimeException;
 import logging.Logger;
 
 public class AccountPrivileges implements Serializable {
@@ -27,6 +29,7 @@ public class AccountPrivileges implements Serializable {
 	/*13*/ private boolean cmd_restart = false;
 	/*14*/ private boolean cmd_switchPower = false;
 	/*15*/ private boolean cmd_userID = false;
+	/*16*/ private boolean cmd_listPrivileges = false;
 	
 //	/*00*/ private boolean give_access = false;
 //	/*01*/ private boolean give_cmd_ping = false;
@@ -62,8 +65,9 @@ public class AccountPrivileges implements Serializable {
 	public static int PERM_CMD_RESTART = 13;
 	public static int PERM_CMD_SWITCHPOWER = 14;
 	public static int PERM_CMD_USERID = 15;
+	public static int PERM_CMD_LISTPRIVILEGES = 16;
 	
-	public static int MOST_PERMISSION_ID = 15;
+	public static int MOST_PERMISSION_ID = 16;
 	
 	public AccountPrivileges(Account acc){
 		this.acc = acc;
@@ -96,6 +100,7 @@ public class AccountPrivileges implements Serializable {
 		case 13: return cmd_restart;
 		case 14: return cmd_switchPower;
 		case 15: return cmd_userID;
+		case 16: return cmd_listPrivileges;
 		default: Logger.logMessage('W', this, "Invalid privID " + String.valueOf(privID) + " passed to hasPriv(). Skipping."); return false;
 		}
 	}
@@ -120,7 +125,7 @@ public class AccountPrivileges implements Serializable {
 //		}
 //	}
 	
-	public static String getPrivString(int privID) throws PrivilegeNotFoundException{
+	public static String getPrivString(int privID) throws PrivilegeNotFoundRuntimeException{
 		switch (privID){
 		case -1: return "admin";
 		case 0: return "access";
@@ -139,7 +144,8 @@ public class AccountPrivileges implements Serializable {
 		case 13: return "cmd_restart";
 		case 14: return "cmd_switchPower";
 		case 15: return "cmd_userID";
-		default: throw new PrivilegeNotFoundException("Invalid privilege ID: " + String.valueOf(privID));
+		case 16: return "cmd_listPrivileges";
+		default: throw new PrivilegeNotFoundRuntimeException("Invalid privilege ID: " + String.valueOf(privID)); return "ID-" + String.valueOf(privID);
 		}
 	}
 	
@@ -162,12 +168,12 @@ public class AccountPrivileges implements Serializable {
 		case "cmd_restart": return 13;
 		case "cmd_switchpower": return 14;
 		case "cmd_userid": return 15;
+		case "cmd_listprivileges": return 16;
 		default: throw new PrivilegeNotFoundException("Invalid privilege String: " + privString);
 		}
 	}
 	
-	public boolean setPriv(int privID, boolean state, Account acc){
-		boolean err = false;
+	public void setPriv(int privID, boolean state, Account acc) throws InsufficientPrivilegeException, PrivilegeNotFoundException {
 		if (acc.hasAccountPrivilege(AccountPrivileges.ADMIN)){
 			switch(privID){
 			case 0: access = state; break;
@@ -186,21 +192,18 @@ public class AccountPrivileges implements Serializable {
 			case 13: cmd_restart = state; break;
 			case 14: cmd_switchPower = state; break;
 			case 15: cmd_userID = state; break;
+			case 16: cmd_listPrivileges = state; break;
 			default: Logger.logMessage('W', this, "Wrong privID passed to setPriv: " + String.valueOf(privID) + " Exiting!");
 					 Logger.logMessage('E', this, "Wrong privID passed to setPriv: " + String.valueOf(privID) + " Exiting!", "priv");
-					 err = true; break;
+					 throw new PrivilegeNotFoundException("Wrong PrivilegeID: '" + String.valueOf(privID) + "'. No changes!");
+					 //TODO: Remove unneccessary Log-outputs
 			}
-			if (!err){
-				try {
-					Logger.logMessage('I', this, "Setting " + getPrivString(privID) + "-privilege of Account " + this.acc.getAccountName() + " to " + String.valueOf(state) + ".", "priv");
-				} catch (PrivilegeNotFoundException e) {
-					Logger.logMessage('E', this, "Error when trying to get privilege String for "
-							+ String.valueOf(privID) + " for security output in "
-							+ "AccountPrivileges.setPriv(int, boolean, Account)");
-				}
-				return true;
-			} else {
-				return false;
+			try {
+				Logger.logMessage('I', this, "Set " + getPrivString(privID) + "-privilege of Account " + this.acc.getAccountName() + " to " + String.valueOf(state) + ".", "priv");
+			} catch (PrivilegeNotFoundException e) {
+				Logger.logMessage('E', this, "Error when trying to get privilege String for "
+						+ String.valueOf(privID) + " for security output in "
+						+ "AccountPrivileges.setPriv(int, boolean, Account)");
 			}
 		} else {
 			try {
@@ -208,6 +211,8 @@ public class AccountPrivileges implements Serializable {
 						+ getPrivString(privID) + " for Account " + this.acc.getAccountName() + "with ID " + String.valueOf(this.acc.getAccountID()) + "!");
 				Logger.logMessage('E', this, "Account " + acc.getAccountName() + " with ID " + String.valueOf(acc.getAccountID()) + " is not allowed to set privilege "
 						+ getPrivString(privID) + " for Account " + this.acc.getAccountName() + "with ID " + String.valueOf(this.acc.getAccountID()) + "!", "priv");
+				throw new InsufficientPrivilegeException ("Account " + acc.getAccountName() + " with ID " + String.valueOf(acc.getAccountID()) + " is not allowed to set privilege "
+						+ getPrivString(privID) + " for Account " + this.acc.getAccountName() + "with ID " + String.valueOf(this.acc.getAccountID()) + "!");
 			} catch (PrivilegeNotFoundException e) {
 				Logger.logMessage('E', this, "Error when trying to get privilege String for "
 						+ String.valueOf(privID) + " for warning in AccountPrivileges.setPriv(int, boolean, Account)");
@@ -215,8 +220,9 @@ public class AccountPrivileges implements Serializable {
 						+ String.valueOf(privID) + " for Account " + this.acc.getAccountName() + "with ID " + String.valueOf(this.acc.getAccountID()) + "!");
 				Logger.logMessage('E', this, "Account " + acc.getAccountName() + " with ID " + String.valueOf(acc.getAccountID()) + " is not allowed to set privilege "
 						+ String.valueOf(privID) + " for Account " + this.acc.getAccountName() + "with ID " + String.valueOf(this.acc.getAccountID()) + "!", "priv");
+				throw new InsufficientPrivilegeException("Account " + acc.getAccountName() + " with ID " + String.valueOf(acc.getAccountID()) + " is not allowed to set privilege "
+						+ String.valueOf(privID) + " for Account " + this.acc.getAccountName() + "with ID " + String.valueOf(this.acc.getAccountID()) + "!");
 			}
-			return false;
 		}
 	}
 	
@@ -255,7 +261,7 @@ public class AccountPrivileges implements Serializable {
 //		}
 //	}
 	
-	public void setAdmin (int adminID, boolean state, Account acc){
+	public void setAdmin (int adminID, boolean state, Account acc) throws InsufficientPrivilegeException, PrivilegeNotFoundException {
 		Logger.logMessage('W', this, "Account " + acc.getAccountName() + " with ID " + String.valueOf(acc.getAccountID())
 				+ " is trying to give Account " + this.acc.getAccountName() + " with ID " + String.valueOf(this.acc.getAccountID())
 				+ " admin privileges of level " + String.valueOf(adminID));
@@ -266,11 +272,15 @@ public class AccountPrivileges implements Serializable {
 			switch(adminID){
 			case -1: admin = state; break;
 			default:
-				Logger.logMessage('E', this, "Account " + acc.getAccountName() + " with ID " + String.valueOf(acc.getAccountID())
-					+ " is not allowed to give admin privileges!");
-				Logger.logMessage('E', this, "Account " + acc.getAccountName() + " with ID " + String.valueOf(acc.getAccountID())
-						+ " is not allowed to give admin privileges!", "priv");
+				throw new PrivilegeNotFoundException("Invalid adminID: + String.valueOf(adminID)");
 			}
+		} else {
+			Logger.logMessage('E', this, "Account " + acc.getAccountName() + " with ID " + String.valueOf(acc.getAccountID())
+					+ " is not allowed to give admin privileges!");
+			Logger.logMessage('E', this, "Account " + acc.getAccountName() + " with ID " + String.valueOf(acc.getAccountID())
+					+ " is not allowed to give admin privileges!", "priv");
+			throw new InsufficientPrivilegeException("Account " + acc.getAccountName() + " with ID " + String.valueOf(acc.getAccountID())
+					+ " is not allowed to give admin privileges!");
 		}
 	}
 }

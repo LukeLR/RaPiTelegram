@@ -9,6 +9,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.io.IOException;
 
+import exception.InsufficientPrivilegeException;
+import exception.PrivilegeNotFoundException;
 import logging.Logger;
 
 public class AccountManager {
@@ -74,9 +76,25 @@ public class AccountManager {
 		Logger.logMessage('I', new AccountManager(), "Creating new Accounts");
 		accounts = new LinkedList<Account>();
 		Account aaa = new Account("console", -631648677);
-		aaa.getPriv().setAdmin(AccountPrivileges.ADMIN, true, aaa);
+		try {
+			aaa.getPriv().setAdmin(AccountPrivileges.ADMIN, true, aaa);
+		} catch (InsufficientPrivilegeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (PrivilegeNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		for (int i = 0; i <= AccountPrivileges.MOST_PERMISSION_ID; i++){
-			aaa.getPriv().setPriv(i, true, aaa);
+			try {
+				aaa.getPriv().setPriv(i, true, aaa);
+			} catch (InsufficientPrivilegeException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (PrivilegeNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		accounts.add(aaa);
 	}

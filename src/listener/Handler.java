@@ -25,6 +25,7 @@ import java.util.logging.LogManager;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import exception.InsufficientPrivilegeException;
 import exception.PrivilegeNotFoundException;
 import util.FileHandler;
 import logging.Logger;
@@ -333,6 +334,7 @@ public class Handler extends Thread{
 			case "help": this.help(message); break;
 			case "info": this.help(message); break;
 			case "giveprivilege": this.givePrivilege(message); break;
+			case "listprivileges": this.listPrivileges(message); break;
 			case "healthreport": this.healthreport(message); break;
 			case "userinfo": this.userInfo(message); break;
 			case "shutdown": this.shutdown(message); break;
@@ -498,7 +500,91 @@ public class Handler extends Thread{
 	}
 	
 	private void givePrivilege(String[] message){
-		
+		if (message.length == 4){ //givePrivilege <user> <privilege> <state>
+			boolean err = false;
+			int userID = -1;
+			int privID = -1;
+			boolean state = false;
+			try {
+				userID = Integer.parseInt(message[1]);
+			} catch (Exception ex){
+				//TODO: Find possible exceptions
+				err = true;
+				Logger.logMessage('E', this, "User " + acc.getAccountName() + " with ID "
+						+ String.valueOf(acc.getAccountID()) + " provided wrong userID '"
+						+ message[1] + "' for givePrivilege-command");
+				this.sendMessage("Wrong userID provided: '" + message[1] + "'. Use userInfo-"
+						+ "command to get userIDs.");
+			}
+			
+			try {
+				privID = Integer.parseInt(message[2]);
+			} catch (Exception ex) {
+				//TODO: Find possible exceptions
+				err = true;
+				Logger.logMessage('E', this, "User " + acc.getAccountName() + " with ID "
+						+ String.valueOf(acc.getAccountID()) + " provided invalid permissionID '"
+						+ message[2] + "' for givePrivilege-command");
+				this.sendMessage("Wrong privilegeID provided: '" + message[2] + "'. Use listPermissions-"
+						+ "command to get privilege IDs.");
+			}
+			
+			switch(message[3].toLowerCase()){
+			case "false": state = false; break;
+			case "true": state = true; break;
+			case "0": state = false; break;
+			case "1": state = true; break;
+			case "deny": state = false; break;
+			case "allow": state = true; break;
+			default:
+				err = true;
+				Logger.logMessage('E', this, "User " + acc.getAccountName() + " with ID "
+						+ String.valueOf(acc.getAccountID()) + " provided invalid state '"
+						+ message[3] + "' for givePrivilege-command");
+				this.sendMessage("Wrong state provided: '" + message[3] + "'. Values 'true', 'false',"
+						+ " '0', '1', 'allow', 'deny' allowed.");
+			}
+			
+			if (!err){
+				Account dummy = new Account(userID);
+				Account dest = AccountManager.getAccount(dummy);
+				if (dest != null){
+					try {
+						dest.setAccountPrivilege(privID, state, acc);
+					} catch (InsufficientPrivilegeException e) {
+						err = true;
+						this.sendMessage("You are not allowed to set the " + Acc);
+					} catch (PrivilegeNotFoundException e) {
+						err = true;
+					}
+				}
+				try {
+					this.sendMessage("Set " + AccountPrivileges.getPrivString(privID) + "-privilege for Account " + dest.getAccountName()
+							+ " with ID " + String.valueOf(dest.getAccountID()) + " to " + String.valueOf(state) + ".");
+				} catch (PrivilegeNotFoundException e) {
+					this.sendMessage("Set " + "ID-" + String.valueOf(privID) + "-privilege for Account " + dest.getAccountName()
+							+ " with ID " + String.valueOf(dest.getAccountID()) + " to " + String.valueOf(state) + ".");
+				}
+			}
+		}
+	}
+	
+	private void listPrivileges(String[] message){
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_LISTPRIVILEGES)){
+			String privileges = "";
+			for (int i = 0; i < AccountPrivileges.MOST_PERMISSION_ID; i++){
+				if (i != 0){
+					privileges = privileges + ", ";
+				}
+				privileges = privileges + String.valueOf(i);
+				try {
+					privileges = privileges + ": " + AccountPrivileges.getPrivString(i);
+				} catch (PrivilegeNotFoundException e) {
+					//Do nothing
+				}
+			}
+			this.sendMessage(privileges);
+		}
 	}
 	
 	private void help(String[] message){

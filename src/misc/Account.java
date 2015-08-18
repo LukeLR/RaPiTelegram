@@ -2,6 +2,9 @@ package misc;
 
 import java.io.Serializable;
 
+
+import exception.InsufficientPrivilegeException;
+import exception.PrivilegeNotFoundException;
 //import listener.Handler;
 import logging.Logger;
 
@@ -61,7 +64,7 @@ public class Account implements Serializable{
 		this.accountState = accountState;
 	}
 	
-	public void setAccountPrivilege(int privID, boolean state, Account acc){
+	public void setAccountPrivilege(int privID, boolean state, Account acc) throws InsufficientPrivilegeException, PrivilegeNotFoundException{
 		priv.setPriv(privID, state, acc);
 	}
 	

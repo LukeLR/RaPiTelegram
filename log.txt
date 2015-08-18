@@ -12109,3 +12109,138 @@ Log channel: socket
 15 [<] ANSWER 70
 16 [<] {"error": "can not parse arg #1", "result": "FAIL", "error_code": 38}
 17 [<] 
+
+
+==========================================
+===== new Instance on 20150818070034 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][misc.AccountManager][logMessage]: Loading Accounts from default filename accounts.dat
+1 [I][misc.AccountManager][loadAccounts]: Loading Accounts from accounts.dat
+2 [E][misc.AccountManager][loadAccounts]: Error loading Accounts! Creating new ones.
+3 [I][misc.AccountManager][loadAccounts]: Creating new Accounts
+4 [W][misc.AccountPrivileges][loadAccounts]: Account console with ID -631648677 is trying to give Account console with ID -631648677 admin privileges of level -1
+5 [I][listener.Handler][<init>]: New Handler for message 0 with JSONObject, raw is true.
+6 [I][misc.Message][<init>]: Constructing Message by JSON!
+7 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+8 [I][listener.Handler][<init>]: Resulting messageText 0: kick
+9 [I][listener.Handler][<init>]: Loading account for sender ID -631648677
+10 [I][listener.Handler][<init>]: Account for sender ID -631648677 found with name console!
+11 [I][listener.Handler][<init>]: Sending welcome back because of message 0
+12 [W][listener.Handler][<init>]: will not answer message 0, because it was internal. Message text: Welcome back, console
+13 [I][misc.AccountOnlineManager][<init>]: Account console now online! Offline in 5000 milliseconds!
+14 [I][listener.Handler][<init>]: Handling command 0: kick
+15 [W][listener.Handler][<init>]: will not answer message 0, because it was internal. Message text: Received Exit-command over network. Exiting.
+16 [I][listener.Handler][<init>]: Received Exit-command over network. Exiting.
+17 [I][logging.LogManager][<init>]: Saving Log File
+18 [I][logging.LogManager][<init>]: LogFile exists: log.txt
+19 [I][logging.LogManager][<init>]: Appending to LogFile log.txt
+20 [I][util.FileHandler][<init>]: Reading StringBuilder from log.txt
+21 [I][util.TimeHandler][<init>]: Returning TimeArray 20150818070034
+22 [I][util.TimeHandler][<init>]: 20150818070034
+
+
+ ------ dumping channel: priv ------
+Log channel: priv
+0 [W][misc.AccountPrivileges][loadAccounts]: Account console with ID -631648677 is trying to give Account console with ID -631648677 admin privileges of level -1
+1 [I][misc.AccountPrivileges][loadAccounts]: Setting access-privilege of Account console to true.
+2 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_ping-privilege of Account console to true.
+3 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_echo-privilege of Account console to true.
+4 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_kick-privilege of Account console to true.
+5 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOn-privilege of Account console to true.
+6 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOff-privilege of Account console to true.
+7 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_addSwitch-privilege of Account console to true.
+8 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_removeSwitch-privilege of Account console to true.
+9 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_postpone-privilege of Account console to true.
+10 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_help-privilege of Account console to true.
+11 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_info-privilege of Account console to true.
+12 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_healthreport-privilege of Account console to true.
+13 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_shutdown-privilege of Account console to true.
+14 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_restart-privilege of Account console to true.
+15 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchPower-privilege of Account console to true.
+16 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_userID-privilege of Account console to true.
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] JSONObject: {"service":"false","from":{"print_name":"console","id":-631648677,"type":"user","first_name":"console","username":"console"},"text":"kick","event":"message"}
+
+
+==========================================
+===== new Instance on 20150818071453 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+0 [I][misc.AccountManager][logMessage]: Loading Accounts from default filename accounts.dat
+1 [I][misc.AccountManager][loadAccounts]: Loading Accounts from accounts.dat
+2 [E][misc.AccountManager][loadAccounts]: Error loading Accounts! Creating new ones.
+3 [I][misc.AccountManager][loadAccounts]: Creating new Accounts
+4 [W][misc.AccountPrivileges][loadAccounts]: Account console with ID -631648677 is trying to give Account console with ID -631648677 admin privileges of level -1
+5 [I][listener.Handler][<init>]: New Handler for message 0 with JSONObject, raw is true.
+6 [I][misc.Message][<init>]: Constructing Message by JSON!
+7 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+8 [I][listener.Handler][<init>]: Resulting messageText 0: listprivileges
+9 [I][listener.Handler][<init>]: Loading account for sender ID -631648677
+10 [I][listener.Handler][<init>]: Account for sender ID -631648677 found with name console!
+11 [I][listener.Handler][<init>]: Sending welcome back because of message 0
+12 [W][listener.Handler][<init>]: will not answer message 0, because it was internal. Message text: Welcome back, console
+13 [I][misc.AccountOnlineManager][<init>]: Account console now online! Offline in 5000 milliseconds!
+14 [I][listener.Handler][<init>]: Handling command 0: listprivileges
+15 [W][listener.Handler][<init>]: will not answer message 0, because it was internal. Message text: 0: access, 1: cmd_ping, 2: cmd_echo, 3: cmd_kick, 4: cmd_switchOn, 5: cmd_switchOff, 6: cmd_addSwitch, 7: cmd_removeSwitch, 8: cmd_postpone, 9: cmd_help, 10: cmd_info, 11: cmd_healthreport, 12: cmd_shutdown, 13: cmd_restart, 14: cmd_switchPower, 15: cmd_userID
+16 [I][misc.AccountOnlineManager][logMessage]: Account console offline!
+17 [I][listener.Handler][<init>]: New Handler for message 3 with JSONObject, raw is true.
+18 [I][misc.Message][<init>]: Constructing Message by JSON!
+19 [W][misc.User][<init>]: Trying to construct a Chat object with a JSON Object.
+This should not be called directly, only subclasses should call this superclass constructor.
+Please use the constructors of the subclasses *User* and *Group*!
+20 [I][listener.Handler][<init>]: Resulting messageText 3: kick
+21 [I][listener.Handler][<init>]: Loading account for sender ID -631648677
+22 [I][listener.Handler][<init>]: Account for sender ID -631648677 found with name console!
+23 [I][listener.Handler][<init>]: Sending welcome back because of message 3
+24 [W][listener.Handler][<init>]: will not answer message 3, because it was internal. Message text: Welcome back, console
+25 [I][misc.AccountOnlineManager][<init>]: Account console now online! Offline in 5000 milliseconds!
+26 [I][listener.Handler][<init>]: Handling command 3: kick
+27 [W][listener.Handler][<init>]: will not answer message 3, because it was internal. Message text: Received Exit-command over network. Exiting.
+28 [I][listener.Handler][<init>]: Received Exit-command over network. Exiting.
+29 [I][logging.LogManager][<init>]: Saving Log File
+30 [I][logging.LogManager][<init>]: LogFile exists: log.txt
+31 [I][logging.LogManager][<init>]: Appending to LogFile log.txt
+32 [I][util.FileHandler][<init>]: Reading StringBuilder from log.txt
+33 [I][util.TimeHandler][<init>]: Returning TimeArray 20150818071453
+34 [I][util.TimeHandler][<init>]: 20150818071453
+
+
+ ------ dumping channel: priv ------
+Log channel: priv
+0 [W][misc.AccountPrivileges][loadAccounts]: Account console with ID -631648677 is trying to give Account console with ID -631648677 admin privileges of level -1
+1 [I][misc.AccountPrivileges][loadAccounts]: Setting access-privilege of Account console to true.
+2 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_ping-privilege of Account console to true.
+3 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_echo-privilege of Account console to true.
+4 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_kick-privilege of Account console to true.
+5 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOn-privilege of Account console to true.
+6 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchOff-privilege of Account console to true.
+7 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_addSwitch-privilege of Account console to true.
+8 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_removeSwitch-privilege of Account console to true.
+9 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_postpone-privilege of Account console to true.
+10 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_help-privilege of Account console to true.
+11 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_info-privilege of Account console to true.
+12 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_healthreport-privilege of Account console to true.
+13 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_shutdown-privilege of Account console to true.
+14 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_restart-privilege of Account console to true.
+15 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_switchPower-privilege of Account console to true.
+16 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_userID-privilege of Account console to true.
+17 [I][misc.AccountPrivileges][loadAccounts]: Setting cmd_listPrivileges-privilege of Account console to true.
+
+
+ ------ dumping channel: socket ------
+Log channel: socket
+0 [<] JSONObject: {"service":"false","from":{"print_name":"console","id":-631648677,"type":"user","first_name":"console","username":"console"},"text":"listprivileges","event":"message"}
+1 [<] ANSWER 260
+2 [<] {"event": "online-status", "user": {"username": "schild_kroete", "flags": 256, "id": 41493817, "first_name": "Elisa", "phone": "4915782288334", "print_name": "Elisa", "last_name": "", "type": "user"}, "online": true, "state": 1, "when": "2015-08-18 19:19:48"}
+3 [<] 
+4 [<] JSONObject: {"service":"false","from":{"print_name":"console","id":-631648677,"type":"user","first_name":"console","username":"console"},"text":"kick","event":"message"}
