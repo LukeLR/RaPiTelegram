@@ -1,2 +1,5 @@
 log.txt
 accounts.dat
+*.class
+.DS_Store
+Thumbs.db
