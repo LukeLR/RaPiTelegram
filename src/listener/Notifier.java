@@ -38,7 +38,7 @@ public class Notifier implements network.NetworkNotifier {
 	
 	private int lastID = 0;
 	
-	private String answerCommand = "";
+	private String sendCommand = "";
 	
 	private boolean verbose = false;
 	private boolean raw = false;
@@ -158,12 +158,12 @@ public class Notifier implements network.NetworkNotifier {
 		lastID ++; //Count Message ID one up.
 	}
 	
-	public void setAnswerCommand (String answerCommand){
-		this.answerCommand = answerCommand;
+	public void setSendCommand (String answerCommand){
+		this.sendCommand = answerCommand;
 	}
 	
-	public String getAnswerCommand (){
-		return answerCommand;
+	public String getSendCommand (){
+		return sendCommand;
 	}
 	
 	public void enqueueForUserInfo(Handler h){

@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import exception.InsufficientPrivilegeException;
 import exception.PrivilegeNotFoundException;
-import exception.PrivilegeNotFoundRuntimeException;
 import logging.Logger;
 
 public class AccountPrivileges implements Serializable {
@@ -30,22 +29,8 @@ public class AccountPrivileges implements Serializable {
 	/*14*/ private boolean cmd_switchPower = false;
 	/*15*/ private boolean cmd_userID = false;
 	/*16*/ private boolean cmd_listPrivileges = false;
-	
-//	/*00*/ private boolean give_access = false;
-//	/*01*/ private boolean give_cmd_ping = false;
-//	/*02*/ private boolean give_cmd_kick = false;
-//	/*03*/ private boolean give_cmd_echo = false;
-//	/*04*/ private boolean give_cmd_switchOn = false;
-//	/*05*/ private boolean give_cmd_switchOff = false;
-//	/*06*/ private boolean give_cmd_addSwitch = false;
-//	/*07*/ private boolean give_cmd_removeSwitch = false;
-//	/*08*/ private boolean give_cmd_postpone = false;
-//	/*09*/ private boolean give_cmd_help = false;
-//	/*10*/ private boolean give_cmd_info = false;
-//	/*11*/ private boolean give_cmd_healthreport = false;
-//	/*12*/ private boolean give_cmd_shutdown = false;
-//	/*13*/ private boolean give_cmd_restart = false;
-//	/*14*/ private boolean give_cmd_switchPower = false;
+	/*17*/ private boolean cmd_givePrivilege = false;
+	/*18*/ private boolean cmd_giveAdmin = false;
 	
 	public static int ADMIN = -1;
 	
@@ -66,8 +51,18 @@ public class AccountPrivileges implements Serializable {
 	public static int PERM_CMD_SWITCHPOWER = 14;
 	public static int PERM_CMD_USERID = 15;
 	public static int PERM_CMD_LISTPRIVILEGES = 16;
+	public static int PERM_CMD_GIVEPRIVILEGE = 17;
+	public static int PERM_CMD_GIVEADMIN = 18;
 	
-	public static int MOST_PERMISSION_ID = 16;
+	
+	/*
+	 * ==============================
+	 * ==========IMPORTANT===========
+	 * ==============================
+	 * 
+	 * Always change this when adding new privileges!!!
+	 */
+	public static int MOST_PERMISSION_ID = 18;
 	
 	public AccountPrivileges(Account acc){
 		this.acc = acc;
@@ -101,31 +96,14 @@ public class AccountPrivileges implements Serializable {
 		case 14: return cmd_switchPower;
 		case 15: return cmd_userID;
 		case 16: return cmd_listPrivileges;
+		case 17: return cmd_givePrivilege;
+		case 18: return cmd_giveAdmin;
 		default: Logger.logMessage('W', this, "Invalid privID " + String.valueOf(privID) + " passed to hasPriv(). Skipping."); return false;
 		}
 	}
+
 	
-//	public boolean givePriv(int privID){
-//		switch (privID){
-//		case 0: return give_access;
-//		case 1: return give_cmd_ping;
-//		case 2: return give_cmd_echo;
-//		case 3: return give_cmd_kick;
-//		case 4: return give_cmd_switchOn;
-//		case 5: return give_cmd_switchOff;
-//		case 6: return give_cmd_addSwitch;
-//		case 7: return give_cmd_removeSwitch;
-//		case 8: return give_cmd_postpone;
-//		case 9: return give_cmd_help;
-//		case 10: return give_cmd_info;
-//		case 11: return give_cmd_healthreport;
-//		case 12: return give_cmd_shutdown;
-//		case 13: return give_cmd_restart;
-//		default: Logger.logMessage('W', this, "Invalid privID " + String.valueOf(privID) + " passed to givePriv(). Skipping."); return false;
-//		}
-//	}
-	
-	public static String getPrivString(int privID) throws PrivilegeNotFoundRuntimeException{
+	public static String getPrivString(int privID) throws PrivilegeNotFoundException{
 		switch (privID){
 		case -1: return "admin";
 		case 0: return "access";
@@ -145,7 +123,17 @@ public class AccountPrivileges implements Serializable {
 		case 14: return "cmd_switchPower";
 		case 15: return "cmd_userID";
 		case 16: return "cmd_listPrivileges";
-		default: throw new PrivilegeNotFoundRuntimeException("Invalid privilege ID: " + String.valueOf(privID)); return "ID-" + String.valueOf(privID);
+		case 17: return "cmd_givePrivilege";
+		case 18: return "cmd_giveAdmin";
+		default: throw new PrivilegeNotFoundException("Invalid privilege ID: " + String.valueOf(privID));
+		}
+	}
+	
+	public static String getPrivStringSafe(int privID){
+		try {
+			return AccountPrivileges.getPrivString(privID);
+		} catch (PrivilegeNotFoundException ex){
+			return "ID-" + String.valueOf(privID);
 		}
 	}
 	
@@ -169,6 +157,8 @@ public class AccountPrivileges implements Serializable {
 		case "cmd_switchpower": return 14;
 		case "cmd_userid": return 15;
 		case "cmd_listprivileges": return 16;
+		case "cmd_giveprivilege": return 17;
+		case "cmd_giveadmin": return 18;
 		default: throw new PrivilegeNotFoundException("Invalid privilege String: " + privString);
 		}
 	}
@@ -193,18 +183,20 @@ public class AccountPrivileges implements Serializable {
 			case 14: cmd_switchPower = state; break;
 			case 15: cmd_userID = state; break;
 			case 16: cmd_listPrivileges = state; break;
+			case 17: cmd_givePrivilege = state; break;
+			case 18: cmd_giveAdmin = state; break;
 			default: Logger.logMessage('W', this, "Wrong privID passed to setPriv: " + String.valueOf(privID) + " Exiting!");
 					 Logger.logMessage('E', this, "Wrong privID passed to setPriv: " + String.valueOf(privID) + " Exiting!", "priv");
 					 throw new PrivilegeNotFoundException("Wrong PrivilegeID: '" + String.valueOf(privID) + "'. No changes!");
 					 //TODO: Remove unneccessary Log-outputs
 			}
-			try {
-				Logger.logMessage('I', this, "Set " + getPrivString(privID) + "-privilege of Account " + this.acc.getAccountName() + " to " + String.valueOf(state) + ".", "priv");
-			} catch (PrivilegeNotFoundException e) {
-				Logger.logMessage('E', this, "Error when trying to get privilege String for "
-						+ String.valueOf(privID) + " for security output in "
-						+ "AccountPrivileges.setPriv(int, boolean, Account)");
-			}
+				try {
+					Logger.logMessage('I', this, "Set " + getPrivString(privID) + "-privilege of Account " + this.acc.getAccountName() + " to " + String.valueOf(state) + ".", "priv");
+				} catch (PrivilegeNotFoundException e) {
+					Logger.logMessage('E', this, "Error when trying to get privilege String for "
+							+ String.valueOf(privID) + " for security output in "
+							+ "AccountPrivileges.setPriv(int, boolean, Account)");
+				}
 		} else {
 			try {
 				Logger.logMessage('E', this, "Account " + acc.getAccountName() + " with ID " + String.valueOf(acc.getAccountID()) + " is not allowed to set privilege "
@@ -226,41 +218,6 @@ public class AccountPrivileges implements Serializable {
 		}
 	}
 	
-//	public boolean setGivePriv(int privID, boolean state, Account acc){
-//		boolean err = false;
-//		if (acc.getAccountID() == -631648677){
-//			switch(privID){
-//			case 0: give_access = state; break;
-//			case 1: give_cmd_ping = state; break;
-//			case 2: give_cmd_echo = state; break;
-//			case 3: give_cmd_kick = state; break;
-//			case 4: give_cmd_switchOn = state; break;
-//			case 5: give_cmd_switchOff = state; break;
-//			case 6: give_cmd_addSwitch = state; break;
-//			case 7: give_cmd_removeSwitch = state; break;
-//			case 8: give_cmd_postpone = state; break;
-//			case 9: give_cmd_help = state; break;
-//			case 10: give_cmd_info = state; break;
-//			case 11: give_cmd_healthreport = state; break;
-//			case 12: give_cmd_shutdown = state; break;
-//			case 13: give_cmd_restart = state; break;
-//			default: Logger.logMessage('W', this, "Wrong privID passed to setGivePriv: " + String.valueOf(privID) + " Exiting!");
-//					 Logger.logMessage('E', this, "Wrong privID passed to setGivePriv: " + String.valueOf(privID) + " Exiting!", "priv");
-//					 err = true; break;
-//			}
-//			if (!err){
-//				Logger.logMessage('W', this, "Setting " + getPrivString(privID) + "-give-privilege of Account " + this.acc.getAccountName() + " to " + String.valueOf(state) + ".", "priv");
-//				return true;
-//			} else {
-//				return false;
-//			}
-//		} else {
-//			Logger.logMessage('E', this, "Account " + acc.getAccountName() + " is not allowed to be given give-privilege " + getPrivString(privID) + " for Account " + this.acc.getAccountName() + "!");
-//			Logger.logMessage('E', this, "Account " + acc.getAccountName() + " is not allowed to be given give-privilege " + getPrivString(privID) + " for Account " + this.acc.getAccountName() + "!");
-//			return false;
-//		}
-//	}
-	
 	public void setAdmin (int adminID, boolean state, Account acc) throws InsufficientPrivilegeException, PrivilegeNotFoundException {
 		Logger.logMessage('W', this, "Account " + acc.getAccountName() + " with ID " + String.valueOf(acc.getAccountID())
 				+ " is trying to give Account " + this.acc.getAccountName() + " with ID " + String.valueOf(this.acc.getAccountID())
@@ -270,7 +227,7 @@ public class AccountPrivileges implements Serializable {
 				+ " admin privileges of level " + String.valueOf(adminID), "priv");
 		if (acc.getAccountID() == -631648677 || acc.hasAccountPrivilege(AccountPrivileges.ADMIN)){
 			switch(adminID){
-			case -1: admin = state; break;
+			case -1: admin = state; access = true; cmd_giveAdmin = true; cmd_givePrivilege = true; break;
 			default:
 				throw new PrivilegeNotFoundException("Invalid adminID: + String.valueOf(adminID)");
 			}

@@ -117,4 +117,8 @@ public class Account implements Serializable{
 			return false;
 		}
 	}
+	
+	public String toString(){
+		return this.getAccountName() + "(" + String.valueOf(this.getAccountID()) + ")";
+	}
 }
