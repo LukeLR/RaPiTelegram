@@ -162,6 +162,11 @@ public class Handler extends Thread {
 	private boolean parseMessageJSON(JSONObject obj) {
 		if (obj.has("event") ? obj.getString("event").equals("message") : false) {
 			message = new Message(obj);
+			if (skipOwn){
+				if (message.getFromID() == ownID){
+					return false;
+				}
+			}
 			if (verbose) Logger.logMessage('I', this, "Resulting messageText " + String.valueOf(id) + ": " + message.getText());
 			notifier.setSendCommand("msg ");
 			return true;
@@ -356,7 +361,7 @@ public class Handler extends Thread {
 	
 	private void killThread(String[] message) {
 		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_KILL)){
-			if (message.length <= 2){
+			if (message.length >= 2){
 				int id = -1;
 				boolean err = false;
 				
