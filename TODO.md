@@ -5,7 +5,8 @@ TODO-List for RaPiTelegram-Project
    - [ ] automatic detection of commands in specific package?/folder? -> plugin-like abilities
 - [ ] Wrap Privileges in AccountPrivileges.class in Classes for each privilege
    - [ ] Superclass / subclass-relation
+- [ ] List privileges of specific user as extension to listPrivileges-command by passing parameter
 
 ##Known bugs
 - [ ] switchOn and switchOff commands don't work, switch-command does.
-- [ ] crashes when postpone-command is used with switch-command
+- [x] crashes when postpone-command is used with switch-command
