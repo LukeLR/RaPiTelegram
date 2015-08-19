@@ -8,3 +8,4 @@ TODO-List for RaPiTelegram-Project
 
 ##Known bugs
 - [ ] switchOn and switchOff commands don't work, switch-command does.
+- [ ] crashes when postpone-command is used with switch-command
