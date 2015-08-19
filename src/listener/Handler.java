@@ -290,6 +290,7 @@ public class Handler extends Thread {
 			case "echo": this.echo(message); break;
 			case "kick": this.exit(message); break;
 			case "kill": this.killThread(message); break;
+			case "killThread": this.killThread(message); break;
 			case "switchon": this.switchOn(message); break;
 			case "switchoff": this.switchOff(message); break;
 			case "switch": this.switchPower(message); break;
@@ -301,7 +302,7 @@ public class Handler extends Thread {
 			case "giveprivilege": this.givePrivilege(message); break;
 			case "giveadmin": this.giveAdmin(message); break;
 			case "listprivileges": this.listPrivileges(message); break;
-			case "repeatfixed": this.repeat(message);
+			case "repeat": this.repeat(message);
 			case "for": this.repeat(message);
 			case "healthreport": this.healthreport(message); break;
 			case "userinfo": this.userInfo(message); break;
