@@ -4,10 +4,10 @@ import logging.Logger;
 
 public class ThreadWrapper {
 	private Thread t;
-	private String name;
-	public ThreadWrapper(Thread t, String name) {
+	private int id;
+	public ThreadWrapper(Thread t, int id) {
 		this.t = t;
-		this.name = name;
+		this.id = id;
 	}
 	
 	public Thread getThread(){
@@ -18,18 +18,17 @@ public class ThreadWrapper {
 		this.t = t;
 	}
 	
-	public String getName(){
-		return name;
+	public int getID(){
+		return id;
 	}
 	
-	public void setName(String name){
-		this.name = name;
+	public void setID(int id){
+		this.id = id;
 	}
 	
 	public boolean equals (Object anObject){
 		try{
-			((ThreadWrapper)anObject).getName().equals(getName());
-			return true;
+			return ((ThreadWrapper)anObject).getID() == getID();
 		} catch(Exception ex) {
 			Logger.logMessage('W', this, "Object provided to ThreadWrapper for comparison couldn't be compared."
 					+ "Is it an instance of ThreadWrapper?");
