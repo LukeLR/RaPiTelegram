@@ -7,6 +7,7 @@ TODO-List for RaPiTelegram-Project
    - [ ] Superclass / subclass-relation
 - [ ] List privileges of specific user as extension to listPrivileges-command by passing parameter
 - [ ] Give Permissions by Permission Name. Get ID of permission by checking getPrivilegeID(String)-method
+- [ ] Command not found-message
 
 ##Known bugs
 - [ ] switchOn and switchOff commands don't work, switch-command does.
