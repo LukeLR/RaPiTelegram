@@ -36,6 +36,8 @@ import misc.AccountOnlineManager;
 import misc.AccountPrivileges;
 import misc.Chat;
 import misc.Message;
+import misc.ThreadManager;
+import misc.ThreadWrapper;
 import misc.User;
 import network.MessageHandler;
 
@@ -282,6 +284,7 @@ public class Handler extends Thread {
 			case "ping": this.ping(message); break;
 			case "echo": this.echo(message); break;
 			case "kick": this.exit(message); break;
+			case "kill": this.killThread(message); break;
 			case "switchon": this.switchOn(message); break;
 			case "switchoff": this.switchOff(message); break;
 			case "switch": this.switchPower(message); break;
@@ -337,7 +340,7 @@ public class Handler extends Thread {
 			this.noPermAns("echo");
 		}
 	}
-
+	
 	private void exit(String[] message) {
 		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_KICK)) {
 			String infoString = "Received Exit-command over network. Exiting.";
@@ -348,6 +351,62 @@ public class Handler extends Thread {
 			System.exit(0);
 		} else {
 			this.noPermAns("exit");
+		}
+	}
+	
+	private void killThread(String[] message) {
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_KILL)){
+			if (message.length <= 2){
+				int id = -1;
+				boolean err = false;
+				
+				try {
+					id = Integer.parseInt(message[1]);
+				} catch (Exception ex){
+					err = true;
+					Logger.logMessage('W', this, "Parsing of ID User " + acc.toString() + " passed to "
+							+ "killThread-command failed: " + message[1]);
+					this.replyMessage("Error: Given ID is not numeric: " + message[1] + ". Exiting.");
+				}
+				
+				if (!err){
+					ThreadWrapper t = ThreadManager.getThreadWrapperByIndex(id);
+					if (t != null){
+						if (t.allowKill(acc)){
+							Logger.logMessage('I', this, "User " + acc.toString() + " is killing his own Thread "
+									+ String.valueOf(id) + ".");
+							this.replyMessage("Killing Thread " + String.valueOf(id));
+							t.getThread().interrupt();
+						} else {
+							if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_KILL_OTHERS)){
+								Logger.logMessage('I', this, "User " + acc.toString() + " is killing Thread "
+										+ String.valueOf(id) + " which belongs to " + t.owner().toString()
+										+ ". He is allowed to override this.");
+								this.replyMessage("Killing Thread " + String.valueOf(id) + ", which was"
+										+ " owned by " + t.getOwner().toString());
+								t.getThread().interrupt();
+							} else {
+								Logger.logMessage('W', this, "User " + acc.toString() + " tried to kill"
+										+ " Thread with ID " + String.valueOf(id) + ", which is owned by "
+										+ t.owner().toString() + ". User has no permission to override this.");
+								this.replyMessage("You're not allowed to kill Thread " + String.valueOf(id));
+							}
+						}
+					} else {
+						Logger.logMessage('W', this, "Thread for ID " + String.valueOf(id)
+								+ ", original: " + message[1] + ", as passed by user "
+								+ acc.toString() + " couldn't be found.");
+						this.replyMessage("Couldn't find Thread with ID " + String.valueOf(id));
+					}
+				}
+			} else {
+				String usage = "killThread <id>; where ID is the ID of the Thread to be killed.";
+				Logger.logMessage('W', this, "User " + acc.toString() + " passed not enough arguments"
+						+ " to killThread-command. Exiting.");
+				this.replyMessage("Not enough arguments. usage: " + usage);
+			}
+		} else {
+			this.noPermAns("kill");
 		}
 	}
 
@@ -449,7 +508,7 @@ public class Handler extends Thread {
 		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_POSTPONE)) {
 			// if ((message.getContents().length - commandDepthParsed) > 2){
 			if (message.length > 2) {
-				String info = "Executing postpone-command...";
+				String info = "Executing postpone-command... I'm " + String.valueOf(ThreadManager.register(this, acc));
 				if (verbose) Logger.logMessage('I', this, info);
 				this.replyMessage(info);
 				try {

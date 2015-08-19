@@ -3,11 +3,19 @@ package misc;
 import logging.Logger;
 
 public class ThreadWrapper {
-	private Thread t;
-	private int id;
-	public ThreadWrapper(Thread t, int id) {
+	private Thread t = null;
+	private int id = -1;
+	private Account owner = null;
+	public ThreadWrapper(Thread t, int id, Account owner) {
 		this.t = t;
 		this.id = id;
+		this.owner = owner;
+	}
+	
+	public ThreadWrapper(Thread t, int id){
+		this.t = t;
+		this.id = id;
+		this.owner = null;
 	}
 	
 	public Thread getThread(){
@@ -34,5 +42,21 @@ public class ThreadWrapper {
 					+ "Is it an instance of ThreadWrapper?");
 			return false;
 		}
+	}
+	
+	public boolean allowKill(Account anAccount){
+		if (owner == null){
+			return true; //If no owner is set, anyone is allowed to kill.
+		} else {
+			return (owner.equals(anAccount)); //If owner is set, only owner may kill (or overrides)
+		}
+	}
+	
+	public Account owner(){
+		return owner;
+	}
+	
+	public Account getOwner(){
+		return owner;
 	}
 }
