@@ -31,6 +31,7 @@ public class AccountPrivileges implements Serializable {
 	/*16*/ private boolean cmd_listPrivileges = false;
 	/*17*/ private boolean cmd_givePrivilege = false;
 	/*18*/ private boolean cmd_giveAdmin = false;
+	/*19*/ private boolean cmd_repeat = true;
 	
 	public static int ADMIN = -1;
 	
@@ -53,6 +54,7 @@ public class AccountPrivileges implements Serializable {
 	public static int PERM_CMD_LISTPRIVILEGES = 16;
 	public static int PERM_CMD_GIVEPRIVILEGE = 17;
 	public static int PERM_CMD_GIVEADMIN = 18;
+	public static int PERM_CMD_REPEAT = 19;
 	
 	
 	/*
@@ -62,7 +64,7 @@ public class AccountPrivileges implements Serializable {
 	 * 
 	 * Always change this when adding new privileges!!!
 	 */
-	public static int MOST_PERMISSION_ID = 18;
+	public static int MOST_PERMISSION_ID = 19;
 	
 	public AccountPrivileges(Account acc){
 		this.acc = acc;
@@ -98,6 +100,7 @@ public class AccountPrivileges implements Serializable {
 		case 16: return cmd_listPrivileges;
 		case 17: return cmd_givePrivilege;
 		case 18: return cmd_giveAdmin;
+		case 19: return cmd_repeat;
 		default: Logger.logMessage('W', this, "Invalid privID " + String.valueOf(privID) + " passed to hasPriv(). Skipping."); return false;
 		}
 	}
@@ -125,6 +128,7 @@ public class AccountPrivileges implements Serializable {
 		case 16: return "cmd_listPrivileges";
 		case 17: return "cmd_givePrivilege";
 		case 18: return "cmd_giveAdmin";
+		case 19: return "cmd_repeat";
 		default: throw new PrivilegeNotFoundException("Invalid privilege ID: " + String.valueOf(privID));
 		}
 	}
@@ -159,6 +163,7 @@ public class AccountPrivileges implements Serializable {
 		case "cmd_listprivileges": return 16;
 		case "cmd_giveprivilege": return 17;
 		case "cmd_giveadmin": return 18;
+		case "cmd_repeat": return 19;
 		default: throw new PrivilegeNotFoundException("Invalid privilege String: " + privString);
 		}
 	}
@@ -185,6 +190,7 @@ public class AccountPrivileges implements Serializable {
 			case 16: cmd_listPrivileges = state; break;
 			case 17: cmd_givePrivilege = state; break;
 			case 18: cmd_giveAdmin = state; break;
+			case 19: cmd_repeat = state; break;
 			default: Logger.logMessage('W', this, "Wrong privID passed to setPriv: " + String.valueOf(privID) + " Exiting!");
 					 Logger.logMessage('E', this, "Wrong privID passed to setPriv: " + String.valueOf(privID) + " Exiting!", "priv");
 					 throw new PrivilegeNotFoundException("Wrong PrivilegeID: '" + String.valueOf(privID) + "'. No changes!");

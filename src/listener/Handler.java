@@ -28,6 +28,7 @@ import org.json.JSONObject;
 import exception.InsufficientPrivilegeException;
 import exception.PrivilegeNotFoundException;
 import util.FileHandler;
+import util.StringTools;
 import logging.Logger;
 import misc.Account;
 import misc.AccountManager;
@@ -39,7 +40,8 @@ import misc.User;
 import network.MessageHandler;
 
 public class Handler extends Thread {
-	// private String messageString;
+	private String messageString = "";
+	private JSONObject messageObject = null;
 	private Notifier notifier;
 	private Message message;
 	// private boolean parsingNeeded = true;
@@ -76,12 +78,11 @@ public class Handler extends Thread {
 	 */
 	public Handler(JSONObject obj, Notifier notifier, int id, boolean raw) {
 		if (verbose) Logger.logMessage('I', this, "New Handler for message " + String.valueOf(id) + " with JSONObject, raw is " + String.valueOf(raw) + ".");
+		this.messageObject = obj;
 		this.notifier = notifier;
 		this.id = id;
 		this.raw = raw;
-		if (this.parseMessageJSON(obj)) {
-			this.handleMessage(message.getContents());
-		}
+		this.start();
 	}
 
 	/**
@@ -119,11 +120,30 @@ public class Handler extends Thread {
 	 */
 	public Handler(String message, Notifier notifier, int id) {
 		if (verbose) Logger.logMessage('I', this, "New Handler for message " + String.valueOf(id) + " with RAW message, raw is true.");
+		this.messageString = message;
 		this.notifier = notifier;
 		this.id = id;
 		this.raw = true;
-		if (this.parseMessageRAW(message)) {
-			this.handleMessage(this.message.getContents());
+		this.start();
+	}
+	
+	public void run(){
+		if (raw){
+			if (messageObject != null){
+				if(this.parseMessageJSON(messageObject)){
+					this.handleMessage(this.message.getContents());
+				}
+			} else if (!messageString.equals("")){
+				if (this.parseMessageRAW(messageString)){
+					this.handleMessage(this.message.getContents());
+				}
+			} else {
+				Logger.logMessage('E', this, "Neither messageObject nor messageString are set in Handler. Exit.");
+			}
+		} else {
+			if(this.parseMessageJSON(messageObject)){
+				this.handleMessage(this.message.getContents());
+			}
 		}
 	}
 
@@ -273,6 +293,8 @@ public class Handler extends Thread {
 			case "giveprivilege": this.givePrivilege(message); break;
 			case "giveadmin": this.giveAdmin(message); break;
 			case "listprivileges": this.listPrivileges(message); break;
+			case "repeatfixed": this.repeat(message);
+			case "for": this.repeat(message);
 			case "healthreport": this.healthreport(message); break;
 			case "userinfo": this.userInfo(message); break;
 			case "shutdown": this.shutdown(message); break;
@@ -707,6 +729,60 @@ public class Handler extends Thread {
 			}
 		} else {
 			this.noPermAns("userID");
+		}
+	}
+	
+	private void repeat(String[] message) {
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_REPEAT)){
+			if (message.length >= 5){ //0:repeat 1:<index> 2:<start> 3:<end> 4:<command>
+				String indexName = "";
+				int start = 0;
+				int end = 0;
+				boolean err = false;
+				
+				indexName = message[1];
+				
+				try {
+					start = Integer.parseInt(message[2]);
+				} catch (Exception ex){
+					err = true;
+					Logger.logMessage('W', this, "User " + acc.toString() + " provided wrong startIndex"
+							+ " for repeat-command: " + message[2]);
+					this.replyMessage("Wrong startIndex provided: " + message[2] + ". Only numbers allowed.");
+				}
+				
+				try {
+					end = Integer.parseInt(message[3]);
+				} catch (Exception ex){
+					err = true;
+					Logger.logMessage('W', this, "User " + acc.toString() + " provided wrong endIndex"
+							+ " for repeat-command: " + message[3]);
+					this.replyMessage("Wrong endIndex provided: " + message[3] + ". Only numbers allowed.");
+				}
+				
+				if (!err){
+					this.replyMessage("Executing repeat-command from " + String.valueOf(start) + " to "
+							+ String.valueOf(end) + " with indexName " + indexName);
+					String[] newMessage = Arrays.copyOfRange(message, 4, message.length);
+					String[] workingCopy = new String[newMessage.length];
+					//execute command repeated
+					for (int i = start; i <= end; i++){
+//						System.err.println("ASDF!");
+						//replace occurrences of indexName in all command information
+						for (int j = 0; j < newMessage.length; j++){
+							workingCopy[j] = newMessage[j].replace(indexName, String.valueOf(i));
+						}
+//						this.replyMessage("Executing command: " + StringTools.StringArrayToString(workingCopy));
+						handleMessage(workingCopy);
+					}
+				}
+			} else {
+				String usage = "repeat <indexName> <startIndex> <endIndex> <command> [commandParams]; startIndex is the lowest, endIndex the highest value inserted for indexName";
+				Logger.logMessage('E', this, "User " + acc.toString() + " provided not enough arguments for repeat-command.");
+				this.replyMessage("Not enough arguments! usage: " + usage);
+			}
+		} else {
+			this.noPermAns("repeat");
 		}
 	}
 
