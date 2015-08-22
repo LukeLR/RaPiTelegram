@@ -25,6 +25,7 @@ import java.util.logging.LogManager;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import exception.AliasNotFoundException;
 import exception.InsufficientPrivilegeException;
 import exception.PrivilegeNotFoundException;
 import util.FileHandler;
@@ -304,10 +305,31 @@ public class Handler extends Thread {
 			case "listprivileges": this.listPrivileges(message); break;
 			case "repeat": this.repeat(message);
 			case "for": this.repeat(message);
+			case "addalias": this.addAlias(message);
+			case "listalias": this.listAlias(message);
+			case "removealias": this.removeAlias(message);
 			case "healthreport": this.healthreport(message); break;
 			case "userinfo": this.userInfo(message); break;
 			case "shutdown": this.shutdown(message); break;
 			case "restart": this.restart(message); break;
+			default:
+				if (acc.hasAlias(message[0])){
+					try {
+						String[] alias = acc.getAlias(message[0]);
+						this.replyMessage("Handling alias " + message[0] + " with contents: "
+								+ StringTools.StringArrayToString(alias));
+						this.handleMessage(alias);
+					} catch (AliasNotFoundException e) {
+						Logger.logMessage('E', this, "User " + acc.getAccountName() + " has no alias"
+								+ " with name '" + message[0] + "', although I checked before.");
+						this.replyMessage("An error occured: Alias disappeared after checking.");
+					}
+				} else {
+					Logger.logMessage('I', this, "User " + acc.toString() + " provided invalid command: "
+							+ message[0] + ". Exiting.");
+					this.replyMessage("Sorry: Command not recognized. Try 'help' for a list of available "
+							+ "commands or 'listAlias' for a list of available aliases in your profile.");
+				}
 			}
 		} else {
 			try {
@@ -730,6 +752,39 @@ public class Handler extends Thread {
 			}
 			this.replyMessage(privileges);
 		}
+	}
+	
+	private void addAlias(String[] message){
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_ADDALIAS)){
+			if (message.length >= 3){ //addAlias <aliasName> <command>
+				acc.addAlias(message[1], Arrays.copyOfRange(message, 2, message.length));
+			} else {
+				String usage = "usage: addAlias <aliasName> <command>";
+				Logger.logMessage('I', this, "User " + acc.toString() + " provided not enough"
+						+ " arguments for addAlias-command. No changes made.");
+				this.replyMessage("Not enough argumenets! " + usage);
+			}
+		} else {
+			this.noPermAns("addAlias");
+		}
+	}
+	
+	private void listAlias(String[] message){
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_LISTALIAS)){
+			try {
+				this.replyMessage("List of aliases for Account " + acc.toString() + "\n"
+						+ StringTools.StringArrayToString(acc.getAllAlias()));
+			} catch (AliasNotFoundException e) {
+				Logger.logMessage('I', this, "User " + acc.toString() + " does not seem to have"
+						+ " any aliases to list in listAlias-command.");
+			}
+		} else {
+			this.noPermAns("listAlias");
+		}
+	}
+	
+	private void removeAlias(String[] message){
+		
 	}
 
 	private void help(String[] message) {

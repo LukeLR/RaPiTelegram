@@ -3,6 +3,13 @@ package misc;
 import java.io.Serializable;
 
 
+
+
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import exception.AliasNotFoundException;
 import exception.InsufficientPrivilegeException;
 import exception.PrivilegeNotFoundException;
 //import listener.Handler;
@@ -17,6 +24,7 @@ public class Account implements Serializable{
 //	private int accountPrivileges = 0;
 	
 	private AccountPrivileges priv = new AccountPrivileges(this);
+	private JSONObject aliases = new JSONObject();
 	
 //	private Thread t = null;
 //	private Handler currentHandler = null;
@@ -68,6 +76,12 @@ public class Account implements Serializable{
 		priv.setPriv(privID, state, acc);
 	}
 	
+	public void addAlias(String aliasName, String[] represents){
+		for (int i = 0; i < represents.length; i++){
+			aliases.append(aliasName, represents[i]);
+		}
+	}
+	
 //	public void setHandler(Handler h){
 //		currentHandler = h;
 //	}
@@ -97,6 +111,36 @@ public class Account implements Serializable{
 	
 	public boolean hasAccountPrivilege(int privID){
 		return priv.hasPriv(privID);
+	}
+	
+	public boolean hasAlias(String aliasName){
+		return aliases.has(aliasName);
+	}
+	
+	public String[] getAlias(String aliasName) throws AliasNotFoundException{
+		if (hasAlias(aliasName)){
+			JSONArray aliasArray = aliases.getJSONArray(aliasName);
+			String[] result = new String[aliasArray.length()];
+			for (int i = 0; i < aliasArray.length(); i++){
+				result[i] = aliasArray.getString(i);
+			}
+			return result;
+		} else {
+			throw new AliasNotFoundException("Alias not found for name: " + aliasName + "!");
+		}
+	}
+	
+	public String[] getAllAlias() throws AliasNotFoundException{
+		JSONArray aliasNames = aliases.names();
+		if (aliasNames != null){
+			String[] result = new String[aliasNames.length()];
+			for (int i = 0; i < aliasNames.length(); i++){
+				result[i] = aliasNames.getString(i);
+			}
+			return result;
+		} else {
+			throw new AliasNotFoundException("No aliases set.");
+		}	
 	}
 	
 //	public Handler getHandler(){
