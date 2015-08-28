@@ -165,4 +165,14 @@ public class Account implements Serializable{
 	public String toString(){
 		return this.getAccountName() + "(" + String.valueOf(this.getAccountID()) + ")";
 	}
+	
+	public void removeAlias(String aliasName) throws AliasNotFoundException{
+		if (this.hasAlias(aliasName)){
+			if (aliases.remove(aliasName) == null){
+				throw new AliasNotFoundException("Alias '" + aliasName + "' not found! Not removed.");
+			}
+		} else {
+			throw new AliasNotFoundException("Alias '" + aliasName + "' not found! Not removed.");
+		}
+	}
 }

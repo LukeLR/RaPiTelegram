@@ -75,7 +75,7 @@ public class Handler extends Thread {
 	 *            identification.
 	 * @param raw
 	 *            A boolean value to force RAW-mode even if a
-	 *            {@link org.json.JSONObject} was passed. This will supress any
+	 *            {@link org.json.JSONObject} was passed. This will suppress any
 	 *            answers sent to telegram, assuming that this was a console
 	 *            message.
 	 */
@@ -196,8 +196,7 @@ public class Handler extends Thread {
 		} else {
 			// Try to parse messageString as a JSON-Object. If it fails, it is probably a RAW messageString.
 			try {
-				new JSONObject(messageString);
-				return false;
+				return this.parseMessageJSON(new JSONObject(messageString));
 			} catch (Exception ex) {
 				// Couldn't parse messageString as a JSON-Object. Handle it as a RAW messageString.
 				return this.parseMessageRAWFinal(messageString); // Pass it to parsing
@@ -784,7 +783,24 @@ public class Handler extends Thread {
 	}
 	
 	private void removeAlias(String[] message){
-		
+		if (acc.hasAccountPrivilege(AccountPrivileges.PERM_CMD_REMOVEALIAS)){
+			if (message.length >= 2){ //<removeAlias> <aliasName>
+				try {
+					acc.removeAlias(message[1]);
+				} catch (AliasNotFoundException ex){
+					Logger.logMessage('I', this, "User " + acc.toString() + " provided invalid"
+							+ " alias name for removeAlias-command: " + message[1]);
+					this.replyMessage("Alias not found: " + message[1]);
+				}
+			} else {
+				String usage = "usage: removeAlias <aliasName>";
+				Logger.logMessage('I', this, "User " + acc.getAccountName() + " didn't provide enough"
+						+ " arguments for removeAlias-command.");
+				this.replyMessage("Not enough arguments! " + usage);
+			}
+		} else {
+			this.noPermAns("removeAlias");
+		}
 	}
 
 	private void help(String[] message) {

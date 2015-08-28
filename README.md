@@ -1,6 +1,9 @@
 # RaPiTelegram
 Java Application for controlling my Raspberry Pi by Telegram. Since this is *very* custom, it won't work for you.
 
+##Contact
+If you have any question, feel free to message me on Telegram.
+
 ##License
 Each file in this repository, if not otherwise specified, is part of RaPiTelegram.
 

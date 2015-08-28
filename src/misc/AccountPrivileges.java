@@ -36,6 +36,7 @@ public class AccountPrivileges implements Serializable {
 	/*21*/ private boolean cmd_kill_others = false;
 	/*22*/ private boolean cmd_addAlias = false;
 	/*23*/ private boolean cmd_listAlias = false;
+	/*24*/ private boolean cmd_removeAlias = false;
 	
 	public static int ADMIN = -1;
 	
@@ -63,6 +64,7 @@ public class AccountPrivileges implements Serializable {
 	public static int PERM_CMD_KILL_OTHERS = 21;
 	public static int PERM_CMD_ADDALIAS = 22;
 	public static int PERM_CMD_LISTALIAS = 23;
+	public static int PERM_CMD_REMOVEALIAS = 24;
 	
 	/*
 	 * ==============================
@@ -71,7 +73,7 @@ public class AccountPrivileges implements Serializable {
 	 * 
 	 * Always change this when adding new privileges!!!
 	 */
-	public static int MOST_PERMISSION_ID = 23;
+	public static int MOST_PERMISSION_ID = 24;
 	
 	public AccountPrivileges(Account acc){
 		this.acc = acc;
@@ -112,6 +114,7 @@ public class AccountPrivileges implements Serializable {
 		case 21: return cmd_kill_others;
 		case 22: return cmd_addAlias;
 		case 23: return cmd_listAlias;
+		case 24: return cmd_removeAlias;
 		default: Logger.logMessage('W', this, "Invalid privID " + String.valueOf(privID) + " passed to hasPriv(). Skipping."); return false;
 		}
 	}
@@ -144,6 +147,7 @@ public class AccountPrivileges implements Serializable {
 		case 21: return "cmd_kill_others";
 		case 22: return "cmd_addAlias";
 		case 23: return "cmd_listAlias";
+		case 24: return "cmd_removeAlias";
 		default: throw new PrivilegeNotFoundException("Invalid privilege ID: " + String.valueOf(privID));
 		}
 	}
@@ -183,6 +187,7 @@ public class AccountPrivileges implements Serializable {
 		case "cmd_kill_others": return 21;
 		case "cmd_addAlias": return 22;
 		case "cmd_listAlias": return 23;
+		case "cmd_removeAlias": return 24;
 		default: throw new PrivilegeNotFoundException("Invalid privilege String: " + privString);
 		}
 	}
@@ -214,6 +219,7 @@ public class AccountPrivileges implements Serializable {
 			case 21: cmd_kill_others = state; break;
 			case 22: cmd_addAlias = state; break;
 			case 23: cmd_listAlias = state; break;
+			case 24: cmd_removeAlias = state; break;
 			default: Logger.logMessage('W', this, "Wrong privID passed to setPriv: " + String.valueOf(privID) + " Exiting!");
 					 Logger.logMessage('E', this, "Wrong privID passed to setPriv: " + String.valueOf(privID) + " Exiting!", "priv");
 					 throw new PrivilegeNotFoundException("Wrong PrivilegeID: '" + String.valueOf(privID) + "'. No changes!");
