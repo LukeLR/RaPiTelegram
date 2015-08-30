@@ -29,7 +29,7 @@ import data.list.ListTools;
 import exception.FieldNotFoundException;
 import logging.Logger;
 
-public class Message {
+public class Message implements Cloneable {
 	protected Chat from, to;
 	protected boolean service = false;
 	protected int flags = -1;
@@ -503,5 +503,9 @@ public class Message {
 			Logger.logException(this, "Error when getting sender's members number: ", ex);
 			return -1;
 		}
+	}
+	
+	public Message clone() throws CloneNotSupportedException{
+		return (Message)super.clone();
 	}
 }
