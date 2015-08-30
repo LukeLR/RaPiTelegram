@@ -376,7 +376,7 @@ public class Message {
 //		return contents;
 //	}
 	
-	public String[] getContents(int index) throws IndexOutOfBoundsException{
+	public String[] getCommand(int index) throws IndexOutOfBoundsException{
 		if (index < length()){
 			return commands.get(index);
 		} else {
