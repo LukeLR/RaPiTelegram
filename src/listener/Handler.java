@@ -116,7 +116,7 @@ public class Handler extends Thread {
 	 *            The messageString to be parsed by this {@link Handler}.
 	 * @param notifier
 	 *            The {@link listener.Notifier} that spawned this
-	 *            {@link Handler}. Needed for back-comminication.
+	 *            {@link Handler}. Needed for back-communication.
 	 * @param id
 	 *            The ID of the message this {@link Handler} parses. Used for
 	 *            identification.
