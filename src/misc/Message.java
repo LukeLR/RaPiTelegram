@@ -325,6 +325,15 @@ public class Message {
 		}
 	}
 	
+	public void removeCommand (int index){
+		if (index < length()){
+			commands.remove(index);
+		} else {
+			throw new IndexOutOfBoundsException("Can't remove command '" + String.valueOf(index)
+					+ "' from message: Exceeds command number of " + String.valueOf(length()));
+		}
+	}
+	
 	// ------ Getter methods ------
 	
 	public Chat getFrom(){
