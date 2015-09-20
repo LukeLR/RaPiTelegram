@@ -90,7 +90,7 @@ public class Handler extends Thread {
 
 	/**
 	 * Constructor, if incoming message was parsed successfully to JSON by
-	 * {@link listener.Notifier}.
+	 * {@link listener.Notifier}. RAW Mode will be assumed as false.
 	 * 
 	 * @param obj
 	 *            The {@link org.json.JSONObject} that represents the message to
@@ -143,7 +143,7 @@ public class Handler extends Thread {
 	public void run(){
 		boolean parsedWell = false;
 		if (!parsingNeeded){
-			parsedWell = false;
+			parsedWell = true;
 		} else {
 			if (raw){
 				if (messageObject != null){
