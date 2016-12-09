@@ -47,7 +47,7 @@ public class Handler extends Thread {
 	private JSONObject messageObject = null;
 	private Notifier notifier;
 	private Message message;
-	// private boolean parsingNeeded = true;
+	private boolean parsingNeeded = true;
 	private boolean raw = false;
 	private boolean waitsForUserInfo = false;
 	// private boolean parsedWell = false;
@@ -90,7 +90,7 @@ public class Handler extends Thread {
 
 	/**
 	 * Constructor, if incoming message was parsed successfully to JSON by
-	 * {@link listener.Notifier}.
+	 * {@link listener.Notifier}. RAW Mode will be assumed as false.
 	 * 
 	 * @param obj
 	 *            The {@link org.json.JSONObject} that represents the message to
@@ -116,7 +116,7 @@ public class Handler extends Thread {
 	 *            The messageString to be parsed by this {@link Handler}.
 	 * @param notifier
 	 *            The {@link listener.Notifier} that spawned this
-	 *            {@link Handler}. Needed for back-comminication.
+	 *            {@link Handler}. Needed for back-communication.
 	 * @param id
 	 *            The ID of the message this {@link Handler} parses. Used for
 	 *            identification.
@@ -130,22 +130,65 @@ public class Handler extends Thread {
 		this.start();
 	}
 	
+	public Handler(Message message, Notifier notifier, int id, boolean raw){
+		if (verbose) Logger.logMessage('I', this, "New Handler for message " + String.valueOf(id) + " by message. Raw is " + String.valueOf(raw) + ".");
+		this.notifier = notifier;
+		this.message = message;
+		this.id = id;
+		this.raw = raw;
+		this.parsingNeeded = false;
+		this.start();
+	}
+	
 	public void run(){
-		if (raw){
-			if (messageObject != null){
-				if(this.parseMessageJSON(messageObject)){
-					this.handleMessage(this.message.getContents());
-				}
-			} else if (!messageString.equals("")){
-				if (this.parseMessageRAW(messageString)){
-					this.handleMessage(this.message.getContents());
+		boolean parsedWell = false;
+		if (!parsingNeeded){
+			parsedWell = true;
+		} else {
+			if (raw){
+				if (messageObject != null){
+					if(this.parseMessageJSON(messageObject)){
+						parsedWell = true;
+					}
+				} else if (!messageString.equals("")){
+					if (this.parseMessageRAW(messageString)){
+						parsedWell = true;
+					}
+				} else {
+					Logger.logMessage('E', this, "Neither messageObject nor messageString are set in Handler. Exit.");
 				}
 			} else {
-				Logger.logMessage('E', this, "Neither messageObject nor messageString are set in Handler. Exit.");
+				if(this.parseMessageJSON(messageObject)){
+					parsedWell = true;
+				}
 			}
-		} else {
-			if(this.parseMessageJSON(messageObject)){
-				this.handleMessage(this.message.getContents());
+		}
+		if (parsedWell){
+			this.handleCommands(message);
+		}
+	}
+	
+	public void handleCommands(Message m){
+		String[] currentCommand = null;
+		for (int i = 0; i < m.length(); i++){
+			currentCommand = m.getCommand(i);
+			switch(currentCommand[0]){
+			case "&&": this.handleMessage(currentCommand); break;
+			case "&":
+				try {
+					Message newMessage = m.clone();
+					for (int j = 0; j < newMessage.length(); j++){
+						if (j != i){
+							newMessage.removeCommand(i);
+						}
+					}
+					new Handler(newMessage, notifier, id, raw);
+				} catch (CloneNotSupportedException e) {
+					Logger.logMessage('E', this, "Couldn't clone Message for handling multi-threaded command.");
+					this.replyMessage("Error in handling command '" + StringTools.StringArrayToString(currentCommand) + "': No clone");
+				}
+				break;
+			default: this.handleMessage(currentCommand); break;
 			}
 		}
 	}

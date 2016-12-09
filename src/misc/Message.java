@@ -18,20 +18,24 @@
 
 package misc;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
 import org.json.JSONObject;
 
+import data.list.ListTools;
 import exception.FieldNotFoundException;
 import logging.Logger;
 
-public class Message {
+public class Message implements Cloneable {
 	protected Chat from, to;
 	protected boolean service = false;
 	protected int flags = -1;
 	protected String text = "Message text";
-	protected String[] contents = null;
+//	protected String[] contents = null;
+	protected List<String[]> commands = new LinkedList<String[]>();
 	public static final String default_text = "Message text";
 	protected int id = -1;
 	protected int date = -1;
@@ -167,7 +171,51 @@ public class Message {
 	
 	public void genContents(){
 		if (!text.equals(default_text)){
-			contents = text.trim().split("\\s");
+			String[] temp = text.trim().split("\\s");
+			List<String> current = new LinkedList<String>();
+			commands = new LinkedList<String[]>();
+			for (int i = 0; i < temp.length; i++){
+				switch (temp[i]){
+				case "&":
+					if (!current.isEmpty()){
+						try{
+							commands.add(((String[])ListTools.ListToArray(current)));
+						} catch (Exception ex){
+							Logger.logMessage('E', this, "Could not parse current command List to String[] in Message.genContents");
+						}
+					} else {
+						Logger.logMessage('I', this, "Command list currently handling is empty. Not enqueuing to commands list.");
+					}
+					current = new LinkedList<String>();
+					current.add(temp[i]);
+					break;
+				case "&&": //basically the same code as above
+					if (!current.isEmpty()){
+						try{
+							commands.add(((String[])ListTools.ListToArray(current)));
+						} catch (Exception ex){
+							Logger.logMessage('E', this, "Could not parse current command List to String[] in Message.genContents");
+						}
+					} else {
+						Logger.logMessage('I', this, "Command list currently handling is empty. Not enqueuing to commands list.");
+					}
+					current = new LinkedList<String>();
+					current.add(temp[i]);
+					break;
+				default:
+					current.add(temp[i]);
+					break;
+				}
+			}
+			if (!current.isEmpty()){
+				try{
+					commands.add(((String[])ListTools.ListToArray(current)));
+				} catch (Exception ex){
+					Logger.logMessage('E', this, "Could not parse current command List to String[] in Message.genContents");
+				}
+			} else {
+				Logger.logMessage('I', this, "Command list currently handling is empty. Not enqueuing to commands list.");
+			}
 		}
 	}
 	
@@ -277,6 +325,15 @@ public class Message {
 		}
 	}
 	
+	public void removeCommand (int index){
+		if (index < length()){
+			commands.remove(index);
+		} else {
+			throw new IndexOutOfBoundsException("Can't remove command '" + String.valueOf(index)
+					+ "' from message: Exceeds command number of " + String.valueOf(length()));
+		}
+	}
+	
 	// ------ Getter methods ------
 	
 	public Chat getFrom(){
@@ -315,8 +372,21 @@ public class Message {
 		return text;
 	}
 	
-	public String[] getContents(){
-		return contents;
+//	public String[] getContents(){
+//		return contents;
+//	}
+	
+	public String[] getCommand(int index) throws IndexOutOfBoundsException{
+		if (index < length()){
+			return commands.get(index);
+		} else {
+			throw new IndexOutOfBoundsException("No command with ID '" + String.valueOf(index)
+					+ "' present: Only " + String.valueOf(length()) + " commands storde.");
+		}
+	}
+	
+	public int length(){
+		return commands.size();
 	}
 	
 	// ------ Advanced getter methods ------
@@ -433,5 +503,9 @@ public class Message {
 			Logger.logException(this, "Error when getting sender's members number: ", ex);
 			return -1;
 		}
+	}
+	
+	public Message clone() throws CloneNotSupportedException{
+		return (Message)super.clone();
 	}
 }
