@@ -9,6 +9,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.io.IOException;
 
+<<<<<<< HEAD
+=======
+import exception.InsufficientPrivilegeException;
+import exception.PrivilegeNotFoundException;
+>>>>>>> e521a27b19badded7b5509b16c76a9311c97d635
 import logging.Logger;
 
 public class AccountManager {
@@ -58,16 +63,56 @@ public class AccountManager {
 				accounts = (List<Account>)obj;
 //				return new Constants();
 			} catch (IOException | ClassNotFoundException e) {
+<<<<<<< HEAD
 				Logger.logException(new AccountManager(), "Error loading Accounts!", e);
 //				accounts = new LinkedList();
 			}
 		} else {
 			Logger.logMessage('I', new AccountManager(), "Creating new Accounts");
 			accounts = new LinkedList<Account>();
+=======
+//				Logger.logException(new AccountManager(), "Error loading Accounts!", e);
+				Logger.logMessage('E', new AccountManager(), "Error loading Accounts! Creating new ones.");
+				createNewAccounts();
+//				accounts = new LinkedList();
+			}
+		} else {
+			createNewAccounts();
+>>>>>>> e521a27b19badded7b5509b16c76a9311c97d635
 		}
 		
 		AccountManager.initOnlineManagers();
 	}
+<<<<<<< HEAD
+=======
+	
+	public static void createNewAccounts(){
+		Logger.logMessage('I', new AccountManager(), "Creating new Accounts");
+		accounts = new LinkedList<Account>();
+		Account aaa = new Account("console", -631648677);
+		try {
+			aaa.getPriv().setAdmin(AccountPrivileges.ADMIN, true, aaa);
+		} catch (InsufficientPrivilegeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (PrivilegeNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		for (int i = 0; i <= AccountPrivileges.MOST_PERMISSION_ID; i++){
+			try {
+				aaa.getPriv().setPriv(i, true, aaa);
+			} catch (InsufficientPrivilegeException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (PrivilegeNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		accounts.add(aaa);
+	}
+>>>>>>> e521a27b19badded7b5509b16c76a9311c97d635
 
 	public static void loadAccounts(){
 		Logger.logMessage('I', new AccountManager(), "Loading Accounts from default filename " + filename);

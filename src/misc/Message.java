@@ -18,8 +18,17 @@
 
 package misc;
 
+<<<<<<< HEAD
 import org.json.JSONObject;
 
+=======
+import java.util.TreeMap;
+import java.util.TreeSet;
+
+import org.json.JSONObject;
+
+import exception.FieldNotFoundException;
+>>>>>>> e521a27b19badded7b5509b16c76a9311c97d635
 import logging.Logger;
 
 public class Message {
@@ -64,6 +73,7 @@ public class Message {
 	public Message(JSONObject obj){
 		if (verbose) Logger.logMessage('I', this, "Constructing Message by JSON!");
 		
+<<<<<<< HEAD
 		if (obj.getString("event").equals("message")){
 			JSONObject fromObject = obj.getJSONObject("from");
 			JSONObject toObject = obj.getJSONObject("to");
@@ -100,6 +110,54 @@ public class Message {
 				to = new Group(toObject);
 			} else {
 				Logger.logMessage('E', this, "To-Object is neither user nor group chat!");
+=======
+		if (obj.getString("event").equals("message")){			
+			// reading standard fields
+			
+			setService(obj.has("service") ? obj.getBoolean("service") : false);
+			setFlags(obj.has("flags") ? obj.getInt("flags") : -1);
+			setText(obj.has("text") ? obj.getString("text") : "no message");
+			genContents();
+			setID(obj.has("id") ? obj.getInt("id") : -1);
+			setDate(obj.has("date") ? obj.getInt("date") : -1);
+			setOutgoing(obj.has("out") ? obj.getBoolean("out") : false);
+			setUnread(obj.has("unread") ? obj.getBoolean("unread") : true);
+			
+			if (obj.has("from")){
+				JSONObject fromObject = obj.getJSONObject("from");
+				
+				//reading sender fields
+				
+				if (fromObject.getString("type").equals("user")){
+					// from-chat is an user
+					from = new User(fromObject);
+				} else if (fromObject.getString("type").equals("chat")){
+					// from-chat is a group chat
+					from = new Group(fromObject);
+				} else {
+					Logger.logMessage('E', this, "From-Object is neither user nor group chat!");
+				}
+			} else {
+				this.from = new Chat();
+			}
+			
+			if (obj.has("to")){
+				JSONObject toObject = obj.getJSONObject("to");
+				
+				// reading receipient fields
+				
+				if (toObject.getString("type").equals("user")){
+					// to-chat is an user
+					to = new User(toObject);
+				} else if (toObject.getString("type").equals("chat")){
+					// to-chat is a group chat
+					to = new Group(toObject);
+				} else {
+					Logger.logMessage('E', this, "To-Object is neither user nor group chat!");
+				}
+			} else {
+				this.to = new Chat();
+>>>>>>> e521a27b19badded7b5509b16c76a9311c97d635
 			}
 			
 		} else {

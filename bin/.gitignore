@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /.DS_Store
 /basicConsole/
 /data/
@@ -14,3 +15,7 @@
 /res/
 /test/
 /util/
+=======
+/misc/
+/listener/
+>>>>>>> e521a27b19badded7b5509b16c76a9311c97d635

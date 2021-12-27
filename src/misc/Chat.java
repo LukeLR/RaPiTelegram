@@ -20,6 +20,10 @@ package misc;
 
 import org.json.JSONObject;
 
+<<<<<<< HEAD
+=======
+import exception.FieldNotFoundException;
+>>>>>>> e521a27b19badded7b5509b16c76a9311c97d635
 import logging.Logger;
 
 public class Chat {
@@ -28,6 +32,10 @@ public class Chat {
 	protected String print_name = "Chat print-name";
 	protected static final String default_print_name = "Chat print-name";
 	protected String type = "none";
+<<<<<<< HEAD
+=======
+	protected static final String default_type = "none";
+>>>>>>> e521a27b19badded7b5509b16c76a9311c97d635
 	
 	private boolean sendAdditionalErrorMessages = false;
 	private boolean warnJSONConstructor = true;
@@ -59,10 +67,17 @@ public class Chat {
 				+ "This should not be called directly, only subclasses should call this superclass constructor.\n"
 				+ "Please use the constructors of the subclasses *User* and *Group*!");
 		
+<<<<<<< HEAD
 		setID(obj.getInt("id"));
 		setFlags(obj.getInt("flags"));
 		setPrintName(obj.getString("print_name"));
 		setType(obj.getString("type"));
+=======
+		setID(obj.has ("id") ? obj.getInt("id") : -1);
+		setFlags(obj.has("flags") ? obj.getInt("flags") : -1);
+		setPrintName(obj.has("print_name") ? obj.getString("print_name") : Chat.default_print_name);
+		setType(obj.has("type") ? obj.getString("type") : Chat.default_type);
+>>>>>>> e521a27b19badded7b5509b16c76a9311c97d635
 	}
 	
 	public Chat(String jsonString){

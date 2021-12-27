@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<jardesc>
+    <jar path="RaPiTelegram/build/build-0004.jar"/>
+    <options buildIfNeeded="true" compress="false" descriptionLocation="/RaPiTelegram/build/build-0004.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="false" mainClassHandleIdentifier="=RaPiTelegram/src&lt;main{Main.java[Main" manifestLocation="/RaPiTelegram/build/build-0004.manifest" manifestVersion="1.0" reuseManifest="true" saveManifest="true" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <file path="/RaPiTelegram/.gitignore"/>
+        <file path="/RaPiTelegram/log.txt"/>
+        <folder path="/RaPiTelegram/info"/>
+        <file path="/RaPiTelegram/.project"/>
+        <file path="/RaPiTelegram/.classpath"/>
+        <file path="/RaPiTelegram/License.txt"/>
+        <file path="/RaPiTelegram/TODO.md"/>
+        <file path="/RaPiTelegram/.DS_Store"/>
+        <javaElement handleIdentifier="=RaPiTelegram/lib\/JSON-java\/src"/>
+        <file path="/RaPiTelegram/README.md"/>
+        <javaElement handleIdentifier="=RaPiTelegram/src"/>
+        <folder path="/RaPiTelegram/doc"/>
+        <file path="/RaPiTelegram/commandHelp"/>
+        <folder path="/RaPiTelegram/build"/>
+        <file path="/RaPiTelegram/appliedLicense"/>
+        <file path="/RaPiTelegram/privileges"/>
+        <file path="/RaPiTelegram/information"/>
+        <file path="/RaPiTelegram/LicenseHead.txt"/>
+        <file path="/RaPiTelegram/.gitmodules"/>
+        <folder path="/RaPiTelegram/lib"/>
+        <javaElement handleIdentifier="=RaPiTelegram/lib\/LukeUtils\/src"/>
+        <file path="/RaPiTelegram/accounts.dat"/>
+    </selectedElements>
+</jardesc>
